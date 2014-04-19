@@ -67,6 +67,14 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     [self startServer];
     
     //
+    [[FFAppLoader sharedInstance] initLoader];
+    
+    
+    _homeController = [[FFHomeViewController alloc] init];
+    _navController = [[UINavigationController alloc] initWithRootViewController:_homeController];
+    self.window.rootViewController = _navController;
+    
+    //
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
