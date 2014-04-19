@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1652558D1902E6D800ECD9A9 /* HTTPUploadConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 1652558C1902E6D800ECD9A9 /* HTTPUploadConnection.m */; };
 		16A2F7721902663100751B82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A2F7711902663100751B82 /* Foundation.framework */; };
 		16A2F7741902663100751B82 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A2F7731902663100751B82 /* CoreGraphics.framework */; };
 		16A2F7761902663100751B82 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A2F7751902663100751B82 /* UIKit.framework */; };
@@ -99,6 +100,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1652558B1902E6D800ECD9A9 /* HTTPUploadConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPUploadConnection.h; sourceTree = "<group>"; };
+		1652558C1902E6D800ECD9A9 /* HTTPUploadConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPUploadConnection.m; sourceTree = "<group>"; };
 		16A2F76E1902663100751B82 /* FireflyBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireflyBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16A2F7711902663100751B82 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		16A2F7731902663100751B82 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -405,6 +408,8 @@
 				16A2F7AB1902814400751B82 /* HTTPServer.m */,
 				16A2F7AC1902814400751B82 /* WebSocket.h */,
 				16A2F7AD1902814400751B82 /* WebSocket.m */,
+				1652558B1902E6D800ECD9A9 /* HTTPUploadConnection.h */,
+				1652558C1902E6D800ECD9A9 /* HTTPUploadConnection.m */,
 			);
 			path = HTTP;
 			sourceTree = "<group>";
@@ -850,6 +855,7 @@
 				16A2F7F61902839400751B82 /* MultipartFormDataParser.m in Sources */,
 				16A2F8EC1902D5C100751B82 /* AFURLConnectionOperation.m in Sources */,
 				16A2F7F41902839400751B82 /* DDNumber.m in Sources */,
+				1652558D1902E6D800ECD9A9 /* HTTPUploadConnection.m in Sources */,
 				16A2F8F91902D5C100751B82 /* FMDatabaseQueue.m in Sources */,
 				16A2F8E71902D5C100751B82 /* AFHTTPRequestOperation.m in Sources */,
 				16A2F8FB1902D5C100751B82 /* FMResultSet.m in Sources */,

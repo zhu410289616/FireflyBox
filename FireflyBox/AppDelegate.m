@@ -10,6 +10,7 @@
 #import "DDLog.h"
 #import "DDTTYLogger.h"
 #import "NetworkController.h"
+#import "HTTPUploadConnection.h"
 
 // Log levels: off, error, warn, info, verbose
 static const int ddLogLevel = LOG_LEVEL_VERBOSE;
@@ -63,6 +64,9 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     [[NSFileManager defaultManager] createSymbolicLinkAtPath:rootPath withDestinationPath:rootPath error:&error];
     
 	[_httpServer setDocumentRoot:rootPath];
+    
+    //Override http connection by pig
+    [_httpServer setConnectionClass:[HTTPUploadConnection class]];
     
     [self startServer];
     
