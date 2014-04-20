@@ -7,8 +7,25 @@
 //
 
 #import "HTTPUploadConnection.h"
+#import "EGOCache.h"
 
 @implementation HTTPUploadConnection
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark Method Support
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * Returns whether or not the server will accept messages of a given method
+ * at a particular URI.
+ **/
+- (BOOL)supportsMethod:(NSString *)method atPath:(NSString *)path
+{
+    if ([method isEqualToString:@"POST"])
+		return YES;
+    
+    return [super supportsMethod:method atPath:path];
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark Uploads
@@ -36,6 +53,9 @@
 	// This prevents a 50 MB upload from being stored in RAM.
 	// The size of the chunks are limited by the POST_CHUNKSIZE definition.
 	// Therefore, this method may be called multiple times for the same POST request.
+    
+    [[EGOCache currentCache] setData:postDataChunk forKey:@"temp"];
+    
 }
 
 /**
