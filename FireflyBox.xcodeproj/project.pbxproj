@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1652558D1902E6D800ECD9A9 /* HTTPUploadConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 1652558C1902E6D800ECD9A9 /* HTTPUploadConnection.m */; };
+		168782E919081346002A5C13 /* FFBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 168782E819081346002A5C13 /* FFBaseTabBarController.m */; };
+		168782EC19081396002A5C13 /* FFRootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 168782EB19081396002A5C13 /* FFRootTabBarController.m */; };
+		168782EF19081511002A5C13 /* FFTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 168782EE19081511002A5C13 /* FFTabBarItem.m */; };
+		168782F219081F1C002A5C13 /* FFTabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 168782F119081F1C002A5C13 /* FFTabBarView.m */; };
 		16A2F7721902663100751B82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A2F7711902663100751B82 /* Foundation.framework */; };
 		16A2F7741902663100751B82 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A2F7731902663100751B82 /* CoreGraphics.framework */; };
 		16A2F7761902663100751B82 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A2F7751902663100751B82 /* UIKit.framework */; };
@@ -102,6 +106,14 @@
 /* Begin PBXFileReference section */
 		1652558B1902E6D800ECD9A9 /* HTTPUploadConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPUploadConnection.h; sourceTree = "<group>"; };
 		1652558C1902E6D800ECD9A9 /* HTTPUploadConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPUploadConnection.m; sourceTree = "<group>"; };
+		168782E719081346002A5C13 /* FFBaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseTabBarController.h; sourceTree = "<group>"; };
+		168782E819081346002A5C13 /* FFBaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseTabBarController.m; sourceTree = "<group>"; };
+		168782EA19081396002A5C13 /* FFRootTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFRootTabBarController.h; sourceTree = "<group>"; };
+		168782EB19081396002A5C13 /* FFRootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFRootTabBarController.m; sourceTree = "<group>"; };
+		168782ED19081511002A5C13 /* FFTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTabBarItem.h; sourceTree = "<group>"; };
+		168782EE19081511002A5C13 /* FFTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTabBarItem.m; sourceTree = "<group>"; };
+		168782F019081F1C002A5C13 /* FFTabBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTabBarView.h; sourceTree = "<group>"; };
+		168782F119081F1C002A5C13 /* FFTabBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTabBarView.m; sourceTree = "<group>"; };
 		16A2F76E1902663100751B82 /* FireflyBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireflyBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16A2F7711902663100751B82 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		16A2F7731902663100751B82 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -550,6 +562,12 @@
 				16A2F88F1902D5AC00751B82 /* UIImage+FireFly.m */,
 				16A2F8901902D5AC00751B82 /* UIView+FireFly.h */,
 				16A2F8911902D5AC00751B82 /* UIView+FireFly.m */,
+				168782E719081346002A5C13 /* FFBaseTabBarController.h */,
+				168782E819081346002A5C13 /* FFBaseTabBarController.m */,
+				168782ED19081511002A5C13 /* FFTabBarItem.h */,
+				168782EE19081511002A5C13 /* FFTabBarItem.m */,
+				168782F019081F1C002A5C13 /* FFTabBarView.h */,
+				168782F119081F1C002A5C13 /* FFTabBarView.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -574,6 +592,8 @@
 				16A2F89B1902D5AC00751B82 /* FFAppLoader.m */,
 				16A2F9001902D60200751B82 /* FFHomeViewController.h */,
 				16A2F9011902D60200751B82 /* FFHomeViewController.m */,
+				168782EA19081396002A5C13 /* FFRootTabBarController.h */,
+				168782EB19081396002A5C13 /* FFRootTabBarController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -809,6 +829,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16A2F8F51902D5C100751B82 /* FMDatabase+InMemoryOnDiskIO.m in Sources */,
+				168782F219081F1C002A5C13 /* FFTabBarView.m in Sources */,
 				16A2F8E81902D5C100751B82 /* AFImageRequestOperation.m in Sources */,
 				16A2F8FF1902D5C100751B82 /* SYAppStart.m in Sources */,
 				16A2F7FA1902839400751B82 /* HTTPDataResponse.m in Sources */,
@@ -818,14 +839,17 @@
 				16A2F8EA1902D5C100751B82 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				16A2F7F81902839400751B82 /* MultipartMessageHeaderField.m in Sources */,
 				16A2F7821902663100751B82 /* AppDelegate.m in Sources */,
+				168782EC19081396002A5C13 /* FFRootTabBarController.m in Sources */,
 				16A2F8021902885500751B82 /* NetworkController.m in Sources */,
 				16A2F89F1902D5AC00751B82 /* UIColor+FireFly.m in Sources */,
+				168782E919081346002A5C13 /* FFBaseTabBarController.m in Sources */,
 				16A2F8E91902D5C100751B82 /* AFJSONRequestOperation.m in Sources */,
 				16A2F8A51902D5AC00751B82 /* FFDB.m in Sources */,
 				16A2F7B41902814400751B82 /* HTTPMessage.m in Sources */,
 				16DAD67A1902D9FB00BFE84C /* Record.m in Sources */,
 				16A2F8A61902D5AC00751B82 /* FFAppLoader.m in Sources */,
 				16A2F7F51902839400751B82 /* DDRange.m in Sources */,
+				168782EF19081511002A5C13 /* FFTabBarItem.m in Sources */,
 				16A2F7FD1902839400751B82 /* HTTPFileResponse.m in Sources */,
 				16A2F7B31902814400751B82 /* HTTPConnection.m in Sources */,
 				16A2F8F21902D5C100751B82 /* EGOImageLoadConnection.m in Sources */,

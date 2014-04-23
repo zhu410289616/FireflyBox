@@ -12,6 +12,8 @@
 #import "NetworkController.h"
 #import "HTTPUploadConnection.h"
 
+#import "FFRootTabBarController.h"
+
 // Log levels: off, error, warn, info, verbose
 static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
@@ -73,10 +75,12 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     //
     [[FFAppLoader sharedInstance] initLoader];
     
+    FFRootTabBarController *test = [[FFRootTabBarController alloc] init];
+    self.window.rootViewController = test;
     
     _homeController = [[FFHomeViewController alloc] init];
     _navController = [[UINavigationController alloc] initWithRootViewController:_homeController];
-    self.window.rootViewController = _navController;
+//    self.window.rootViewController = _navController;
     
     //
     self.window.backgroundColor = [UIColor whiteColor];
