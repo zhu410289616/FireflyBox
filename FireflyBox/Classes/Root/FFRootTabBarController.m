@@ -7,6 +7,7 @@
 //
 
 #import "FFRootTabBarController.h"
+#import "FFBarButtonItem.h"
 
 #define TABBAR_HEIGHT 50.0f
 
@@ -30,9 +31,13 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    FFBarButtonItem *tempBarButtonItem = [[FFBarButtonItem alloc] initWithTitle:@"添加" style:UIBarButtonItemStylePlain target:self action:@selector(doRightBarButtonItemAction:)];
+    self.navigationItem.rightBarButtonItem = tempBarButtonItem;
+    
     NSArray *titleList = [NSArray arrayWithObjects:@"TabBarItem1", @"TabBarItem2", @"TabBarItem3", nil];
     FFTabBarView *tabBarView = [[FFTabBarView alloc] initWithFrame:CGRectMake(0, GLOBAL_SCREEN_HEIGHT - TABBAR_HEIGHT, GLOBAL_SCREEN_WIDTH, TABBAR_HEIGHT) titles:titleList];
     tabBarView.delegate = self;
+    tabBarView.backgroundColor = [UIColor grayColor];
     [self.view addSubview:tabBarView];
     
 }
@@ -41,6 +46,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)doRightBarButtonItemAction:(id)sender
+{
+    PLog(@"doRightBarButtonItemAction...");
 }
 
 #pragma mark FFTabBarViewDelegate method

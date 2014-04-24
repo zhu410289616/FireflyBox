@@ -11,4 +11,6 @@
 
 @interface FFRootTabBarController : FFBaseTabBarController<FFTabBarViewDelegate>
 
+- (IBAction)doRightBarButtonItemAction:(id)sender;
+
 @end

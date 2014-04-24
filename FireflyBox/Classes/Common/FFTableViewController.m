@@ -1,18 +1,18 @@
 //
-//  FFBaseViewController.m
-//  FFRunner
+//  FFTableViewController.m
+//  FireflyBox
 //
-//  Created by pig on 14-3-28.
+//  Created by pig on 14-4-24.
 //  Copyright (c) 2014年 pig. All rights reserved.
 //
 
-#import "FFBaseViewController.h"
+#import "FFTableViewController.h"
 
-@interface FFBaseViewController ()
+@interface FFTableViewController ()
 
 @end
 
-@implementation FFBaseViewController
+@implementation FFTableViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,14 +33,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-#pragma mark bar button item function
-
-- (IBAction)doRightBarButtonItemAction:(id)sender
-{
-    PLog(@"doRightBarButtonItemAction...");
-    
 }
 
 @end

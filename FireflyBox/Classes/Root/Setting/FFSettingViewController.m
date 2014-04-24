@@ -1,18 +1,18 @@
 //
-//  FFBaseViewController.m
-//  FFRunner
+//  FFSettingViewController.m
+//  FireflyBox
 //
-//  Created by pig on 14-3-28.
+//  Created by pig on 14-4-24.
 //  Copyright (c) 2014年 pig. All rights reserved.
 //
 
-#import "FFBaseViewController.h"
+#import "FFSettingViewController.h"
 
-@interface FFBaseViewController ()
+@interface FFSettingViewController ()
 
 @end
 
-@implementation FFBaseViewController
+@implementation FFSettingViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,20 +27,15 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    self.title = @"Setting";
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-#pragma mark bar button item function
-
-- (IBAction)doRightBarButtonItemAction:(id)sender
-{
-    PLog(@"doRightBarButtonItemAction...");
-    
 }
 
 @end

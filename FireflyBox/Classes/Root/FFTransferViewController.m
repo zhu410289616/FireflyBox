@@ -1,18 +1,19 @@
 //
-//  FFBaseViewController.m
-//  FFRunner
+//  FFTransferViewController.m
+//  FireflyBox
 //
-//  Created by pig on 14-3-28.
+//  Created by pig on 14-4-24.
 //  Copyright (c) 2014年 pig. All rights reserved.
 //
 
-#import "FFBaseViewController.h"
+#import "FFTransferViewController.h"
+#import "FFBarButtonItem.h"
 
-@interface FFBaseViewController ()
+@interface FFTransferViewController ()
 
 @end
 
-@implementation FFBaseViewController
+@implementation FFTransferViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +28,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    self.title = @"传输";
+    
+    FFBarButtonItem *tempBarButtonItem = [[FFBarButtonItem alloc] initWithTitle:@"添加" style:UIBarButtonItemStylePlain target:self action:@selector(doRightBarButtonItemAction:)];
+    self.navigationItem.rightBarButtonItem = tempBarButtonItem;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,12 +42,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark bar button item function
-
 - (IBAction)doRightBarButtonItemAction:(id)sender
 {
-    PLog(@"doRightBarButtonItemAction...");
-    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

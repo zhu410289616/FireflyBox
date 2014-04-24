@@ -7,6 +7,9 @@
 //
 
 #import "FFHomeViewController.h"
+#import "FFBarButtonItem.h"
+#import "FFTransferViewController.h"
+
 #import "NetworkController.h"
 #import "AppDelegate.h"
 
@@ -30,6 +33,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    self.title = @"Home";
+    
+    FFBarButtonItem *tempBarButtonItem = [[FFBarButtonItem alloc] initWithTitle:@"添加" style:UIBarButtonItemStylePlain target:self action:@selector(doRightBarButtonItemAction:)];
+    self.navigationItem.rightBarButtonItem = tempBarButtonItem;
+    
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     HTTPServer *httpServer = appDelegate.httpServer;
     
@@ -46,6 +54,12 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)doRightBarButtonItemAction:(id)sender
+{
+    FFTransferViewController *transferController = [[FFTransferViewController alloc] init];
+    [self.navigationController pushViewController:transferController animated:YES];
 }
 
 @end

@@ -10,4 +10,6 @@
 
 @interface FFBaseViewController : UIViewController
 
+- (IBAction)doRightBarButtonItemAction:(id)sender;
+
 @end

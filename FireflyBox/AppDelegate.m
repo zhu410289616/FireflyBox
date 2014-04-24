@@ -7,12 +7,15 @@
 //
 
 #import "AppDelegate.h"
+#import "FFHomeViewController.h"
+#import "FFRecentViewController.h"
+#import "FFSettingViewController.h"
+
+#import "FFAppLoader.h"
 #import "DDLog.h"
 #import "DDTTYLogger.h"
 #import "NetworkController.h"
 #import "HTTPUploadConnection.h"
-
-#import "FFRootTabBarController.h"
 
 // Log levels: off, error, warn, info, verbose
 static const int ddLogLevel = LOG_LEVEL_VERBOSE;
@@ -75,12 +78,24 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     //
     [[FFAppLoader sharedInstance] initLoader];
     
-    FFRootTabBarController *test = [[FFRootTabBarController alloc] init];
-    self.window.rootViewController = test;
     
-    _homeController = [[FFHomeViewController alloc] init];
-    _navController = [[UINavigationController alloc] initWithRootViewController:_homeController];
-//    self.window.rootViewController = _navController;
+    FFHomeViewController *homeController = [[FFHomeViewController alloc] init];
+    UINavigationController *homeNav = [[UINavigationController alloc] initWithRootViewController:homeController];
+    FFRecentViewController *recentController = [[FFRecentViewController alloc] init];
+    UINavigationController *recentNav = [[UINavigationController alloc] initWithRootViewController:recentController];
+    FFSettingViewController *settingController = [[FFSettingViewController alloc] init];
+    UINavigationController *settingNav = [[UINavigationController alloc] initWithRootViewController:settingController];
+    _tabBarController = [[FFRootTabBarController alloc] init];
+    _tabBarController.viewControllers = [NSArray arrayWithObjects:homeNav, recentNav, settingNav, nil];
+//    _tabBarController.viewControllers = [NSArray arrayWithObjects:homeController, recentController, settingController, nil];
+    homeController.hidesBottomBarWhenPushed = YES;
+    recentController.hidesBottomBarWhenPushed = YES;
+    settingController.hidesBottomBarWhenPushed = YES;
+    
+    self.window.rootViewController = _tabBarController;
+    
+//    UINavigationController *rootNav = [[UINavigationController alloc] initWithRootViewController:_tabBarController];
+//    self.window.rootViewController = rootNav;
     
     //
     self.window.backgroundColor = [UIColor whiteColor];

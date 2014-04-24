@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 pig. All rights reserved.
 //
 
-#import "FFBaseViewController.h"
+#import "FFTableViewController.h"
 
-@interface FFHomeViewController : FFBaseViewController
+@interface FFHomeViewController : FFTableViewController
 
 @property (nonatomic, strong) UIView *typeBarView;
 @property (nonatomic, strong) UIButton *firstTypeButton;

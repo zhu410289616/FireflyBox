@@ -7,16 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FFHomeViewController.h"
-#import "FFAppLoader.h"
+#import "FFRootTabBarController.h"
+
 #import "HTTPServer.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (nonatomic, strong) FFHomeViewController *homeController;
-@property (nonatomic, strong) UINavigationController *navController;
+@property (nonatomic, strong) FFRootTabBarController *tabBarController;
 
 @property (nonatomic, strong) HTTPServer *httpServer;
 

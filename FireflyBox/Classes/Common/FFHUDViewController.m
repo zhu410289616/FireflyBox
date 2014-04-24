@@ -1,18 +1,18 @@
 //
-//  FFBaseViewController.m
-//  FFRunner
+//  FFHUDViewController.m
+//  FireflyBox
 //
-//  Created by pig on 14-3-28.
+//  Created by pig on 14-4-24.
 //  Copyright (c) 2014年 pig. All rights reserved.
 //
 
-#import "FFBaseViewController.h"
+#import "FFHUDViewController.h"
 
-@interface FFBaseViewController ()
+@interface FFHUDViewController ()
 
 @end
 
-@implementation FFBaseViewController
+@implementation FFHUDViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,14 +33,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-#pragma mark bar button item function
-
-- (IBAction)doRightBarButtonItemAction:(id)sender
-{
-    PLog(@"doRightBarButtonItemAction...");
-    
 }
 
 @end
