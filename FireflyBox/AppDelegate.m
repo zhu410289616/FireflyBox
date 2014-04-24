@@ -78,7 +78,6 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     //
     [[FFAppLoader sharedInstance] initLoader];
     
-    
     FFHomeViewController *homeController = [[FFHomeViewController alloc] init];
     UINavigationController *homeNav = [[UINavigationController alloc] initWithRootViewController:homeController];
     FFRecentViewController *recentController = [[FFRecentViewController alloc] init];
@@ -88,13 +87,14 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     _tabBarController = [[FFRootTabBarController alloc] init];
     _tabBarController.viewControllers = [NSArray arrayWithObjects:homeNav, recentNav, settingNav, nil];
 //    _tabBarController.viewControllers = [NSArray arrayWithObjects:homeController, recentController, settingController, nil];
-    homeController.hidesBottomBarWhenPushed = YES;
-    recentController.hidesBottomBarWhenPushed = YES;
-    settingController.hidesBottomBarWhenPushed = YES;
+//    homeController.hidesBottomBarWhenPushed = YES;
+//    recentController.hidesBottomBarWhenPushed = YES;
+//    settingController.hidesBottomBarWhenPushed = YES;
     
     self.window.rootViewController = _tabBarController;
     
 //    UINavigationController *rootNav = [[UINavigationController alloc] initWithRootViewController:_tabBarController];
+//    rootNav.navigationBar.hidden = YES;
 //    self.window.rootViewController = rootNav;
     
     //

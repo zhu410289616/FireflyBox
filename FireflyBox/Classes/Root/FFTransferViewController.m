@@ -31,6 +31,9 @@
     
     self.title = @"传输";
     
+    FFBarButtonItem *leftBarItem = [[FFBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(doBackBarButtonItemAction:)];
+    self.navigationItem.leftBarButtonItem = leftBarItem;
+    
     FFBarButtonItem *tempBarButtonItem = [[FFBarButtonItem alloc] initWithTitle:@"添加" style:UIBarButtonItemStylePlain target:self action:@selector(doRightBarButtonItemAction:)];
     self.navigationItem.rightBarButtonItem = tempBarButtonItem;
     
@@ -42,7 +45,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)doRightBarButtonItemAction:(id)sender
+- (IBAction)doBackBarButtonItemAction:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
 }

@@ -31,4 +31,8 @@
 #define GLOBAL_SCREEN_WIDTH     (GLOBAL_SCREEN_SIZE.width)
 #define GLOBAL_SCREEN_HEIGHT    (GLOBAL_SCREEN_SIZE.height)
 
+#define GLOBAL_TABBAR_HEIGHT    50.0f
+
+#define GLOBAL_APP_DELEGATE     ((AppDelegate *)([UIApplication sharedApplication].delegate))
+
 #endif

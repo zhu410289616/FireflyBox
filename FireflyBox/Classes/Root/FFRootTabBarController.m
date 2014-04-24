@@ -42,6 +42,26 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -58,7 +78,27 @@
 - (void)tabBarItem:(FFTabBarItem *)tTabBarItem didSelected:(NSInteger)tIndex
 {
     self.selectedIndex = tIndex;
-    PLog(@"tIndex: %d", tIndex);
+    PLog(@"tIndex: %ld", tIndex);
+}
+
+- (void)hideFFTabBarView
+{
+    for (UIView *view in self.view.subviews) {
+        if([view isKindOfClass:[FFTabBarView class]]){
+            view.hidden = YES;
+            break;
+        }
+    }
+}
+
+- (void)showFFTabBarView
+{
+    for (UIView *view in self.view.subviews) {
+        if([view isKindOfClass:[FFTabBarView class]]){
+            view.hidden = NO;
+            break;
+        }
+    }
 }
 
 @end

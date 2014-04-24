@@ -13,4 +13,7 @@
 
 - (IBAction)doRightBarButtonItemAction:(id)sender;
 
+- (void)hideFFTabBarView;
+- (void)showFFTabBarView;
+
 @end

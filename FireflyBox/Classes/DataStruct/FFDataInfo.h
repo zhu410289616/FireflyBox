@@ -12,5 +12,6 @@
 
 @property (nonatomic, assign) NSInteger dataId;
 @property (nonatomic, assign) NSInteger dataType;
+@property (nonatomic, strong) NSString *dataName;
 
 @end

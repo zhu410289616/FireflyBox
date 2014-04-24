@@ -37,10 +37,19 @@
 
 #pragma mark bar button item function
 
+- (IBAction)doBackBarButtonItemAction:(id)sender
+{
+    PLog(@"doBackBarButtonItemAction...");
+}
+
+- (IBAction)doLeftBarButtonItemAction:(id)sender
+{
+    PLog(@"doLeftBarButtonItemAction...");
+}
+
 - (IBAction)doRightBarButtonItemAction:(id)sender
 {
     PLog(@"doRightBarButtonItemAction...");
-    
 }
 
 @end

@@ -29,10 +29,26 @@
 	// Do any additional setup after loading the view.
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self hideRealTabBar];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)hideRealTabBar
+{
+    for (UIView *view in self.view.subviews) {
+        if ([view isKindOfClass:[UITabBar class]]) {
+            view.hidden = YES;
+            break;
+        }
+    }
 }
 
 @end

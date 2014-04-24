@@ -10,6 +10,8 @@
 
 @interface FFBaseViewController : UIViewController
 
+- (IBAction)doBackBarButtonItemAction:(id)sender;
+- (IBAction)doLeftBarButtonItemAction:(id)sender;
 - (IBAction)doRightBarButtonItemAction:(id)sender;
 
 @end
