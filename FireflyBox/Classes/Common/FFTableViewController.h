@@ -13,4 +13,6 @@
 @property (nonatomic, strong) UITableView *dataTableView;
 @property (nonatomic, strong) NSMutableArray *dataList;
 
+- (void)showOrHideEmptyTips;
+
 @end

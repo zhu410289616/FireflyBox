@@ -30,12 +30,11 @@
         float tabBarWidth = frame.size.width / tabBarCount;
         float tabBarHeight = frame.size.height;
         for (int i=0; i<tabBarCount; i++) {
-            FFTabBarItem *tabBarItem = [FFTabBarItem buttonWithType:UIButtonTypeCustom];
+            FFTabBarItem *tabBarItem = [[FFTabBarItem alloc] init];
             tabBarItem.frame = CGRectMake(i * tabBarWidth, 0, tabBarWidth, tabBarHeight);
             tabBarItem.tag = 100 + i;
             tabBarItem.itemTitleLabel.text = [tTitleList objectAtIndex:i];
-            tabBarItem.itemTitleLabel.textColor = [UIColor redColor];
-            tabBarItem.titleLabel.textColor = [UIColor colorWithHex:0x454545];
+            tabBarItem.itemTitleLabel.textColor = [UIColor grayColor];
             [tabBarItem setTitle:[tTitleList objectAtIndex:i] forState:UIControlStateNormal];
             [tabBarItem addTarget:self action:@selector(tabBarItemSelectedAction:) forControlEvents:UIControlEventTouchUpInside];
             [self addSubview:tabBarItem];

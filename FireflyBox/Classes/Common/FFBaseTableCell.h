@@ -10,4 +10,8 @@
 
 @interface FFBaseTableCell : UITableViewCell
 
+@property (nonatomic, assign) float lineHeight;
+@property (nonatomic, strong) UIView *headerLineView;
+@property (nonatomic, strong) UIView *footerLineView;
+
 @end

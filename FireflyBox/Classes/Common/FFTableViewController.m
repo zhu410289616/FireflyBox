@@ -35,4 +35,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)showOrHideEmptyTips
+{
+    PLog(@"showOrHideEmptyTips...");
+}
+
 @end

@@ -30,13 +30,21 @@
 	// Do any additional setup after loading the view.
     
     self.title = @"传输";
+    self.view.backgroundColor = [UIColor whiteColor];
     
-    FFBarButtonItem *leftBarItem = [[FFBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(doBackBarButtonItemAction:)];
-    self.navigationItem.leftBarButtonItem = leftBarItem;
-    
-    FFBarButtonItem *tempBarButtonItem = [[FFBarButtonItem alloc] initWithTitle:@"添加" style:UIBarButtonItemStylePlain target:self action:@selector(doRightBarButtonItemAction:)];
+    FFBarButtonItem *tempBarButtonItem = [[FFBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(doRightBarButtonItemAction:)];
     self.navigationItem.rightBarButtonItem = tempBarButtonItem;
     
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,9 +53,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)doBackBarButtonItemAction:(id)sender
+- (void)doRightBarButtonItemAction:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

@@ -37,8 +37,10 @@
     NSArray *titleList = [NSArray arrayWithObjects:@"TabBarItem1", @"TabBarItem2", @"TabBarItem3", nil];
     FFTabBarView *tabBarView = [[FFTabBarView alloc] initWithFrame:CGRectMake(0, GLOBAL_SCREEN_HEIGHT - TABBAR_HEIGHT, GLOBAL_SCREEN_WIDTH, TABBAR_HEIGHT) titles:titleList];
     tabBarView.delegate = self;
-    tabBarView.backgroundColor = [UIColor grayColor];
+    tabBarView.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:tabBarView];
+    
+    [tabBarView selectedTabBarItem:0];
     
 }
 

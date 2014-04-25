@@ -10,6 +10,7 @@
 #import "FFDataInfo.h"
 #import "FFRecentCell.h"
 
+#import "FFBarButtonItem.h"
 #import "FFTransferViewController.h"
 
 @interface FFRecentViewController ()
@@ -56,13 +57,13 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    [GLOBAL_APP_DELEGATE.tabBarController showFFTabBarView];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+    [GLOBAL_APP_DELEGATE.tabBarController showFFTabBarView];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -106,7 +107,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     [GLOBAL_APP_DELEGATE.tabBarController hideFFTabBarView];
+    FFBarButtonItem *backBarItem = [[FFBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.backBarButtonItem = backBarItem;
     FFTransferViewController *transferController = [[FFTransferViewController alloc] init];
     [self.navigationController pushViewController:transferController animated:YES];
 }
