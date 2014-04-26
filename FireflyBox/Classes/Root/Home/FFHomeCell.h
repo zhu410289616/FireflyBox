@@ -7,7 +7,14 @@
 //
 
 #import "FFBaseTableCell.h"
+#import "FFDataInfo.h"
 
 @interface FFHomeCell : FFBaseTableCell
+
+@property (nonatomic, strong) UIImageView *iconImageView;
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *timeLabel;
+
+- (void)updateViewWithContent:(FFDataInfo *)tDataInfo;
 
 @end

@@ -15,17 +15,36 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
+        
+        _iconImageView = [[UIImageView alloc] init];
+        [self addSubview:_iconImageView];
+        
+        _titleLabel = [[UILabel alloc] init];
+        [self addSubview:_titleLabel];
+        
+        _timeLabel = [[UILabel alloc] init];
+        [self addSubview:_timeLabel];
+        
     }
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+- (void)updateViewWithContent:(FFDataInfo *)tDataInfo
 {
-    // Drawing code
+    _titleLabel.text = [NSString stringWithFormat:@"%@", tDataInfo.dataName];
+    _timeLabel.text = [NSString stringWithFormat:@"%ld", tDataInfo.dataId];
 }
-*/
+
+#pragma mark overried
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    _iconImageView.frame = CGRectMake(15, 10, 50, 50);
+    _titleLabel.frame = CGRectMake(80, 15, GLOBAL_SCREEN_WIDTH - 80 - 30, 25);
+    _timeLabel.frame = CGRectMake(80, 40, GLOBAL_SCREEN_WIDTH - 80 - 30, 25);
+    
+}
 
 @end

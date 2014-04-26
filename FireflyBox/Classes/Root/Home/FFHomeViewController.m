@@ -155,12 +155,17 @@
     }
     
     FFDataInfo *dataInfo = [self.dataList objectAtIndex:indexPath.row];
-    cell.textLabel.text = dataInfo.dataName;
+    [cell updateViewWithContent:dataInfo];
     
     return cell;
 }
 
 #pragma mark UITableViewDelegate method
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 70.0f;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
