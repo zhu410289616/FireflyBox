@@ -14,6 +14,10 @@
 + (NSString *)getCacheHomeDirectory;
 + (NSString *)createPath:(NSString *)tpath;
 
+//磁盘空间信息
++ (long long)getFreeSpace;
++ (float)getTotalDiskSpaceInBytes;
+
 //计算文件大小
 + (long long)getLocalFileSize:(NSString *)filepath;
 + (long long)getFileSizeForDir:(NSString *)dir;

@@ -24,10 +24,15 @@
 		162F915A19095740004D0C25 /* FFRecentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 162F915919095740004D0C25 /* FFRecentCell.m */; };
 		167E7126190B82040014ADEB /* transfer_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 167E7124190B82040014ADEB /* transfer_bg.png */; };
 		167E7127190B82040014ADEB /* transfer_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 167E7125190B82040014ADEB /* transfer_bg@2x.png */; };
+		167E7135190B8F6C0014ADEB /* NSString+FireFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 167E712A190B8F6C0014ADEB /* NSString+FireFly.m */; };
+		167E7136190B8F6C0014ADEB /* UIColor+FireFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 167E712C190B8F6C0014ADEB /* UIColor+FireFly.m */; };
+		167E7137190B8F6C0014ADEB /* UIDevice+FireFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 167E712E190B8F6C0014ADEB /* UIDevice+FireFly.m */; };
+		167E7138190B8F6C0014ADEB /* UIFont+FireFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 167E7130190B8F6C0014ADEB /* UIFont+FireFly.m */; };
+		167E7139190B8F6C0014ADEB /* UIImage+FireFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 167E7132190B8F6C0014ADEB /* UIImage+FireFly.m */; };
+		167E713A190B8F6C0014ADEB /* UIView+FireFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 167E7134190B8F6C0014ADEB /* UIView+FireFly.m */; };
 		16A0D626190ABD95007D6EBA /* FFHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A0D625190ABD95007D6EBA /* FFHomeCell.m */; };
 		16A0D62A190AC0A7007D6EBA /* FFEmptyTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A0D629190AC0A7007D6EBA /* FFEmptyTipsView.m */; };
 		16A0D62E190AC0CE007D6EBA /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A0D62D190AC0CE007D6EBA /* TTTAttributedLabel.m */; };
-		16A0D631190ACB4A007D6EBA /* UIDevice+FireFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A0D630190ACB4A007D6EBA /* UIDevice+FireFly.m */; };
 		16A2F7721902663100751B82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A2F7711902663100751B82 /* Foundation.framework */; };
 		16A2F7741902663100751B82 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A2F7731902663100751B82 /* CoreGraphics.framework */; };
 		16A2F7761902663100751B82 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A2F7751902663100751B82 /* UIKit.framework */; };
@@ -42,11 +47,6 @@
 		16A2F7971902663100751B82 /* FireflyBoxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F7961902663100751B82 /* FireflyBoxTests.m */; };
 		16A2F89C1902D5AC00751B82 /* FFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F8851902D5AC00751B82 /* FFBaseViewController.m */; };
 		16A2F89D1902D5AC00751B82 /* FFCommonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F8871902D5AC00751B82 /* FFCommonUtil.m */; };
-		16A2F89E1902D5AC00751B82 /* NSString+FireFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F8891902D5AC00751B82 /* NSString+FireFly.m */; };
-		16A2F89F1902D5AC00751B82 /* UIColor+FireFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F88B1902D5AC00751B82 /* UIColor+FireFly.m */; };
-		16A2F8A01902D5AC00751B82 /* UIFont+FireFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F88D1902D5AC00751B82 /* UIFont+FireFly.m */; };
-		16A2F8A11902D5AC00751B82 /* UIImage+FireFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F88F1902D5AC00751B82 /* UIImage+FireFly.m */; };
-		16A2F8A21902D5AC00751B82 /* UIView+FireFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F8911902D5AC00751B82 /* UIView+FireFly.m */; };
 		16A2F8A31902D5AC00751B82 /* FFDB+All.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F8941902D5AC00751B82 /* FFDB+All.m */; };
 		16A2F8A41902D5AC00751B82 /* FFDB+Record.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F8961902D5AC00751B82 /* FFDB+Record.m */; };
 		16A2F8A51902D5AC00751B82 /* FFDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F8981902D5AC00751B82 /* FFDB.m */; };
@@ -137,14 +137,24 @@
 		162F915919095740004D0C25 /* FFRecentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFRecentCell.m; sourceTree = "<group>"; };
 		167E7124190B82040014ADEB /* transfer_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transfer_bg.png; sourceTree = "<group>"; };
 		167E7125190B82040014ADEB /* transfer_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transfer_bg@2x.png"; sourceTree = "<group>"; };
+		167E7129190B8F6C0014ADEB /* NSString+FireFly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FireFly.h"; sourceTree = "<group>"; };
+		167E712A190B8F6C0014ADEB /* NSString+FireFly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FireFly.m"; sourceTree = "<group>"; };
+		167E712B190B8F6C0014ADEB /* UIColor+FireFly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FireFly.h"; sourceTree = "<group>"; };
+		167E712C190B8F6C0014ADEB /* UIColor+FireFly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FireFly.m"; sourceTree = "<group>"; };
+		167E712D190B8F6C0014ADEB /* UIDevice+FireFly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+FireFly.h"; sourceTree = "<group>"; };
+		167E712E190B8F6C0014ADEB /* UIDevice+FireFly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+FireFly.m"; sourceTree = "<group>"; };
+		167E712F190B8F6C0014ADEB /* UIFont+FireFly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+FireFly.h"; sourceTree = "<group>"; };
+		167E7130190B8F6C0014ADEB /* UIFont+FireFly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+FireFly.m"; sourceTree = "<group>"; };
+		167E7131190B8F6C0014ADEB /* UIImage+FireFly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FireFly.h"; sourceTree = "<group>"; };
+		167E7132190B8F6C0014ADEB /* UIImage+FireFly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FireFly.m"; sourceTree = "<group>"; };
+		167E7133190B8F6C0014ADEB /* UIView+FireFly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FireFly.h"; sourceTree = "<group>"; };
+		167E7134190B8F6C0014ADEB /* UIView+FireFly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FireFly.m"; sourceTree = "<group>"; };
 		16A0D624190ABD95007D6EBA /* FFHomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFHomeCell.h; sourceTree = "<group>"; };
 		16A0D625190ABD95007D6EBA /* FFHomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFHomeCell.m; sourceTree = "<group>"; };
 		16A0D628190AC0A7007D6EBA /* FFEmptyTipsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFEmptyTipsView.h; sourceTree = "<group>"; };
 		16A0D629190AC0A7007D6EBA /* FFEmptyTipsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFEmptyTipsView.m; sourceTree = "<group>"; };
 		16A0D62C190AC0CE007D6EBA /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
 		16A0D62D190AC0CE007D6EBA /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
-		16A0D62F190ACB4A007D6EBA /* UIDevice+FireFly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+FireFly.h"; sourceTree = "<group>"; };
-		16A0D630190ACB4A007D6EBA /* UIDevice+FireFly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+FireFly.m"; sourceTree = "<group>"; };
 		16A0D632190ACD71007D6EBA /* FFSharedMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFSharedMacro.h; sourceTree = "<group>"; };
 		16A2F76E1902663100751B82 /* FireflyBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireflyBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16A2F7711902663100751B82 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -167,16 +177,6 @@
 		16A2F8851902D5AC00751B82 /* FFBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseViewController.m; sourceTree = "<group>"; };
 		16A2F8861902D5AC00751B82 /* FFCommonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCommonUtil.h; sourceTree = "<group>"; };
 		16A2F8871902D5AC00751B82 /* FFCommonUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCommonUtil.m; sourceTree = "<group>"; };
-		16A2F8881902D5AC00751B82 /* NSString+FireFly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FireFly.h"; sourceTree = "<group>"; };
-		16A2F8891902D5AC00751B82 /* NSString+FireFly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FireFly.m"; sourceTree = "<group>"; };
-		16A2F88A1902D5AC00751B82 /* UIColor+FireFly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FireFly.h"; sourceTree = "<group>"; };
-		16A2F88B1902D5AC00751B82 /* UIColor+FireFly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FireFly.m"; sourceTree = "<group>"; };
-		16A2F88C1902D5AC00751B82 /* UIFont+FireFly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+FireFly.h"; sourceTree = "<group>"; };
-		16A2F88D1902D5AC00751B82 /* UIFont+FireFly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+FireFly.m"; sourceTree = "<group>"; };
-		16A2F88E1902D5AC00751B82 /* UIImage+FireFly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FireFly.h"; sourceTree = "<group>"; };
-		16A2F88F1902D5AC00751B82 /* UIImage+FireFly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FireFly.m"; sourceTree = "<group>"; };
-		16A2F8901902D5AC00751B82 /* UIView+FireFly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FireFly.h"; sourceTree = "<group>"; };
-		16A2F8911902D5AC00751B82 /* UIView+FireFly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FireFly.m"; sourceTree = "<group>"; };
 		16A2F8931902D5AC00751B82 /* FFDB+All.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FFDB+All.h"; sourceTree = "<group>"; };
 		16A2F8941902D5AC00751B82 /* FFDB+All.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FFDB+All.m"; sourceTree = "<group>"; };
 		16A2F8951902D5AC00751B82 /* FFDB+Record.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FFDB+Record.h"; sourceTree = "<group>"; };
@@ -373,6 +373,25 @@
 			path = Transfer;
 			sourceTree = "<group>";
 		};
+		167E7128190B8F6C0014ADEB /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				167E7129190B8F6C0014ADEB /* NSString+FireFly.h */,
+				167E712A190B8F6C0014ADEB /* NSString+FireFly.m */,
+				167E712B190B8F6C0014ADEB /* UIColor+FireFly.h */,
+				167E712C190B8F6C0014ADEB /* UIColor+FireFly.m */,
+				167E712D190B8F6C0014ADEB /* UIDevice+FireFly.h */,
+				167E712E190B8F6C0014ADEB /* UIDevice+FireFly.m */,
+				167E712F190B8F6C0014ADEB /* UIFont+FireFly.h */,
+				167E7130190B8F6C0014ADEB /* UIFont+FireFly.m */,
+				167E7131190B8F6C0014ADEB /* UIImage+FireFly.h */,
+				167E7132190B8F6C0014ADEB /* UIImage+FireFly.m */,
+				167E7133190B8F6C0014ADEB /* UIView+FireFly.h */,
+				167E7134190B8F6C0014ADEB /* UIView+FireFly.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		16A0D62B190AC0CE007D6EBA /* TTTAttributedLabel */ = {
 			isa = PBXGroup;
 			children = (
@@ -496,21 +515,12 @@
 		16A2F8831902D5AC00751B82 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				167E7128190B8F6C0014ADEB /* Category */,
 				162F914B190953F3004D0C25 /* TabBar */,
 				16A2F8841902D5AC00751B82 /* FFBaseViewController.h */,
 				16A2F8851902D5AC00751B82 /* FFBaseViewController.m */,
 				16A2F8861902D5AC00751B82 /* FFCommonUtil.h */,
 				16A2F8871902D5AC00751B82 /* FFCommonUtil.m */,
-				16A2F8881902D5AC00751B82 /* NSString+FireFly.h */,
-				16A2F8891902D5AC00751B82 /* NSString+FireFly.m */,
-				16A2F88A1902D5AC00751B82 /* UIColor+FireFly.h */,
-				16A2F88B1902D5AC00751B82 /* UIColor+FireFly.m */,
-				16A2F88C1902D5AC00751B82 /* UIFont+FireFly.h */,
-				16A2F88D1902D5AC00751B82 /* UIFont+FireFly.m */,
-				16A2F88E1902D5AC00751B82 /* UIImage+FireFly.h */,
-				16A2F88F1902D5AC00751B82 /* UIImage+FireFly.m */,
-				16A2F8901902D5AC00751B82 /* UIView+FireFly.h */,
-				16A2F8911902D5AC00751B82 /* UIView+FireFly.m */,
 				1624B87F190930E40018B8FE /* FFHUDViewController.h */,
 				1624B880190930E40018B8FE /* FFHUDViewController.m */,
 				1624B8821909311C0018B8FE /* FFTableViewController.h */,
@@ -521,8 +531,6 @@
 				162F9156190956FD004D0C25 /* FFBaseTableCell.m */,
 				16A0D628190AC0A7007D6EBA /* FFEmptyTipsView.h */,
 				16A0D629190AC0A7007D6EBA /* FFEmptyTipsView.m */,
-				16A0D62F190ACB4A007D6EBA /* UIDevice+FireFly.h */,
-				16A0D630190ACB4A007D6EBA /* UIDevice+FireFly.m */,
 				16A0D632190ACD71007D6EBA /* FFSharedMacro.h */,
 			);
 			path = Common;
@@ -856,46 +864,47 @@
 				16A2F8FF1902D5C100751B82 /* SYAppStart.m in Sources */,
 				16A2F8ED1902D5C100751B82 /* AFXMLRequestOperation.m in Sources */,
 				16ED1D4E190B78B9007EC697 /* GCDWebServerRequest.m in Sources */,
-				16A2F8A21902D5AC00751B82 /* UIView+FireFly.m in Sources */,
 				1624B88A190937510018B8FE /* FFDataInfo.m in Sources */,
 				1624B8A019093C140018B8FE /* FFSettingViewController.m in Sources */,
 				16A2F8EA1902D5C100751B82 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				16ED1D51190B78B9007EC697 /* GCDWebServerFileRequest.m in Sources */,
 				16A2F7821902663100751B82 /* AppDelegate.m in Sources */,
 				16A0D626190ABD95007D6EBA /* FFHomeCell.m in Sources */,
-				16A2F89F1902D5AC00751B82 /* UIColor+FireFly.m in Sources */,
 				1624B89F19093C140018B8FE /* FFRecentViewController.m in Sources */,
 				16ED1D52190B78B9007EC697 /* GCDWebServerMultiPartFormRequest.m in Sources */,
 				16A2F8E91902D5C100751B82 /* AFJSONRequestOperation.m in Sources */,
 				16A2F8A51902D5AC00751B82 /* FFDB.m in Sources */,
 				16ED1D4F190B78B9007EC697 /* GCDWebServerResponse.m in Sources */,
+				167E7138190B8F6C0014ADEB /* UIFont+FireFly.m in Sources */,
 				1624B881190930E40018B8FE /* FFHUDViewController.m in Sources */,
+				167E7136190B8F6C0014ADEB /* UIColor+FireFly.m in Sources */,
 				16DAD67A1902D9FB00BFE84C /* Record.m in Sources */,
 				1624B8841909311C0018B8FE /* FFTableViewController.m in Sources */,
 				1624B88D190938D90018B8FE /* FFBarButtonItem.m in Sources */,
 				16ED1D56190B78B9007EC697 /* GCDWebServerFileResponse.m in Sources */,
 				16A2F8F21902D5C100751B82 /* EGOImageLoadConnection.m in Sources */,
-				16A2F8A11902D5AC00751B82 /* UIImage+FireFly.m in Sources */,
 				16A2F8E61902D5C100751B82 /* AFHTTPClient.m in Sources */,
-				16A2F8A01902D5AC00751B82 /* UIFont+FireFly.m in Sources */,
 				16A2F77E1902663100751B82 /* main.m in Sources */,
 				162F915A19095740004D0C25 /* FFRecentCell.m in Sources */,
+				167E713A190B8F6C0014ADEB /* UIView+FireFly.m in Sources */,
 				16A2F8F01902D5C100751B82 /* EGOCache.m in Sources */,
 				162F9152190953F3004D0C25 /* FFBaseTabBarController.m in Sources */,
 				16ED1D53190B78B9007EC697 /* GCDWebServerURLEncodedFormRequest.m in Sources */,
 				16A2F8A41902D5AC00751B82 /* FFDB+Record.m in Sources */,
 				16A2F8F61902D5C100751B82 /* FMDatabase.m in Sources */,
 				16ED1D57190B78B9007EC697 /* GCDWebServerStreamedResponse.m in Sources */,
+				167E7137190B8F6C0014ADEB /* UIDevice+FireFly.m in Sources */,
 				16A2F8F81902D5C100751B82 /* FMDatabasePool.m in Sources */,
+				167E7135190B8F6C0014ADEB /* NSString+FireFly.m in Sources */,
 				16A2F89D1902D5AC00751B82 /* FFCommonUtil.m in Sources */,
 				16A2F89C1902D5AC00751B82 /* FFBaseViewController.m in Sources */,
 				16A2F8F41902D5C100751B82 /* EGOImageView.m in Sources */,
 				16ED1D4C190B78B9007EC697 /* GCDWebServerConnection.m in Sources */,
 				16A0D62A190AC0A7007D6EBA /* FFEmptyTipsView.m in Sources */,
-				16A2F89E1902D5AC00751B82 /* NSString+FireFly.m in Sources */,
 				16A2F8A31902D5AC00751B82 /* FFDB+All.m in Sources */,
 				16ED1D4B190B78B9007EC697 /* GCDWebServer.m in Sources */,
 				16ED1D54190B78B9007EC697 /* GCDWebServerDataResponse.m in Sources */,
+				167E7139190B8F6C0014ADEB /* UIImage+FireFly.m in Sources */,
 				1624B89D19093C140018B8FE /* FFRootTabBarController.m in Sources */,
 				16A2F8EC1902D5C100751B82 /* AFURLConnectionOperation.m in Sources */,
 				1624B8A319093CA30018B8FE /* FFTransferViewController.m in Sources */,
@@ -905,7 +914,6 @@
 				16A2F8FB1902D5C100751B82 /* FMResultSet.m in Sources */,
 				16ED1D4D190B78B9007EC697 /* GCDWebServerFunctions.m in Sources */,
 				16A2F8EB1902D5C100751B82 /* AFPropertyListRequestOperation.m in Sources */,
-				16A0D631190ACB4A007D6EBA /* UIDevice+FireFly.m in Sources */,
 				162F9157190956FD004D0C25 /* FFBaseTableCell.m in Sources */,
 				16ED1D55190B78B9007EC697 /* GCDWebServerErrorResponse.m in Sources */,
 				162F9154190953F3004D0C25 /* FFTabBarView.m in Sources */,

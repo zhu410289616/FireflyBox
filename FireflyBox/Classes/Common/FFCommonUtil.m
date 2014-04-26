@@ -7,6 +7,8 @@
 //
 
 #import "FFCommonUtil.h"
+#include <sys/param.h>
+#include <sys/mount.h>
 
 double dd = M_PI/180;
 double R = 6371004;
@@ -43,6 +45,26 @@ double R = 6371004;
     }
     
     return temppath;
+}
+
+//磁盘空间信息
++ (long long)getFreeSpace
+{
+    struct statfs buf;
+    long long freespace = -1;
+    if (statfs("/private/var", &buf) >= 0) {
+        freespace = buf.f_bsize * buf.f_bfree;
+    }
+    return freespace;
+}
+
++ (float)getTotalDiskSpaceInBytes
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    struct statfs tStats;
+    statfs([[paths lastObject] cStringUsingEncoding:NSUTF8StringEncoding], &tStats);
+    float totalSpace = (float)(tStats.f_blocks * tStats.f_bsize);
+    return totalSpace;
 }
 
 + (long long)getLocalFileSize:(NSString *)filepath
