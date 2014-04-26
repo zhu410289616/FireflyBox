@@ -9,14 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "FFRootTabBarController.h"
 
-#import "HTTPServer.h"
-
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
 @property (nonatomic, strong) FFRootTabBarController *tabBarController;
-
-@property (nonatomic, strong) HTTPServer *httpServer;
 
 @end

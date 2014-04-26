@@ -24,16 +24,19 @@
 #define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
 #define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
 
-#define IS_IOS7_OR_HIGHER       SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")
-#define IS_RETINA_SCREEN        [[UIDevice currentDevice] isRetinaScreen]
+#define IS_IOS7_OR_HIGHER               SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")
+#define IS_RETINA_SCREEN                [[UIDevice currentDevice] isRetinaScreen]
 
 //
-#define GLOBAL_SCREEN_SIZE      ([UIScreen mainScreen].bounds.size)
-#define GLOBAL_SCREEN_WIDTH     (GLOBAL_SCREEN_SIZE.width)
-#define GLOBAL_SCREEN_HEIGHT    (GLOBAL_SCREEN_SIZE.height)
+#define GLOBAL_SCREEN_SIZE              ([UIScreen mainScreen].bounds.size)
+#define GLOBAL_SCREEN_WIDTH             (GLOBAL_SCREEN_SIZE.width)
+#define GLOBAL_SCREEN_HEIGHT            (GLOBAL_SCREEN_SIZE.height)
 
-#define GLOBAL_TABBAR_HEIGHT    50.0f
+#define GLOBAL_TABBAR_HEIGHT            50.0f
 
-#define GLOBAL_APP_DELEGATE     ((AppDelegate *)([UIApplication sharedApplication].delegate))
+#define GLOBAL_APP_DELEGATE             ((AppDelegate *)([UIApplication sharedApplication].delegate))
+
+#define TRANSFER_WEB_SERVER_NAME        @"firefly"
+#define TRANSFER_WEB_SERVER_PORT        20144
 
 #endif

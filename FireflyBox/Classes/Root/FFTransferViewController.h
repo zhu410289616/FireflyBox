@@ -7,7 +7,10 @@
 //
 
 #import "FFBaseViewController.h"
+#import "GCDWebUploader.h"
 
-@interface FFTransferViewController : FFBaseViewController
+@interface FFTransferViewController : FFBaseViewController<GCDWebUploaderDelegate>
+
+@property (nonatomic, strong) GCDWebUploader *webServer;
 
 @end

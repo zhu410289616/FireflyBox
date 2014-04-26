@@ -12,10 +12,6 @@
 #import "FFHomeCell.h"
 #import "FFDataInfo.h"
 
-
-#import "NetworkController.h"
-#import "AppDelegate.h"
-
 @interface FFHomeViewController ()
 
 @end
@@ -36,7 +32,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    self.title = @"所有文件";
+    self.title = @"Home";
     
     FFBarButtonItem *tempBarButtonItem = [[FFBarButtonItem alloc] initWithTitle:@"添加" style:UIBarButtonItemStylePlain target:self action:@selector(doRightBarButtonItemAction:)];
     self.navigationItem.rightBarButtonItem = tempBarButtonItem;
@@ -48,16 +44,6 @@
     self.dataTableView.dataSource = self;
     self.dataTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:self.dataTableView];
-    
-    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    HTTPServer *httpServer = appDelegate.httpServer;
-    
-    UILabel *serverInfoLabel = [[UILabel alloc] init];
-    serverInfoLabel.frame = CGRectMake(15, 80, 200, 50);
-    serverInfoLabel.backgroundColor = [UIColor clearColor];
-    serverInfoLabel.text = [NSString stringWithFormat:@"server: %@:%hu", [NetworkController localWifiIPAddress], [httpServer listeningPort]];
-    serverInfoLabel.textColor = [UIColor colorWithHex:0x454545];
-    [self.view addSubview:serverInfoLabel];
     
     //
     [self loadData];

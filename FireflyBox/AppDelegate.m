@@ -7,73 +7,17 @@
 //
 
 #import "AppDelegate.h"
+#import "FFAppLoader.h"
 #import "FFHomeViewController.h"
 #import "FFRecentViewController.h"
 #import "FFSettingViewController.h"
 
-#import "FFAppLoader.h"
-#import "DDLog.h"
-#import "DDTTYLogger.h"
-#import "NetworkController.h"
-#import "HTTPUploadConnection.h"
-
-// Log levels: off, error, warn, info, verbose
-static const int ddLogLevel = LOG_LEVEL_VERBOSE;
-
 @implementation AppDelegate
-
-- (void)startServer
-{
-    // Start the server (and check for problems)
-	
-	NSError *error;
-	if([_httpServer start:&error])
-	{
-		DDLogInfo(@"Started HTTP Server on: %@:%hu", [NetworkController localWifiIPAddress], [_httpServer listeningPort]);
-	}
-	else
-	{
-		DDLogError(@"Error starting HTTP Server: %@", error);
-	}
-}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    
-    // Configure our logging framework.
-	// To keep things simple and fast, we're just going to log to the Xcode console.
-	[DDLog addLogger:[DDTTYLogger sharedInstance]];
-	
-	// Create server using our custom MyHTTPServer class
-	_httpServer = [[HTTPServer alloc] init];
-	
-	// Tell the server to broadcast its presence via Bonjour.
-	// This allows browsers such as Safari to automatically discover our service.
-	[_httpServer setType:@"_http._tcp."];
-	
-	// Normally there's no need to run our server on any specific port.
-	// Technologies like Bonjour allow clients to dynamically discover the server's port at runtime.
-	// However, for easy testing you may want force a certain port so you can just hit the refresh button.
-	// [httpServer setPort:12345];
-    [_httpServer setPort:56789];
-	
-	// Serve files from our embedded Web folder
-//	NSString *rootPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Website.bundle/Web"];
-//    NSString *rootPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Website.bundle/Upload"];
-    NSString *rootPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Website.bundle/fineuploader"];
-	DDLogInfo(@"Setting document root: %@", rootPath);
-	
-    NSError *error;
-    [[NSFileManager defaultManager] createSymbolicLinkAtPath:rootPath withDestinationPath:rootPath error:&error];
-    
-	[_httpServer setDocumentRoot:rootPath];
-    
-    //Override http connection by pig
-    [_httpServer setConnectionClass:[HTTPUploadConnection class]];
-    
-    [self startServer];
     
     //
     [[FFAppLoader sharedInstance] initLoader];
