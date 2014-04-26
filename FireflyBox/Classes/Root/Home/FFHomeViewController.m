@@ -60,6 +60,10 @@
     [super viewDidAppear:animated];
     
     [GLOBAL_APP_DELEGATE.tabBarController showFFTabBarView];
+    
+    if ([self shouldUpdateFileInfo]) {
+        
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -95,6 +99,16 @@
     }
     [self.dataTableView reloadData];
     [self showOrHideEmptyTips];
+}
+
+- (BOOL)shouldUpdateFileInfo
+{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:SHOULD_UPDATE_FILE_INFO];
+}
+
+- (void)updateFileInfoBySearchDir
+{
+    
 }
 
 - (void)showOrHideEmptyTips

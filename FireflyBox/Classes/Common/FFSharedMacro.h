@@ -38,5 +38,8 @@
 
 #define TRANSFER_WEB_SERVER_NAME        @"firefly"
 #define TRANSFER_WEB_SERVER_PORT        20144
+#define TRANSFER_WEB_SERVER_DIR         @"/WebServer"
+
+#define SHOULD_UPDATE_FILE_INFO         @"SHOULD_UPDATE_FILE_INFO"
 
 #endif

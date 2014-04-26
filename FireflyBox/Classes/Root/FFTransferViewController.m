@@ -79,22 +79,8 @@
     tip4Label.textAlignment = NSTextAlignmentLeft;
     tip4Label.textColor = [UIColor blackColor];
     tip4Label.font = [UIFont fontOfApp:13.0f];
+    tip4Label.text = [NSString stringWithFormat:@"可用容量: %@", [FFCommonUtil formatSpace:[FFCommonUtil getFreeSpace]]];
     [contentScrollView addSubview:tip4Label];
-    NSString *strUnit = @"B";
-    int times = 0;
-    double freespace = [FFCommonUtil getFreeSpace];
-    while (freespace > 1024) {
-        times++;
-        if (times == 1) {
-            strUnit = @"KB";
-        } else if (times == 2) {
-            strUnit = @"MB";
-        } else if (times == 3) {
-            strUnit = @"GB";
-        }
-        freespace = freespace / 1024;
-    }
-    tip4Label.text = [NSString stringWithFormat:@"可用容量: %.2f%@", freespace, strUnit];
     
     UILabel *tip5Label = [[UILabel alloc] init];
     tip5Label.frame = CGRectMake(GLOBAL_SCREEN_WIDTH / 2, GLOBAL_SCREEN_HEIGHT - 30 - 64, GLOBAL_SCREEN_WIDTH / 2 - margin, 25);
@@ -102,28 +88,15 @@
     tip5Label.textAlignment = NSTextAlignmentRight;
     tip5Label.textColor = [UIColor blackColor];
     tip5Label.font = [UIFont fontOfApp:13.0f];
+    tip5Label.text = [NSString stringWithFormat:@"总容量: %@", [FFCommonUtil formatSpace:[FFCommonUtil getTotalDiskSpaceInBytes]]];
     [contentScrollView addSubview:tip5Label];
-    strUnit = @"B";
-    times = 0;
-    double totalspace = [FFCommonUtil getTotalDiskSpaceInBytes];
-    while (totalspace > 1024) {
-        times++;
-        if (times == 1) {
-            strUnit = @"KB";
-        } else if (times == 2) {
-            strUnit = @"MB";
-        } else if (times == 3) {
-            strUnit = @"GB";
-        }
-        totalspace = totalspace / 1024;
-    }
-    tip5Label.text = [NSString stringWithFormat:@"总容量: %.2f%@", totalspace, strUnit];
     
     [self.view addSubview:contentScrollView];
     
     //
-    NSString* documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
-    _webServer = [[GCDWebUploader alloc] initWithUploadDirectory:documentsPath];
+    NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+    NSString *webServerPath = [FFCommonUtil createPath:[NSString stringWithFormat:@"%@%@", documentsPath, TRANSFER_WEB_SERVER_DIR]];
+    _webServer = [[GCDWebUploader alloc] initWithUploadDirectory:webServerPath];
     _webServer.delegate = self;
     _webServer.allowHiddenItems = YES;
     BOOL isStart = [_webServer startWithPort:TRANSFER_WEB_SERVER_PORT bonjourName:TRANSFER_WEB_SERVER_NAME];
@@ -141,6 +114,9 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+    [[NSUserDefaults standardUserDefaults] setValue:@YES forKey:SHOULD_UPDATE_FILE_INFO];
+    
 }
 
 - (void)didReceiveMemoryWarning

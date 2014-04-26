@@ -17,6 +17,7 @@
 //磁盘空间信息
 + (long long)getFreeSpace;
 + (float)getTotalDiskSpaceInBytes;
++ (NSString *)formatSpace:(float)tSpaceSize;
 
 //计算文件大小
 + (long long)getLocalFileSize:(NSString *)filepath;

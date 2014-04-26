@@ -67,6 +67,25 @@ double R = 6371004;
     return totalSpace;
 }
 
++ (NSString *)formatSpace:(float)tSpaceSize
+{
+    NSString *strUnit = @"B";
+    int times = 0;
+    double freespace = tSpaceSize;
+    while (freespace > 1024) {
+        times++;
+        if (times == 1) {
+            strUnit = @"KB";
+        } else if (times == 2) {
+            strUnit = @"MB";
+        } else if (times == 3) {
+            strUnit = @"GB";
+        }
+        freespace = freespace / 1024;
+    }
+    return [NSString stringWithFormat:@"%.2f %@", freespace, strUnit];
+}
+
 + (long long)getLocalFileSize:(NSString *)filepath
 {
     NSFileManager *fm = [NSFileManager defaultManager];
