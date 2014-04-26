@@ -17,15 +17,6 @@
 
 @implementation FFRootTabBarController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -87,7 +78,11 @@
 {
     for (UIView *view in self.view.subviews) {
         if([view isKindOfClass:[FFTabBarView class]]){
-            view.hidden = YES;
+            [UIView animateWithDuration:0.6 animations:^{
+                view.frame = CGRectMake(0, GLOBAL_SCREEN_HEIGHT, GLOBAL_SCREEN_WIDTH, TABBAR_HEIGHT);
+            } completion:^(BOOL finished) {
+                view.hidden = YES;
+            }];
             break;
         }
     }
@@ -97,7 +92,11 @@
 {
     for (UIView *view in self.view.subviews) {
         if([view isKindOfClass:[FFTabBarView class]]){
-            view.hidden = NO;
+            [UIView animateWithDuration:0.6 animations:^{
+                view.frame = CGRectMake(0, GLOBAL_SCREEN_HEIGHT - TABBAR_HEIGHT, GLOBAL_SCREEN_WIDTH, TABBAR_HEIGHT);
+            } completion:^(BOOL finished) {
+                view.hidden = NO;
+            }];
             break;
         }
     }

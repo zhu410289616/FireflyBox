@@ -13,6 +13,7 @@
 - (void)initAll
 {
     [self initRecord];
+    [self initDataInfo];
 }
 
 @end

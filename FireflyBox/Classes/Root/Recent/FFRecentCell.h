@@ -6,8 +6,11 @@
 //  Copyright (c) 2014年 pig. All rights reserved.
 //
 
-#import "FFBaseTableCell.h"
+#import "FFHeadImageCell.h"
+#import "FFDataInfo.h"
 
-@interface FFRecentCell : FFBaseTableCell
+@interface FFRecentCell : FFHeadImageCell
+
+- (void)updateViewWithContent:(FFDataInfo *)tDataInfo;
 
 @end

@@ -19,11 +19,10 @@
 
 @implementation FFRecentViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    if (self = [super init]) {
+        self.title = @"Recent";
     }
     return self;
 }
@@ -33,30 +32,17 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    self.title = @"Recent";
-    
-    self.dataTableView = [[UITableView alloc] init];
-    self.dataTableView.frame = CGRectMake(0, 0, GLOBAL_SCREEN_WIDTH, GLOBAL_SCREEN_HEIGHT);
-    self.dataTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.dataTableView.delegate = self;
     self.dataTableView.dataSource = self;
     [self.view addSubview:self.dataTableView];
-    
-    //
-    self.dataList = [[NSMutableArray alloc] init];
-    for (int i=0; i<20; i++) {
-        FFDataInfo *dataInfo = [[FFDataInfo alloc] init];
-        dataInfo.dataId = i;
-        dataInfo.dataName = [NSString stringWithFormat:@"FFDataInfo: %d", i];
-        [self.dataList addObject:dataInfo];
-    }
-    [self.dataTableView reloadData];
     
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [self showOrHideEmptyTips];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -80,6 +66,24 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark function
+
+- (void)showOrHideEmptyTips
+{
+    if ([self.dataList count] == 0) {
+        if (self.emptyTipsView == nil) {
+            self.emptyTipsView = [[FFEmptyTipsView alloc] initWithFrame:CGRectMake(0, 180, GLOBAL_SCREEN_WIDTH, 100) emptyTips:@"您好像很忙，最近没有使用记录喔"];
+            [self.emptyTipsView.emptyTipsActionButton addTarget:self action:@selector(doEmptyTipsAction:) forControlEvents:UIControlEventTouchUpInside];
+            [self.view addSubview:self.emptyTipsView];
+        }
+        self.emptyTipsView.hidden = NO;
+        [self.view bringSubviewToFront:self.emptyTipsView];
+    } else {
+        self.emptyTipsView.hidden = YES;
+        [self.view sendSubviewToBack:self.emptyTipsView];
+    }
 }
 
 #pragma mark UITableViewDataSource method

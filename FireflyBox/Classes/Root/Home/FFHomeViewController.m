@@ -11,6 +11,9 @@
 #import "FFTransferViewController.h"
 #import "FFHomeCell.h"
 #import "FFDataInfo.h"
+#import "FFUpdateFileInfoTask.h"
+#import "FFConcurrentQueue.h"
+#import "FFDB+All.h"
 
 @interface FFHomeViewController ()
 
@@ -18,11 +21,10 @@
 
 @implementation FFHomeViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    if (self = [super init]) {
+        self.title = @"Home";
     }
     return self;
 }
@@ -32,17 +34,12 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    self.title = @"Home";
-    
     FFBarButtonItem *tempBarButtonItem = [[FFBarButtonItem alloc] initWithTitle:@"添加" style:UIBarButtonItemStylePlain target:self action:@selector(doRightBarButtonItemAction:)];
     self.navigationItem.rightBarButtonItem = tempBarButtonItem;
     
-    self.dataTableView = [[UITableView alloc] init];
-    self.dataTableView.frame = CGRectMake(0, 0, GLOBAL_SCREEN_WIDTH, GLOBAL_SCREEN_HEIGHT);
-    self.dataTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    //
     self.dataTableView.delegate = self;
     self.dataTableView.dataSource = self;
-    self.dataTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:self.dataTableView];
     
     //
@@ -53,6 +50,15 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    @synchronized(self)
+    {
+        if ([self shouldUpdateFileInfo]) {
+            [[NSUserDefaults standardUserDefaults] setValue:@NO forKey:SHOULD_UPDATE_FILE_INFO];
+            [self updateFileInfoBySearchDir];
+        }
+    }
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -61,9 +67,6 @@
     
     [GLOBAL_APP_DELEGATE.tabBarController showFFTabBarView];
     
-    if ([self shouldUpdateFileInfo]) {
-        
-    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -89,41 +92,52 @@
 
 - (void)loadData
 {
-    //
-    self.dataList = [[NSMutableArray alloc] init];
     for (int i=0; i<20; i++) {
         FFDataInfo *dataInfo = [[FFDataInfo alloc] init];
         dataInfo.dataId = i;
         dataInfo.dataName = [NSString stringWithFormat:@"FFDataInfo: %d", i];
         [self.dataList addObject:dataInfo];
     }
+    
+    NSMutableArray *tempDataInfoList = [[FFDB sharedInstance] selectDataInfo];
+    [self.dataList removeAllObjects];
+    [self.dataList addObjectsFromArray:tempDataInfoList];
+    
     [self.dataTableView reloadData];
     [self showOrHideEmptyTips];
 }
 
 - (BOOL)shouldUpdateFileInfo
 {
-    return [[NSUserDefaults standardUserDefaults] objectForKey:SHOULD_UPDATE_FILE_INFO];
+    BOOL shouldUpdate = [[[NSUserDefaults standardUserDefaults] objectForKey:SHOULD_UPDATE_FILE_INFO] boolValue];
+    return shouldUpdate;
 }
 
 - (void)updateFileInfoBySearchDir
 {
-    
+    FFUpdateFileInfoTask *updateFileInfoTask = [[FFUpdateFileInfoTask alloc] init];
+    updateFileInfoTask.finishBlock = ^(id task){
+        FFUpdateFileInfoTask *updateTask = task;
+        [self.dataList removeAllObjects];
+        [self.dataList addObjectsFromArray:updateTask.dataInfoList];
+        [self.dataTableView reloadData];
+    };
+    [[FFConcurrentQueue sharedConcurrentQueue] addTask:updateFileInfoTask];
 }
 
 - (void)showOrHideEmptyTips
 {
     if ([self.dataList count] == 0) {
-        if (_emptyTipsView == nil) {
-            _emptyTipsView = [[FFEmptyTipsView alloc] initWithFrame:CGRectMake(0, 180, GLOBAL_SCREEN_WIDTH, 100) emptyTips:@"您还没有导入文件，快点击我吧"];
-            [_emptyTipsView.emptyTipsActionButton addTarget:self action:@selector(doEmptyTipsAction:) forControlEvents:UIControlEventTouchUpInside];
-            [self.view addSubview:_emptyTipsView];
+        if (self.emptyTipsView == nil) {
+            self.emptyTipsView = [[FFEmptyTipsView alloc] initWithFrame:CGRectMake(0, 180, GLOBAL_SCREEN_WIDTH, 100) emptyTips:@"您还没有导入文件，快点击我吧"];
+            [self.emptyTipsView.emptyTipsActionButton addTarget:self action:@selector(doEmptyTipsAction:) forControlEvents:UIControlEventTouchUpInside];
+            [self.view addSubview:self.emptyTipsView];
         }
-        _emptyTipsView.hidden = NO;
-        [self.view bringSubviewToFront:_emptyTipsView];
+        self.emptyTipsView.hidden = NO;
+        [self.view bringSubviewToFront:self.emptyTipsView];
     } else {
-        _emptyTipsView.hidden = YES;
-        [self.view sendSubviewToBack:_emptyTipsView];
+        self.emptyTipsView.hidden = YES;
+        [self.view sendSubviewToBack:self.emptyTipsView];
     }
 }
 
@@ -171,11 +185,14 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    [GLOBAL_APP_DELEGATE.tabBarController hideFFTabBarView];
-    FFBarButtonItem *backBarItem = [[FFBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
-    self.navigationItem.backBarButtonItem = backBarItem;
-    FFTransferViewController *transferController = [[FFTransferViewController alloc] init];
-    [self.navigationController pushViewController:transferController animated:YES];
+    FFDataInfo *tempDataInfo = [self.dataList objectAtIndex:indexPath.row];
+    if (tempDataInfo.dataType == FFDataTypeDirectory) {
+        FFHomeViewController *homeController = [[FFHomeViewController alloc] init];
+        homeController.title = tempDataInfo.dataName;
+        [self.navigationController pushViewController:homeController animated:YES];
+    } else {
+        
+    }
 }
 
 @end

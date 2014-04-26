@@ -16,23 +16,15 @@
     if (self) {
         // Initialization code
         
-        _iconImageView = [[UIImageView alloc] init];
-        [self addSubview:_iconImageView];
-        
-        _titleLabel = [[UILabel alloc] init];
-        [self addSubview:_titleLabel];
-        
-        _timeLabel = [[UILabel alloc] init];
-        [self addSubview:_timeLabel];
-        
     }
     return self;
 }
 
 - (void)updateViewWithContent:(FFDataInfo *)tDataInfo
 {
-    _titleLabel.text = [NSString stringWithFormat:@"%@", tDataInfo.dataName];
-    _timeLabel.text = [NSString stringWithFormat:@"%ld", tDataInfo.dataId];
+    self.iconImageView.image = [UIImage imageNamed:@"file_icon_normal.png"];
+    self.titleLabel.text = [NSString stringWithFormat:@"%@", tDataInfo.dataName];
+    self.timeLabel.text = [NSString stringWithFormat:@"%@", tDataInfo.creationDate];
 }
 
 #pragma mark overried
@@ -41,9 +33,9 @@
 {
     [super layoutSubviews];
     
-    _iconImageView.frame = CGRectMake(15, 10, 50, 50);
-    _titleLabel.frame = CGRectMake(80, 15, GLOBAL_SCREEN_WIDTH - 80 - 30, 25);
-    _timeLabel.frame = CGRectMake(80, 40, GLOBAL_SCREEN_WIDTH - 80 - 30, 25);
+    self.iconImageView.frame = CGRectMake(15, 15, 40, 40);
+    self.titleLabel.frame = CGRectMake(70, 15, GLOBAL_SCREEN_WIDTH - 70 - 30, 25);
+    self.timeLabel.frame = CGRectMake(70, 40, GLOBAL_SCREEN_WIDTH - 70 - 30, 20);
     
 }
 

@@ -128,7 +128,9 @@
 - (void)doRightBarButtonItemAction:(id)sender
 {
     _webServer.delegate = nil;
-    [_webServer stop];
+    if ([_webServer isRunning]) {
+        [_webServer stop];
+    }
     _webServer = nil;
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }

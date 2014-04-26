@@ -19,13 +19,22 @@
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+- (void)updateViewWithContent:(FFDataInfo *)tDataInfo
 {
-    // Drawing code
+    self.titleLabel.text = [NSString stringWithFormat:@"%@", tDataInfo.dataName];
+    self.timeLabel.text = [NSString stringWithFormat:@"%@", tDataInfo.creationDate];
 }
-*/
+
+#pragma mark overried
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    self.iconImageView.frame = CGRectMake(15, 10, 50, 50);
+    self.titleLabel.frame = CGRectMake(80, 15, GLOBAL_SCREEN_WIDTH - 80 - 30, 25);
+    self.timeLabel.frame = CGRectMake(80, 40, GLOBAL_SCREEN_WIDTH - 80 - 30, 25);
+    
+}
 
 @end

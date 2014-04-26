@@ -72,6 +72,15 @@
 		16A2F8FB1902D5C100751B82 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F8DB1902D5C100751B82 /* FMResultSet.m */; };
 		16A2F8FC1902D5C100751B82 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F8DE1902D5C100751B82 /* EGORefreshTableHeaderView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		16A2F8FF1902D5C100751B82 /* SYAppStart.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F8E51902D5C100751B82 /* SYAppStart.m */; };
+		16A5B12E190BE35C000FA5C4 /* FFBaseTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5B12D190BE35C000FA5C4 /* FFBaseTask.m */; };
+		16A5B131190BE916000FA5C4 /* FFBaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5B130190BE916000FA5C4 /* FFBaseQueue.m */; };
+		16A5B134190BEAE8000FA5C4 /* FFConcurrentQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5B133190BEAE8000FA5C4 /* FFConcurrentQueue.m */; };
+		16A5B137190BEB0C000FA5C4 /* FFSerialQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5B136190BEB0C000FA5C4 /* FFSerialQueue.m */; };
+		16A5B13A190BEC4A000FA5C4 /* FFUpdateFileInfoTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5B139190BEC4A000FA5C4 /* FFUpdateFileInfoTask.m */; };
+		16A5B13D190C0C8D000FA5C4 /* FFSingleTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5B13C190C0C8D000FA5C4 /* FFSingleTextCell.m */; };
+		16A5B140190C0CB9000FA5C4 /* FFHeadImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5B13F190C0CB9000FA5C4 /* FFHeadImageCell.m */; };
+		16A5B143190C0FBB000FA5C4 /* FFSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5B142190C0FBB000FA5C4 /* FFSettingCell.m */; };
+		16A5B14E190C17D9000FA5C4 /* FFDB+DataInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5B14D190C17D9000FA5C4 /* FFDB+DataInfo.m */; };
 		16DAD67A1902D9FB00BFE84C /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = 16DAD6791902D9FB00BFE84C /* Record.m */; };
 		16DAD67F1902DA6D00BFE84C /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 16DAD67D1902DA6D00BFE84C /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		16DAD6811902DADE00BFE84C /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 16DAD6801902DADE00BFE84C /* libsqlite3.dylib */; };
@@ -228,6 +237,24 @@
 		16A2F8DE1902D5C100751B82 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
 		16A2F8E41902D5C100751B82 /* SYAppStart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYAppStart.h; sourceTree = "<group>"; };
 		16A2F8E51902D5C100751B82 /* SYAppStart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYAppStart.m; sourceTree = "<group>"; };
+		16A5B12C190BE35C000FA5C4 /* FFBaseTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseTask.h; sourceTree = "<group>"; };
+		16A5B12D190BE35C000FA5C4 /* FFBaseTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseTask.m; sourceTree = "<group>"; };
+		16A5B12F190BE916000FA5C4 /* FFBaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseQueue.h; sourceTree = "<group>"; };
+		16A5B130190BE916000FA5C4 /* FFBaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseQueue.m; sourceTree = "<group>"; };
+		16A5B132190BEAE8000FA5C4 /* FFConcurrentQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFConcurrentQueue.h; sourceTree = "<group>"; };
+		16A5B133190BEAE8000FA5C4 /* FFConcurrentQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFConcurrentQueue.m; sourceTree = "<group>"; };
+		16A5B135190BEB0C000FA5C4 /* FFSerialQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFSerialQueue.h; sourceTree = "<group>"; };
+		16A5B136190BEB0C000FA5C4 /* FFSerialQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFSerialQueue.m; sourceTree = "<group>"; };
+		16A5B138190BEC4A000FA5C4 /* FFUpdateFileInfoTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFUpdateFileInfoTask.h; sourceTree = "<group>"; };
+		16A5B139190BEC4A000FA5C4 /* FFUpdateFileInfoTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFUpdateFileInfoTask.m; sourceTree = "<group>"; };
+		16A5B13B190C0C8D000FA5C4 /* FFSingleTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFSingleTextCell.h; sourceTree = "<group>"; };
+		16A5B13C190C0C8D000FA5C4 /* FFSingleTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFSingleTextCell.m; sourceTree = "<group>"; };
+		16A5B13E190C0CB9000FA5C4 /* FFHeadImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFHeadImageCell.h; sourceTree = "<group>"; };
+		16A5B13F190C0CB9000FA5C4 /* FFHeadImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFHeadImageCell.m; sourceTree = "<group>"; };
+		16A5B141190C0FBB000FA5C4 /* FFSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFSettingCell.h; sourceTree = "<group>"; };
+		16A5B142190C0FBB000FA5C4 /* FFSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFSettingCell.m; sourceTree = "<group>"; };
+		16A5B14C190C17D9000FA5C4 /* FFDB+DataInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FFDB+DataInfo.h"; sourceTree = "<group>"; };
+		16A5B14D190C17D9000FA5C4 /* FFDB+DataInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FFDB+DataInfo.m"; sourceTree = "<group>"; };
 		16DAD6781902D9FB00BFE84C /* Record.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Record.h; sourceTree = "<group>"; };
 		16DAD6791902D9FB00BFE84C /* Record.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Record.m; sourceTree = "<group>"; };
 		16DAD67C1902DA6D00BFE84C /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
@@ -339,6 +366,8 @@
 			children = (
 				1624B89A19093C140018B8FE /* FFSettingViewController.h */,
 				1624B89B19093C140018B8FE /* FFSettingViewController.m */,
+				16A5B141190C0FBB000FA5C4 /* FFSettingCell.h */,
+				16A5B142190C0FBB000FA5C4 /* FFSettingCell.m */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -480,6 +509,7 @@
 		16A2F7A01902814400751B82 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				16A5B122190BE018000FA5C4 /* TaskManager */,
 				1624B88E19093C140018B8FE /* Root */,
 				16DAD6771902D9FB00BFE84C /* DataStruct */,
 				16A2F8831902D5AC00751B82 /* Common */,
@@ -532,6 +562,10 @@
 				16A0D628190AC0A7007D6EBA /* FFEmptyTipsView.h */,
 				16A0D629190AC0A7007D6EBA /* FFEmptyTipsView.m */,
 				16A0D632190ACD71007D6EBA /* FFSharedMacro.h */,
+				16A5B13B190C0C8D000FA5C4 /* FFSingleTextCell.h */,
+				16A5B13C190C0C8D000FA5C4 /* FFSingleTextCell.m */,
+				16A5B13E190C0CB9000FA5C4 /* FFHeadImageCell.h */,
+				16A5B13F190C0CB9000FA5C4 /* FFHeadImageCell.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -545,6 +579,8 @@
 				16A2F8961902D5AC00751B82 /* FFDB+Record.m */,
 				16A2F8971902D5AC00751B82 /* FFDB.h */,
 				16A2F8981902D5AC00751B82 /* FFDB.m */,
+				16A5B14C190C17D9000FA5C4 /* FFDB+DataInfo.h */,
+				16A5B14D190C17D9000FA5C4 /* FFDB+DataInfo.m */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -659,6 +695,23 @@
 				16A2F8E51902D5C100751B82 /* SYAppStart.m */,
 			);
 			path = SYAppStart;
+			sourceTree = "<group>";
+		};
+		16A5B122190BE018000FA5C4 /* TaskManager */ = {
+			isa = PBXGroup;
+			children = (
+				16A5B12C190BE35C000FA5C4 /* FFBaseTask.h */,
+				16A5B12D190BE35C000FA5C4 /* FFBaseTask.m */,
+				16A5B12F190BE916000FA5C4 /* FFBaseQueue.h */,
+				16A5B130190BE916000FA5C4 /* FFBaseQueue.m */,
+				16A5B132190BEAE8000FA5C4 /* FFConcurrentQueue.h */,
+				16A5B133190BEAE8000FA5C4 /* FFConcurrentQueue.m */,
+				16A5B135190BEB0C000FA5C4 /* FFSerialQueue.h */,
+				16A5B136190BEB0C000FA5C4 /* FFSerialQueue.m */,
+				16A5B138190BEC4A000FA5C4 /* FFUpdateFileInfoTask.h */,
+				16A5B139190BEC4A000FA5C4 /* FFUpdateFileInfoTask.m */,
+			);
+			path = TaskManager;
 			sourceTree = "<group>";
 		};
 		16DAD6771902D9FB00BFE84C /* DataStruct */ = {
@@ -879,9 +932,11 @@
 				1624B881190930E40018B8FE /* FFHUDViewController.m in Sources */,
 				167E7136190B8F6C0014ADEB /* UIColor+FireFly.m in Sources */,
 				16DAD67A1902D9FB00BFE84C /* Record.m in Sources */,
+				16A5B13A190BEC4A000FA5C4 /* FFUpdateFileInfoTask.m in Sources */,
 				1624B8841909311C0018B8FE /* FFTableViewController.m in Sources */,
 				1624B88D190938D90018B8FE /* FFBarButtonItem.m in Sources */,
 				16ED1D56190B78B9007EC697 /* GCDWebServerFileResponse.m in Sources */,
+				16A5B12E190BE35C000FA5C4 /* FFBaseTask.m in Sources */,
 				16A2F8F21902D5C100751B82 /* EGOImageLoadConnection.m in Sources */,
 				16A2F8E61902D5C100751B82 /* AFHTTPClient.m in Sources */,
 				16A2F77E1902663100751B82 /* main.m in Sources */,
@@ -891,20 +946,24 @@
 				162F9152190953F3004D0C25 /* FFBaseTabBarController.m in Sources */,
 				16ED1D53190B78B9007EC697 /* GCDWebServerURLEncodedFormRequest.m in Sources */,
 				16A2F8A41902D5AC00751B82 /* FFDB+Record.m in Sources */,
+				16A5B14E190C17D9000FA5C4 /* FFDB+DataInfo.m in Sources */,
 				16A2F8F61902D5C100751B82 /* FMDatabase.m in Sources */,
 				16ED1D57190B78B9007EC697 /* GCDWebServerStreamedResponse.m in Sources */,
 				167E7137190B8F6C0014ADEB /* UIDevice+FireFly.m in Sources */,
 				16A2F8F81902D5C100751B82 /* FMDatabasePool.m in Sources */,
 				167E7135190B8F6C0014ADEB /* NSString+FireFly.m in Sources */,
+				16A5B134190BEAE8000FA5C4 /* FFConcurrentQueue.m in Sources */,
 				16A2F89D1902D5AC00751B82 /* FFCommonUtil.m in Sources */,
 				16A2F89C1902D5AC00751B82 /* FFBaseViewController.m in Sources */,
 				16A2F8F41902D5C100751B82 /* EGOImageView.m in Sources */,
 				16ED1D4C190B78B9007EC697 /* GCDWebServerConnection.m in Sources */,
+				16A5B140190C0CB9000FA5C4 /* FFHeadImageCell.m in Sources */,
 				16A0D62A190AC0A7007D6EBA /* FFEmptyTipsView.m in Sources */,
 				16A2F8A31902D5AC00751B82 /* FFDB+All.m in Sources */,
 				16ED1D4B190B78B9007EC697 /* GCDWebServer.m in Sources */,
 				16ED1D54190B78B9007EC697 /* GCDWebServerDataResponse.m in Sources */,
 				167E7139190B8F6C0014ADEB /* UIImage+FireFly.m in Sources */,
+				16A5B13D190C0C8D000FA5C4 /* FFSingleTextCell.m in Sources */,
 				1624B89D19093C140018B8FE /* FFRootTabBarController.m in Sources */,
 				16A2F8EC1902D5C100751B82 /* AFURLConnectionOperation.m in Sources */,
 				1624B8A319093CA30018B8FE /* FFTransferViewController.m in Sources */,
@@ -917,14 +976,17 @@
 				162F9157190956FD004D0C25 /* FFBaseTableCell.m in Sources */,
 				16ED1D55190B78B9007EC697 /* GCDWebServerErrorResponse.m in Sources */,
 				162F9154190953F3004D0C25 /* FFTabBarView.m in Sources */,
+				16A5B137190BEB0C000FA5C4 /* FFSerialQueue.m in Sources */,
 				16A2F8F31902D5C100751B82 /* EGOImageLoader.m in Sources */,
 				16ED1D59190B78B9007EC697 /* GCDWebUploader.m in Sources */,
 				16A2F8F11902D5C100751B82 /* EGOImageButton.m in Sources */,
 				16A0D62E190AC0CE007D6EBA /* TTTAttributedLabel.m in Sources */,
+				16A5B131190BE916000FA5C4 /* FFBaseQueue.m in Sources */,
 				16A2F8EE1902D5C100751B82 /* UIImageView+AFNetworking.m in Sources */,
 				16A2F8FC1902D5C100751B82 /* EGORefreshTableHeaderView.m in Sources */,
 				16A2F8F71902D5C100751B82 /* FMDatabaseAdditions.m in Sources */,
 				16ED1D50190B78B9007EC697 /* GCDWebServerDataRequest.m in Sources */,
+				16A5B143190C0FBB000FA5C4 /* FFSettingCell.m in Sources */,
 				16DAD67F1902DA6D00BFE84C /* GTMBase64.m in Sources */,
 				1624B89E19093C140018B8FE /* FFHomeViewController.m in Sources */,
 			);

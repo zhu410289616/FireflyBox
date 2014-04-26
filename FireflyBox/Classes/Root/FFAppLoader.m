@@ -7,6 +7,7 @@
 //
 
 #import "FFAppLoader.h"
+#import "FFDB+All.h"
 
 @implementation FFAppLoader
 
@@ -28,6 +29,7 @@
             return;
         }
         [self initAppLevelUIConfig];
+        [[FFDB sharedInstance] initAll];
         _isLoaded = YES;
     }
     

@@ -8,6 +8,7 @@
 
 #import "FFDB.h"
 #import "FFDB+Record.h"
+#import "FFDB+DataInfo.h"
 
 @interface FFDB (All)
 

@@ -7,7 +7,6 @@
 //
 
 #import "FFTableViewController.h"
-#import "FFEmptyTipsView.h"
 
 @interface FFHomeViewController : FFTableViewController<UITableViewDataSource, UITableViewDelegate>
 
@@ -17,8 +16,6 @@
 @property (nonatomic, strong) UIButton *firstTypeButton;
 @property (nonatomic, strong) UIButton *secondTypeButton;
 @property (nonatomic, strong) UIButton *thirdTypeButton;
-
-@property (nonatomic, strong) FFEmptyTipsView *emptyTipsView;
 
 - (void)loadData;
 
