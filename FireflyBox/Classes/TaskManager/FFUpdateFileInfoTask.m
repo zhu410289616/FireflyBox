@@ -30,10 +30,10 @@
     
     NSFileManager *fm = [NSFileManager defaultManager];
     if ([fm fileExistsAtPath:webServerPath]) {
-        NSDirectoryEnumerator *dirEnum = [fm enumeratorAtPath:webServerPath];
-        for (id info in dirEnum) {
+        NSError *error;
+        NSArray *contents = [fm contentsOfDirectoryAtPath:webServerPath error:&error];
+        for (id info in contents) {
             PLog(@"-------------- info: %@ --------------", info);
-            NSError *error;
             NSString *infoPath = [NSString stringWithFormat:@"%@/%@", webServerPath, info];
             NSDictionary *fileAttributes = [fm attributesOfItemAtPath:infoPath error:&error];
             

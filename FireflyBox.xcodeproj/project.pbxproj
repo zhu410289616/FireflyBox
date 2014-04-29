@@ -33,6 +33,7 @@
 		16A0D626190ABD95007D6EBA /* FFHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A0D625190ABD95007D6EBA /* FFHomeCell.m */; };
 		16A0D62A190AC0A7007D6EBA /* FFEmptyTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A0D629190AC0A7007D6EBA /* FFEmptyTipsView.m */; };
 		16A0D62E190AC0CE007D6EBA /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A0D62D190AC0CE007D6EBA /* TTTAttributedLabel.m */; };
+		16A14390190F69AB00A1A0FA /* NSObject+FireFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A1438F190F69AB00A1A0FA /* NSObject+FireFly.m */; };
 		16A2F7721902663100751B82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A2F7711902663100751B82 /* Foundation.framework */; };
 		16A2F7741902663100751B82 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A2F7731902663100751B82 /* CoreGraphics.framework */; };
 		16A2F7761902663100751B82 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A2F7751902663100751B82 /* UIKit.framework */; };
@@ -165,6 +166,8 @@
 		16A0D62C190AC0CE007D6EBA /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
 		16A0D62D190AC0CE007D6EBA /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
 		16A0D632190ACD71007D6EBA /* FFSharedMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFSharedMacro.h; sourceTree = "<group>"; };
+		16A1438E190F69AB00A1A0FA /* NSObject+FireFly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FireFly.h"; sourceTree = "<group>"; };
+		16A1438F190F69AB00A1A0FA /* NSObject+FireFly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FireFly.m"; sourceTree = "<group>"; };
 		16A2F76E1902663100751B82 /* FireflyBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireflyBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16A2F7711902663100751B82 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		16A2F7731902663100751B82 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -417,6 +420,8 @@
 				167E7132190B8F6C0014ADEB /* UIImage+FireFly.m */,
 				167E7133190B8F6C0014ADEB /* UIView+FireFly.h */,
 				167E7134190B8F6C0014ADEB /* UIView+FireFly.m */,
+				16A1438E190F69AB00A1A0FA /* NSObject+FireFly.h */,
+				16A1438F190F69AB00A1A0FA /* NSObject+FireFly.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -971,6 +976,7 @@
 				16A2F8F91902D5C100751B82 /* FMDatabaseQueue.m in Sources */,
 				16A2F8E71902D5C100751B82 /* AFHTTPRequestOperation.m in Sources */,
 				16A2F8FB1902D5C100751B82 /* FMResultSet.m in Sources */,
+				16A14390190F69AB00A1A0FA /* NSObject+FireFly.m in Sources */,
 				16ED1D4D190B78B9007EC697 /* GCDWebServerFunctions.m in Sources */,
 				16A2F8EB1902D5C100751B82 /* AFPropertyListRequestOperation.m in Sources */,
 				162F9157190956FD004D0C25 /* FFBaseTableCell.m in Sources */,
