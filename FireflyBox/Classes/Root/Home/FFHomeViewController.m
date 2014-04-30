@@ -15,6 +15,9 @@
 #import "FFConcurrentQueue.h"
 #import "FFDB+All.h"
 
+#import "PlayerViewController.h"
+#import "Track+Provider.h"
+
 @interface FFHomeViewController ()
 
 @end
@@ -191,8 +194,19 @@
         homeController.title = tempDataInfo.dataName;
         [self.navigationController pushViewController:homeController animated:YES];
     } else {
-        
+        PlayerViewController *playerController = [[PlayerViewController alloc] init];
+        if ((tempNum++) % 2) {
+            [playerController setTitle:@"Remote Music ♫"];
+            [playerController setTracks:[Track remoteTracks]];
+        } else {
+            [playerController setTitle:@"Local Music Library ♫"];
+            [playerController setTracks:[Track musicLibraryTracks]];
+        }
+        [GLOBAL_APP_DELEGATE.tabBarController hideFFTabBarView];
+        [self.navigationController pushViewController:playerController animated:YES];
     }
 }
+
+static int tempNum = 1;
 
 @end
