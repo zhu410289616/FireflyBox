@@ -22,6 +22,9 @@
 		162F9154190953F3004D0C25 /* FFTabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 162F9151190953F3004D0C25 /* FFTabBarView.m */; };
 		162F9157190956FD004D0C25 /* FFBaseTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 162F9156190956FD004D0C25 /* FFBaseTableCell.m */; };
 		162F915A19095740004D0C25 /* FFRecentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 162F915919095740004D0C25 /* FFRecentCell.m */; };
+		16747D5E1910F0B500717577 /* FFFileInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16747D5B1910F0B500717577 /* FFFileInfoCell.m */; };
+		16747D5F1910F0B500717577 /* FFFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16747D5D1910F0B500717577 /* FFFileViewController.m */; };
+		16747D651910F63D00717577 /* FFFileReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16747D641910F63D00717577 /* FFFileReaderViewController.m */; };
 		167E7126190B82040014ADEB /* transfer_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 167E7124190B82040014ADEB /* transfer_bg.png */; };
 		167E7127190B82040014ADEB /* transfer_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 167E7125190B82040014ADEB /* transfer_bg@2x.png */; };
 		167E7135190B8F6C0014ADEB /* NSString+FireFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 167E712A190B8F6C0014ADEB /* NSString+FireFly.m */; };
@@ -168,6 +171,12 @@
 		162F9156190956FD004D0C25 /* FFBaseTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseTableCell.m; sourceTree = "<group>"; };
 		162F915819095740004D0C25 /* FFRecentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFRecentCell.h; sourceTree = "<group>"; };
 		162F915919095740004D0C25 /* FFRecentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFRecentCell.m; sourceTree = "<group>"; };
+		16747D5A1910F0B500717577 /* FFFileInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFileInfoCell.h; sourceTree = "<group>"; };
+		16747D5B1910F0B500717577 /* FFFileInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFileInfoCell.m; sourceTree = "<group>"; };
+		16747D5C1910F0B500717577 /* FFFileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFileViewController.h; sourceTree = "<group>"; };
+		16747D5D1910F0B500717577 /* FFFileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFileViewController.m; sourceTree = "<group>"; };
+		16747D631910F63D00717577 /* FFFileReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFileReaderViewController.h; sourceTree = "<group>"; };
+		16747D641910F63D00717577 /* FFFileReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFileReaderViewController.m; sourceTree = "<group>"; };
 		167E7124190B82040014ADEB /* transfer_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transfer_bg.png; sourceTree = "<group>"; };
 		167E7125190B82040014ADEB /* transfer_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transfer_bg@2x.png"; sourceTree = "<group>"; };
 		167E7129190B8F6C0014ADEB /* NSString+FireFly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FireFly.h"; sourceTree = "<group>"; };
@@ -402,6 +411,7 @@
 		1624B88E19093C140018B8FE /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				16747D591910F07600717577 /* NormalFile */,
 				16CF243F19109CF00029F3D2 /* MusicPlayer */,
 				1624B88F19093C140018B8FE /* FFAppLoader.h */,
 				1624B89019093C140018B8FE /* FFAppLoader.m */,
@@ -460,6 +470,19 @@
 				162F9151190953F3004D0C25 /* FFTabBarView.m */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		16747D591910F07600717577 /* NormalFile */ = {
+			isa = PBXGroup;
+			children = (
+				16747D5A1910F0B500717577 /* FFFileInfoCell.h */,
+				16747D5B1910F0B500717577 /* FFFileInfoCell.m */,
+				16747D5C1910F0B500717577 /* FFFileViewController.h */,
+				16747D5D1910F0B500717577 /* FFFileViewController.m */,
+				16747D631910F63D00717577 /* FFFileReaderViewController.h */,
+				16747D641910F63D00717577 /* FFFileReaderViewController.m */,
+			);
+			path = NormalFile;
 			sourceTree = "<group>";
 		};
 		167E711E190B7FE80014ADEB /* Images */ = {
@@ -1062,6 +1085,7 @@
 				16A2F8FF1902D5C100751B82 /* SYAppStart.m in Sources */,
 				16CF243B1910948B0029F3D2 /* NSData+DOUMappedFile.m in Sources */,
 				16A2F8ED1902D5C100751B82 /* AFXMLRequestOperation.m in Sources */,
+				16747D5E1910F0B500717577 /* FFFileInfoCell.m in Sources */,
 				16ED1D4E190B78B9007EC697 /* GCDWebServerRequest.m in Sources */,
 				1624B88A190937510018B8FE /* FFDataInfo.m in Sources */,
 				1624B8A019093C140018B8FE /* FFSettingViewController.m in Sources */,
@@ -1092,6 +1116,7 @@
 				16CF24361910948B0029F3D2 /* DOUAudioVisualizer.m in Sources */,
 				1624B88D190938D90018B8FE /* FFBarButtonItem.m in Sources */,
 				16ED1D56190B78B9007EC697 /* GCDWebServerFileResponse.m in Sources */,
+				16747D651910F63D00717577 /* FFFileReaderViewController.m in Sources */,
 				16CF24371910948B0029F3D2 /* DOUEAGL1View.m in Sources */,
 				16A5B12E190BE35C000FA5C4 /* FFBaseTask.m in Sources */,
 				16A2F8F21902D5C100751B82 /* EGOImageLoadConnection.m in Sources */,
@@ -1138,6 +1163,7 @@
 				16A2F8FB1902D5C100751B82 /* FMResultSet.m in Sources */,
 				16A14390190F69AB00A1A0FA /* NSObject+FireFly.m in Sources */,
 				16ED1D4D190B78B9007EC697 /* GCDWebServerFunctions.m in Sources */,
+				16747D5F1910F0B500717577 /* FFFileViewController.m in Sources */,
 				16A2F8EB1902D5C100751B82 /* AFPropertyListRequestOperation.m in Sources */,
 				162F9157190956FD004D0C25 /* FFBaseTableCell.m in Sources */,
 				16CF242A1910948B0029F3D2 /* DOUAudioAnalyzer.m in Sources */,

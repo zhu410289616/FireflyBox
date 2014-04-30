@@ -9,7 +9,7 @@
 #import "FFBaseViewController.h"
 #import "FFEmptyTipsView.h"
 
-@interface FFTableViewController : FFBaseViewController
+@interface FFTableViewController : FFBaseViewController<UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *dataTableView;
 @property (nonatomic, strong) NSMutableArray *dataList;

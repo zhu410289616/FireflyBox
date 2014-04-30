@@ -8,7 +8,7 @@
 
 #import "FFTableViewController.h"
 
-@interface FFHomeViewController : FFTableViewController<UITableViewDataSource, UITableViewDelegate>
+@interface FFHomeViewController : FFTableViewController
 
 @property (nonatomic, strong) UISearchBar *searchBar;
 

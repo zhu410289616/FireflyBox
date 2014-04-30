@@ -15,6 +15,8 @@
 #import "FFConcurrentQueue.h"
 #import "FFDB+All.h"
 
+#import "FFFileViewController.h"
+
 #import "PlayerViewController.h"
 #import "Track+Provider.h"
 
@@ -164,10 +166,9 @@
     FFHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
         cell = [[FFHomeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell.footerLineView.hidden = NO;
     }
-    cell.headerLineView.hidden = YES;
-    cell.footerLineView.hidden = NO;
-    if (indexPath.row == 0) {
+    if (indexPath.row == 0 && cell.headerLineView.hidden) {
         cell.headerLineView.hidden = NO;
     }
     
@@ -190,9 +191,15 @@
     
     FFDataInfo *tempDataInfo = [self.dataList objectAtIndex:indexPath.row];
     if (tempDataInfo.dataType == FFDataTypeDirectory) {
-        FFHomeViewController *homeController = [[FFHomeViewController alloc] init];
-        homeController.title = tempDataInfo.dataName;
-        [self.navigationController pushViewController:homeController animated:YES];
+        
+        FFFileViewController *fileController = [[FFFileViewController alloc] init];
+        fileController.title = tempDataInfo.dataName;
+        fileController.fileDir = tempDataInfo.dataPath;
+        [self.navigationController pushViewController:fileController animated:YES];
+        
+//        FFHomeViewController *homeController = [[FFHomeViewController alloc] init];
+//        homeController.title = tempDataInfo.dataName;
+//        [self.navigationController pushViewController:homeController animated:YES];
     } else {
         PlayerViewController *playerController = [[PlayerViewController alloc] init];
         if ((tempNum++) % 2) {

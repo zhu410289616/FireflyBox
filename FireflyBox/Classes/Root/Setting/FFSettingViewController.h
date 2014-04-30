@@ -8,6 +8,6 @@
 
 #import "FFTableViewController.h"
 
-@interface FFSettingViewController : FFTableViewController<UITableViewDataSource, UITableViewDelegate>
+@interface FFSettingViewController : FFTableViewController
 
 @end
