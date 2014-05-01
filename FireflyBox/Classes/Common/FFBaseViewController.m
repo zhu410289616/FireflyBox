@@ -14,6 +14,21 @@
 
 @implementation FFBaseViewController
 
+- (id)init
+{
+    if (self = [super init]) {
+#ifdef __IPHONE_7_0
+        if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)])
+        {
+            self.edgesForExtendedLayout = UIRectEdgeNone;
+            self.extendedLayoutIncludesOpaqueBars = NO;
+            self.automaticallyAdjustsScrollViewInsets = NO;
+        }
+#endif
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

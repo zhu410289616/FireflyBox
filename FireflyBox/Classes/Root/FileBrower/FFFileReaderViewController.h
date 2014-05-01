@@ -14,4 +14,6 @@
 
 @property (nonatomic, strong) NSString *filePath;
 
+- (BOOL)openFile;
+
 @end

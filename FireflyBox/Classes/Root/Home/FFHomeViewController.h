@@ -17,6 +17,7 @@
 @property (nonatomic, strong) UIButton *secondTypeButton;
 @property (nonatomic, strong) UIButton *thirdTypeButton;
 
-- (void)loadData;
+- (void)loadFileInfoInHome;
+- (void)loadFileInfoWithDir:(NSString *)tDir;
 
 @end

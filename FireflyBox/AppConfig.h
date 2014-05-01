@@ -14,6 +14,8 @@
 #import "UIImage+FireFly.h"
 #import "NSString+FireFly.h"
 #import "UIDevice+FireFly.h"
+#import "NSObject+FireFly.h"
+#import "UIViewController+FireFly.h"
 
 #import "AppDelegate.h"
 

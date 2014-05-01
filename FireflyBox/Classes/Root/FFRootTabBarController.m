@@ -25,7 +25,7 @@
     FFBarButtonItem *tempBarButtonItem = [[FFBarButtonItem alloc] initWithTitle:@"添加" style:UIBarButtonItemStylePlain target:self action:@selector(doRightBarButtonItemAction:)];
     self.navigationItem.rightBarButtonItem = tempBarButtonItem;
     
-    NSArray *titleList = [NSArray arrayWithObjects:@"TabBarItem1", @"TabBarItem2", @"TabBarItem3", nil];
+    NSArray *titleList = [NSArray arrayWithObjects:@"FireFlyBox", @"TabBarItem2", @"TabBarItem3", nil];
     FFTabBarView *tabBarView = [[FFTabBarView alloc] initWithFrame:CGRectMake(0, GLOBAL_SCREEN_HEIGHT - TABBAR_HEIGHT, GLOBAL_SCREEN_WIDTH, TABBAR_HEIGHT) titles:titleList];
     tabBarView.delegate = self;
     tabBarView.backgroundColor = [UIColor lightGrayColor];

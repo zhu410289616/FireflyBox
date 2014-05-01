@@ -19,14 +19,20 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    self.view.backgroundColor = [UIColor whiteColor];
+    
     _fileWebView = [[UIWebView alloc] init];
-    _fileWebView.frame = CGRectMake(0, 0, GLOBAL_SCREEN_WIDTH, GLOBAL_SCREEN_HEIGHT - 44);
+    _fileWebView.frame = CGRectMake(0, 0, GLOBAL_SCREEN_WIDTH, GLOBAL_SCREEN_HEIGHT - 64);
+    _fileWebView.backgroundColor = [UIColor whiteColor];
     _fileWebView.delegate = self;
     _fileWebView.multipleTouchEnabled = YES;
     _fileWebView.scalesPageToFit = YES;
     [self.view addSubview:_fileWebView];
     
-    [self openFile];
+    //
+    if (![self openFile]) {
+        [self openFileWithDefault];
+    }
     
 }
 
@@ -36,28 +42,20 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)openFile
+- (void)openFileWithDefault
 {
-    NSRange extRange = [[_filePath lowercaseString] rangeOfString:@".txt"];
-    if (extRange.location != NSNotFound && extRange.length > 0) {
-        [self openFileWithTxt:_filePath];
-    } else {
-        NSURL *url = [NSURL fileURLWithPath:_filePath];
-        NSURLRequest *request = [NSURLRequest requestWithURL:url];
-        [_fileWebView loadRequest:request];
-    }
+    NSURL *url = [NSURL fileURLWithPath:_filePath];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [_fileWebView loadRequest:request];
 }
 
-- (void)openFileWithTxt:(NSString *)tFilePath
+/*
+ * override in subclass
+ * if override function then return yes, else return no
+ */
+- (BOOL)openFile
 {
-    NSString *body = [NSString stringWithContentsOfFile:tFilePath encoding:NSUTF8StringEncoding error:nil];
-    if (!body) {
-        body = [NSString stringWithContentsOfFile:tFilePath encoding:0x80000632 error:nil];
-    }
-    if (!body) {
-        body = [NSString stringWithContentsOfFile:tFilePath encoding:0x80000631 error:nil];
-    }
-    [_fileWebView loadHTMLString:body baseURL:nil];
+    return NO;
 }
 
 #pragma mark UIWebViewDelegate method

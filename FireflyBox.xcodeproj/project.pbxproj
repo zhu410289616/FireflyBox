@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		161FF06219124B4F00CDD559 /* FFFileInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 161FF05F19124B4F00CDD559 /* FFFileInfoCell.m */; };
+		161FF06319124B4F00CDD559 /* FFFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 161FF06119124B4F00CDD559 /* FFFileViewController.m */; };
+		161FF06619124D3A00CDD559 /* FFFileTypeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 161FF06519124D3A00CDD559 /* FFFileTypeHelper.m */; };
+		161FF06A191264AB00CDD559 /* FFFileReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 161FF068191264AB00CDD559 /* FFFileReaderViewController.m */; };
+		161FF06D191264DA00CDD559 /* FFTextReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 161FF06C191264DA00CDD559 /* FFTextReaderViewController.m */; };
+		161FF070191266BF00CDD559 /* UIViewController+FireFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 161FF06F191266BF00CDD559 /* UIViewController+FireFly.m */; };
+		161FF074191273B600CDD559 /* FFMusicPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 161FF073191273B600CDD559 /* FFMusicPlayerViewController.m */; };
 		1624B881190930E40018B8FE /* FFHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1624B880190930E40018B8FE /* FFHUDViewController.m */; };
 		1624B8841909311C0018B8FE /* FFTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1624B8831909311C0018B8FE /* FFTableViewController.m */; };
 		1624B88A190937510018B8FE /* FFDataInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1624B889190937510018B8FE /* FFDataInfo.m */; };
@@ -22,9 +29,6 @@
 		162F9154190953F3004D0C25 /* FFTabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 162F9151190953F3004D0C25 /* FFTabBarView.m */; };
 		162F9157190956FD004D0C25 /* FFBaseTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 162F9156190956FD004D0C25 /* FFBaseTableCell.m */; };
 		162F915A19095740004D0C25 /* FFRecentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 162F915919095740004D0C25 /* FFRecentCell.m */; };
-		16747D5E1910F0B500717577 /* FFFileInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16747D5B1910F0B500717577 /* FFFileInfoCell.m */; };
-		16747D5F1910F0B500717577 /* FFFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16747D5D1910F0B500717577 /* FFFileViewController.m */; };
-		16747D651910F63D00717577 /* FFFileReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16747D641910F63D00717577 /* FFFileReaderViewController.m */; };
 		167E7126190B82040014ADEB /* transfer_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 167E7124190B82040014ADEB /* transfer_bg.png */; };
 		167E7127190B82040014ADEB /* transfer_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 167E7125190B82040014ADEB /* transfer_bg@2x.png */; };
 		167E7135190B8F6C0014ADEB /* NSString+FireFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 167E712A190B8F6C0014ADEB /* NSString+FireFly.m */; };
@@ -141,6 +145,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		161FF05E19124B4F00CDD559 /* FFFileInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFileInfoCell.h; sourceTree = "<group>"; };
+		161FF05F19124B4F00CDD559 /* FFFileInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFileInfoCell.m; sourceTree = "<group>"; };
+		161FF06019124B4F00CDD559 /* FFFileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFileViewController.h; sourceTree = "<group>"; };
+		161FF06119124B4F00CDD559 /* FFFileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFileViewController.m; sourceTree = "<group>"; };
+		161FF06419124D3A00CDD559 /* FFFileTypeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFileTypeHelper.h; sourceTree = "<group>"; };
+		161FF06519124D3A00CDD559 /* FFFileTypeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFileTypeHelper.m; sourceTree = "<group>"; };
+		161FF067191264AB00CDD559 /* FFFileReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFileReaderViewController.h; sourceTree = "<group>"; };
+		161FF068191264AB00CDD559 /* FFFileReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFileReaderViewController.m; sourceTree = "<group>"; };
+		161FF06B191264DA00CDD559 /* FFTextReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTextReaderViewController.h; sourceTree = "<group>"; };
+		161FF06C191264DA00CDD559 /* FFTextReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTextReaderViewController.m; sourceTree = "<group>"; };
+		161FF06E191266BF00CDD559 /* UIViewController+FireFly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FireFly.h"; sourceTree = "<group>"; };
+		161FF06F191266BF00CDD559 /* UIViewController+FireFly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FireFly.m"; sourceTree = "<group>"; };
+		161FF072191273B600CDD559 /* FFMusicPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMusicPlayerViewController.h; sourceTree = "<group>"; };
+		161FF073191273B600CDD559 /* FFMusicPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMusicPlayerViewController.m; sourceTree = "<group>"; };
 		1624B87F190930E40018B8FE /* FFHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFHUDViewController.h; sourceTree = "<group>"; };
 		1624B880190930E40018B8FE /* FFHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFHUDViewController.m; sourceTree = "<group>"; };
 		1624B8821909311C0018B8FE /* FFTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTableViewController.h; sourceTree = "<group>"; };
@@ -171,12 +189,6 @@
 		162F9156190956FD004D0C25 /* FFBaseTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseTableCell.m; sourceTree = "<group>"; };
 		162F915819095740004D0C25 /* FFRecentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFRecentCell.h; sourceTree = "<group>"; };
 		162F915919095740004D0C25 /* FFRecentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFRecentCell.m; sourceTree = "<group>"; };
-		16747D5A1910F0B500717577 /* FFFileInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFileInfoCell.h; sourceTree = "<group>"; };
-		16747D5B1910F0B500717577 /* FFFileInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFileInfoCell.m; sourceTree = "<group>"; };
-		16747D5C1910F0B500717577 /* FFFileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFileViewController.h; sourceTree = "<group>"; };
-		16747D5D1910F0B500717577 /* FFFileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFileViewController.m; sourceTree = "<group>"; };
-		16747D631910F63D00717577 /* FFFileReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFileReaderViewController.h; sourceTree = "<group>"; };
-		16747D641910F63D00717577 /* FFFileReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFileReaderViewController.m; sourceTree = "<group>"; };
 		167E7124190B82040014ADEB /* transfer_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transfer_bg.png; sourceTree = "<group>"; };
 		167E7125190B82040014ADEB /* transfer_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transfer_bg@2x.png"; sourceTree = "<group>"; };
 		167E7129190B8F6C0014ADEB /* NSString+FireFly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FireFly.h"; sourceTree = "<group>"; };
@@ -408,10 +420,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		161FF05D19124B4F00CDD559 /* FileBrower */ = {
+			isa = PBXGroup;
+			children = (
+				161FF0711912733F00CDD559 /* MusicFile */,
+				161FF069191264AB00CDD559 /* NormalFile */,
+				161FF067191264AB00CDD559 /* FFFileReaderViewController.h */,
+				161FF068191264AB00CDD559 /* FFFileReaderViewController.m */,
+				161FF05E19124B4F00CDD559 /* FFFileInfoCell.h */,
+				161FF05F19124B4F00CDD559 /* FFFileInfoCell.m */,
+				161FF06019124B4F00CDD559 /* FFFileViewController.h */,
+				161FF06119124B4F00CDD559 /* FFFileViewController.m */,
+			);
+			path = FileBrower;
+			sourceTree = "<group>";
+		};
+		161FF069191264AB00CDD559 /* NormalFile */ = {
+			isa = PBXGroup;
+			children = (
+				161FF06B191264DA00CDD559 /* FFTextReaderViewController.h */,
+				161FF06C191264DA00CDD559 /* FFTextReaderViewController.m */,
+			);
+			path = NormalFile;
+			sourceTree = "<group>";
+		};
+		161FF0711912733F00CDD559 /* MusicFile */ = {
+			isa = PBXGroup;
+			children = (
+				161FF072191273B600CDD559 /* FFMusicPlayerViewController.h */,
+				161FF073191273B600CDD559 /* FFMusicPlayerViewController.m */,
+			);
+			path = MusicFile;
+			sourceTree = "<group>";
+		};
 		1624B88E19093C140018B8FE /* Root */ = {
 			isa = PBXGroup;
 			children = (
-				16747D591910F07600717577 /* NormalFile */,
+				161FF05D19124B4F00CDD559 /* FileBrower */,
 				16CF243F19109CF00029F3D2 /* MusicPlayer */,
 				1624B88F19093C140018B8FE /* FFAppLoader.h */,
 				1624B89019093C140018B8FE /* FFAppLoader.m */,
@@ -433,6 +478,8 @@
 				1624B89519093C140018B8FE /* FFHomeViewController.m */,
 				16A0D624190ABD95007D6EBA /* FFHomeCell.h */,
 				16A0D625190ABD95007D6EBA /* FFHomeCell.m */,
+				161FF06419124D3A00CDD559 /* FFFileTypeHelper.h */,
+				161FF06519124D3A00CDD559 /* FFFileTypeHelper.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -472,19 +519,6 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		16747D591910F07600717577 /* NormalFile */ = {
-			isa = PBXGroup;
-			children = (
-				16747D5A1910F0B500717577 /* FFFileInfoCell.h */,
-				16747D5B1910F0B500717577 /* FFFileInfoCell.m */,
-				16747D5C1910F0B500717577 /* FFFileViewController.h */,
-				16747D5D1910F0B500717577 /* FFFileViewController.m */,
-				16747D631910F63D00717577 /* FFFileReaderViewController.h */,
-				16747D641910F63D00717577 /* FFFileReaderViewController.m */,
-			);
-			path = NormalFile;
-			sourceTree = "<group>";
-		};
 		167E711E190B7FE80014ADEB /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -519,6 +553,8 @@
 				167E7134190B8F6C0014ADEB /* UIView+FireFly.m */,
 				16A1438E190F69AB00A1A0FA /* NSObject+FireFly.h */,
 				16A1438F190F69AB00A1A0FA /* NSObject+FireFly.m */,
+				161FF06E191266BF00CDD559 /* UIViewController+FireFly.h */,
+				161FF06F191266BF00CDD559 /* UIViewController+FireFly.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1081,11 +1117,11 @@
 				16A2F8F51902D5C100751B82 /* FMDatabase+InMemoryOnDiskIO.m in Sources */,
 				16A2F8E81902D5C100751B82 /* AFImageRequestOperation.m in Sources */,
 				162F9153190953F3004D0C25 /* FFTabBarItem.m in Sources */,
+				161FF06319124B4F00CDD559 /* FFFileViewController.m in Sources */,
 				16CF244819109CF00029F3D2 /* Track.m in Sources */,
 				16A2F8FF1902D5C100751B82 /* SYAppStart.m in Sources */,
 				16CF243B1910948B0029F3D2 /* NSData+DOUMappedFile.m in Sources */,
 				16A2F8ED1902D5C100751B82 /* AFXMLRequestOperation.m in Sources */,
-				16747D5E1910F0B500717577 /* FFFileInfoCell.m in Sources */,
 				16ED1D4E190B78B9007EC697 /* GCDWebServerRequest.m in Sources */,
 				1624B88A190937510018B8FE /* FFDataInfo.m in Sources */,
 				1624B8A019093C140018B8FE /* FFSettingViewController.m in Sources */,
@@ -1112,12 +1148,13 @@
 				16DAD67A1902D9FB00BFE84C /* Record.m in Sources */,
 				16CF24311910948B0029F3D2 /* DOUAudioPlaybackItem.m in Sources */,
 				16A5B13A190BEC4A000FA5C4 /* FFUpdateFileInfoTask.m in Sources */,
+				161FF070191266BF00CDD559 /* UIViewController+FireFly.m in Sources */,
 				1624B8841909311C0018B8FE /* FFTableViewController.m in Sources */,
 				16CF24361910948B0029F3D2 /* DOUAudioVisualizer.m in Sources */,
 				1624B88D190938D90018B8FE /* FFBarButtonItem.m in Sources */,
 				16ED1D56190B78B9007EC697 /* GCDWebServerFileResponse.m in Sources */,
-				16747D651910F63D00717577 /* FFFileReaderViewController.m in Sources */,
 				16CF24371910948B0029F3D2 /* DOUEAGL1View.m in Sources */,
+				161FF06A191264AB00CDD559 /* FFFileReaderViewController.m in Sources */,
 				16A5B12E190BE35C000FA5C4 /* FFBaseTask.m in Sources */,
 				16A2F8F21902D5C100751B82 /* EGOImageLoadConnection.m in Sources */,
 				16A2F8E61902D5C100751B82 /* AFHTTPClient.m in Sources */,
@@ -1152,6 +1189,8 @@
 				16CF24291910948B0029F3D2 /* DOUAudioAnalyzer+Default.m in Sources */,
 				16CF243E191095540029F3D2 /* FFGetFileInfoTask.m in Sources */,
 				16CF243A1910948B0029F3D2 /* DOUSimpleHTTPRequest.m in Sources */,
+				161FF06D191264DA00CDD559 /* FFTextReaderViewController.m in Sources */,
+				161FF074191273B600CDD559 /* FFMusicPlayerViewController.m in Sources */,
 				1624B89D19093C140018B8FE /* FFRootTabBarController.m in Sources */,
 				16A2F8EC1902D5C100751B82 /* AFURLConnectionOperation.m in Sources */,
 				1624B8A319093CA30018B8FE /* FFTransferViewController.m in Sources */,
@@ -1159,11 +1198,11 @@
 				16A2F8F91902D5C100751B82 /* FMDatabaseQueue.m in Sources */,
 				16A2F8E71902D5C100751B82 /* AFHTTPRequestOperation.m in Sources */,
 				16CF242C1910948B0029F3D2 /* DOUAudioEventLoop.m in Sources */,
+				161FF06219124B4F00CDD559 /* FFFileInfoCell.m in Sources */,
 				16CF24391910948B0029F3D2 /* DOUMPMediaLibraryAssetLoader.m in Sources */,
 				16A2F8FB1902D5C100751B82 /* FMResultSet.m in Sources */,
 				16A14390190F69AB00A1A0FA /* NSObject+FireFly.m in Sources */,
 				16ED1D4D190B78B9007EC697 /* GCDWebServerFunctions.m in Sources */,
-				16747D5F1910F0B500717577 /* FFFileViewController.m in Sources */,
 				16A2F8EB1902D5C100751B82 /* AFPropertyListRequestOperation.m in Sources */,
 				162F9157190956FD004D0C25 /* FFBaseTableCell.m in Sources */,
 				16CF242A1910948B0029F3D2 /* DOUAudioAnalyzer.m in Sources */,
@@ -1175,6 +1214,7 @@
 				16CF244619109CF00029F3D2 /* PlayerViewController.m in Sources */,
 				16A2F8F11902D5C100751B82 /* EGOImageButton.m in Sources */,
 				16A0D62E190AC0CE007D6EBA /* TTTAttributedLabel.m in Sources */,
+				161FF06619124D3A00CDD559 /* FFFileTypeHelper.m in Sources */,
 				16A5B131190BE916000FA5C4 /* FFBaseQueue.m in Sources */,
 				16A2F8EE1902D5C100751B82 /* UIImageView+AFNetworking.m in Sources */,
 				16A2F8FC1902D5C100751B82 /* EGORefreshTableHeaderView.m in Sources */,

@@ -11,14 +11,9 @@
 #import "FFTransferViewController.h"
 #import "FFHomeCell.h"
 #import "FFDataInfo.h"
-#import "FFUpdateFileInfoTask.h"
+#import "FFGetFileInfoTask.h"
 #import "FFConcurrentQueue.h"
-#import "FFDB+All.h"
-
-#import "FFFileViewController.h"
-
-#import "PlayerViewController.h"
-#import "Track+Provider.h"
+#import "FFFileTypeHelper.h"
 
 @interface FFHomeViewController ()
 
@@ -48,21 +43,13 @@
     [self.view addSubview:self.dataTableView];
     
     //
-    [self loadData];
+    [self loadFileInfoInHome];
     
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    @synchronized(self)
-    {
-        if ([self shouldUpdateFileInfo]) {
-            [[NSUserDefaults standardUserDefaults] setValue:@NO forKey:SHOULD_UPDATE_FILE_INFO];
-            [self updateFileInfoBySearchDir];
-        }
-    }
     
 }
 
@@ -95,7 +82,7 @@
     [self doEmptyTipsAction:sender];
 }
 
-- (void)loadData
+- (void)testData
 {
     for (int i=0; i<20; i++) {
         FFDataInfo *dataInfo = [[FFDataInfo alloc] init];
@@ -103,31 +90,42 @@
         dataInfo.dataName = [NSString stringWithFormat:@"FFDataInfo: %d", i];
         [self.dataList addObject:dataInfo];
     }
-    
-    NSMutableArray *tempDataInfoList = [[FFDB sharedInstance] selectDataInfo];
-    [self.dataList removeAllObjects];
-    [self.dataList addObjectsFromArray:tempDataInfoList];
-    
     [self.dataTableView reloadData];
     [self showOrHideEmptyTips];
+}
+
+- (void)loadFileInfoInHome
+{
+    NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+    NSString *webServerPath = [NSString stringWithFormat:@"%@%@", documentsPath, TRANSFER_WEB_SERVER_DIR];
+    PLog(@"webServerPath: %@", webServerPath);
+    
+    [self loadFileInfoWithDir:webServerPath];
+}
+
+- (void)loadFileInfoWithDir:(NSString *)tDir
+{
+    FFGetFileInfoTask *getFileInfoTask = [[FFGetFileInfoTask alloc] init];
+    getFileInfoTask.fileDir = tDir;
+    getFileInfoTask.finishBlock = ^(id task){
+        FFGetFileInfoTask *getTask = task;
+        NSMutableArray *fileInfos = getTask.fileInfoList;
+        for (id obj in fileInfos) {
+            [obj log];
+        }
+        
+        [self.dataList removeAllObjects];
+        [self.dataList addObjectsFromArray:getTask.fileInfoList];
+        [self.dataTableView reloadData];
+        [self showOrHideEmptyTips];
+    };
+    [[FFConcurrentQueue sharedConcurrentQueue] addTask:getFileInfoTask];
 }
 
 - (BOOL)shouldUpdateFileInfo
 {
     BOOL shouldUpdate = [[[NSUserDefaults standardUserDefaults] objectForKey:SHOULD_UPDATE_FILE_INFO] boolValue];
     return shouldUpdate;
-}
-
-- (void)updateFileInfoBySearchDir
-{
-    FFUpdateFileInfoTask *updateFileInfoTask = [[FFUpdateFileInfoTask alloc] init];
-    updateFileInfoTask.finishBlock = ^(id task){
-        FFUpdateFileInfoTask *updateTask = task;
-        [self.dataList removeAllObjects];
-        [self.dataList addObjectsFromArray:updateTask.dataInfoList];
-        [self.dataTableView reloadData];
-    };
-    [[FFConcurrentQueue sharedConcurrentQueue] addTask:updateFileInfoTask];
 }
 
 - (void)showOrHideEmptyTips
@@ -190,30 +188,11 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     FFDataInfo *tempDataInfo = [self.dataList objectAtIndex:indexPath.row];
-    if (tempDataInfo.dataType == FFDataTypeDirectory) {
-        
-        FFFileViewController *fileController = [[FFFileViewController alloc] init];
-        fileController.title = tempDataInfo.dataName;
-        fileController.fileDir = tempDataInfo.dataPath;
-        [self.navigationController pushViewController:fileController animated:YES];
-        
-//        FFHomeViewController *homeController = [[FFHomeViewController alloc] init];
-//        homeController.title = tempDataInfo.dataName;
-//        [self.navigationController pushViewController:homeController animated:YES];
-    } else {
-        PlayerViewController *playerController = [[PlayerViewController alloc] init];
-        if ((tempNum++) % 2) {
-            [playerController setTitle:@"Remote Music ♫"];
-            [playerController setTracks:[Track remoteTracks]];
-        } else {
-            [playerController setTitle:@"Local Music Library ♫"];
-            [playerController setTracks:[Track musicLibraryTracks]];
-        }
-        [GLOBAL_APP_DELEGATE.tabBarController hideFFTabBarView];
-        [self.navigationController pushViewController:playerController animated:YES];
-    }
+    
+    FFFileTypeHelper *fileTypeHelper = [[FFFileTypeHelper alloc] init];
+    fileTypeHelper.viewController = self;
+    fileTypeHelper.dataInfo = tempDataInfo;
+    [fileTypeHelper doActionWithFileType];
 }
-
-static int tempNum = 1;
 
 @end

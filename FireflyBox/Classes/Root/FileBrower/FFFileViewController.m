@@ -9,9 +9,8 @@
 #import "FFFileViewController.h"
 #import "FFGetFileInfoTask.h"
 #import "FFConcurrentQueue.h"
-#import "NSObject+FireFly.h"
 #import "FFFileInfoCell.h"
-#import "FFFileReaderViewController.h"
+#import "FFFileTypeHelper.h"
 
 @interface FFFileViewController ()
 
@@ -94,17 +93,12 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     FFDataInfo *tempDataInfo = [self.dataList objectAtIndex:indexPath.row];
-    if (tempDataInfo.dataType == FFDataTypeDirectory) {
-        FFFileViewController *fileController = [[FFFileViewController alloc] init];
-        fileController.title = tempDataInfo.dataName;
-        fileController.fileDir = tempDataInfo.dataPath;
-        [self.navigationController pushViewController:fileController animated:YES];
-    } else {
-        FFFileReaderViewController *fileReaderController = [[FFFileReaderViewController alloc] init];
-        fileReaderController.title = tempDataInfo.dataName;
-        fileReaderController.filePath = tempDataInfo.dataPath;
-        [self.navigationController pushViewController:fileReaderController animated:YES];
-    }
+    
+    FFFileTypeHelper *fileTypeHelper = [[FFFileTypeHelper alloc] init];
+    fileTypeHelper.viewController = self;
+    fileTypeHelper.dataInfo = tempDataInfo;
+    [fileTypeHelper doActionWithFileType];
+    
 }
 
 @end
