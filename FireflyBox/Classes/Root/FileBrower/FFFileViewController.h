@@ -11,6 +11,7 @@
 @interface FFFileViewController : FFTableViewController
 
 @property (nonatomic, strong) NSString *fileDir;
+@property (nonatomic, strong) NSMutableArray *musicInfoList;
 
 - (void)loadFileInfoWithDir:(NSString *)tDir;
 

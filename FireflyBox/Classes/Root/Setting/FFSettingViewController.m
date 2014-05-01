@@ -81,7 +81,7 @@
 {
     if ([self.dataList count] == 0) {
         if (self.emptyTipsView == nil) {
-            self.emptyTipsView = [[FFEmptyTipsView alloc] initWithFrame:CGRectMake(0, 180, GLOBAL_SCREEN_WIDTH, 100) emptyTips:@"您好像很忙，最近没有使用记录喔"];
+            self.emptyTipsView = [[FFEmptyTipsView alloc] initWithFrame:CGRectMake(0, 100, GLOBAL_SCREEN_WIDTH, 100) emptyTips:@"您好像很忙，最近没有使用记录喔"];
             [self.emptyTipsView.emptyTipsActionButton addTarget:self action:@selector(doEmptyTipsAction:) forControlEvents:UIControlEventTouchUpInside];
             [self.view addSubview:self.emptyTipsView];
         }

@@ -14,6 +14,7 @@
 #import "FFGetFileInfoTask.h"
 #import "FFConcurrentQueue.h"
 #import "FFFileTypeHelper.h"
+#import "FFDB+All.h"
 
 @interface FFHomeViewController ()
 
@@ -43,13 +44,15 @@
     [self.view addSubview:self.dataTableView];
     
     //
-    [self loadFileInfoInHome];
+    
     
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [self loadFileInfoInHome];
     
 }
 
@@ -112,6 +115,7 @@
         NSMutableArray *fileInfos = getTask.fileInfoList;
         for (id obj in fileInfos) {
             [obj log];
+            [[FFDB sharedInstance] insertDataInfo:obj];
         }
         
         [self.dataList removeAllObjects];
@@ -132,7 +136,7 @@
 {
     if ([self.dataList count] == 0) {
         if (self.emptyTipsView == nil) {
-            self.emptyTipsView = [[FFEmptyTipsView alloc] initWithFrame:CGRectMake(0, 180, GLOBAL_SCREEN_WIDTH, 100) emptyTips:@"您还没有导入文件，快点击我吧"];
+            self.emptyTipsView = [[FFEmptyTipsView alloc] initWithFrame:CGRectMake(0, 100, GLOBAL_SCREEN_WIDTH, 100) emptyTips:@"您还没有导入文件，快点击我吧"];
             [self.emptyTipsView.emptyTipsActionButton addTarget:self action:@selector(doEmptyTipsAction:) forControlEvents:UIControlEventTouchUpInside];
             [self.view addSubview:self.emptyTipsView];
         }
@@ -191,6 +195,7 @@
     
     FFFileTypeHelper *fileTypeHelper = [[FFFileTypeHelper alloc] init];
     fileTypeHelper.viewController = self;
+    fileTypeHelper.dataInfoList = self.dataList;
     fileTypeHelper.dataInfo = tempDataInfo;
     [fileTypeHelper doActionWithFileType];
 }

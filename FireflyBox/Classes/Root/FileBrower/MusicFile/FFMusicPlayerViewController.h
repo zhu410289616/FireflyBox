@@ -10,4 +10,6 @@
 
 @interface FFMusicPlayerViewController : FFBaseViewController
 
+@property (strong) NSMutableArray *tracks;
+
 @end

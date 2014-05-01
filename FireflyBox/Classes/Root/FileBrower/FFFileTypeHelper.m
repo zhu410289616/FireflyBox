@@ -8,7 +8,11 @@
 
 #import "FFFileTypeHelper.h"
 #import "FFFileViewController.h"
+#import "FFFileReaderViewController.h"//default
 #import "FFTextReaderViewController.h"
+
+#import "FFTrack.h"
+#import "FFMusicPlayerViewController.h"
 
 //
 #import "PlayerViewController.h"
@@ -20,7 +24,7 @@ static int tempNum = 1;
 
 - (void)doActionWithFileType
 {
-    FFFileType fileType = [self checkFileType];
+    FFFileType fileType = [self checkFileType:_dataInfo.dataPath];
     switch (fileType) {
         case FFFileTypeDirectory:
         {
@@ -45,15 +49,10 @@ static int tempNum = 1;
         case FFFileTypeMusic:
         {
             [GLOBAL_APP_DELEGATE.tabBarController hideFFTabBarView];
-            PlayerViewController *playerController = [[PlayerViewController alloc] init];
-            if ((tempNum++) % 2) {
-                [playerController setTitle:@"Remote Music ♫"];
-                [playerController setTracks:[Track remoteTracks]];
-            } else {
-                [playerController setTitle:@"Local Music Library ♫"];
-                [playerController setTracks:[Track musicLibraryTracks]];
-            }
-            [_viewController.navigationController pushViewController:playerController animated:YES];
+            FFMusicPlayerViewController *musicController = [[FFMusicPlayerViewController alloc] init];
+            musicController.tracks = [self getMusicInfoList];
+            musicController.title = [NSString stringWithFormat:@"Music(%d)", [[self getMusicInfoList] count]];
+            [_viewController.navigationController pushViewController:musicController animated:YES];
         }
             break;
         case FFFileTypeVideo:
@@ -77,11 +76,11 @@ static int tempNum = 1;
 
 #pragma mark private function
 
-- (FFFileType)checkFileType
+- (FFFileType)checkFileType:(NSString *)tFilePath
 {
     FFFileType fileType = FFFileTypeUnkown;
     
-    NSString *filePath = [_dataInfo.dataPath lowercaseString];
+    NSString *filePath = [tFilePath lowercaseString];
     if (_dataInfo.dataType == FFDataTypeDirectory) {
         fileType = FFFileTypeDirectory;
     } else if ([filePath hasSuffix:@".txt"]) {
@@ -90,7 +89,7 @@ static int tempNum = 1;
         fileType = FFFileTypeImage;
     } else if ([filePath hasSuffix:@".gif"]) {
         fileType = FFFileTypeImageGif;
-    } else if ([filePath hasSuffix:@".m4a"]) {
+    } else if ([filePath hasSuffix:@".m4a"] || [filePath hasSuffix:@".mp3"] || [filePath hasSuffix:@".caf"]) {
         fileType = FFFileTypeMusic;
     } else if ([filePath hasSuffix:@".mp4"]) {
         fileType = FFFileTypeVideo;
@@ -100,6 +99,28 @@ static int tempNum = 1;
         _fileTypeBlock(fileType);
     }
     return fileType;
+}
+
+- (NSMutableArray *)getMusicInfoList
+{
+    NSMutableArray *musicInfoList = [[NSMutableArray alloc] init];
+    for (FFDataInfo *dataInfo in _dataInfoList) {
+        if (FFFileTypeMusic == [self checkFileType:dataInfo.dataPath]) {
+            FFTrack *track = [[FFTrack alloc] init];
+            track.artist = [NSString stringWithFormat:@"%ld", dataInfo.dataId];
+            track.title = dataInfo.dataName;
+            track.audioFileURL = [NSURL URLWithString:dataInfo.dataPath];
+            [musicInfoList addObject:track];
+        }
+    }
+    
+    if ((tempNum++) % 2) {
+        [musicInfoList addObjectsFromArray:[Track remoteTracks]];
+    } else {
+        [musicInfoList addObjectsFromArray:[Track musicLibraryTracks]];
+    }
+    
+    return musicInfoList;
 }
 
 @end

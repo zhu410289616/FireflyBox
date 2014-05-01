@@ -24,6 +24,7 @@ typedef void(^CheckFileTypeBlock)(FFFileType fileType);
 @interface FFFileTypeHelper : NSObject
 
 @property (nonatomic, assign) UIViewController *viewController;
+@property (nonatomic, strong) NSMutableArray *dataInfoList;
 @property (nonatomic, strong) FFDataInfo *dataInfo;
 @property (nonatomic, copy) CheckFileTypeBlock fileTypeBlock;
 

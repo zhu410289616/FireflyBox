@@ -96,6 +96,7 @@
     
     FFFileTypeHelper *fileTypeHelper = [[FFFileTypeHelper alloc] init];
     fileTypeHelper.viewController = self;
+    fileTypeHelper.dataInfoList = self.dataList;
     fileTypeHelper.dataInfo = tempDataInfo;
     [fileTypeHelper doActionWithFileType];
     
