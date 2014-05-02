@@ -32,8 +32,7 @@
             NSString *infoPath = [NSString stringWithFormat:@"%@/%@", _fileDir, info];
             NSDictionary *fileAttributes = [fm attributesOfItemAtPath:infoPath error:&error];
             
-            FFDataInfo *dataInfo = [[FFDataInfo alloc] initWithFileAttributes:fileAttributes];
-            dataInfo.dataName = info;
+            FFDataInfo *dataInfo = [[FFDataInfo alloc] initWithFileAttributes:fileAttributes name:info];
             dataInfo.dataPath = infoPath;
             
             [_fileInfoList addObject:dataInfo];

@@ -15,6 +15,7 @@
 		161FF074191273B600CDD559 /* FFMusicPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 161FF073191273B600CDD559 /* FFMusicPlayerViewController.m */; };
 		161FF0771912780300CDD559 /* FFTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 161FF0761912780300CDD559 /* FFTrack.m */; };
 		161FF07B19127F4200CDD559 /* FFFileTypeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 161FF07919127F4200CDD559 /* FFFileTypeHelper.m */; };
+		1620DCD61913338300AE810C /* FFFileTypeIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1620DCD51913338300AE810C /* FFFileTypeIconView.m */; };
 		1624B881190930E40018B8FE /* FFHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1624B880190930E40018B8FE /* FFHUDViewController.m */; };
 		1624B8841909311C0018B8FE /* FFTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1624B8831909311C0018B8FE /* FFTableViewController.m */; };
 		1624B88A190937510018B8FE /* FFDataInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1624B889190937510018B8FE /* FFDataInfo.m */; };
@@ -161,6 +162,8 @@
 		161FF0761912780300CDD559 /* FFTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTrack.m; sourceTree = "<group>"; };
 		161FF07819127F4200CDD559 /* FFFileTypeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFileTypeHelper.h; sourceTree = "<group>"; };
 		161FF07919127F4200CDD559 /* FFFileTypeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFileTypeHelper.m; sourceTree = "<group>"; };
+		1620DCD41913338300AE810C /* FFFileTypeIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFileTypeIconView.h; sourceTree = "<group>"; };
+		1620DCD51913338300AE810C /* FFFileTypeIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFileTypeIconView.m; sourceTree = "<group>"; };
 		1624B87F190930E40018B8FE /* FFHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFHUDViewController.h; sourceTree = "<group>"; };
 		1624B880190930E40018B8FE /* FFHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFHUDViewController.m; sourceTree = "<group>"; };
 		1624B8821909311C0018B8FE /* FFTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTableViewController.h; sourceTree = "<group>"; };
@@ -434,6 +437,8 @@
 				161FF05F19124B4F00CDD559 /* FFFileInfoCell.m */,
 				161FF06019124B4F00CDD559 /* FFFileViewController.h */,
 				161FF06119124B4F00CDD559 /* FFFileViewController.m */,
+				1620DCD41913338300AE810C /* FFFileTypeIconView.h */,
+				1620DCD51913338300AE810C /* FFFileTypeIconView.m */,
 			);
 			path = FileBrower;
 			sourceTree = "<group>";
@@ -1157,6 +1162,7 @@
 				16CF24311910948B0029F3D2 /* DOUAudioPlaybackItem.m in Sources */,
 				161FF070191266BF00CDD559 /* UIViewController+FireFly.m in Sources */,
 				1624B8841909311C0018B8FE /* FFTableViewController.m in Sources */,
+				1620DCD61913338300AE810C /* FFFileTypeIconView.m in Sources */,
 				16CF24361910948B0029F3D2 /* DOUAudioVisualizer.m in Sources */,
 				1624B88D190938D90018B8FE /* FFBarButtonItem.m in Sources */,
 				16ED1D56190B78B9007EC697 /* GCDWebServerFileResponse.m in Sources */,

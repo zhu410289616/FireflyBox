@@ -8,8 +8,11 @@
 
 #import "FFHeadImageCell.h"
 #import "FFDataInfo.h"
+#import "FFFileTypeIconView.h"
 
 @interface FFFileInfoCell : FFHeadImageCell
+
+@property (nonatomic, strong) FFFileTypeIconView *typeIconView;
 
 - (void)updateViewWithContent:(FFDataInfo *)tDataInfo;
 

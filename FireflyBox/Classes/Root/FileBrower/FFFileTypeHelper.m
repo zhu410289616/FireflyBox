@@ -24,7 +24,7 @@ static int tempNum = 1;
 
 - (void)doActionWithFileType
 {
-    FFFileType fileType = [self checkFileType:_dataInfo.dataPath];
+    FFFileType fileType = _dataInfo.fileType;
     switch (fileType) {
         case FFFileTypeDirectory:
         {
@@ -76,36 +76,11 @@ static int tempNum = 1;
 
 #pragma mark private function
 
-- (FFFileType)checkFileType:(NSString *)tFilePath
-{
-    FFFileType fileType = FFFileTypeUnkown;
-    
-    NSString *filePath = [tFilePath lowercaseString];
-    if (_dataInfo.dataType == FFDataTypeDirectory) {
-        fileType = FFFileTypeDirectory;
-    } else if ([filePath hasSuffix:@".txt"]) {
-        fileType = FFFileTypeText;
-    } else if ([filePath hasSuffix:@".png"] || [filePath hasSuffix:@".jpg"]) {
-        fileType = FFFileTypeImage;
-    } else if ([filePath hasSuffix:@".gif"]) {
-        fileType = FFFileTypeImageGif;
-    } else if ([filePath hasSuffix:@".m4a"] || [filePath hasSuffix:@".mp3"] || [filePath hasSuffix:@".caf"]) {
-        fileType = FFFileTypeMusic;
-    } else if ([filePath hasSuffix:@".mp4"]) {
-        fileType = FFFileTypeVideo;
-    }
-    
-    if (_fileTypeBlock) {
-        _fileTypeBlock(fileType);
-    }
-    return fileType;
-}
-
 - (NSMutableArray *)getMusicInfoList
 {
     NSMutableArray *musicInfoList = [[NSMutableArray alloc] init];
     for (FFDataInfo *dataInfo in _dataInfoList) {
-        if (FFFileTypeMusic == [self checkFileType:dataInfo.dataPath]) {
+        if (FFFileTypeMusic == dataInfo.fileType) {
             FFTrack *track = [[FFTrack alloc] init];
             track.artist = [NSString stringWithFormat:@"%ld", dataInfo.dataId];
             track.title = dataInfo.dataName;

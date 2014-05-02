@@ -10,7 +10,7 @@
 
 @implementation FFDataInfo
 
-- (id)initWithFileAttributes:(NSDictionary *)fileAttributes
+- (id)initWithFileAttributes:(NSDictionary *)fileAttributes name:(NSString *)name
 {
     if (self = [super init]) {
         for (NSString *str in fileAttributes) {
@@ -20,13 +20,17 @@
         NSString *fileType = [fileAttributes objectForKey:@"NSFileType"];
         NSString *fileCreationDate = [fileAttributes objectForKey:@"NSFileCreationDate"];
         
+        _dataName = name;
         _dataId = fileNumber;
         if ([fileType isEqualToString:NSFileTypeDirectory]) {
             _dataType = FFDataTypeDirectory;
+            _fileType = FFFileTypeDirectory;
         } else if ([fileType isEqualToString:NSFileTypeRegular]) {
             _dataType = FFDataTypeRegular;
+            [self getFileType:name];
         } else {
             _dataType = FFDataTypeUnknow;
+            _fileType = FFFileTypeUnkown;
         }
         _creationDate = fileCreationDate;
     }
@@ -46,9 +50,28 @@
     return self;
 }
 
-- (void)log
+- (void)getFileType:(NSString *)tFilePath
 {
-    PLog(@"_dataId: %ld, _dataType: %d, _dataName: %@, _creationDate: %@, _dataPath: %@", _dataId, _dataType, _dataName, _creationDate, _dataPath);
+    _fileType = FFFileTypeUnkown;
+    _showColor = [UIColor blackColor];
+    
+    NSString *filePath = [tFilePath lowercaseString];
+    if ([filePath hasSuffix:@".txt"]) {
+        _fileType = FFFileTypeText;
+        _showColor = [UIColor blueColor];
+    } else if ([filePath hasSuffix:@".png"] || [filePath hasSuffix:@".jpg"]) {
+        _fileType = FFFileTypeImage;
+        _showColor = [UIColor purpleColor];
+    } else if ([filePath hasSuffix:@".gif"]) {
+        _fileType = FFFileTypeImageGif;
+        _showColor = [UIColor lightGrayColor];
+    } else if ([filePath hasSuffix:@".m4a"] || [filePath hasSuffix:@".mp3"] || [filePath hasSuffix:@".caf"]) {
+        _fileType = FFFileTypeMusic;
+        _showColor = [UIColor redColor];
+    } else if ([filePath hasSuffix:@".mp4"]) {
+        _fileType = FFFileTypeVideo;
+        _showColor = [UIColor greenColor];
+    }
 }
 
 @end
