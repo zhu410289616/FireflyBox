@@ -99,7 +99,7 @@ static int tempNum = 1;
     }
     
     if ((tempNum++) % 2) {
-        [musicInfoList addObjectsFromArray:[Track remoteTracks]];
+//        [musicInfoList addObjectsFromArray:[Track remoteTracks]];
     } else {
         [musicInfoList addObjectsFromArray:[Track musicLibraryTracks]];
     }

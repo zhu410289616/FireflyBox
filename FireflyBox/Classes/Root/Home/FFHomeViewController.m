@@ -38,24 +38,26 @@
     FFBarButtonItem *tempBarButtonItem = [[FFBarButtonItem alloc] initWithTitle:@"添加" style:UIBarButtonItemStylePlain target:self action:@selector(doRightBarButtonItemAction:)];
     self.navigationItem.rightBarButtonItem = tempBarButtonItem;
     
+    self.dataTableView.frame = CGRectMake(0, 0, GLOBAL_SCREEN_WIDTH, GLOBAL_SCREEN_HEIGHT);
+    self.dataTableView.delegate = self;
+    self.dataTableView.dataSource = self;
+    [self.view addSubview:self.dataTableView];
+    
+    UIView *tableHeaderView = [[UIView alloc] init];
+    tableHeaderView.frame = CGRectMake(0, 0, GLOBAL_SCREEN_WIDTH, 44.0f);
     _searchBar = [[UISearchBar alloc] init];
     _searchBar.frame = CGRectMake(0.0f, 0.0f, GLOBAL_SCREEN_WIDTH, 44.0f);
     _searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
     _searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
     _searchBar.keyboardType = UIKeyboardTypeDefault;
     _searchBar.delegate = self;
-    [self.view addSubview:_searchBar];
+    [tableHeaderView addSubview:_searchBar];
+    self.dataTableView.tableHeaderView = tableHeaderView;
     
     _searchDC = [[UISearchDisplayController alloc] initWithSearchBar:_searchBar contentsController:self];
     _searchDC.searchResultsDelegate = self;
     _searchDC.searchResultsDataSource = self;
     _searchDC.searchResultsTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    
-    //
-    self.dataTableView.frame = CGRectMake(0, 44, GLOBAL_SCREEN_WIDTH, GLOBAL_SCREEN_HEIGHT - 44);
-    self.dataTableView.delegate = self;
-    self.dataTableView.dataSource = self;
-    [self.view addSubview:self.dataTableView];
     
     //
     _filterDataList = [[NSMutableArray alloc] init];
