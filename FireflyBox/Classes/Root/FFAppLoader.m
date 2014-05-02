@@ -52,4 +52,9 @@
     
 }
 
+- (void)testFunction
+{
+    [UIFont showAllFont];
+}
+
 @end

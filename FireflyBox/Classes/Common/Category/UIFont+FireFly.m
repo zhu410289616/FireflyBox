@@ -10,9 +10,22 @@
 
 @implementation UIFont (FireFly)
 
++ (void)showAllFont
+{
+    NSArray *familyNames = [UIFont familyNames];
+    for (id obj in familyNames) {
+        NSLog(@"obj: %@", obj);
+    }
+}
+
 + (UIFont *)fontOfApp:(CGFloat)tFontSize
 {
     return [UIFont fontWithName:@"Helvetica Neue" size:tFontSize];
+}
+
++ (UIFont *)fontWithBoldOfApp:(CGFloat)tFontSize
+{
+    return [UIFont fontWithName:@"HelveticaNeue-Medium" size:tFontSize];
 }
 
 @end

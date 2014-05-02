@@ -17,4 +17,6 @@
 - (void)initLoader;
 - (void)initAppLevelUIConfig;
 
+- (void)testFunction;
+
 @end

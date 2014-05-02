@@ -25,12 +25,14 @@
         if ([fileType isEqualToString:NSFileTypeDirectory]) {
             _dataType = FFDataTypeDirectory;
             _fileType = FFFileTypeDirectory;
+            _showColor = [UIColor grayColor];
         } else if ([fileType isEqualToString:NSFileTypeRegular]) {
             _dataType = FFDataTypeRegular;
             [self getFileType:name];
         } else {
             _dataType = FFDataTypeUnknow;
             _fileType = FFFileTypeUnkown;
+            _showColor = [UIColor blackColor];
         }
         _creationDate = fileCreationDate;
     }
@@ -59,6 +61,9 @@
     if ([filePath hasSuffix:@".txt"]) {
         _fileType = FFFileTypeText;
         _showColor = [UIColor blueColor];
+    } else if ([filePath hasPrefix:@".pdf"]) {
+        _fileType = FFFileTypePdf;
+        _showColor = [UIColor yellowColor];
     } else if ([filePath hasSuffix:@".png"] || [filePath hasSuffix:@".jpg"]) {
         _fileType = FFFileTypeImage;
         _showColor = [UIColor purpleColor];

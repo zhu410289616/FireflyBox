@@ -43,6 +43,15 @@ static int tempNum = 1;
             [_viewController.navigationController pushViewController:textController animated:YES];
         }
             break;
+        case FFFileTypePdf:
+        {
+            [GLOBAL_APP_DELEGATE.tabBarController hideFFTabBarView];
+            FFFileReaderViewController *readerController = [[FFFileReaderViewController alloc] init];
+            readerController.title = _dataInfo.dataName;
+            readerController.filePath = _dataInfo.dataPath;
+            [_viewController.navigationController pushViewController:readerController animated:YES];
+        }
+            break;
         case FFFileTypeImage:
         {}
             break;

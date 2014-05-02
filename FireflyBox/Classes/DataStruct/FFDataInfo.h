@@ -26,6 +26,7 @@ typedef enum {
     FFFileTypeUnkown = -1,
     FFFileTypeDirectory = 0,
     FFFileTypeText = 1,
+    FFFileTypePdf,
     FFFileTypeImage,
     FFFileTypeImageGif,
     FFFileTypeMusic,

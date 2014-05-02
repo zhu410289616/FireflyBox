@@ -20,7 +20,7 @@
         _fileTypeLabel.backgroundColor = [UIColor clearColor];
         _fileTypeLabel.textAlignment = NSTextAlignmentCenter;
         _fileTypeLabel.textColor = [UIColor whiteColor];
-        _fileTypeLabel.font = [UIFont fontOfApp:14.0f];
+        _fileTypeLabel.font = [UIFont fontWithBoldOfApp:14.0f];
         [self addSubview:_fileTypeLabel];
     }
     return self;
@@ -30,7 +30,7 @@
 {
     self.backgroundColor = showColor;
     _fileTypeLabel.frame = self.bounds;
-    _fileTypeLabel.text = title;
+    _fileTypeLabel.text = (title.length > 4) ? [title substringToIndex:4] : title;
 }
 
 @end

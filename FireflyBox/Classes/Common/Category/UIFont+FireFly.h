@@ -10,6 +10,9 @@
 
 @interface UIFont (FireFly)
 
++ (void)showAllFont;
+
 + (UIFont *)fontOfApp:(CGFloat)tFontSize;
++ (UIFont *)fontWithBoldOfApp:(CGFloat)tFontSize;
 
 @end
