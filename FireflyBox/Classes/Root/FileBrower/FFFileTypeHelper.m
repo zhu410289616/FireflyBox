@@ -93,7 +93,7 @@ static int tempNum = 1;
             FFTrack *track = [[FFTrack alloc] init];
             track.artist = [NSString stringWithFormat:@"%ld", dataInfo.dataId];
             track.title = dataInfo.dataName;
-            track.audioFileURL = [NSURL URLWithString:dataInfo.dataPath];
+            track.audioFileURL = [NSURL fileURLWithPath:dataInfo.dataPath isDirectory:NO];
             [musicInfoList addObject:track];
         }
     }
