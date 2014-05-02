@@ -8,9 +8,6 @@
 
 #import "AppDelegate.h"
 #import "FFAppLoader.h"
-#import "FFHomeViewController.h"
-#import "FFRecentViewController.h"
-#import "FFSettingViewController.h"
 
 @implementation AppDelegate
 
@@ -22,24 +19,9 @@
     //
     [[FFAppLoader sharedInstance] initLoader];
     
-    FFHomeViewController *homeController = [[FFHomeViewController alloc] init];
-    UINavigationController *homeNav = [[UINavigationController alloc] initWithRootViewController:homeController];
-    FFRecentViewController *recentController = [[FFRecentViewController alloc] init];
-    UINavigationController *recentNav = [[UINavigationController alloc] initWithRootViewController:recentController];
-    FFSettingViewController *settingController = [[FFSettingViewController alloc] init];
-    UINavigationController *settingNav = [[UINavigationController alloc] initWithRootViewController:settingController];
+    //
     _tabBarController = [[FFRootTabBarController alloc] init];
-    _tabBarController.viewControllers = [NSArray arrayWithObjects:homeNav, recentNav, settingNav, nil];
-//    _tabBarController.viewControllers = [NSArray arrayWithObjects:homeController, recentController, settingController, nil];
-//    homeController.hidesBottomBarWhenPushed = YES;
-//    recentController.hidesBottomBarWhenPushed = YES;
-//    settingController.hidesBottomBarWhenPushed = YES;
-    
     self.window.rootViewController = _tabBarController;
-    
-//    UINavigationController *rootNav = [[UINavigationController alloc] initWithRootViewController:_tabBarController];
-//    rootNav.navigationBar.hidden = YES;
-//    self.window.rootViewController = rootNav;
     
     //
     self.window.backgroundColor = [UIColor whiteColor];

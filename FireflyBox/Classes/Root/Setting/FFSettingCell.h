@@ -6,8 +6,10 @@
 //  Copyright (c) 2014年 pig. All rights reserved.
 //
 
-#import "FFBaseTableCell.h"
+#import "FFSingleTextCell.h"
 
-@interface FFSettingCell : FFBaseTableCell
+@interface FFSettingCell : FFSingleTextCell
+
+- (void)updateViewWithContent:(NSString *)menuName;
 
 @end

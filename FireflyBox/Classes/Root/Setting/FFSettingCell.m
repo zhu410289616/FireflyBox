@@ -15,8 +15,15 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
+        
+        self.titleLabel.frame = CGRectMake(15, 0, GLOBAL_SCREEN_WIDTH - 30, 44);
     }
     return self;
+}
+
+- (void)updateViewWithContent:(NSString *)menuName
+{
+    self.titleLabel.text = [NSString stringWithFormat:@"%@", menuName];
 }
 
 @end

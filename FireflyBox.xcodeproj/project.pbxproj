@@ -15,7 +15,6 @@
 		161FF0771912780300CDD559 /* FFTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 161FF0761912780300CDD559 /* FFTrack.m */; };
 		161FF07B19127F4200CDD559 /* FFFileTypeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 161FF07919127F4200CDD559 /* FFFileTypeHelper.m */; };
 		1620DCD61913338300AE810C /* FFFileTypeIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1620DCD51913338300AE810C /* FFFileTypeIconView.m */; };
-		1620DCDA19136B7500AE810C /* FFSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1620DCD919136B7500AE810C /* FFSearchTableViewController.m */; };
 		1620DCE31913805500AE810C /* FFBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1620DCDE1913805500AE810C /* FFBaseTabBarController.m */; };
 		1620DCE41913805500AE810C /* FFTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1620DCE01913805500AE810C /* FFTabBarItem.m */; };
 		1620DCE51913805500AE810C /* FFTabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1620DCE21913805500AE810C /* FFTabBarView.m */; };
@@ -31,6 +30,10 @@
 		1620DD0419138F2800AE810C /* UIButton+FireFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 1620DD0319138F2800AE810C /* UIButton+FireFly.m */; };
 		1620DD0A19139F1700AE810C /* FFBaseActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1620DD0919139F1700AE810C /* FFBaseActionView.m */; };
 		1620DD0D19139F5200AE810C /* FFIconActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1620DD0C19139F5200AE810C /* FFIconActionView.m */; };
+		1620DD131913E04A00AE810C /* FFAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1620DD121913E04A00AE810C /* FFAboutViewController.m */; };
+		1620DD161913E1BB00AE810C /* FFTransferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1620DD151913E1BB00AE810C /* FFTransferViewController.m */; };
+		1620DD1B1913EE4300AE810C /* Icon_120_120@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1620DD191913EE4300AE810C /* Icon_120_120@2x.png */; };
+		1620DD1C1913EE4300AE810C /* Icon_200_200@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1620DD1A1913EE4300AE810C /* Icon_200_200@2x.png */; };
 		1624B881190930E40018B8FE /* FFHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1624B880190930E40018B8FE /* FFHUDViewController.m */; };
 		1624B8841909311C0018B8FE /* FFTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1624B8831909311C0018B8FE /* FFTableViewController.m */; };
 		1624B88A190937510018B8FE /* FFDataInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1624B889190937510018B8FE /* FFDataInfo.m */; };
@@ -40,7 +43,6 @@
 		1624B89E19093C140018B8FE /* FFHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1624B89519093C140018B8FE /* FFHomeViewController.m */; };
 		1624B89F19093C140018B8FE /* FFRecentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1624B89819093C140018B8FE /* FFRecentViewController.m */; };
 		1624B8A019093C140018B8FE /* FFSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1624B89B19093C140018B8FE /* FFSettingViewController.m */; };
-		1624B8A319093CA30018B8FE /* FFTransferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1624B8A219093CA30018B8FE /* FFTransferViewController.m */; };
 		162F9157190956FD004D0C25 /* FFBaseTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 162F9156190956FD004D0C25 /* FFBaseTableCell.m */; };
 		162F915A19095740004D0C25 /* FFRecentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 162F915919095740004D0C25 /* FFRecentCell.m */; };
 		167E7126190B82040014ADEB /* transfer_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 167E7124190B82040014ADEB /* transfer_bg.png */; };
@@ -167,8 +169,6 @@
 		161FF07919127F4200CDD559 /* FFFileTypeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFileTypeHelper.m; sourceTree = "<group>"; };
 		1620DCD41913338300AE810C /* FFFileTypeIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFileTypeIconView.h; sourceTree = "<group>"; };
 		1620DCD51913338300AE810C /* FFFileTypeIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFileTypeIconView.m; sourceTree = "<group>"; };
-		1620DCD819136B7500AE810C /* FFSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFSearchTableViewController.h; sourceTree = "<group>"; };
-		1620DCD919136B7500AE810C /* FFSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFSearchTableViewController.m; sourceTree = "<group>"; };
 		1620DCDD1913805500AE810C /* FFBaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseTabBarController.h; sourceTree = "<group>"; };
 		1620DCDE1913805500AE810C /* FFBaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseTabBarController.m; sourceTree = "<group>"; };
 		1620DCDF1913805500AE810C /* FFTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTabBarItem.h; sourceTree = "<group>"; };
@@ -199,6 +199,12 @@
 		1620DD0919139F1700AE810C /* FFBaseActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseActionView.m; sourceTree = "<group>"; };
 		1620DD0B19139F5200AE810C /* FFIconActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFIconActionView.h; sourceTree = "<group>"; };
 		1620DD0C19139F5200AE810C /* FFIconActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFIconActionView.m; sourceTree = "<group>"; };
+		1620DD111913E04A00AE810C /* FFAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFAboutViewController.h; sourceTree = "<group>"; };
+		1620DD121913E04A00AE810C /* FFAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFAboutViewController.m; sourceTree = "<group>"; };
+		1620DD141913E1BB00AE810C /* FFTransferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTransferViewController.h; sourceTree = "<group>"; };
+		1620DD151913E1BB00AE810C /* FFTransferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTransferViewController.m; sourceTree = "<group>"; };
+		1620DD191913EE4300AE810C /* Icon_120_120@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon_120_120@2x.png"; sourceTree = "<group>"; };
+		1620DD1A1913EE4300AE810C /* Icon_200_200@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon_200_200@2x.png"; sourceTree = "<group>"; };
 		1624B87F190930E40018B8FE /* FFHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFHUDViewController.h; sourceTree = "<group>"; };
 		1624B880190930E40018B8FE /* FFHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFHUDViewController.m; sourceTree = "<group>"; };
 		1624B8821909311C0018B8FE /* FFTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTableViewController.h; sourceTree = "<group>"; };
@@ -217,8 +223,6 @@
 		1624B89819093C140018B8FE /* FFRecentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFRecentViewController.m; sourceTree = "<group>"; };
 		1624B89A19093C140018B8FE /* FFSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFSettingViewController.h; sourceTree = "<group>"; };
 		1624B89B19093C140018B8FE /* FFSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFSettingViewController.m; sourceTree = "<group>"; };
-		1624B8A119093CA30018B8FE /* FFTransferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTransferViewController.h; sourceTree = "<group>"; };
-		1624B8A219093CA30018B8FE /* FFTransferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTransferViewController.m; sourceTree = "<group>"; };
 		162F9155190956FD004D0C25 /* FFBaseTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseTableCell.h; sourceTree = "<group>"; };
 		162F9156190956FD004D0C25 /* FFBaseTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseTableCell.m; sourceTree = "<group>"; };
 		162F915819095740004D0C25 /* FFRecentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFRecentCell.h; sourceTree = "<group>"; };
@@ -441,6 +445,8 @@
 		161FF05D19124B4F00CDD559 /* FileBrower */ = {
 			isa = PBXGroup;
 			children = (
+				1620DD141913E1BB00AE810C /* FFTransferViewController.h */,
+				1620DD151913E1BB00AE810C /* FFTransferViewController.m */,
 				161FF07819127F4200CDD559 /* FFFileTypeHelper.h */,
 				161FF07919127F4200CDD559 /* FFFileTypeHelper.m */,
 				161FF07A19127F4200CDD559 /* ImageFile */,
@@ -534,9 +540,19 @@
 			path = FFCategory;
 			sourceTree = "<group>";
 		};
+		1620DD101913E02600AE810C /* About */ = {
+			isa = PBXGroup;
+			children = (
+				1620DD111913E04A00AE810C /* FFAboutViewController.h */,
+				1620DD121913E04A00AE810C /* FFAboutViewController.m */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
 		1624B88E19093C140018B8FE /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				1620DD101913E02600AE810C /* About */,
 				161FF05D19124B4F00CDD559 /* FileBrower */,
 				16CF243F19109CF00029F3D2 /* MusicPlayer */,
 				1624B88F19093C140018B8FE /* FFAppLoader.h */,
@@ -546,8 +562,6 @@
 				1624B89319093C140018B8FE /* Home */,
 				1624B89619093C140018B8FE /* Recent */,
 				1624B89919093C140018B8FE /* Setting */,
-				1624B8A119093CA30018B8FE /* FFTransferViewController.h */,
-				1624B8A219093CA30018B8FE /* FFTransferViewController.m */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -588,6 +602,8 @@
 		167E711E190B7FE80014ADEB /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1620DD191913EE4300AE810C /* Icon_120_120@2x.png */,
+				1620DD1A1913EE4300AE810C /* Icon_200_200@2x.png */,
 				167E711F190B7FE80014ADEB /* Transfer */,
 			);
 			path = Images;
@@ -749,8 +765,6 @@
 				16A5B13C190C0C8D000FA5C4 /* FFSingleTextCell.m */,
 				16A5B13E190C0CB9000FA5C4 /* FFHeadImageCell.h */,
 				16A5B13F190C0CB9000FA5C4 /* FFHeadImageCell.m */,
-				1620DCD819136B7500AE810C /* FFSearchTableViewController.h */,
-				1620DCD919136B7500AE810C /* FFSearchTableViewController.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1137,8 +1151,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1620DD1B1913EE4300AE810C /* Icon_120_120@2x.png in Resources */,
 				16A2F77C1902663100751B82 /* InfoPlist.strings in Resources */,
 				167E7126190B82040014ADEB /* transfer_bg.png in Resources */,
+				1620DD1C1913EE4300AE810C /* Icon_200_200@2x.png in Resources */,
 				16ED1D58190B78B9007EC697 /* GCDWebUploader.bundle in Resources */,
 				16A2F7841902663100751B82 /* Images.xcassets in Resources */,
 				167E7127190B82040014ADEB /* transfer_bg@2x.png in Resources */,
@@ -1169,6 +1185,7 @@
 				16A2F8ED1902D5C100751B82 /* AFXMLRequestOperation.m in Sources */,
 				16ED1D4E190B78B9007EC697 /* GCDWebServerRequest.m in Sources */,
 				1620DCFB1913807200AE810C /* UIFont+FireFly.m in Sources */,
+				1620DD161913E1BB00AE810C /* FFTransferViewController.m in Sources */,
 				1624B88A190937510018B8FE /* FFDataInfo.m in Sources */,
 				1620DCE31913805500AE810C /* FFBaseTabBarController.m in Sources */,
 				1624B8A019093C140018B8FE /* FFSettingViewController.m in Sources */,
@@ -1242,13 +1259,12 @@
 				16A2F8EC1902D5C100751B82 /* AFURLConnectionOperation.m in Sources */,
 				1620DCFD1913807200AE810C /* UIView+FireFly.m in Sources */,
 				1620DCF81913807200AE810C /* NSString+FireFly.m in Sources */,
-				1624B8A319093CA30018B8FE /* FFTransferViewController.m in Sources */,
 				1620DD0419138F2800AE810C /* UIButton+FireFly.m in Sources */,
+				1620DD131913E04A00AE810C /* FFAboutViewController.m in Sources */,
 				1624B89C19093C140018B8FE /* FFAppLoader.m in Sources */,
 				16A2F8F91902D5C100751B82 /* FMDatabaseQueue.m in Sources */,
 				16A2F8E71902D5C100751B82 /* AFHTTPRequestOperation.m in Sources */,
 				16CF242C1910948B0029F3D2 /* DOUAudioEventLoop.m in Sources */,
-				1620DCDA19136B7500AE810C /* FFSearchTableViewController.m in Sources */,
 				161FF06219124B4F00CDD559 /* FFFileInfoCell.m in Sources */,
 				1620DCF71913807200AE810C /* NSObject+FireFly.m in Sources */,
 				16CF24391910948B0029F3D2 /* DOUMPMediaLibraryAssetLoader.m in Sources */,
@@ -1349,7 +1365,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1383,7 +1399,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1400,6 +1416,7 @@
 				GCC_PREFIX_HEADER = "FireflyBox/FireflyBox-Prefix.pch";
 				INFOPLIST_FILE = "FireflyBox/FireflyBox-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1414,6 +1431,7 @@
 				GCC_PREFIX_HEADER = "FireflyBox/FireflyBox-Prefix.pch";
 				INFOPLIST_FILE = "FireflyBox/FireflyBox-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

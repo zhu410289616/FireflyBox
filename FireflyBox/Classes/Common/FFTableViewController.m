@@ -23,6 +23,7 @@
     _dataTableView.frame = CGRectMake(0, 0, GLOBAL_SCREEN_WIDTH, GLOBAL_SCREEN_HEIGHT);
     _dataTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     _dataTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _dataTableView.backgroundColor = [UIColor colorWithHex:0xe5e5e5];
     [self.view addSubview:_dataTableView];
     
     _dataList = [[NSMutableArray alloc] init];

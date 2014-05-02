@@ -112,7 +112,7 @@
     _cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _cancelButton.frame = CGRectMake(0, posy, GLOBAL_SCREEN_WIDTH, CANCEL_BUTTON_HEIGHT);
     _cancelButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-    _cancelButton.titleLabel.font = [UIFont boldSystemFontOfSize:19.0f];
+    _cancelButton.titleLabel.font = [UIFont fontWithBoldOfApp:19.0f];
     [_cancelButton styleWithTitle:@"Cancel" titleColor:[UIColor colorWithHex:0x157dfb]];
     [_cancelButton styleWithBackgroundColor:[UIColor colorWithHex:0xf8f8f8]];
     [_cancelButton highlightedStyleWithBackgroundColor:[UIColor colorWithHex:0xd9d9d9]];

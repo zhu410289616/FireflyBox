@@ -187,4 +187,13 @@ double R = 6371004;
     return strTime;
 }
 
+//version
++ (NSString *)getBundleVersion
+{
+    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"Info" ofType:@"plist"];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:bundlePath];
+    NSString *bundleVersion = [dict objectForKey:@"CFBundleVersion"];
+    return bundleVersion;
+}
+
 @end

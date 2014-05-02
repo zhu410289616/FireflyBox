@@ -34,7 +34,6 @@
             tabBarItem.frame = CGRectMake(i * tabBarWidth, 0, tabBarWidth, tabBarHeight);
             tabBarItem.tag = 100 + i;
             tabBarItem.itemTitleLabel.text = [tTitleList objectAtIndex:i];
-            tabBarItem.itemTitleLabel.textColor = [UIColor grayColor];
             [tabBarItem setTitle:[tTitleList objectAtIndex:i] forState:UIControlStateNormal];
             [tabBarItem addTarget:self action:@selector(tabBarItemSelectedAction:) forControlEvents:UIControlEventTouchUpInside];
             [self addSubview:tabBarItem];
@@ -66,9 +65,16 @@
 {
     FFTabBarItem *tabBarItem = sender;
     NSInteger index = tabBarItem.tag - 100;
-    [self selectedTabBarItem:index];
-    if (_delegate && [_delegate respondsToSelector:@selector(tabBarItem:didSelected:)]) {
-        [_delegate tabBarItem:tabBarItem didSelected:index];
+    
+    BOOL shouldSelected = YES;
+    if (_delegate && [_delegate respondsToSelector:@selector(tabBarItem:willSelected:)]) {
+        shouldSelected = [_delegate tabBarItem:tabBarItem willSelected:index];
+    }
+    if (shouldSelected) {
+        [self selectedTabBarItem:index];
+        if (_delegate && [_delegate respondsToSelector:@selector(tabBarItem:didSelected:)]) {
+            [_delegate tabBarItem:tabBarItem didSelected:index];
+        }
     }
 }
 

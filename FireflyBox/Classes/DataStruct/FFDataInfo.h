@@ -30,7 +30,10 @@ typedef enum {
     FFFileTypeImage,
     FFFileTypeImageGif,
     FFFileTypeMusic,
-    FFFileTypeVideo
+    FFFileTypeVideo,
+    FFFileTypeZip,
+    FFFileTypeHtml,
+    FFFileTypePlist
 } FFFileType;
 
 @interface FFDataInfo : NSObject

@@ -58,7 +58,7 @@
     _showColor = [UIColor blackColor];
     
     NSString *filePath = [tFilePath lowercaseString];
-    if ([filePath hasSuffix:@".txt"]) {
+    if ([filePath hasSuffix:@".txt"] || [filePath hasSuffix:@".rtf"]) {
         _fileType = FFFileTypeText;
         _showColor = [UIColor blueColor];
     } else if ([filePath hasPrefix:@".pdf"]) {
@@ -76,6 +76,15 @@
     } else if ([filePath hasSuffix:@".mp4"]) {
         _fileType = FFFileTypeVideo;
         _showColor = [UIColor greenColor];
+    } else if ([filePath hasPrefix:@".zip"]) {
+        _fileType = FFFileTypeZip;
+        _showColor = [UIColor yellowColor];
+    } else if ([filePath hasPrefix:@".html"] || [filePath hasPrefix:@".htm"]) {
+        _fileType = FFFileTypeHtml;
+        _showColor = [UIColor cyanColor];
+    } else if ([filePath hasPrefix:@".plist"]) {
+        _fileType = FFFileTypePlist;
+        _showColor = [UIColor brownColor];
     }
 }
 

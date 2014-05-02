@@ -21,6 +21,8 @@
         _itemTitleLabel = [[UILabel alloc] init];
         _itemTitleLabel.backgroundColor = [UIColor clearColor];
         _itemTitleLabel.textAlignment = NSTextAlignmentCenter;
+        _itemTitleLabel.textColor = [UIColor grayColor];
+        _itemTitleLabel.font = [UIFont fontOfApp:18.0f];
         [self addSubview:_itemTitleLabel];
     }
     return self;
@@ -47,7 +49,7 @@
 {
     if (isSelected) {
         _itemImageView.image = _selItemImage;
-        _itemTitleLabel.textColor = [UIColor blueColor];
+        _itemTitleLabel.textColor = [UIColor colorWithHex:0x157dfb];
     } else {
         _itemImageView.image = _norItemImage;
         _itemTitleLabel.textColor = [UIColor grayColor];

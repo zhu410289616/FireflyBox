@@ -11,6 +11,7 @@
 
 @protocol FFTabBarViewDelegate <NSObject>
 
+- (BOOL)tabBarItem:(FFTabBarItem *)tTabBarItem willSelected:(NSInteger)tIndex;
 - (void)tabBarItem:(FFTabBarItem *)tTabBarItem didSelected:(NSInteger)tIndex;
 
 @end

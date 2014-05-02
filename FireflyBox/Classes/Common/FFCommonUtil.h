@@ -28,4 +28,7 @@
 + (double)calcDistance:(double)lat1 longitude1:(double)lng1 latitude2:(double)lat2 longitude2:(double)lng2;
 + (double)calcCalorie:(double)tWeight distance:(double)tDistance;
 
+//version
++ (NSString *)getBundleVersion;
+
 @end

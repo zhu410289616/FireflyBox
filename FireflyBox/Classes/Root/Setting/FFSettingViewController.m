@@ -21,7 +21,7 @@
 - (id)init
 {
     if (self = [super init]) {
-        self.title = @"Setting";
+        self.title = @"设置";
     }
     return self;
 }
@@ -31,7 +31,16 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    self.dataTableView.delegate = self;
+    self.dataTableView.dataSource = self;
+    [self.view addSubview:self.dataTableView];
     
+    UIView *tableHeaderView = [[UIView alloc] init];
+    tableHeaderView.frame = CGRectMake(0, 0, GLOBAL_SCREEN_WIDTH, 20);
+    self.dataTableView.tableHeaderView = tableHeaderView;
+    
+    //
+    [self loadMenuData];
     
 }
 
@@ -65,32 +74,10 @@
 
 #pragma mark function
 
-- (void)loadData
+- (void)loadMenuData
 {
-    for (int i=0; i<20; i++) {
-        FFDataInfo *dataInfo = [[FFDataInfo alloc] init];
-        dataInfo.dataId = i;
-        dataInfo.dataName = [NSString stringWithFormat:@"FFDataInfo: %d", i];
-        [self.dataList addObject:dataInfo];
-    }
+    self.dataList = [NSMutableArray arrayWithObjects:@"设置", @"帮助", @"关于", nil];
     [self.dataTableView reloadData];
-    [self showOrHideEmptyTips];
-}
-
-- (void)showOrHideEmptyTips
-{
-    if ([self.dataList count] == 0) {
-        if (self.emptyTipsView == nil) {
-            self.emptyTipsView = [[FFEmptyTipsView alloc] initWithFrame:CGRectMake(0, 100, GLOBAL_SCREEN_WIDTH, 100) emptyTips:@"您好像很忙，最近没有使用记录喔"];
-            [self.emptyTipsView.emptyTipsActionButton addTarget:self action:@selector(doEmptyTipsAction:) forControlEvents:UIControlEventTouchUpInside];
-            [self.view addSubview:self.emptyTipsView];
-        }
-        self.emptyTipsView.hidden = NO;
-        [self.view bringSubviewToFront:self.emptyTipsView];
-    } else {
-        self.emptyTipsView.hidden = YES;
-        [self.view sendSubviewToBack:self.emptyTipsView];
-    }
 }
 
 #pragma mark UITableViewDataSource method
@@ -106,10 +93,14 @@
     FFSettingCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
         cell = [[FFSettingCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell.footerLineView.hidden = NO;
+    }
+    if (indexPath.row == 0 && cell.headerLineView.hidden) {
+        cell.headerLineView.hidden = NO;
     }
     
-    FFDataInfo *dataInfo = [self.dataList objectAtIndex:indexPath.row];
-    cell.textLabel.text = dataInfo.dataName;
+    NSString *menuName = [self.dataList objectAtIndex:indexPath.row];
+    [cell updateViewWithContent:menuName];
     
     return cell;
 }
@@ -121,10 +112,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     [GLOBAL_APP_DELEGATE.tabBarController hideFFTabBarView];
-    FFBarButtonItem *backBarItem = [[FFBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
-    self.navigationItem.backBarButtonItem = backBarItem;
-    FFTransferViewController *transferController = [[FFTransferViewController alloc] init];
-    [self.navigationController pushViewController:transferController animated:YES];
+    
 }
 
 @end
