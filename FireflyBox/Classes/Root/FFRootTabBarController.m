@@ -7,7 +7,7 @@
 //
 
 #import "FFRootTabBarController.h"
-#import "FFBarButtonItem.h"
+#import "FFActionSheetView.h"
 
 #define TABBAR_HEIGHT 50.0f
 
@@ -22,10 +22,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    FFBarButtonItem *tempBarButtonItem = [[FFBarButtonItem alloc] initWithTitle:@"添加" style:UIBarButtonItemStylePlain target:self action:@selector(doRightBarButtonItemAction:)];
-    self.navigationItem.rightBarButtonItem = tempBarButtonItem;
-    
-    NSArray *titleList = [NSArray arrayWithObjects:@"FireFlyBox", @"TabBarItem2", @"TabBarItem3", nil];
+    NSArray *titleList = [NSArray arrayWithObjects:@"小盒子", @"萤火虫", @"设置", nil];
     _tabBarView = [[FFTabBarView alloc] initWithFrame:CGRectMake(0, GLOBAL_SCREEN_HEIGHT - TABBAR_HEIGHT, GLOBAL_SCREEN_WIDTH, TABBAR_HEIGHT) titles:titleList];
     _tabBarView.delegate = self;
     _tabBarView.backgroundColor = [UIColor lightGrayColor];
@@ -61,11 +58,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)doRightBarButtonItemAction:(id)sender
-{
-    PLog(@"doRightBarButtonItemAction...");
-}
-
 - (void)hideFFTabBarView
 {
     [UIView animateWithDuration:0.3 animations:^{
@@ -85,42 +77,19 @@
     }];
 }
 
-/*
-- (void)hideFFTabBarView
-{
-    for (UIView *view in self.view.subviews) {
-        if([view isKindOfClass:[FFTabBarView class]]){
-            [UIView animateWithDuration:0.6 animations:^{
-                view.frame = CGRectMake(0, GLOBAL_SCREEN_HEIGHT, GLOBAL_SCREEN_WIDTH, TABBAR_HEIGHT);
-            } completion:^(BOOL finished) {
-                view.hidden = YES;
-            }];
-            break;
-        }
-    }
-}
-
-- (void)showFFTabBarView
-{
-    for (UIView *view in self.view.subviews) {
-        if([view isKindOfClass:[FFTabBarView class]]){
-            [UIView animateWithDuration:0.6 animations:^{
-                view.frame = CGRectMake(0, GLOBAL_SCREEN_HEIGHT - TABBAR_HEIGHT, GLOBAL_SCREEN_WIDTH, TABBAR_HEIGHT);
-            } completion:^(BOOL finished) {
-                view.hidden = NO;
-            }];
-            break;
-        }
-    }
-}
-*/
-
 #pragma mark FFTabBarViewDelegate method
 
 - (void)tabBarItem:(FFTabBarItem *)tTabBarItem didSelected:(NSInteger)tIndex
 {
-    self.selectedIndex = tIndex;
-    PLog(@"tIndex: %ld", tIndex);
+    PLog(@"tIndex: %d", tIndex);
+    
+    if (tIndex == 1) {
+        NSArray *titles = [NSArray arrayWithObjects:@"文字", @"拍照", nil];
+        FFActionSheetView *actionSheetView = [[FFActionSheetView alloc] initWithTitles:titles];
+        [actionSheetView showInView:self.view];
+    } else {
+        self.selectedIndex = tIndex;
+    }
 }
 
 @end

@@ -25,7 +25,7 @@
 - (id)init
 {
     if (self = [super init]) {
-        self.title = @"Home";
+        self.title = @"首页";
     }
     return self;
 }
@@ -209,8 +209,13 @@
         cell.headerLineView.hidden = NO;
     }
     
-    FFDataInfo *dataInfo = [self.dataList objectAtIndex:indexPath.row];
-    [cell updateViewWithContent:dataInfo];
+    if (tableView == self.dataTableView) {
+        FFDataInfo *dataInfo = [self.dataList objectAtIndex:indexPath.row];
+        [cell updateViewWithContent:dataInfo];
+    } else {
+        FFDataInfo *dataInfo = [self.filterDataList objectAtIndex:indexPath.row];
+        [cell updateViewWithContent:dataInfo];
+    }
     
     return cell;
 }

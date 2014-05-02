@@ -67,6 +67,7 @@
         return NO;
     }
     NSRange range = [content rangeOfString:keyword options:NSCaseInsensitiveSearch];
+    PLog(@"range.location: %d, range.length: %d", range.location, range.length);
     if (range.location != NSNotFound && range.length > 0) {
         return YES;
     }

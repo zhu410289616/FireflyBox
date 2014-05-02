@@ -11,6 +11,7 @@
 #import "UIColor+FireFly.h"
 #import "UIFont+FireFly.h"
 #import "UIView+FireFly.h"
+#import "UIButton+FireFly.h"
 #import "UIImage+FireFly.h"
 #import "NSString+FireFly.h"
 #import "UIDevice+FireFly.h"

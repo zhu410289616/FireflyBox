@@ -13,8 +13,6 @@
 
 @property (nonatomic, strong) FFTabBarView *tabBarView;
 
-- (IBAction)doRightBarButtonItemAction:(id)sender;
-
 - (void)hideFFTabBarView;
 - (void)showFFTabBarView;
 

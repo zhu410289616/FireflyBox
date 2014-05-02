@@ -77,7 +77,6 @@
     [_filterDataList removeAllObjects];
     for (FFDataInfo *datainfo in self.dataList) {
         if ([self searchResult:datainfo.dataName searchKeyword:keyword]) {
-            [datainfo log];
             [_filterDataList addObject:datainfo];
         }
     }
@@ -113,8 +112,13 @@
         cell.headerLineView.hidden = NO;
     }
     
-    FFDataInfo *dataInfo = [self.dataList objectAtIndex:indexPath.row];
-    [cell updateViewWithContent:dataInfo];
+    if (tableView == self.dataTableView) {
+        FFDataInfo *dataInfo = [self.dataList objectAtIndex:indexPath.row];
+        [cell updateViewWithContent:dataInfo];
+    } else {
+        FFDataInfo *dataInfo = [self.filterDataList objectAtIndex:indexPath.row];
+        [cell updateViewWithContent:dataInfo];
+    }
     
     return cell;
 }
