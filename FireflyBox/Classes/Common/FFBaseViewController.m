@@ -58,4 +58,19 @@
     PLog(@"doRightBarButtonItemAction...");
 }
 
+#pragma mark common function
+
+- (BOOL)searchResult:(NSString *)content searchKeyword:(NSString *)keyword
+{
+    PLog(@"content: %@, keyword: %@", content, keyword);
+    if (keyword == nil || keyword.length == 0) {
+        return NO;
+    }
+    NSRange range = [content rangeOfString:keyword options:NSCaseInsensitiveSearch];
+    if (range.location != NSNotFound && range.length > 0) {
+        return YES;
+    }
+    return NO;
+}
+
 @end

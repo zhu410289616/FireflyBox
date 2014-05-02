@@ -26,12 +26,12 @@
     self.navigationItem.rightBarButtonItem = tempBarButtonItem;
     
     NSArray *titleList = [NSArray arrayWithObjects:@"FireFlyBox", @"TabBarItem2", @"TabBarItem3", nil];
-    FFTabBarView *tabBarView = [[FFTabBarView alloc] initWithFrame:CGRectMake(0, GLOBAL_SCREEN_HEIGHT - TABBAR_HEIGHT, GLOBAL_SCREEN_WIDTH, TABBAR_HEIGHT) titles:titleList];
-    tabBarView.delegate = self;
-    tabBarView.backgroundColor = [UIColor lightGrayColor];
-    [self.view addSubview:tabBarView];
+    _tabBarView = [[FFTabBarView alloc] initWithFrame:CGRectMake(0, GLOBAL_SCREEN_HEIGHT - TABBAR_HEIGHT, GLOBAL_SCREEN_WIDTH, TABBAR_HEIGHT) titles:titleList];
+    _tabBarView.delegate = self;
+    _tabBarView.backgroundColor = [UIColor lightGrayColor];
+    [self.view addSubview:_tabBarView];
     
-    [tabBarView selectedTabBarItem:0];
+    [_tabBarView selectedTabBarItem:0];
     
 }
 
@@ -66,14 +66,26 @@
     PLog(@"doRightBarButtonItemAction...");
 }
 
-#pragma mark FFTabBarViewDelegate method
-
-- (void)tabBarItem:(FFTabBarItem *)tTabBarItem didSelected:(NSInteger)tIndex
+- (void)hideFFTabBarView
 {
-    self.selectedIndex = tIndex;
-    PLog(@"tIndex: %ld", tIndex);
+    [UIView animateWithDuration:0.3 animations:^{
+        _tabBarView.frame = CGRectMake(0, GLOBAL_SCREEN_HEIGHT, GLOBAL_SCREEN_WIDTH, TABBAR_HEIGHT);
+    } completion:^(BOOL finished) {
+        _tabBarView.hidden = YES;
+    }];
 }
 
+- (void)showFFTabBarView
+{
+    _tabBarView.hidden = NO;
+    [UIView animateWithDuration:0.3 animations:^{
+        _tabBarView.frame = CGRectMake(0, GLOBAL_SCREEN_HEIGHT - TABBAR_HEIGHT, GLOBAL_SCREEN_WIDTH, TABBAR_HEIGHT);
+    } completion:^(BOOL finished) {
+        _tabBarView.hidden = NO;
+    }];
+}
+
+/*
 - (void)hideFFTabBarView
 {
     for (UIView *view in self.view.subviews) {
@@ -100,6 +112,15 @@
             break;
         }
     }
+}
+*/
+
+#pragma mark FFTabBarViewDelegate method
+
+- (void)tabBarItem:(FFTabBarItem *)tTabBarItem didSelected:(NSInteger)tIndex
+{
+    self.selectedIndex = tIndex;
+    PLog(@"tIndex: %ld", tIndex);
 }
 
 @end

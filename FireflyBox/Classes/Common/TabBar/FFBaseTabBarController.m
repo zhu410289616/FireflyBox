@@ -18,12 +18,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    [self hideRealTabBar];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self hideRealTabBar];
 }
 
 - (void)didReceiveMemoryWarning

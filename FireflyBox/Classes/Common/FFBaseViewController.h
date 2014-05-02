@@ -14,4 +14,6 @@
 - (IBAction)doLeftBarButtonItemAction:(id)sender;
 - (IBAction)doRightBarButtonItemAction:(id)sender;
 
+- (BOOL)searchResult:(NSString *)content searchKeyword:(NSString *)keyword;
+
 @end

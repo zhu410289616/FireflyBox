@@ -38,19 +38,35 @@
     FFBarButtonItem *tempBarButtonItem = [[FFBarButtonItem alloc] initWithTitle:@"添加" style:UIBarButtonItemStylePlain target:self action:@selector(doRightBarButtonItemAction:)];
     self.navigationItem.rightBarButtonItem = tempBarButtonItem;
     
+    _searchBar = [[UISearchBar alloc] init];
+    _searchBar.frame = CGRectMake(0.0f, 0.0f, GLOBAL_SCREEN_WIDTH, 44.0f);
+    _searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
+    _searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    _searchBar.keyboardType = UIKeyboardTypeDefault;
+    _searchBar.delegate = self;
+    [self.view addSubview:_searchBar];
+    
+    _searchDC = [[UISearchDisplayController alloc] initWithSearchBar:_searchBar contentsController:self];
+    _searchDC.searchResultsDelegate = self;
+    _searchDC.searchResultsDataSource = self;
+    _searchDC.searchResultsTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
     //
+    self.dataTableView.frame = CGRectMake(0, 44, GLOBAL_SCREEN_WIDTH, GLOBAL_SCREEN_HEIGHT - 44);
     self.dataTableView.delegate = self;
     self.dataTableView.dataSource = self;
     [self.view addSubview:self.dataTableView];
     
     //
-    
+    _filterDataList = [[NSMutableArray alloc] init];
     
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [GLOBAL_APP_DELEGATE.tabBarController showFFTabBarView];
     
     [self loadFileInfoInHome];
     
@@ -59,8 +75,6 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    [GLOBAL_APP_DELEGATE.tabBarController showFFTabBarView];
     
 }
 
@@ -126,6 +140,16 @@
     [[FFConcurrentQueue sharedConcurrentQueue] addTask:getFileInfoTask];
 }
 
+- (void)searchFilter:(NSString *)keyword
+{
+    [_filterDataList removeAllObjects];
+    for (FFDataInfo *datainfo in self.dataList) {
+        if ([self searchResult:datainfo.dataName searchKeyword:keyword]) {
+            [_filterDataList addObject:datainfo];
+        }
+    }
+}
+
 - (BOOL)shouldUpdateFileInfo
 {
     BOOL shouldUpdate = [[[NSUserDefaults standardUserDefaults] objectForKey:SHOULD_UPDATE_FILE_INFO] boolValue];
@@ -155,11 +179,22 @@
     [self.navigationController presentViewController:nav animated:YES completion:nil];
 }
 
+#pragma mark UISearchBarDelegate method
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    [self searchFilter:_searchBar.text];
+}
+
 #pragma mark UITableViewDataSource method
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.dataList count];
+    if (tableView == self.dataTableView) {
+        return [self.dataList count];
+    } else {
+        return [_filterDataList count];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

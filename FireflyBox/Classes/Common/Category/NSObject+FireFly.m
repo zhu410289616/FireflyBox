@@ -13,13 +13,20 @@
 
 - (void)log
 {
-    id LenderClass= objc_getClass("ClassName");
+    id LenderClass = [self getCustomClass];//objc_getClass("ClassName");
     unsigned int outCount;
     objc_property_t *properties = class_copyPropertyList(LenderClass, &outCount);
     for (int i=0; i<outCount; i++) {
         objc_property_t property = properties[i];
-        fprintf(stdout, "%s %s\n", property_getName(property), property_getAttributes(property));
+        unsigned int attributeOutCount;
+        objc_property_attribute_t *attribute = property_copyAttributeList(property, &attributeOutCount);
+//        PLog(@"%s %s", property_getName(property), attribute->value);
     }
+}
+
+- (Class)getCustomClass
+{
+    return [self class];
 }
 
 @end

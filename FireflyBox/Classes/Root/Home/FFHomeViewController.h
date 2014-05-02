@@ -8,16 +8,15 @@
 
 #import "FFTableViewController.h"
 
-@interface FFHomeViewController : FFTableViewController
+@interface FFHomeViewController : FFTableViewController<UISearchBarDelegate, UISearchDisplayDelegate>
 
 @property (nonatomic, strong) UISearchBar *searchBar;
+@property (nonatomic, strong) UISearchDisplayController *searchDC;
 
-@property (nonatomic, strong) UIView *typeBarView;
-@property (nonatomic, strong) UIButton *firstTypeButton;
-@property (nonatomic, strong) UIButton *secondTypeButton;
-@property (nonatomic, strong) UIButton *thirdTypeButton;
+@property (nonatomic, strong) NSMutableArray *filterDataList;
 
 - (void)loadFileInfoInHome;
 - (void)loadFileInfoWithDir:(NSString *)tDir;
+- (void)searchFilter:(NSString *)keyword;
 
 @end

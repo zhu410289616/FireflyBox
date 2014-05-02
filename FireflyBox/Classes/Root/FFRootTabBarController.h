@@ -11,6 +11,8 @@
 
 @interface FFRootTabBarController : FFBaseTabBarController<FFTabBarViewDelegate>
 
+@property (nonatomic, strong) FFTabBarView *tabBarView;
+
 - (IBAction)doRightBarButtonItemAction:(id)sender;
 
 - (void)hideFFTabBarView;
