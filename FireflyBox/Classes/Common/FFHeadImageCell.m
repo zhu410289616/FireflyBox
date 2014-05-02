@@ -19,7 +19,7 @@
         _iconImageView = [[UIImageView alloc] init];
         [self addSubview:_iconImageView];
         
-        _titleLabel = [[UILabel alloc] init];
+        _titleLabel = [[TTTAttributedLabel alloc] init];
         _titleLabel.textAlignment = NSTextAlignmentLeft;
         _titleLabel.textColor = [UIColor blackColor];
         _titleLabel.font = [UIFont fontOfApp:16.0f];

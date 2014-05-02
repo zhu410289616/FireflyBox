@@ -43,6 +43,10 @@
     self.dataTableView.dataSource = self;
     [self.view addSubview:self.dataTableView];
     
+    _refreshHeaderView = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0, 0 - self.dataTableView.bounds.size.height, self.view.frame.size.width, self.dataTableView.bounds.size.height)];
+    _refreshHeaderView.delegate = self;
+    [self.dataTableView addSubview:_refreshHeaderView];
+    
     UIView *tableHeaderView = [[UIView alloc] init];
     tableHeaderView.frame = CGRectMake(0, 0, GLOBAL_SCREEN_WIDTH, 44.0f);
     _searchBar = [[UISearchBar alloc] init];
@@ -62,6 +66,8 @@
     //
     _filterDataList = [[NSMutableArray alloc] init];
     
+    [self loadFileInfoInHome];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -69,8 +75,6 @@
     [super viewWillAppear:animated];
     
     [GLOBAL_APP_DELEGATE.tabBarController showFFTabBarView];
-    
-    [self loadFileInfoInHome];
     
 }
 
@@ -137,6 +141,7 @@
         [self.dataList removeAllObjects];
         [self.dataList addObjectsFromArray:getTask.fileInfoList];
         [self.dataTableView reloadData];
+        [self doneLoadingTableViewData];
         [self showOrHideEmptyTips];
     };
     [[FFConcurrentQueue sharedConcurrentQueue] addTask:getFileInfoTask];
@@ -179,6 +184,56 @@
     FFTransferViewController *transferController = [[FFTransferViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:transferController];
     [self.navigationController presentViewController:nav animated:YES completion:nil];
+}
+
+#pragma mark -
+#pragma mark Data Source Loading / Reloading Methods
+
+- (void)reloadTableViewDataSource
+{
+	//  should be calling your tableviews data source model to reload
+	//  put here just for demo
+	_isReloading = YES;
+	[self loadFileInfoInHome];
+    
+}
+
+- (void)doneLoadingTableViewData
+{
+	//  model should call this when its done loading
+	_isReloading = NO;
+	[_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.dataTableView];
+}
+
+#pragma mark -
+#pragma mark UIScrollViewDelegate Methods
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+	[_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+	[_refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
+}
+
+#pragma mark -
+#pragma mark EGORefreshTableHeaderDelegate Methods
+
+- (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view
+{
+	[self reloadTableViewDataSource];
+}
+
+- (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view
+{
+	return _isReloading; // should return if data source model is reloading
+}
+
+- (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView*)view
+{
+	return [NSDate date]; // should return date data source was last changed
 }
 
 #pragma mark UISearchBarDelegate method

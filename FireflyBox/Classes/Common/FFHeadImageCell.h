@@ -7,11 +7,12 @@
 //
 
 #import "FFBaseTableCell.h"
+#import "TTTAttributedLabel.h"
 
 @interface FFHeadImageCell : FFBaseTableCell
 
 @property (nonatomic, strong) UIImageView *iconImageView;
-@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) TTTAttributedLabel *titleLabel;
 @property (nonatomic, strong) UILabel *timeLabel;
 
 @end

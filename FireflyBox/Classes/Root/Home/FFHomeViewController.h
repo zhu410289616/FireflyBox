@@ -7,8 +7,12 @@
 //
 
 #import "FFTableViewController.h"
+#import "EGORefreshTableHeaderView.h"
 
-@interface FFHomeViewController : FFTableViewController<UISearchBarDelegate, UISearchDisplayDelegate>
+@interface FFHomeViewController : FFTableViewController<UISearchBarDelegate, UISearchDisplayDelegate, EGORefreshTableHeaderDelegate>
+
+@property (nonatomic, strong) EGORefreshTableHeaderView *refreshHeaderView;
+@property (nonatomic, assign) BOOL isReloading;
 
 @property (nonatomic, strong) UISearchBar *searchBar;
 @property (nonatomic, strong) UISearchDisplayController *searchDC;

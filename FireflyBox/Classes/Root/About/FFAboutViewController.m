@@ -27,7 +27,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    UIImage *iconImage = [UIImage imageNamed:@"Icon.png"];
+    UIImage *iconImage = [UIImage imageNamed:@"Icon_200_200.png"];
     UIImageView *iconImageView = [[UIImageView alloc] init];
     iconImageView.frame = CGRectMake((GLOBAL_SCREEN_WIDTH - 100) / 2, 35, 100, 100);
     iconImageView.image = iconImage;
