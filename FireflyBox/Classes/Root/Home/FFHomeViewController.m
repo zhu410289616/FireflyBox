@@ -178,6 +178,8 @@
 - (BOOL)shouldUpdateFileInfo
 {
     BOOL shouldUpdate = [[[NSUserDefaults standardUserDefaults] objectForKey:SHOULD_UPDATE_FILE_INFO] boolValue];
+    //读取后重置为否
+    [[NSUserDefaults standardUserDefaults] setValue:@NO forKey:SHOULD_UPDATE_FILE_INFO];
     return shouldUpdate;
 }
 
@@ -185,7 +187,7 @@
 {
     if ([self.dataList count] == 0) {
         if (self.emptyTipsView == nil) {
-            self.emptyTipsView = [[FFEmptyTipsView alloc] initWithFrame:CGRectMake(0, 100, GLOBAL_SCREEN_WIDTH, 100) emptyTips:@"您还没有导入文件，快点击我吧"];
+            self.emptyTipsView = [[FFEmptyTipsView alloc] initWithFrame:CGRectMake(0, 100, GLOBAL_SCREEN_WIDTH, 100) emptyTips:@"您还没有导入文件，快点击我吧" rangeColor:[UIColor blueColor] range:NSMakeRange(10, 3)];
             [self.emptyTipsView.emptyTipsActionButton addTarget:self action:@selector(doEmptyTipsAction:) forControlEvents:UIControlEventTouchUpInside];
             [self.view addSubview:self.emptyTipsView];
         }

@@ -7,6 +7,7 @@
 //
 
 #import "FFAppLoader.h"
+#import <AVFoundation/AVFoundation.h>
 #import "FFDB+All.h"
 
 @implementation FFAppLoader
@@ -29,6 +30,8 @@
             return;
         }
         [self initAppLevelUIConfig];
+        [self setAudioSession];
+        
         [[FFDB sharedInstance] initAll];
         _isLoaded = YES;
     }
@@ -50,6 +53,21 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
     
+}
+
+//这种方式后台，可以连续播放非网络请求歌曲。遇到网络请求歌曲就废，需要后台申请task
+- (void)setAudioSession
+{
+    /*
+     * AudioSessionInitialize用于处理中断处理，
+     * AVAudioSession主要调用setCategory和setActive方法来进行设置，
+     * AVAudioSessionCategoryPlayback一般用于支持后台播放
+     */
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    NSError *setCategoryError = nil;
+    [session setCategory:AVAudioSessionCategoryPlayback error:&setCategoryError];
+    NSError *activationError = nil;
+    [session setActive:YES error:&activationError];
 }
 
 - (void)testFunction

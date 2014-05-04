@@ -9,7 +9,7 @@
 #import "FFRootTabBarController.h"
 
 #import "FFActionSheetView.h"
-#import "FFTransferViewController.h"
+#import "FFNextStepViewController.h"
 
 #define TABBAR_HEIGHT 50.0f
 
@@ -104,6 +104,13 @@
 
 #pragma mark private function
 
+- (void)doShowNextStepAction
+{
+    FFNextStepViewController *nextStepController = [[FFNextStepViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:nextStepController];
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
 - (void)doItemAction:(int)actionIndex
 {
     PLog(@"doItemAction: %d", actionIndex);
@@ -113,6 +120,7 @@
             [_homeController doAddAction];
             break;
         case 1:
+            [self doShowNextStepAction];
             break;
             
         default:
@@ -128,7 +136,7 @@
     
     if (tIndex == 1) {
         [_tabBarView selectedTabBarItem:self.selectedIndex];
-        NSArray *titles = [NSArray arrayWithObjects:@"添加", @"说明", @"???", nil];
+        NSArray *titles = [NSArray arrayWithObjects:@"添加", @"???", nil];
         FFActionSheetView *actionSheetView = [[FFActionSheetView alloc] initWithTitles:titles];
         actionSheetView.actionBlock = ^(int actionIndex) {
             [self doItemAction:actionIndex];

@@ -7,10 +7,7 @@
 //
 
 #import "FFSettingViewController.h"
-#import "FFDataInfo.h"
 #import "FFSettingCell.h"
-#import "FFBarButtonItem.h"
-#import "FFTransferViewController.h"
 
 @interface FFSettingViewController ()
 

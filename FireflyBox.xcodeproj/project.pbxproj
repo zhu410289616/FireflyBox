@@ -35,6 +35,8 @@
 		1620DD1B1913EE4300AE810C /* Icon_120_120@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1620DD191913EE4300AE810C /* Icon_120_120@2x.png */; };
 		1620DD1C1913EE4300AE810C /* Icon_200_200@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1620DD1A1913EE4300AE810C /* Icon_200_200@2x.png */; };
 		16232D271916649E0043F840 /* NSDate+FireFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 16232D261916649E0043F840 /* NSDate+FireFly.m */; };
+		16232D2C191671A90043F840 /* FFNextStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16232D2B191671A90043F840 /* FFNextStepViewController.m */; };
+		16232D301916743B0043F840 /* NextStep.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 16232D2F1916743B0043F840 /* NextStep.bundle */; };
 		1624B881190930E40018B8FE /* FFHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1624B880190930E40018B8FE /* FFHUDViewController.m */; };
 		1624B8841909311C0018B8FE /* FFTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1624B8831909311C0018B8FE /* FFTableViewController.m */; };
 		1624B88A190937510018B8FE /* FFDataInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1624B889190937510018B8FE /* FFDataInfo.m */; };
@@ -208,6 +210,9 @@
 		1620DD1A1913EE4300AE810C /* Icon_200_200@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon_200_200@2x.png"; sourceTree = "<group>"; };
 		16232D251916649E0043F840 /* NSDate+FireFly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+FireFly.h"; sourceTree = "<group>"; };
 		16232D261916649E0043F840 /* NSDate+FireFly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+FireFly.m"; sourceTree = "<group>"; };
+		16232D2A191671A90043F840 /* FFNextStepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFNextStepViewController.h; sourceTree = "<group>"; };
+		16232D2B191671A90043F840 /* FFNextStepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFNextStepViewController.m; sourceTree = "<group>"; };
+		16232D2F1916743B0043F840 /* NextStep.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NextStep.bundle; sourceTree = "<group>"; };
 		1624B87F190930E40018B8FE /* FFHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFHUDViewController.h; sourceTree = "<group>"; };
 		1624B880190930E40018B8FE /* FFHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFHUDViewController.m; sourceTree = "<group>"; };
 		1624B8821909311C0018B8FE /* FFTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTableViewController.h; sourceTree = "<group>"; };
@@ -554,9 +559,28 @@
 			path = About;
 			sourceTree = "<group>";
 		};
+		16232D28191671980043F840 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Help;
+			sourceTree = "<group>";
+		};
+		16232D29191671980043F840 /* NextStep */ = {
+			isa = PBXGroup;
+			children = (
+				16232D2A191671A90043F840 /* FFNextStepViewController.h */,
+				16232D2B191671A90043F840 /* FFNextStepViewController.m */,
+				16232D2F1916743B0043F840 /* NextStep.bundle */,
+			);
+			path = NextStep;
+			sourceTree = "<group>";
+		};
 		1624B88E19093C140018B8FE /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				16232D28191671980043F840 /* Help */,
+				16232D29191671980043F840 /* NextStep */,
 				1620DD101913E02600AE810C /* About */,
 				161FF05D19124B4F00CDD559 /* FileBrower */,
 				16CF243F19109CF00029F3D2 /* MusicPlayer */,
@@ -1158,6 +1182,7 @@
 			files = (
 				1620DD1B1913EE4300AE810C /* Icon_120_120@2x.png in Resources */,
 				16A2F77C1902663100751B82 /* InfoPlist.strings in Resources */,
+				16232D301916743B0043F840 /* NextStep.bundle in Resources */,
 				167E7126190B82040014ADEB /* transfer_bg.png in Resources */,
 				1620DD1C1913EE4300AE810C /* Icon_200_200@2x.png in Resources */,
 				16ED1D58190B78B9007EC697 /* GCDWebUploader.bundle in Resources */,
@@ -1276,6 +1301,7 @@
 				16A2F8FB1902D5C100751B82 /* FMResultSet.m in Sources */,
 				1620DCE51913805500AE810C /* FFTabBarView.m in Sources */,
 				16232D271916649E0043F840 /* NSDate+FireFly.m in Sources */,
+				16232D2C191671A90043F840 /* FFNextStepViewController.m in Sources */,
 				16ED1D4D190B78B9007EC697 /* GCDWebServerFunctions.m in Sources */,
 				16A2F8EB1902D5C100751B82 /* AFPropertyListRequestOperation.m in Sources */,
 				162F9157190956FD004D0C25 /* FFBaseTableCell.m in Sources */,

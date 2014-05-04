@@ -10,12 +10,14 @@
 
 @interface FFAppLoader : NSObject
 
-@property (nonatomic, assign) BOOL isLoaded;
+@property (assign) BOOL isLoaded;
 
 + (id)sharedInstance;
 
 - (void)initLoader;
+
 - (void)initAppLevelUIConfig;
+- (void)setAudioSession;
 
 - (void)testFunction;
 
