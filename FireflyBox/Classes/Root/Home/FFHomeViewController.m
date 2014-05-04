@@ -35,8 +35,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    //现在功能少，先放到[工具]里面
+    /*
     FFBarButtonItem *tempBarButtonItem = [[FFBarButtonItem alloc] initWithTitle:@"添加" style:UIBarButtonItemStylePlain target:self action:@selector(doRightBarButtonItemAction:)];
     self.navigationItem.rightBarButtonItem = tempBarButtonItem;
+    */
     
     self.dataTableView.frame = CGRectMake(0, 0, GLOBAL_SCREEN_WIDTH, GLOBAL_SCREEN_HEIGHT);
     self.dataTableView.delegate = self;
@@ -76,6 +79,10 @@
     
     [GLOBAL_APP_DELEGATE.tabBarController showFFTabBarView];
     
+    if ([self shouldUpdateFileInfo]) {
+        [self loadFileInfoInHome];
+    }
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -100,10 +107,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark public function
+
 - (IBAction)doRightBarButtonItemAction:(id)sender
 {
-    [self doEmptyTipsAction:sender];
+    [self doAddAction];
 }
+
+- (void)doAddAction
+{
+    FFTransferViewController *transferController = [[FFTransferViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:transferController];
+    [self.navigationController presentViewController:nav animated:YES completion:nil];
+}
+
+#pragma mark private function
 
 - (void)testData
 {
@@ -181,9 +199,7 @@
 
 - (IBAction)doEmptyTipsAction:(id)sender
 {
-    FFTransferViewController *transferController = [[FFTransferViewController alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:transferController];
-    [self.navigationController presentViewController:nav animated:YES completion:nil];
+    [self doAddAction];
 }
 
 #pragma mark -

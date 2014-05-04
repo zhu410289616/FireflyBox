@@ -19,8 +19,6 @@
 
 @property (nonatomic, strong) NSMutableArray *filterDataList;
 
-- (void)loadFileInfoInHome;
-- (void)loadFileInfoWithDir:(NSString *)tDir;
-- (void)searchFilter:(NSString *)keyword;
+- (void)doAddAction;
 
 @end

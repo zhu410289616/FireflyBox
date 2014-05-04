@@ -7,12 +7,9 @@
 //
 
 #import "FFRootTabBarController.h"
-#import "FFHomeViewController.h"
-#import "FFRecentViewController.h"
-#import "FFSettingViewController.h"
-#import "FFAboutViewController.h"
 
 #import "FFActionSheetView.h"
+#import "FFTransferViewController.h"
 
 #define TABBAR_HEIGHT 50.0f
 
@@ -27,14 +24,14 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    FFHomeViewController *homeController = [[FFHomeViewController alloc] init];
-    UINavigationController *homeNav = [[UINavigationController alloc] initWithRootViewController:homeController];
-    FFRecentViewController *recentController = [[FFRecentViewController alloc] init];
-    UINavigationController *recentNav = [[UINavigationController alloc] initWithRootViewController:recentController];
-    FFSettingViewController *settingController = [[FFSettingViewController alloc] init];
-    UINavigationController *settingNav = [[UINavigationController alloc] initWithRootViewController:settingController];
-    FFAboutViewController *aboutController = [[FFAboutViewController alloc] init];
-    UINavigationController *aboutNav = [[UINavigationController alloc] initWithRootViewController:aboutController];
+    _homeController = [[FFHomeViewController alloc] init];
+    UINavigationController *homeNav = [[UINavigationController alloc] initWithRootViewController:_homeController];
+    _recentController = [[FFRecentViewController alloc] init];
+    UINavigationController *recentNav = [[UINavigationController alloc] initWithRootViewController:_recentController];
+    _settingController = [[FFSettingViewController alloc] init];
+    UINavigationController *settingNav = [[UINavigationController alloc] initWithRootViewController:_settingController];
+    _aboutController = [[FFAboutViewController alloc] init];
+    UINavigationController *aboutNav = [[UINavigationController alloc] initWithRootViewController:_aboutController];
     
     int showContentType = 1;
     if (showContentType == 0) {
@@ -84,6 +81,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark public function
+
 - (void)hideFFTabBarView
 {
     [UIView animateWithDuration:0.3 animations:^{
@@ -103,6 +102,24 @@
     }];
 }
 
+#pragma mark private function
+
+- (void)doItemAction:(int)actionIndex
+{
+    PLog(@"doItemAction: %d", actionIndex);
+    
+    switch (actionIndex) {
+        case 0:
+            [_homeController doAddAction];
+            break;
+        case 1:
+            break;
+            
+        default:
+            break;
+    }
+}
+
 #pragma mark FFTabBarViewDelegate method
 
 - (BOOL)tabBarItem:(FFTabBarItem *)tTabBarItem willSelected:(NSInteger)tIndex
@@ -111,8 +128,11 @@
     
     if (tIndex == 1) {
         [_tabBarView selectedTabBarItem:self.selectedIndex];
-        NSArray *titles = [NSArray arrayWithObjects:@"文字", @"拍照", nil];
+        NSArray *titles = [NSArray arrayWithObjects:@"添加", @"说明", @"???", nil];
         FFActionSheetView *actionSheetView = [[FFActionSheetView alloc] initWithTitles:titles];
+        actionSheetView.actionBlock = ^(int actionIndex) {
+            [self doItemAction:actionIndex];
+        };
         [actionSheetView showInView:self.view];
         return NO;
     }

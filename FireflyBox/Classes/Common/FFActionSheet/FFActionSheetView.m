@@ -70,7 +70,7 @@
                 
                 FFBaseActionView *itemView = [[FFBaseActionView alloc] initWidth80WithTitle:title];
                 itemView.frame = frame;
-                itemView.tag = i;
+                itemView.actionButton.tag = i;
                 [itemView.actionButton styleWithCornerRadius:itemWidth / 2];
                 [itemView.actionButton styleWithTitle:title titleColor:[UIColor whiteColor]];
                 [itemView.actionButton styleWithBackgroundColor:[UIColor orangeColor]];

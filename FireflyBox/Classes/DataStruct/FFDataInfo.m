@@ -18,7 +18,7 @@
         }
         long fileNumber = [[fileAttributes objectForKey:@"NSFileSystemFileNumber"] longValue];
         NSString *fileType = [fileAttributes objectForKey:@"NSFileType"];
-        NSString *fileCreationDate = [fileAttributes objectForKey:@"NSFileCreationDate"];
+        NSDate *fileCreationDate = [fileAttributes objectForKey:@"NSFileCreationDate"];
         
         _dataName = name;
         _dataId = fileNumber;
@@ -34,7 +34,8 @@
             _fileType = FFFileTypeUnkown;
             _showColor = [UIColor colorWithHex:0x157dfb];
         }
-        _creationDate = fileCreationDate;
+        _creationDate = [NSString stringWithDate:fileCreationDate formatter:@"yyyy-MM-dd HH:mm:ss"];
+        _lCreateTime = [fileCreationDate timeIntervalSince1970];
     }
     return self;
 }

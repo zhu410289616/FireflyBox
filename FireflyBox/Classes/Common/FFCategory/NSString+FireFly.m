@@ -37,7 +37,7 @@
 + (NSString *)stringWithDate:(NSDate *)tDate formatter:(NSString *)tFormatter
 {
     NSDateFormatter *dateformatter = [[NSDateFormatter alloc] init];
-    [dateformatter setDateFormat:@"YYYY-MM-DD"];
+    [dateformatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     if (tFormatter) {
         [dateformatter setDateFormat:tFormatter];
     }
@@ -48,7 +48,7 @@
 + (NSString *)stringWithTime:(long)tTimeInterval formatter:(NSString *)tFormatter
 {
     NSDateFormatter *dateformatter = [[NSDateFormatter alloc] init];
-    [dateformatter setDateFormat:@"YYYY-MM-DD"];
+    [dateformatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     if (tFormatter) {
         [dateformatter setDateFormat:tFormatter];
     }
