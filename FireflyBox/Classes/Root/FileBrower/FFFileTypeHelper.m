@@ -36,7 +36,6 @@ static int tempNum = 1;
             break;
         case FFFileTypeText:
         {
-            [GLOBAL_APP_DELEGATE.tabBarController hideFFTabBarView];
             FFTextReaderViewController *textController = [[FFTextReaderViewController alloc] init];
             textController.title = _dataInfo.dataName;
             textController.filePath = _dataInfo.dataPath;
@@ -45,7 +44,6 @@ static int tempNum = 1;
             break;
         case FFFileTypePdf:
         {
-            [GLOBAL_APP_DELEGATE.tabBarController hideFFTabBarView];
             FFFileReaderViewController *readerController = [[FFFileReaderViewController alloc] init];
             readerController.title = _dataInfo.dataName;
             readerController.filePath = _dataInfo.dataPath;
@@ -57,11 +55,7 @@ static int tempNum = 1;
             break;
         case FFFileTypeMusic:
         {
-            [GLOBAL_APP_DELEGATE.tabBarController hideFFTabBarView];
-            FFMusicPlayerViewController *musicController = [[FFMusicPlayerViewController alloc] init];
-            musicController.tracks = [self getMusicInfoList];
-            musicController.title = [NSString stringWithFormat:@"Music(%d)", [[self getMusicInfoList] count]];
-            [_viewController.navigationController pushViewController:musicController animated:YES];
+            [self doGotoPlayerController];
         }
             break;
         case FFFileTypeVideo:
@@ -70,7 +64,6 @@ static int tempNum = 1;
         case FFFileTypeUnkown:
         {
             PLog(@"FFFileTypeUnkown...");
-            [GLOBAL_APP_DELEGATE.tabBarController hideFFTabBarView];
             FFFileReaderViewController *readerController = [[FFFileReaderViewController alloc] init];
             readerController.title = _dataInfo.dataName;
             readerController.filePath = _dataInfo.dataPath;
@@ -84,6 +77,36 @@ static int tempNum = 1;
 }
 
 #pragma mark private function
+
+#pragma mark music --------------------
+
+- (void)doGotoPlayerController
+{
+    int selectIndex = 0;
+    int tempIndex = 0;
+    NSMutableArray *musicInfoList = [[NSMutableArray alloc] init];
+    for (int i=0; i<[_dataInfoList count]; i++) {
+        FFDataInfo *tempdatainfo = [_dataInfoList objectAtIndex:i];
+        if (FFFileTypeMusic == tempdatainfo.fileType) {
+            FFTrack *track = [[FFTrack alloc] init];
+            track.artist = [NSString stringWithFormat:@"%ld", tempdatainfo.dataId];
+            track.title = tempdatainfo.dataName;
+            track.audioFileURL = [NSURL fileURLWithPath:tempdatainfo.dataPath isDirectory:NO];
+            [musicInfoList addObject:track];
+            
+            if (_dataInfo.dataId == tempdatainfo.dataId) {
+                selectIndex = tempIndex;
+            }
+            tempIndex++;
+        }
+    }
+    
+    FFMusicPlayerViewController *musicController = [[FFMusicPlayerViewController alloc] init];
+    musicController.tracks = [self getMusicInfoList];
+    musicController.currentTrackIndex = selectIndex;
+    musicController.title = [NSString stringWithFormat:@"Music(%d)", [[self getMusicInfoList] count]];
+    [_viewController.navigationController pushViewController:musicController animated:YES];
+}
 
 - (NSMutableArray *)getMusicInfoList
 {

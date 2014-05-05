@@ -30,7 +30,6 @@ static void *kBufferingRatioKVOKey = &kBufferingRatioKVOKey;
     UILabel *_volumeLabel;
     UISlider *_volumeSlider;
     
-    NSUInteger _currentTrackIndex;
     NSTimer *_timer;
     
     DOUAudioStreamer *_streamer;
@@ -49,7 +48,7 @@ static void *kBufferingRatioKVOKey = &kBufferingRatioKVOKey;
     UIView *view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [view setBackgroundColor:[UIColor whiteColor]];
     
-    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 64.0, CGRectGetWidth([view bounds]), 30.0)];
+    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, CGRectGetWidth([view bounds]), 30.0)];
     [_titleLabel setFont:[UIFont systemFontOfSize:20.0]];
     [_titleLabel setTextColor:[UIColor blackColor]];
     [_titleLabel setTextAlignment:NSTextAlignmentCenter];
@@ -110,6 +109,8 @@ static void *kBufferingRatioKVOKey = &kBufferingRatioKVOKey;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [GLOBAL_APP_DELEGATE.tabBarController hideFFTabBarView];
     
     [self _resetStreamer];
     

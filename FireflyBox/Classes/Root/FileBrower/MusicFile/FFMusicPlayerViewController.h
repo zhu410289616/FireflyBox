@@ -11,5 +11,6 @@
 @interface FFMusicPlayerViewController : FFBaseViewController
 
 @property (strong) NSMutableArray *tracks;
+@property (assign) NSUInteger currentTrackIndex;
 
 @end
