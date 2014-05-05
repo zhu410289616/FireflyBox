@@ -136,7 +136,7 @@
     
     if (tIndex == 1) {
         [_tabBarView selectedTabBarItem:self.selectedIndex];
-        NSArray *titles = [NSArray arrayWithObjects:@"添加", @"???", nil];
+        NSArray *titles = [NSArray arrayWithObjects:@"添加", @"下一步", nil];
         FFActionSheetView *actionSheetView = [[FFActionSheetView alloc] initWithTitles:titles];
         actionSheetView.actionBlock = ^(int actionIndex) {
             [self doItemAction:actionIndex];
