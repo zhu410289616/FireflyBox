@@ -48,6 +48,7 @@
 		1624B8A019093C140018B8FE /* FFSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1624B89B19093C140018B8FE /* FFSettingViewController.m */; };
 		162F9157190956FD004D0C25 /* FFBaseTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 162F9156190956FD004D0C25 /* FFBaseTableCell.m */; };
 		162F915A19095740004D0C25 /* FFRecentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 162F915919095740004D0C25 /* FFRecentCell.m */; };
+		166DF8A61917E39300ED2CE4 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 166DF8A31917E39300ED2CE4 /* libMobClickLibrary.a */; };
 		167E7126190B82040014ADEB /* transfer_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 167E7124190B82040014ADEB /* transfer_bg.png */; };
 		167E7127190B82040014ADEB /* transfer_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 167E7125190B82040014ADEB /* transfer_bg@2x.png */; };
 		16A0D626190ABD95007D6EBA /* FFHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A0D625190ABD95007D6EBA /* FFHomeCell.m */; };
@@ -235,6 +236,8 @@
 		162F9156190956FD004D0C25 /* FFBaseTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseTableCell.m; sourceTree = "<group>"; };
 		162F915819095740004D0C25 /* FFRecentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFRecentCell.h; sourceTree = "<group>"; };
 		162F915919095740004D0C25 /* FFRecentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFRecentCell.m; sourceTree = "<group>"; };
+		166DF8A31917E39300ED2CE4 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		166DF8A51917E39300ED2CE4 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		167E7124190B82040014ADEB /* transfer_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transfer_bg.png; sourceTree = "<group>"; };
 		167E7125190B82040014ADEB /* transfer_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transfer_bg@2x.png"; sourceTree = "<group>"; };
 		16A0D624190ABD95007D6EBA /* FFHomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFHomeCell.h; sourceTree = "<group>"; };
@@ -433,6 +436,7 @@
 				16DAD6811902DADE00BFE84C /* libsqlite3.dylib in Frameworks */,
 				16A2F7741902663100751B82 /* CoreGraphics.framework in Frameworks */,
 				16A2F7761902663100751B82 /* UIKit.framework in Frameworks */,
+				166DF8A61917E39300ED2CE4 /* libMobClickLibrary.a in Frameworks */,
 				16A2F7721902663100751B82 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -628,6 +632,15 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		166DF8A21917E39300ED2CE4 /* UMAnalytics_Sdk_2.2.1.OpenUDID */ = {
+			isa = PBXGroup;
+			children = (
+				166DF8A31917E39300ED2CE4 /* libMobClickLibrary.a */,
+				166DF8A51917E39300ED2CE4 /* MobClick.h */,
+			);
+			path = UMAnalytics_Sdk_2.2.1.OpenUDID;
+			sourceTree = "<group>";
+		};
 		167E711E190B7FE80014ADEB /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -748,6 +761,7 @@
 		16A2F7A11902814400751B82 /* ThirdPartyLib */ = {
 			isa = PBXGroup;
 			children = (
+				166DF8A21917E39300ED2CE4 /* UMAnalytics_Sdk_2.2.1.OpenUDID */,
 				16CF23FE1910948B0029F3D2 /* DOUAudioStreamer */,
 				16ED1D26190B78B9007EC697 /* GCDWebServer */,
 				16A0D62B190AC0CE007D6EBA /* TTTAttributedLabel */,
@@ -1381,7 +1395,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xiang Dong (T932MCQ645)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiang Dong (T932MCQ645)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1421,7 +1436,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xiang Dong (T932MCQ645)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiang Dong (T932MCQ645)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1447,6 +1463,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FireflyBox/FireflyBox-Prefix.pch";
 				INFOPLIST_FILE = "FireflyBox/FireflyBox-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/pig/Desktop/FireflyBox1.0/2326-20140419com.firefly.box/FireflyBox/FireflyBox/Classes/ThirdPartyLib/UMAnalytics_Sdk_2.2.1.OpenUDID",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -1462,6 +1482,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FireflyBox/FireflyBox-Prefix.pch";
 				INFOPLIST_FILE = "FireflyBox/FireflyBox-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/pig/Desktop/FireflyBox1.0/2326-20140419com.firefly.box/FireflyBox/FireflyBox/Classes/ThirdPartyLib/UMAnalytics_Sdk_2.2.1.OpenUDID",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

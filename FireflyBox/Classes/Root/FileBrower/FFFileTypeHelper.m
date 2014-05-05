@@ -42,17 +42,6 @@ static int tempNum = 1;
             [_viewController.navigationController pushViewController:textController animated:YES];
         }
             break;
-        case FFFileTypePdf:
-        {
-            FFFileReaderViewController *readerController = [[FFFileReaderViewController alloc] init];
-            readerController.title = _dataInfo.dataName;
-            readerController.filePath = _dataInfo.dataPath;
-            [_viewController.navigationController pushViewController:readerController animated:YES];
-        }
-            break;
-        case FFFileTypeImage:
-        {}
-            break;
         case FFFileTypeMusic:
         {
             [self doGotoPlayerController];
@@ -60,6 +49,17 @@ static int tempNum = 1;
             break;
         case FFFileTypeVideo:
         {}
+            break;
+        case FFFileTypePdf:
+        case FFFileTypeImage:
+        case FFFileTypeHtml:
+        case FFFileTypePlist:
+        {
+            FFFileReaderViewController *readerController = [[FFFileReaderViewController alloc] init];
+            readerController.title = _dataInfo.dataName;
+            readerController.filePath = _dataInfo.dataPath;
+            [_viewController.navigationController pushViewController:readerController animated:YES];
+        }
             break;
         case FFFileTypeUnkown:
         {

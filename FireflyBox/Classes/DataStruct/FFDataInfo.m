@@ -75,7 +75,7 @@
         _fileType = FFFileTypeMusic;
         _showColor = [UIColor magentaColor];
     } else if ([filePath hasSuffix:@"plist"]) {
-        _fileType = FFFileTypeVideo;
+        _fileType = FFFileTypePlist;
         _showColor = [UIColor colorWithHex:0x228b22];
     } else if ([filePath hasPrefix:@"zip"] || [filePath hasPrefix:@"rar"]) {
         _fileType = FFFileTypeZip;
@@ -84,7 +84,7 @@
         _fileType = FFFileTypeHtml;
         _showColor = [UIColor purpleColor];
     } else if ([filePath hasPrefix:@"mp4"]) {
-        _fileType = FFFileTypePlist;
+        _fileType = FFFileTypeVideo;
         _showColor = [UIColor brownColor];
     }
 }
