@@ -34,6 +34,7 @@
 
 #define GLOBAL_TABBAR_HEIGHT            50.0f
 
+#define GLOBAL_APP                      [UIApplication sharedApplication]
 #define GLOBAL_APP_DELEGATE             ((AppDelegate *)([UIApplication sharedApplication].delegate))
 
 #define TRANSFER_WEB_SERVER_NAME        @"firefly"

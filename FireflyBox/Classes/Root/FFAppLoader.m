@@ -50,8 +50,8 @@
     }
     
     //config for StatusBar
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-    [[UIApplication sharedApplication] setStatusBarHidden:NO];
+    [GLOBAL_APP setStatusBarStyle:UIStatusBarStyleDefault];
+    [GLOBAL_APP setStatusBarHidden:NO];
     
 }
 
