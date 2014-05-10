@@ -49,6 +49,7 @@
 		162F9157190956FD004D0C25 /* FFBaseTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 162F9156190956FD004D0C25 /* FFBaseTableCell.m */; };
 		162F915A19095740004D0C25 /* FFRecentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 162F915919095740004D0C25 /* FFRecentCell.m */; };
 		166DF8A61917E39300ED2CE4 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 166DF8A31917E39300ED2CE4 /* libMobClickLibrary.a */; };
+		16798A3D191E720100726FBD /* NSMutableArray+FireFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 16798A3C191E720100726FBD /* NSMutableArray+FireFly.m */; };
 		167E7126190B82040014ADEB /* transfer_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 167E7124190B82040014ADEB /* transfer_bg.png */; };
 		167E7127190B82040014ADEB /* transfer_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 167E7125190B82040014ADEB /* transfer_bg@2x.png */; };
 		16A0D626190ABD95007D6EBA /* FFHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A0D625190ABD95007D6EBA /* FFHomeCell.m */; };
@@ -238,6 +239,8 @@
 		162F915919095740004D0C25 /* FFRecentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFRecentCell.m; sourceTree = "<group>"; };
 		166DF8A31917E39300ED2CE4 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		166DF8A51917E39300ED2CE4 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		16798A3B191E720100726FBD /* NSMutableArray+FireFly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+FireFly.h"; sourceTree = "<group>"; };
+		16798A3C191E720100726FBD /* NSMutableArray+FireFly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+FireFly.m"; sourceTree = "<group>"; };
 		167E7124190B82040014ADEB /* transfer_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transfer_bg.png; sourceTree = "<group>"; };
 		167E7125190B82040014ADEB /* transfer_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transfer_bg@2x.png"; sourceTree = "<group>"; };
 		16A0D624190ABD95007D6EBA /* FFHomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFHomeCell.h; sourceTree = "<group>"; };
@@ -550,6 +553,8 @@
 				1620DD0319138F2800AE810C /* UIButton+FireFly.m */,
 				16232D251916649E0043F840 /* NSDate+FireFly.h */,
 				16232D261916649E0043F840 /* NSDate+FireFly.m */,
+				16798A3B191E720100726FBD /* NSMutableArray+FireFly.h */,
+				16798A3C191E720100726FBD /* NSMutableArray+FireFly.m */,
 			);
 			path = FFCategory;
 			sourceTree = "<group>";
@@ -1315,6 +1320,7 @@
 				16A2F8FB1902D5C100751B82 /* FMResultSet.m in Sources */,
 				1620DCE51913805500AE810C /* FFTabBarView.m in Sources */,
 				16232D271916649E0043F840 /* NSDate+FireFly.m in Sources */,
+				16798A3D191E720100726FBD /* NSMutableArray+FireFly.m in Sources */,
 				16232D2C191671A90043F840 /* FFNextStepViewController.m in Sources */,
 				16ED1D4D190B78B9007EC697 /* GCDWebServerFunctions.m in Sources */,
 				16A2F8EB1902D5C100751B82 /* AFPropertyListRequestOperation.m in Sources */,
@@ -1395,8 +1401,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Xiang Dong (6JWDKE7GS8)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Xiang Dong (6JWDKE7GS8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xiang Dong (T932MCQ645)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiang Dong (T932MCQ645)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1436,8 +1442,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Xiang Dong (6JWDKE7GS8)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Xiang Dong (6JWDKE7GS8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xiang Dong (T932MCQ645)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiang Dong (T932MCQ645)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1460,8 +1466,8 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Xiang Dong (6JWDKE7GS8)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Xiang Dong (6JWDKE7GS8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xiang Dong (T932MCQ645)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiang Dong (T932MCQ645)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FireflyBox/FireflyBox-Prefix.pch";
 				INFOPLIST_FILE = "FireflyBox/FireflyBox-Info.plist";
@@ -1481,8 +1487,8 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Xiang Dong (6JWDKE7GS8)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Xiang Dong (6JWDKE7GS8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xiang Dong (T932MCQ645)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiang Dong (T932MCQ645)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FireflyBox/FireflyBox-Prefix.pch";
 				INFOPLIST_FILE = "FireflyBox/FireflyBox-Info.plist";

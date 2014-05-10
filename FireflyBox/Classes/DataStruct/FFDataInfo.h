@@ -13,9 +13,9 @@
  * 从磁盘获取数据大的分类, 需要写入数据库
  */
 typedef enum {
-    FFDataTypeUnknow = 0,
-    FFDataTypeDirectory = 1,
-    FFDataTypeRegular = 2
+    FFDataTypeUnknow = -1,
+    FFDataTypeDirectory = 0,
+    FFDataTypeRegular = 1
 } FFDataType;
 
 /*
@@ -36,6 +36,8 @@ typedef enum {
     FFFileTypePlist
 } FFFileType;
 
+static int const TOP_PARENT_DATA_ID = 0;
+
 @interface FFDataInfo : NSObject
 
 @property (nonatomic, assign) long dataId;
@@ -48,7 +50,7 @@ typedef enum {
 @property (nonatomic, strong) NSString *dataPath;
 @property (nonatomic, assign) long lCreateTime;
 
-- (id)initWithFileAttributes:(NSDictionary *)fileAttributes name:(NSString *)name;
+- (id)initWithFileAttributes:(NSDictionary *)fileAttributes name:(NSString *)name parentDataId:(long)tParentDataId;
 - (id)initWithFMResultSet:(FMResultSet *)tResultSet;
 
 @end

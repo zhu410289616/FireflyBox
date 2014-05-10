@@ -7,6 +7,7 @@
 //
 
 #import "FFFileViewController.h"
+#import "FFDB+All.h"
 #import "FFGetFileInfoTask.h"
 #import "FFConcurrentQueue.h"
 #import "FFFileInfoCell.h"
@@ -46,7 +47,9 @@
     
     _filterDataList = [[NSMutableArray alloc] init];
     
-    [self loadFileInfoWithDir:_fileDir];
+    //
+    [self loadFileInfoInSubDir];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -65,15 +68,29 @@
 
 #pragma mark function
 
-- (void)loadFileInfoWithDir:(NSString *)tDir
+- (void)loadFileInfoInSubDir
+{
+    NSMutableArray *dataInfoList = [[FFDB sharedInstance] selectDataInfoWithParentDataId:_parentDataId];
+    [dataInfoList sortDataInfoList];
+    [self.dataList removeAllObjects];
+    [self.dataList addObjectsFromArray:dataInfoList];
+    [self.dataTableView reloadData];
+    [self showOrHideEmptyTips];
+    
+    [self loadFileInfoWithDir:_fileDir parentDataId:_parentDataId];
+}
+
+- (void)loadFileInfoWithDir:(NSString *)tDir parentDataId:(long)tParentDataId
 {
     FFGetFileInfoTask *getFileInfoTask = [[FFGetFileInfoTask alloc] init];
+    getFileInfoTask.parentDataId = tParentDataId;
     getFileInfoTask.fileDir = tDir;
     getFileInfoTask.finishBlock = ^(id task){
         FFGetFileInfoTask *getTask = task;
         NSMutableArray *fileInfos = getTask.fileInfoList;
         for (id obj in fileInfos) {
             [obj log];
+            [[FFDB sharedInstance] insertDataInfo:obj];
         }
         
         [self.dataList removeAllObjects];

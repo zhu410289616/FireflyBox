@@ -10,7 +10,7 @@
 
 @implementation FFDataInfo
 
-- (id)initWithFileAttributes:(NSDictionary *)fileAttributes name:(NSString *)name
+- (id)initWithFileAttributes:(NSDictionary *)fileAttributes name:(NSString *)name parentDataId:(long)tParentDataId
 {
     if (self = [super init]) {
         for (NSString *str in fileAttributes) {
@@ -22,13 +22,14 @@
         
         _dataName = name;
         _dataId = fileNumber;
+        _parentDataId = tParentDataId;
         if ([fileType isEqualToString:NSFileTypeDirectory]) {
             _dataType = FFDataTypeDirectory;
             _fileType = FFFileTypeDirectory;
             _showColor = [UIColor colorWithHex:0x157dfb];
         } else if ([fileType isEqualToString:NSFileTypeRegular]) {
             _dataType = FFDataTypeRegular;
-            [self getFileType:name];
+            [self getFileTypeWithFileName:name];
         } else {
             _dataType = FFDataTypeUnknow;
             _fileType = FFFileTypeUnkown;
@@ -46,44 +47,88 @@
         _dataId = [tResultSet longForColumn:@"dataid"];//_id
         _parentDataId = [tResultSet longForColumn:@"parentdataid"];
         _dataType = [tResultSet intForColumn:@"datatype"];
+        _fileType = [tResultSet intForColumn:@"filetype"];
         _dataName = [tResultSet stringForColumn:@"dataname"];
         _creationDate = [tResultSet stringForColumn:@"creationdate"];
         _dataPath = [tResultSet stringForColumn:@"datapath"];
+        [self getShowColorWithFileType:_fileType];
     }
     return self;
 }
 
-- (void)getFileType:(NSString *)tFilePath
+- (void)getShowColorWithFileType:(FFFileType)tFileType
+{
+    _showColor = [UIColor colorWithHex:0x157dfb];
+    
+    FFFileType type = tFileType;
+    switch (type) {
+        case FFFileTypeDirectory:
+            _showColor = [UIColor colorWithHex:0x157dfb];
+            break;
+        case FFFileTypeText:
+            _showColor = [UIColor colorWithHex:0xdeb887];
+            break;
+        case FFFileTypePdf:
+            _showColor = [UIColor redColor];
+            break;
+        case FFFileTypeImage:
+            _showColor = [UIColor greenColor];
+            break;
+        case FFFileTypeImageGif:
+            _showColor = [UIColor blueColor];
+            break;
+        case FFFileTypeMusic:
+            _showColor = [UIColor magentaColor];
+            break;
+        case FFFileTypePlist:
+            _showColor = [UIColor colorWithHex:0x228b22];
+            break;
+        case FFFileTypeZip:
+            _showColor = [UIColor orangeColor];
+            break;
+        case FFFileTypeHtml:
+            _showColor = [UIColor purpleColor];
+            break;
+        case FFFileTypeVideo:
+            _showColor = [UIColor brownColor];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+- (void)getFileTypeWithFileName:(NSString *)tFileName
 {
     _fileType = FFFileTypeUnkown;
     _showColor = [UIColor colorWithHex:0x157dfb];
     
-    NSString *filePath = [[tFilePath lowercaseString] pathExtension];
-    if ([filePath hasSuffix:@"txt"] || [filePath hasSuffix:@"rtf"]) {
+    NSString *name = [[tFileName lowercaseString] pathExtension];
+    if ([name hasSuffix:@"txt"] || [name hasSuffix:@"rtf"]) {
         _fileType = FFFileTypeText;
         _showColor = [UIColor colorWithHex:0xdeb887];
-    } else if ([filePath hasPrefix:@"pdf"]) {
+    } else if ([name hasPrefix:@"pdf"]) {
         _fileType = FFFileTypePdf;
         _showColor = [UIColor redColor];
-    } else if ([filePath hasSuffix:@"png"] || [filePath hasSuffix:@"jpg"]) {
+    } else if ([name hasSuffix:@"png"] || [name hasSuffix:@"jpg"]) {
         _fileType = FFFileTypeImage;
         _showColor = [UIColor greenColor];
-    } else if ([filePath hasSuffix:@"gif"]) {
+    } else if ([name hasSuffix:@"gif"]) {
         _fileType = FFFileTypeImageGif;
         _showColor = [UIColor blueColor];
-    } else if ([filePath hasSuffix:@"m4a"] || [filePath hasSuffix:@"mp3"] || [filePath hasSuffix:@"caf"]) {
+    } else if ([name hasSuffix:@"m4a"] || [name hasSuffix:@"mp3"] || [name hasSuffix:@"caf"]) {
         _fileType = FFFileTypeMusic;
         _showColor = [UIColor magentaColor];
-    } else if ([filePath hasSuffix:@"plist"]) {
+    } else if ([name hasSuffix:@"plist"]) {
         _fileType = FFFileTypePlist;
         _showColor = [UIColor colorWithHex:0x228b22];
-    } else if ([filePath hasPrefix:@"zip"] || [filePath hasPrefix:@"rar"]) {
+    } else if ([name hasPrefix:@"zip"] || [name hasPrefix:@"rar"]) {
         _fileType = FFFileTypeZip;
         _showColor = [UIColor orangeColor];
-    } else if ([filePath hasPrefix:@"html"] || [filePath hasPrefix:@"htm"]) {
+    } else if ([name hasPrefix:@"html"] || [name hasPrefix:@"htm"]) {
         _fileType = FFFileTypeHtml;
         _showColor = [UIColor purpleColor];
-    } else if ([filePath hasPrefix:@"mp4"]) {
+    } else if ([name hasPrefix:@"mp4"]) {
         _fileType = FFFileTypeVideo;
         _showColor = [UIColor brownColor];
     }

@@ -32,25 +32,12 @@
             NSString *infoPath = [NSString stringWithFormat:@"%@/%@", _fileDir, info];
             NSDictionary *fileAttributes = [fm attributesOfItemAtPath:infoPath error:&error];
             
-            FFDataInfo *dataInfo = [[FFDataInfo alloc] initWithFileAttributes:fileAttributes name:info];
+            FFDataInfo *dataInfo = [[FFDataInfo alloc] initWithFileAttributes:fileAttributes name:info parentDataId:_parentDataId];
             dataInfo.dataPath = infoPath;
             
             [_fileInfoList addObject:dataInfo];
         }
-        [_fileInfoList sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-            FFDataInfo *info1 = obj1;
-            FFDataInfo *info2 = obj2;
-            if ([info1.dataName compare:info2.dataName options:NSCaseInsensitiveSearch] == NSOrderedSame) {
-                if (info1.lCreateTime > info2.lCreateTime) {
-                    return NSOrderedAscending;
-                } else if (info1.lCreateTime < info2.lCreateTime) {
-                    return NSOrderedDescending;
-                } else {
-                    return NSOrderedSame;
-                }
-            }
-            return [info1.dataName compare:info2.dataName options:NSCaseInsensitiveSearch];
-        }];
+        [_fileInfoList sortDataInfoList];
     }
 }
 

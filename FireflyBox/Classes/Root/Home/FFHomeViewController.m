@@ -69,8 +69,6 @@
     //
     _filterDataList = [[NSMutableArray alloc] init];
     
-    [self loadFileInfoInHome];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -81,6 +79,14 @@
     
     if ([self shouldUpdateFileInfo]) {
         [self loadFileInfoInHome];
+    } else {
+        NSMutableArray *dataInfoList = [[FFDB sharedInstance] selectDataInfoWithParentDataId:TOP_PARENT_DATA_ID];
+        [dataInfoList sortDataInfoList];
+        
+        [self.dataList removeAllObjects];
+        [self.dataList addObjectsFromArray:dataInfoList];
+        [self.dataTableView reloadData];
+        [self showOrHideEmptyTips];
     }
     
 }
@@ -141,12 +147,13 @@
     NSString *webServerPath = [NSString stringWithFormat:@"%@%@", documentsPath, TRANSFER_WEB_SERVER_DIR];
     PLog(@"webServerPath: %@", webServerPath);
     
-    [self loadFileInfoWithDir:webServerPath];
+    [self loadFileInfoWithDir:webServerPath parentDataId:TOP_PARENT_DATA_ID];
 }
 
-- (void)loadFileInfoWithDir:(NSString *)tDir
+- (void)loadFileInfoWithDir:(NSString *)tDir parentDataId:(long)tParentDataId
 {
     FFGetFileInfoTask *getFileInfoTask = [[FFGetFileInfoTask alloc] init];
+    getFileInfoTask.parentDataId = tParentDataId;
     getFileInfoTask.fileDir = tDir;
     getFileInfoTask.finishBlock = ^(id task){
         FFGetFileInfoTask *getTask = task;

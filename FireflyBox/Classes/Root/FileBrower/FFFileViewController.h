@@ -10,10 +10,9 @@
 
 @interface FFFileViewController : FFTableViewController<UISearchBarDelegate, UISearchDisplayDelegate>
 
+@property (nonatomic, assign) long parentDataId;
 @property (nonatomic, strong) NSString *fileDir;
 @property (nonatomic, strong) NSMutableArray *musicInfoList;
-
-- (void)loadFileInfoWithDir:(NSString *)tDir;
 
 /*
  * search
@@ -21,7 +20,5 @@
 @property (nonatomic, strong) UISearchBar *searchBar;
 @property (nonatomic, strong) UISearchDisplayController *searchDC;
 @property (nonatomic, strong) NSMutableArray *filterDataList;
-
-- (void)searchFilter:(NSString *)keyword;
 
 @end

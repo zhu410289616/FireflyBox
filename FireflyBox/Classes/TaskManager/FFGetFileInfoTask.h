@@ -10,6 +10,7 @@
 
 @interface FFGetFileInfoTask : FFBaseTask
 
+@property (nonatomic, assign) long parentDataId;
 @property (nonatomic, strong) NSString *fileDir;
 @property (nonatomic, strong) NSMutableArray *fileInfoList;
 

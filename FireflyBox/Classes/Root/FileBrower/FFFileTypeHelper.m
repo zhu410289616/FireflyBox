@@ -30,6 +30,7 @@ static int tempNum = 1;
         {
             FFFileViewController *fileController = [[FFFileViewController alloc] init];
             fileController.title = _dataInfo.dataName;
+            fileController.parentDataId = _dataInfo.dataId;
             fileController.fileDir = _dataInfo.dataPath;
             [_viewController.navigationController pushViewController:fileController animated:YES];
         }
