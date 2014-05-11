@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16059CD1191F267D0072DD8F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 16059CD0191F267D0072DD8F /* Reachability.m */; };
+		16059CD4191F2A370072DD8F /* FFReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 16059CD3191F2A370072DD8F /* FFReachability.m */; };
 		161FF06219124B4F00CDD559 /* FFFileInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 161FF05F19124B4F00CDD559 /* FFFileInfoCell.m */; };
 		161FF06319124B4F00CDD559 /* FFFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 161FF06119124B4F00CDD559 /* FFFileViewController.m */; };
 		161FF06A191264AB00CDD559 /* FFFileReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 161FF068191264AB00CDD559 /* FFFileReaderViewController.m */; };
@@ -159,6 +161,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		16059CCF191F267D0072DD8F /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		16059CD0191F267D0072DD8F /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		16059CD2191F2A370072DD8F /* FFReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFReachability.h; sourceTree = "<group>"; };
+		16059CD3191F2A370072DD8F /* FFReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFReachability.m; sourceTree = "<group>"; };
 		161FF05E19124B4F00CDD559 /* FFFileInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFileInfoCell.h; sourceTree = "<group>"; };
 		161FF05F19124B4F00CDD559 /* FFFileInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFileInfoCell.m; sourceTree = "<group>"; };
 		161FF06019124B4F00CDD559 /* FFFileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFileViewController.h; sourceTree = "<group>"; };
@@ -460,6 +466,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16059CCE191F267D0072DD8F /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				16059CCF191F267D0072DD8F /* Reachability.h */,
+				16059CD0191F267D0072DD8F /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
 		161FF05D19124B4F00CDD559 /* FileBrower */ = {
 			isa = PBXGroup;
 			children = (
@@ -769,6 +784,7 @@
 		16A2F7A11902814400751B82 /* ThirdPartyLib */ = {
 			isa = PBXGroup;
 			children = (
+				16059CCE191F267D0072DD8F /* Reachability */,
 				166DF8A21917E39300ED2CE4 /* UMAnalytics_Sdk_2.2.1.OpenUDID */,
 				16CF23FE1910948B0029F3D2 /* DOUAudioStreamer */,
 				16ED1D26190B78B9007EC697 /* GCDWebServer */,
@@ -818,6 +834,8 @@
 				16A5B13F190C0CB9000FA5C4 /* FFHeadImageCell.m */,
 				16798A3E191E86FA00726FBD /* FFBaseLoadingView.h */,
 				16798A3F191E86FA00726FBD /* FFBaseLoadingView.m */,
+				16059CD2191F2A370072DD8F /* FFReachability.h */,
+				16059CD3191F2A370072DD8F /* FFReachability.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1263,7 +1281,9 @@
 				1624B881190930E40018B8FE /* FFHUDViewController.m in Sources */,
 				16DAD67A1902D9FB00BFE84C /* Record.m in Sources */,
 				1620DCE41913805500AE810C /* FFTabBarItem.m in Sources */,
+				16059CD4191F2A370072DD8F /* FFReachability.m in Sources */,
 				16CF24311910948B0029F3D2 /* DOUAudioPlaybackItem.m in Sources */,
+				16059CD1191F267D0072DD8F /* Reachability.m in Sources */,
 				1624B8841909311C0018B8FE /* FFTableViewController.m in Sources */,
 				1620DCD61913338300AE810C /* FFFileTypeIconView.m in Sources */,
 				16CF24361910948B0029F3D2 /* DOUAudioVisualizer.m in Sources */,

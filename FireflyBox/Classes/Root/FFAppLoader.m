@@ -9,6 +9,7 @@
 #import "FFAppLoader.h"
 #import "MobClick.h"
 #import <AVFoundation/AVFoundation.h>
+#import "FFReachability.h"
 #import "FFDB+All.h"
 
 
@@ -36,6 +37,7 @@
         [self umengTrack];//
         [self initAppLevelUIConfig];
         [self setAudioSession];
+        [self setFFReachability];
         
         [[FFDB sharedInstance] initAll];
         _isLoaded = YES;
@@ -104,6 +106,16 @@
     [session setCategory:AVAudioSessionCategoryPlayback error:&setCategoryError];
     NSError *activationError = nil;
     [session setActive:YES error:&activationError];
+}
+
+#pragma mark reachability
+
+- (void)setFFReachability
+{
+    FFReachability *ffReachability = [FFReachability sharedInstance];
+    ffReachability.reachabilityBlock = ^(NetworkStatus netStatus, BOOL connectionRequired){
+        PLog(@"");
+    };
 }
 
 - (void)testFunction
