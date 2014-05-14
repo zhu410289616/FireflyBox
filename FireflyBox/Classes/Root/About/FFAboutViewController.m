@@ -40,7 +40,7 @@
     nameLabel.backgroundColor = [UIColor clearColor];
     nameLabel.textAlignment = NSTextAlignmentCenter;
     nameLabel.font = [UIFont fontOfApp:20.0f];
-    nameLabel.text = [NSString stringWithFormat:@"%@", @"小盒子"];
+    nameLabel.text = [NSString stringWithFormat:@"%@", @"赤兔文件U盘"];
     [self.view addSubview:nameLabel];
     
     UILabel *versionLabel = [[UILabel alloc] init];
@@ -58,7 +58,7 @@
     copyrightLabel.textAlignment = NSTextAlignmentCenter;
 	copyrightLabel.font = [UIFont systemFontOfSize:16];
 	copyrightLabel.textColor = [UIColor colorWithHex:0x808080];
-    copyrightLabel.text = [NSString stringWithFormat:@"%@", @"Copyright © 2014 FireFly"];
+    copyrightLabel.text = [NSString stringWithFormat:@"%@", @"Copyright © 2014 赤兔"];
 	[self.view addSubview:copyrightLabel];
     
 }
