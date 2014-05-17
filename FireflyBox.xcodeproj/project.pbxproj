@@ -50,6 +50,10 @@
 		1624B8A019093C140018B8FE /* FFSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1624B89B19093C140018B8FE /* FFSettingViewController.m */; };
 		162F9157190956FD004D0C25 /* FFBaseTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 162F9156190956FD004D0C25 /* FFBaseTableCell.m */; };
 		162F915A19095740004D0C25 /* FFRecentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 162F915919095740004D0C25 /* FFRecentCell.m */; };
+		163102FF192716A3000ECCDC /* FFAudioRecorder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 163102FE192716A3000ECCDC /* FFAudioRecorder.mm */; };
+		16686624192675C2009BD05D /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16686623192675C2009BD05D /* CoreAudio.framework */; };
+		16686626192675E1009BD05D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16686625192675E1009BD05D /* QuartzCore.framework */; };
+		16686628192675F9009BD05D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16686627192675F9009BD05D /* OpenGLES.framework */; };
 		166DF8A61917E39300ED2CE4 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 166DF8A31917E39300ED2CE4 /* libMobClickLibrary.a */; };
 		16798A3D191E720100726FBD /* NSMutableArray+FireFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 16798A3C191E720100726FBD /* NSMutableArray+FireFly.m */; };
 		16798A40191E86FA00726FBD /* FFBaseLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16798A3F191E86FA00726FBD /* FFBaseLoadingView.m */; };
@@ -105,6 +109,17 @@
 		16A5B140190C0CB9000FA5C4 /* FFHeadImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5B13F190C0CB9000FA5C4 /* FFHeadImageCell.m */; };
 		16A5B143190C0FBB000FA5C4 /* FFSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5B142190C0FBB000FA5C4 /* FFSettingCell.m */; };
 		16A5B14E190C17D9000FA5C4 /* FFDB+DataInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5B14D190C17D9000FA5C4 /* FFDB+DataInfo.m */; };
+		16BCB5531926650000B12CBF /* FFAudioRecorderViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 16BCB5521926650000B12CBF /* FFAudioRecorderViewController.mm */; };
+		16BCB56C1926716500B12CBF /* AQPlayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 16BCB5561926716500B12CBF /* AQPlayer.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		16BCB56D1926716500B12CBF /* AQRecorder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 16BCB5581926716500B12CBF /* AQRecorder.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		16BCB56E1926716500B12CBF /* AQLevelMeter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 16BCB55B1926716500B12CBF /* AQLevelMeter.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		16BCB56F1926716500B12CBF /* GLLevelMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BCB55D1926716500B12CBF /* GLLevelMeter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		16BCB5701926716500B12CBF /* LevelMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BCB55F1926716500B12CBF /* LevelMeter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		16BCB5721926716500B12CBF /* MeterTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16BCB5621926716500B12CBF /* MeterTable.cpp */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		16BCB5731926716500B12CBF /* CADebugMacros.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16BCB5651926716500B12CBF /* CADebugMacros.cpp */; };
+		16BCB5741926716500B12CBF /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16BCB5681926716500B12CBF /* CAStreamBasicDescription.cpp */; };
+		16BCB5751926716500B12CBF /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16BCB56A1926716500B12CBF /* CAXException.cpp */; };
+		16BCB5771926756400B12CBF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16BCB5761926756400B12CBF /* AudioToolbox.framework */; };
 		16CF24291910948B0029F3D2 /* DOUAudioAnalyzer+Default.m in Sources */ = {isa = PBXBuildFile; fileRef = 16CF24001910948B0029F3D2 /* DOUAudioAnalyzer+Default.m */; };
 		16CF242A1910948B0029F3D2 /* DOUAudioAnalyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = 16CF24021910948B0029F3D2 /* DOUAudioAnalyzer.m */; };
 		16CF242B1910948B0029F3D2 /* DOUAudioDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 16CF24061910948B0029F3D2 /* DOUAudioDecoder.m */; };
@@ -233,7 +248,7 @@
 		1624B88F19093C140018B8FE /* FFAppLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFAppLoader.h; sourceTree = "<group>"; };
 		1624B89019093C140018B8FE /* FFAppLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFAppLoader.m; sourceTree = "<group>"; };
 		1624B89119093C140018B8FE /* FFRootTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFRootTabBarController.h; sourceTree = "<group>"; };
-		1624B89219093C140018B8FE /* FFRootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFRootTabBarController.m; sourceTree = "<group>"; };
+		1624B89219093C140018B8FE /* FFRootTabBarController.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = FFRootTabBarController.m; sourceTree = "<group>"; };
 		1624B89419093C140018B8FE /* FFHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFHomeViewController.h; sourceTree = "<group>"; };
 		1624B89519093C140018B8FE /* FFHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFHomeViewController.m; sourceTree = "<group>"; };
 		1624B89719093C140018B8FE /* FFRecentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFRecentViewController.h; sourceTree = "<group>"; };
@@ -244,6 +259,11 @@
 		162F9156190956FD004D0C25 /* FFBaseTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseTableCell.m; sourceTree = "<group>"; };
 		162F915819095740004D0C25 /* FFRecentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFRecentCell.h; sourceTree = "<group>"; };
 		162F915919095740004D0C25 /* FFRecentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFRecentCell.m; sourceTree = "<group>"; };
+		163102FD192716A3000ECCDC /* FFAudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFAudioRecorder.h; sourceTree = "<group>"; };
+		163102FE192716A3000ECCDC /* FFAudioRecorder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FFAudioRecorder.mm; sourceTree = "<group>"; };
+		16686623192675C2009BD05D /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		16686625192675E1009BD05D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		16686627192675F9009BD05D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		166DF8A31917E39300ED2CE4 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		166DF8A51917E39300ED2CE4 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		16798A3B191E720100726FBD /* NSMutableArray+FireFly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+FireFly.h"; sourceTree = "<group>"; };
@@ -347,6 +367,28 @@
 		16A5B142190C0FBB000FA5C4 /* FFSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFSettingCell.m; sourceTree = "<group>"; };
 		16A5B14C190C17D9000FA5C4 /* FFDB+DataInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FFDB+DataInfo.h"; sourceTree = "<group>"; };
 		16A5B14D190C17D9000FA5C4 /* FFDB+DataInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FFDB+DataInfo.m"; sourceTree = "<group>"; };
+		16BCB5511926650000B12CBF /* FFAudioRecorderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFAudioRecorderViewController.h; sourceTree = "<group>"; };
+		16BCB5521926650000B12CBF /* FFAudioRecorderViewController.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = FFAudioRecorderViewController.mm; sourceTree = "<group>"; };
+		16BCB5551926716500B12CBF /* AQPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQPlayer.h; sourceTree = "<group>"; };
+		16BCB5561926716500B12CBF /* AQPlayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AQPlayer.mm; sourceTree = "<group>"; };
+		16BCB5571926716500B12CBF /* AQRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQRecorder.h; sourceTree = "<group>"; };
+		16BCB5581926716500B12CBF /* AQRecorder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AQRecorder.mm; sourceTree = "<group>"; };
+		16BCB55A1926716500B12CBF /* AQLevelMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQLevelMeter.h; sourceTree = "<group>"; };
+		16BCB55B1926716500B12CBF /* AQLevelMeter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AQLevelMeter.mm; sourceTree = "<group>"; };
+		16BCB55C1926716500B12CBF /* GLLevelMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLLevelMeter.h; sourceTree = "<group>"; };
+		16BCB55D1926716500B12CBF /* GLLevelMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLLevelMeter.m; sourceTree = "<group>"; };
+		16BCB55E1926716500B12CBF /* LevelMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelMeter.h; sourceTree = "<group>"; };
+		16BCB55F1926716500B12CBF /* LevelMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelMeter.m; sourceTree = "<group>"; };
+		16BCB5621926716500B12CBF /* MeterTable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MeterTable.cpp; sourceTree = "<group>"; };
+		16BCB5631926716500B12CBF /* MeterTable.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = MeterTable.h; sourceTree = "<group>"; };
+		16BCB5651926716500B12CBF /* CADebugMacros.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CADebugMacros.cpp; sourceTree = "<group>"; };
+		16BCB5661926716500B12CBF /* CADebugMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADebugMacros.h; sourceTree = "<group>"; };
+		16BCB5671926716500B12CBF /* CAMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMath.h; sourceTree = "<group>"; };
+		16BCB5681926716500B12CBF /* CAStreamBasicDescription.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAStreamBasicDescription.cpp; sourceTree = "<group>"; };
+		16BCB5691926716500B12CBF /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAStreamBasicDescription.h; sourceTree = "<group>"; };
+		16BCB56A1926716500B12CBF /* CAXException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAXException.cpp; sourceTree = "<group>"; };
+		16BCB56B1926716500B12CBF /* CAXException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAXException.h; sourceTree = "<group>"; };
+		16BCB5761926756400B12CBF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		16CF23FF1910948B0029F3D2 /* DOUAudioAnalyzer+Default.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DOUAudioAnalyzer+Default.h"; sourceTree = "<group>"; };
 		16CF24001910948B0029F3D2 /* DOUAudioAnalyzer+Default.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DOUAudioAnalyzer+Default.m"; sourceTree = "<group>"; };
 		16CF24011910948B0029F3D2 /* DOUAudioAnalyzer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOUAudioAnalyzer.h; sourceTree = "<group>"; };
@@ -443,6 +485,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16686628192675F9009BD05D /* OpenGLES.framework in Frameworks */,
+				16686626192675E1009BD05D /* QuartzCore.framework in Frameworks */,
+				16686624192675C2009BD05D /* CoreAudio.framework in Frameworks */,
+				16BCB5771926756400B12CBF /* AudioToolbox.framework in Frameworks */,
 				16EA9927190B7A890075CE47 /* libz.dylib in Frameworks */,
 				16ED1D5B190B799E007EC697 /* CFNetwork.framework in Frameworks */,
 				16DAD6811902DADE00BFE84C /* libsqlite3.dylib in Frameworks */,
@@ -606,6 +652,7 @@
 		1624B88E19093C140018B8FE /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				16BCB5501926646500B12CBF /* AudioRecorder */,
 				16232D28191671980043F840 /* Help */,
 				16232D29191671980043F840 /* NextStep */,
 				1620DD101913E02600AE810C /* About */,
@@ -714,6 +761,10 @@
 		16A2F7701902663100751B82 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				16686627192675F9009BD05D /* OpenGLES.framework */,
+				16686625192675E1009BD05D /* QuartzCore.framework */,
+				16686623192675C2009BD05D /* CoreAudio.framework */,
+				16BCB5761926756400B12CBF /* AudioToolbox.framework */,
 				16EA9926190B7A890075CE47 /* libz.dylib */,
 				16ED1D5A190B799E007EC697 /* CFNetwork.framework */,
 				16DAD6801902DADE00BFE84C /* libsqlite3.dylib */,
@@ -784,6 +835,7 @@
 		16A2F7A11902814400751B82 /* ThirdPartyLib */ = {
 			isa = PBXGroup;
 			children = (
+				16BCB5541926716500B12CBF /* SpeakAudio */,
 				16059CCE191F267D0072DD8F /* Reachability */,
 				166DF8A21917E39300ED2CE4 /* UMAnalytics_Sdk_2.2.1.OpenUDID */,
 				16CF23FE1910948B0029F3D2 /* DOUAudioStreamer */,
@@ -982,6 +1034,59 @@
 				16CF243D191095540029F3D2 /* FFGetFileInfoTask.m */,
 			);
 			path = TaskManager;
+			sourceTree = "<group>";
+		};
+		16BCB5501926646500B12CBF /* AudioRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				16BCB5511926650000B12CBF /* FFAudioRecorderViewController.h */,
+				16BCB5521926650000B12CBF /* FFAudioRecorderViewController.mm */,
+				163102FD192716A3000ECCDC /* FFAudioRecorder.h */,
+				163102FE192716A3000ECCDC /* FFAudioRecorder.mm */,
+			);
+			path = AudioRecorder;
+			sourceTree = "<group>";
+		};
+		16BCB5541926716500B12CBF /* SpeakAudio */ = {
+			isa = PBXGroup;
+			children = (
+				16BCB5551926716500B12CBF /* AQPlayer.h */,
+				16BCB5561926716500B12CBF /* AQPlayer.mm */,
+				16BCB5571926716500B12CBF /* AQRecorder.h */,
+				16BCB5581926716500B12CBF /* AQRecorder.mm */,
+				16BCB5591926716500B12CBF /* AudioViews */,
+				16BCB5621926716500B12CBF /* MeterTable.cpp */,
+				16BCB5631926716500B12CBF /* MeterTable.h */,
+				16BCB5641926716500B12CBF /* PublicUtility */,
+			);
+			path = SpeakAudio;
+			sourceTree = "<group>";
+		};
+		16BCB5591926716500B12CBF /* AudioViews */ = {
+			isa = PBXGroup;
+			children = (
+				16BCB55A1926716500B12CBF /* AQLevelMeter.h */,
+				16BCB55B1926716500B12CBF /* AQLevelMeter.mm */,
+				16BCB55C1926716500B12CBF /* GLLevelMeter.h */,
+				16BCB55D1926716500B12CBF /* GLLevelMeter.m */,
+				16BCB55E1926716500B12CBF /* LevelMeter.h */,
+				16BCB55F1926716500B12CBF /* LevelMeter.m */,
+			);
+			path = AudioViews;
+			sourceTree = "<group>";
+		};
+		16BCB5641926716500B12CBF /* PublicUtility */ = {
+			isa = PBXGroup;
+			children = (
+				16BCB5651926716500B12CBF /* CADebugMacros.cpp */,
+				16BCB5661926716500B12CBF /* CADebugMacros.h */,
+				16BCB5671926716500B12CBF /* CAMath.h */,
+				16BCB5681926716500B12CBF /* CAStreamBasicDescription.cpp */,
+				16BCB5691926716500B12CBF /* CAStreamBasicDescription.h */,
+				16BCB56A1926716500B12CBF /* CAXException.cpp */,
+				16BCB56B1926716500B12CBF /* CAXException.h */,
+			);
+			path = PublicUtility;
 			sourceTree = "<group>";
 		};
 		16CF23FE1910948B0029F3D2 /* DOUAudioStreamer */ = {
@@ -1248,10 +1353,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				163102FF192716A3000ECCDC /* FFAudioRecorder.mm in Sources */,
+				16BCB5751926716500B12CBF /* CAXException.cpp in Sources */,
 				16A2F8F51902D5C100751B82 /* FMDatabase+InMemoryOnDiskIO.m in Sources */,
 				16A2F8E81902D5C100751B82 /* AFImageRequestOperation.m in Sources */,
 				161FF06319124B4F00CDD559 /* FFFileViewController.m in Sources */,
 				16CF244819109CF00029F3D2 /* Track.m in Sources */,
+				16BCB5741926716500B12CBF /* CAStreamBasicDescription.cpp in Sources */,
 				16A2F8FF1902D5C100751B82 /* SYAppStart.m in Sources */,
 				16CF243B1910948B0029F3D2 /* NSData+DOUMappedFile.m in Sources */,
 				16A2F8ED1902D5C100751B82 /* AFXMLRequestOperation.m in Sources */,
@@ -1285,12 +1393,16 @@
 				16CF24311910948B0029F3D2 /* DOUAudioPlaybackItem.m in Sources */,
 				16059CD1191F267D0072DD8F /* Reachability.m in Sources */,
 				1624B8841909311C0018B8FE /* FFTableViewController.m in Sources */,
+				16BCB56F1926716500B12CBF /* GLLevelMeter.m in Sources */,
 				1620DCD61913338300AE810C /* FFFileTypeIconView.m in Sources */,
 				16CF24361910948B0029F3D2 /* DOUAudioVisualizer.m in Sources */,
 				1624B88D190938D90018B8FE /* FFBarButtonItem.m in Sources */,
+				16BCB56E1926716500B12CBF /* AQLevelMeter.mm in Sources */,
 				16ED1D56190B78B9007EC697 /* GCDWebServerFileResponse.m in Sources */,
 				16CF24371910948B0029F3D2 /* DOUEAGL1View.m in Sources */,
+				16BCB5721926716500B12CBF /* MeterTable.cpp in Sources */,
 				161FF06A191264AB00CDD559 /* FFFileReaderViewController.m in Sources */,
+				16BCB5701926716500B12CBF /* LevelMeter.m in Sources */,
 				16A5B12E190BE35C000FA5C4 /* FFBaseTask.m in Sources */,
 				16A2F8F21902D5C100751B82 /* EGOImageLoadConnection.m in Sources */,
 				16A2F8E61902D5C100751B82 /* AFHTTPClient.m in Sources */,
@@ -1333,6 +1445,7 @@
 				1624B89D19093C140018B8FE /* FFRootTabBarController.m in Sources */,
 				16A2F8EC1902D5C100751B82 /* AFURLConnectionOperation.m in Sources */,
 				1620DCFD1913807200AE810C /* UIView+FireFly.m in Sources */,
+				16BCB5531926650000B12CBF /* FFAudioRecorderViewController.mm in Sources */,
 				1620DCF81913807200AE810C /* NSString+FireFly.m in Sources */,
 				1620DD0419138F2800AE810C /* UIButton+FireFly.m in Sources */,
 				1620DD131913E04A00AE810C /* FFAboutViewController.m in Sources */,
@@ -1340,6 +1453,7 @@
 				16A2F8F91902D5C100751B82 /* FMDatabaseQueue.m in Sources */,
 				16A2F8E71902D5C100751B82 /* AFHTTPRequestOperation.m in Sources */,
 				16CF242C1910948B0029F3D2 /* DOUAudioEventLoop.m in Sources */,
+				16BCB5731926716500B12CBF /* CADebugMacros.cpp in Sources */,
 				161FF06219124B4F00CDD559 /* FFFileInfoCell.m in Sources */,
 				1620DCF71913807200AE810C /* NSObject+FireFly.m in Sources */,
 				16CF24391910948B0029F3D2 /* DOUMPMediaLibraryAssetLoader.m in Sources */,
@@ -1356,9 +1470,11 @@
 				16A5B137190BEB0C000FA5C4 /* FFSerialQueue.m in Sources */,
 				16A2F8F31902D5C100751B82 /* EGOImageLoader.m in Sources */,
 				16ED1D59190B78B9007EC697 /* GCDWebUploader.m in Sources */,
+				16BCB56C1926716500B12CBF /* AQPlayer.mm in Sources */,
 				16CF244619109CF00029F3D2 /* PlayerViewController.m in Sources */,
 				16A2F8F11902D5C100751B82 /* EGOImageButton.m in Sources */,
 				16A0D62E190AC0CE007D6EBA /* TTTAttributedLabel.m in Sources */,
+				16BCB56D1926716500B12CBF /* AQRecorder.mm in Sources */,
 				16A5B131190BE916000FA5C4 /* FFBaseQueue.m in Sources */,
 				16A2F8EE1902D5C100751B82 /* UIImageView+AFNetworking.m in Sources */,
 				16A2F8FC1902D5C100751B82 /* EGORefreshTableHeaderView.m in Sources */,
@@ -1496,6 +1612,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiang Dong (T932MCQ645)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FireflyBox/FireflyBox-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INFOPLIST_FILE = "FireflyBox/FireflyBox-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

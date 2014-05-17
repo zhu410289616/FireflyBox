@@ -10,6 +10,7 @@
 
 #import "FFActionSheetView.h"
 #import "FFNextStepViewController.h"
+#import "FFAudioRecorderViewController.h"
 
 #define TABBAR_HEIGHT 50.0f
 
@@ -111,6 +112,13 @@
     [self presentViewController:nav animated:YES completion:nil];
 }
 
+- (void)doShowAudioRecorderAction
+{
+    FFAudioRecorderViewController *audioRecorderController = [[FFAudioRecorderViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:audioRecorderController];
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
 - (void)doItemAction:(int)actionIndex
 {
     PLog(@"doItemAction: %d", actionIndex);
@@ -120,6 +128,9 @@
             [_homeController doAddAction];
             break;
         case 1:
+            [self doShowAudioRecorderAction];
+            break;
+        case 2:
             [self doShowNextStepAction];
             break;
             
@@ -136,7 +147,7 @@
     
     if (tIndex == 1) {
         [_tabBarView selectedTabBarItem:self.selectedIndex];
-        NSArray *titles = [NSArray arrayWithObjects:@"添加", @"下一步", nil];
+        NSArray *titles = [NSArray arrayWithObjects:@"添加", @"录音", @"下一步", nil];
         FFActionSheetView *actionSheetView = [[FFActionSheetView alloc] initWithTitles:titles];
         actionSheetView.actionBlock = ^(int actionIndex) {
             [self doItemAction:actionIndex];

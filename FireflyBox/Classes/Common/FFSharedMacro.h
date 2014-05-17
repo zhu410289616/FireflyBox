@@ -43,4 +43,7 @@
 
 #define SHOULD_UPDATE_FILE_INFO         @"SHOULD_UPDATE_FILE_INFO"
 
+//audio recorder
+#define kBufferDurationSeconds .5
+
 #endif
