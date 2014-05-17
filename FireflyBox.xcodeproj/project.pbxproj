@@ -51,6 +51,7 @@
 		162F9157190956FD004D0C25 /* FFBaseTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 162F9156190956FD004D0C25 /* FFBaseTableCell.m */; };
 		162F915A19095740004D0C25 /* FFRecentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 162F915919095740004D0C25 /* FFRecentCell.m */; };
 		163102FF192716A3000ECCDC /* FFAudioRecorder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 163102FE192716A3000ECCDC /* FFAudioRecorder.mm */; };
+		1631030B1927C369000ECCDC /* FFDeleteFileTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 1631030A1927C369000ECCDC /* FFDeleteFileTask.m */; };
 		16686624192675C2009BD05D /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16686623192675C2009BD05D /* CoreAudio.framework */; };
 		16686626192675E1009BD05D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16686625192675E1009BD05D /* QuartzCore.framework */; };
 		16686628192675F9009BD05D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16686627192675F9009BD05D /* OpenGLES.framework */; };
@@ -260,6 +261,8 @@
 		162F915919095740004D0C25 /* FFRecentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFRecentCell.m; sourceTree = "<group>"; };
 		163102FD192716A3000ECCDC /* FFAudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFAudioRecorder.h; sourceTree = "<group>"; };
 		163102FE192716A3000ECCDC /* FFAudioRecorder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FFAudioRecorder.mm; sourceTree = "<group>"; };
+		163103091927C369000ECCDC /* FFDeleteFileTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFDeleteFileTask.h; sourceTree = "<group>"; };
+		1631030A1927C369000ECCDC /* FFDeleteFileTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFDeleteFileTask.m; sourceTree = "<group>"; };
 		16686623192675C2009BD05D /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		16686625192675E1009BD05D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		16686627192675F9009BD05D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1027,6 +1030,8 @@
 				16A5B136190BEB0C000FA5C4 /* FFSerialQueue.m */,
 				16CF243C191095540029F3D2 /* FFGetFileInfoTask.h */,
 				16CF243D191095540029F3D2 /* FFGetFileInfoTask.m */,
+				163103091927C369000ECCDC /* FFDeleteFileTask.h */,
+				1631030A1927C369000ECCDC /* FFDeleteFileTask.m */,
 			);
 			path = TaskManager;
 			sourceTree = "<group>";
@@ -1399,6 +1404,7 @@
 				16BCB5701926716500B12CBF /* LevelMeter.m in Sources */,
 				16A5B12E190BE35C000FA5C4 /* FFBaseTask.m in Sources */,
 				16A2F8F21902D5C100751B82 /* EGOImageLoadConnection.m in Sources */,
+				1631030B1927C369000ECCDC /* FFDeleteFileTask.m in Sources */,
 				16A2F8E61902D5C100751B82 /* AFHTTPClient.m in Sources */,
 				1620DCFE1913807200AE810C /* UIViewController+FireFly.m in Sources */,
 				1620DD011913809E00AE810C /* FFActionSheetView.m in Sources */,

@@ -12,6 +12,7 @@
 #import "FFConcurrentQueue.h"
 #import "FFFileInfoCell.h"
 #import "FFFileTypeHelper.h"
+#import "FFDeleteFileTask.h"
 
 @interface FFFileViewController ()
 
@@ -230,6 +231,32 @@
     }
     
     return cell;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    FFDataInfo *dataInfo = nil;
+    if (tableView == self.dataTableView) {
+        dataInfo = [self.dataList objectAtIndex:indexPath.row];
+        [self.dataList removeObject:dataInfo];
+    } else {
+        dataInfo = [self.filterDataList objectAtIndex:indexPath.row];
+        [self.filterDataList removeObject:dataInfo];
+    }
+    FFDeleteFileTask *deleteFileTask = [[FFDeleteFileTask alloc] init];
+    deleteFileTask.filePath = dataInfo.dataPath;
+    deleteFileTask.finishBlock = ^(id task) {
+        [[FFDB sharedInstance] deleteDataInfoWithDataId:dataInfo.dataId];
+        [[FFDB sharedInstance] deleteDataInfoWithParentDataId:dataInfo.dataId];
+    };
+    [[FFConcurrentQueue sharedConcurrentQueue] addTask:deleteFileTask];
+    
+    [tableView reloadData];
 }
 
 #pragma mark UITableViewDelegate method

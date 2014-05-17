@@ -84,82 +84,14 @@
 
 - (void)registerForBackgroundNotifications
 {
-	[[NSNotificationCenter defaultCenter] addObserver:self
-											 selector:@selector(resignActive)
-												 name:UIApplicationWillResignActiveNotification
-											   object:nil];
-	
-	[[NSNotificationCenter defaultCenter] addObserver:self
-											 selector:@selector(enterForeground)
-												 name:UIApplicationWillEnterForegroundNotification
-											   object:nil];
-}
-
-- (void)resignActive
-{
-    if (_recorder->IsRunning()) {
-        [self stopRecord];
-    }
-}
-
-- (void)enterForeground
-{
-    OSStatus error = AudioSessionSetActive(true);
-    if (error) {
-        PLog(@"AudioSessionSetActive (true) failed");
-    }
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stopRecord) name:UIApplicationWillResignActiveNotification object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stopRecord) name:UIApplicationWillEnterForegroundNotification object:nil];
 }
 
 - (void)removeForBackgroundNotifications
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillResignActiveNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillEnterForegroundNotification object:nil];
-}
-
-#pragma mark AudioSession listeners
-
-void interruptionListener(	void *	inClientData,
-                          UInt32	inInterruptionState)
-{
-	FFAudioRecorder *THIS = (__bridge FFAudioRecorder*)inClientData;
-	if (inInterruptionState == kAudioSessionBeginInterruption)
-	{
-		if (THIS->_recorder->IsRunning()) {
-			[THIS stopRecord];
-		}
-	}
-}
-
-void propListener(	void *                  inClientData,
-                  AudioSessionPropertyID	inID,
-                  UInt32                  inDataSize,
-                  const void *            inData)
-{
-	FFAudioRecorder *THIS = (__bridge FFAudioRecorder*)inClientData;
-	if (inID == kAudioSessionProperty_AudioRouteChange)
-	{
-		CFDictionaryRef routeDictionary = (CFDictionaryRef)inData;
-		//CFShow(routeDictionary);
-		CFNumberRef reason = (CFNumberRef)CFDictionaryGetValue(routeDictionary, CFSTR(kAudioSession_AudioRouteChangeKey_Reason));
-		SInt32 reasonVal;
-		CFNumberGetValue(reason, kCFNumberSInt32Type, &reasonVal);
-		if (reasonVal != kAudioSessionRouteChangeReason_CategoryChange)
-		{
-			// stop the queue if we had a non-policy route change
-			if (THIS->_recorder->IsRunning()) {
-				[THIS stopRecord];
-			}
-		}
-	}
-	else if (inID == kAudioSessionProperty_AudioInputAvailable)
-	{
-		if (inDataSize == sizeof(UInt32)) {
-			UInt32 isAvailable = *(UInt32*)inData;
-			// disable recording if input is not available
-//			THIS->btn_record.enabled = (isAvailable > 0) ? YES : NO;
-            
-		}
-	}
 }
 
 char *OSTypeToStr(char *buf, OSType t)

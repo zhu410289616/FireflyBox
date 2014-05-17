@@ -46,6 +46,6 @@
 
 //audio recorder
 #define kBufferDurationSeconds .5
-#define AUDIO_RECORDER_SAVE_DIR         @"/WebServer/AudioRecorder"
+#define AUDIO_RECORDER_SAVE_DIR         @"/WebServer/MyAudio"
 
 #endif
