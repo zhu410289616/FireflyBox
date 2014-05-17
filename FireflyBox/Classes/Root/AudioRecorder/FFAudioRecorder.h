@@ -20,10 +20,8 @@
 
 @interface FFAudioRecorder : NSObject
 
+@property (nonatomic, strong) NSString *audioRecorderPath;
 @property (readonly) AQRecorder *recorder;
-@property (nonatomic, assign) BOOL playbackWasInterrupted;
-@property (nonatomic, assign) BOOL playbackWasPaused;
-@property (nonatomic, assign) BOOL inBackground;
 
 @property (nonatomic, assign) id<FFAudioRecorderDelegate> delegate;
 

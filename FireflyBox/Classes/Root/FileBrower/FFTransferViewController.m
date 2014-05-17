@@ -108,8 +108,6 @@
     
     GLOBAL_APP.idleTimerDisabled = YES;//不自动锁屏
     
-    [[NSUserDefaults standardUserDefaults] setValue:@YES forKey:SHOULD_UPDATE_FILE_INFO];
-    
 }
 
 - (void)viewWillDisappear:(BOOL)animated

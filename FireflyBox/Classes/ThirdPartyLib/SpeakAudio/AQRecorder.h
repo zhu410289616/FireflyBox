@@ -68,6 +68,7 @@ class AQRecorder
 		CAStreamBasicDescription	DataFormat() const			{ return mRecordFormat; }
 		
 		void			StartRecord(CFStringRef inRecordFile);
+        void            StartRecord(CFStringRef inRecordFile, CFStringRef inRecordDir);
 		void			StopRecord();		
 		Boolean			IsRunning() const			{ return mIsRunning; }
 		

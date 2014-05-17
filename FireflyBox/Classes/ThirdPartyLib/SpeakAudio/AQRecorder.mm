@@ -181,6 +181,11 @@ void AQRecorder::SetupAudioFormat(UInt32 inFormatID)
 
 void AQRecorder::StartRecord(CFStringRef inRecordFile)
 {
+    StartRecord(inRecordFile, NULL);
+}
+
+void AQRecorder::StartRecord(CFStringRef inRecordFile, CFStringRef inRecordDir)
+{
 	int i, bufferByteSize;
 	UInt32 size;
 	CFURLRef url = nil;
@@ -208,7 +213,9 @@ void AQRecorder::StartRecord(CFStringRef inRecordFile)
 										 &mRecordFormat, &size), "couldn't get queue's format");
 			
 		NSString *recordFile = [NSTemporaryDirectory() stringByAppendingPathComponent: (NSString*)inRecordFile];
-			
+        if (NULL != inRecordDir) {
+            recordFile = [NSString stringWithFormat:@"%@%@", (NSString*)inRecordDir, (NSString*)inRecordFile];
+        }
 		url = CFURLCreateWithString(kCFAllocatorDefault, (CFStringRef)recordFile, NULL);
 		
 		// create the audio file

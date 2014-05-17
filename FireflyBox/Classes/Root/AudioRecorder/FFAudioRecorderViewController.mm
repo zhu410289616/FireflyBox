@@ -34,12 +34,12 @@
     
     //录音时间, 文件名称
     _timeLabel = [[UILabel alloc] init];
-    _timeLabel.frame = CGRectMake(15, CGRectGetHeight(_lvlMeter_in.bounds) + 20, GLOBAL_SCREEN_WIDTH - 30, 30);
+    _timeLabel.frame = CGRectMake(15, CGRectGetMaxY(_lvlMeter_in.frame) + 20, GLOBAL_SCREEN_WIDTH - 30, 30);
     _timeLabel.text = @"time(s):";
     [self.view addSubview:_timeLabel];
     
     _fileDescription = [[UILabel alloc] init];
-    _fileDescription.frame = CGRectMake(15, CGRectGetMaxY(_timeLabel.bounds) + 20, GLOBAL_SCREEN_WIDTH - 30, 30);
+    _fileDescription.frame = CGRectMake(15, CGRectGetMaxY(_timeLabel.frame) + 20, GLOBAL_SCREEN_WIDTH - 30, 30);
     _fileDescription.text = @"file description";
     [self.view addSubview:_fileDescription];
     

@@ -18,6 +18,9 @@
 - (id)init
 {
     if (self = [super init]) {
+        
+        [self initAudioRecorderDir];
+        
         // Allocate our singleton instance for the recorder & player object
         _recorder = new AQRecorder();
         
@@ -69,8 +72,9 @@
 	}
 	else // If we're not recording, start.
 	{
+        NSString *recordFileName = [NSString stringWithFormat:@"%@.caf", [NSString stringWithDate:[NSDate date] formatter:@"yyyy-MM-dd-HHmmss"]];
 		// Start the recorder
-		_recorder->StartRecord(CFSTR("recordedFile.caf"));
+		_recorder->StartRecord((__bridge CFStringRef)recordFileName, (__bridge CFStringRef)_audioRecorderPath);
 		
 		[self setFileDescriptionForFormat:_recorder->DataFormat() withName:@"Recorded File"];
 		
@@ -90,6 +94,12 @@
 }
 
 #pragma mark privte function
+
+- (void)initAudioRecorderDir
+{
+    NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+    _audioRecorderPath = [FFCommonUtil createPath:[NSString stringWithFormat:@"%@%@/", documentsPath, AUDIO_RECORDER_SAVE_DIR]];
+}
 
 #pragma mark background notifications
 

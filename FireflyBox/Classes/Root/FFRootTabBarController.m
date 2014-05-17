@@ -105,6 +105,13 @@
 
 #pragma mark private function
 
+- (void)doShowTransferAction
+{
+    [[NSUserDefaults standardUserDefaults] setValue:@YES forKey:SHOULD_UPDATE_FILE_INFO];
+    
+    [_homeController doAddAction];
+}
+
 - (void)doShowNextStepAction
 {
     FFNextStepViewController *nextStepController = [[FFNextStepViewController alloc] init];
@@ -114,6 +121,8 @@
 
 - (void)doShowAudioRecorderAction
 {
+    [[NSUserDefaults standardUserDefaults] setValue:@YES forKey:SHOULD_UPDATE_FILE_INFO];
+    
     FFAudioRecorderViewController *audioRecorderController = [[FFAudioRecorderViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:audioRecorderController];
     [self presentViewController:nav animated:YES completion:nil];
@@ -125,7 +134,7 @@
     
     switch (actionIndex) {
         case 0:
-            [_homeController doAddAction];
+            [self doShowTransferAction];
             break;
         case 1:
             [self doShowAudioRecorderAction];
