@@ -46,14 +46,20 @@
         [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryRecord error: nil];
         [[AVAudioSession sharedInstance] setActive:YES error:nil];
         
+        _recordTime = 0;
+        _recordTimeTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(recording) userInfo:nil repeats:YES];
+        
         NSString *recordFileName = [NSString stringWithFormat:@"%@.caf", [NSString stringWithDate:[NSDate date] formatter:@"yyyy-MM-dd-HHmmss"]];
 		// Start the recorder
 		_recorder->StartRecord((__bridge CFStringRef)recordFileName, (__bridge CFStringRef)_audioRecorderPath);
 		
-		[self setFileDescriptionForFormat:_recorder->DataFormat() withName:@"Recorded File"];
+        char buf[5];
+        const char *dataFormat = OSTypeToStr(buf, _recorder->DataFormat().mFormatID);
+        NSString *description = [NSString stringWithFormat:@"(%ld ch. %s @ %g Hz)", _recorder->DataFormat().NumberChannels(), dataFormat, _recorder->DataFormat().mSampleRate, nil];
+        PLog(@"description: %@", description);
 		
         if (_delegate) {
-            [_delegate audioRecorder:self didStart:_recorder->DataFormat() name:@"Recorded File"];
+            [_delegate audioRecorder:self didStart:description name:recordFileName];
         }
         
 	}
@@ -64,11 +70,25 @@
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error: nil];
     [[AVAudioSession sharedInstance] setActive:YES error:nil];
     
+    if (_recordTimeTimer) {
+        [_recordTimeTimer invalidate];
+        _recordTimeTimer = nil;
+    }
+    
     if (_delegate) {
         [_delegate audioRecorder:self didStop:nil name:nil];
     }
     if (_recorder->IsRunning()) {
         _recorder->StopRecord();
+    }
+}
+
+- (void)recording
+{
+    _recordTime++;
+    
+    if (_delegate) {
+        [_delegate audioRecorder:self didRecording:_recordTime];
     }
 }
 
@@ -110,14 +130,6 @@ char *OSTypeToStr(char *buf, OSType t)
 	}
 	*p = '\0';
 	return buf;
-}
-
-- (void)setFileDescriptionForFormat: (CAStreamBasicDescription)format withName:(NSString*)name
-{
-	char buf[5];
-	const char *dataFormat = OSTypeToStr(buf, format.mFormatID);
-	NSString *description = [NSString stringWithFormat:@"(%ld ch. %s @ %g Hz)", format.NumberChannels(), dataFormat, format.mSampleRate, nil];
-	PLog(@"description: %@", description);
 }
 
 @end

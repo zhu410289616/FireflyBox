@@ -13,6 +13,7 @@
 @interface FFAudioRecorderViewController : FFBaseViewController<FFAudioRecorderDelegate>
 
 @property (nonatomic, strong) AQLevelMeter *lvlMeter_in;
+@property (nonatomic, strong) UILabel *fileNameLabel;
 @property (nonatomic, strong) UILabel *timeLabel;
 @property (nonatomic, strong) UILabel *fileDescription;
 @property (nonatomic, strong) UIButton *recorderButton;

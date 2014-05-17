@@ -64,7 +64,7 @@
     if ([self shouldUpdateFileInfo]) {
         [self loadFileInfoWithDir:_fileDir parentDataId:_parentDataId];
     } else {
-        [self loadFileInfoWithParentDataId:_parentDataId];
+        [self loadFileInfo];
     }
     
 }
@@ -117,6 +117,9 @@
     [[FFConcurrentQueue sharedConcurrentQueue] addTask:getFileInfoTask];
 }
 
+/**
+ * 刷新文件列表信息后的任务回调
+ */
 - (void)loadFileInfoFinished
 {
     PLog(@"loadFileInfoFinished...");
@@ -124,6 +127,9 @@
     [self showOrHideEmptyTips];
 }
 
+/**
+ * 读取是否需要刷新的标志
+ */
 - (BOOL)shouldUpdateFileInfo
 {
     BOOL shouldUpdate = [[[NSUserDefaults standardUserDefaults] objectForKey:SHOULD_UPDATE_FILE_INFO] boolValue];
@@ -132,6 +138,9 @@
     return shouldUpdate;
 }
 
+/**
+ * 关键字搜索
+ */
 - (void)searchFilter:(NSString *)keyword
 {
     [_filterDataList removeAllObjects];
@@ -266,6 +275,9 @@
     return 70.0f;
 }
 
+/**
+ * 根据选择cell中的文件信息，做对应的跳转动作
+ */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

@@ -32,16 +32,26 @@
 	[_lvlMeter_in setBorderColor:bgColor];
     [self.view addSubview:_lvlMeter_in];
     
-    //录音时间, 文件名称
-    _timeLabel = [[UILabel alloc] init];
-    _timeLabel.frame = CGRectMake(15, CGRectGetMaxY(_lvlMeter_in.frame) + 20, GLOBAL_SCREEN_WIDTH - 30, 30);
-    _timeLabel.text = @"time(s):";
-    [self.view addSubview:_timeLabel];
+    //文件名称
+    _fileNameLabel = [[UILabel alloc] init];
+    _fileNameLabel.frame = CGRectMake(15, CGRectGetMaxY(_lvlMeter_in.frame) + 20, GLOBAL_SCREEN_WIDTH - 30, 30);
+    _fileNameLabel.text = @"录音文件名称";
+    _fileNameLabel.hidden = YES;
+    [self.view addSubview:_fileNameLabel];
     
+    //
     _fileDescription = [[UILabel alloc] init];
-    _fileDescription.frame = CGRectMake(15, CGRectGetMaxY(_timeLabel.frame) + 20, GLOBAL_SCREEN_WIDTH - 30, 30);
+    _fileDescription.frame = CGRectMake(15, CGRectGetMaxY(_fileNameLabel.frame) + 20, GLOBAL_SCREEN_WIDTH - 30, 30);
     _fileDescription.text = @"file description";
+    _fileDescription.hidden = YES;
     [self.view addSubview:_fileDescription];
+    
+    //录音时间
+    _timeLabel = [[UILabel alloc] init];
+    _timeLabel.frame = CGRectMake(15, CGRectGetMaxY(_fileDescription.frame) + 20, GLOBAL_SCREEN_WIDTH - 30, 30);
+    _timeLabel.text = @"录音时间: 0 秒";
+    _timeLabel.hidden = YES;
+    [self.view addSubview:_timeLabel];
     
     //
     _recorderButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -117,11 +127,20 @@
 
 #pragma mark FFAudioRecorderDelegate method
 
-- (void)audioRecorder:(FFAudioRecorder *)audioRecorder didStart:(CAStreamBasicDescription)format name:(NSString *)name
+- (void)audioRecorder:(FFAudioRecorder *)audioRecorder didStart:(NSString *)fileDescription name:(NSString *)name
 {
     // Hook the level meter up to the Audio Queue for the recorder
     [_lvlMeter_in setAq:audioRecorder.recorder->Queue()];
-    _fileDescription.text = [NSString stringWithFormat:@"(%ld ch. @ %g Hz)", format.NumberChannels(), format.mSampleRate, nil];
+    _fileNameLabel.text = name;
+    _fileNameLabel.hidden = NO;
+    _fileDescription.text = fileDescription;
+    _fileDescription.hidden = NO;
+}
+
+- (void)audioRecorder:(FFAudioRecorder *)audioRecorder didRecording:(int)recordTime
+{
+    _timeLabel.text = [NSString stringWithFormat:@"录音时间: %d 秒", recordTime];
+    _timeLabel.hidden = NO;
 }
 
 - (void)audioRecorder:(FFAudioRecorder *)audioRecorder didStop:(NSString *)savePath name:(NSString *)name
