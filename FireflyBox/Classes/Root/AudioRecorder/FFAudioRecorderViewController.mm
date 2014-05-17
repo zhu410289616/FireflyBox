@@ -94,6 +94,8 @@
 
 - (void)doRightBarButtonItemAction:(id)sender
 {
+    [_audioRecorder stopRecord];
+    
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 

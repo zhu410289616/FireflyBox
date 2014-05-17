@@ -13,6 +13,8 @@
 
 - (void)initDataInfo;
 - (BOOL)insertDataInfo:(FFDataInfo *)tDataInfo;
+- (BOOL)deleteDataInfoWithDataId:(long)tDataId;
+- (BOOL)deleteDataInfoWithParentDataId:(long)tParentDataId;
 - (NSMutableArray *)selectDataInfo;
 - (NSMutableArray *)selectDataInfoWithDataId:(long)tDataId;
 - (NSMutableArray *)selectDataInfoWithParentDataId:(long)tParentDataId;

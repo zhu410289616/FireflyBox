@@ -46,6 +46,32 @@
     return result;
 }
 
+- (BOOL)deleteDataInfoWithDataId:(long)tDataId
+{
+    __block BOOL result = YES;
+    [self.dbQueue inDatabase:^(FMDatabase *db) {
+        [db open];
+        NSString *sql = @"delete from FF_DATA_INFO where dataid = ? ";
+        NSNumber *numDataId = [NSNumber numberWithLong:tDataId];
+        result = [db executeUpdate:sql, numDataId];
+        [db close];
+    }];
+    return result;
+}
+
+- (BOOL)deleteDataInfoWithParentDataId:(long)tParentDataId
+{
+    __block BOOL result = YES;
+    [self.dbQueue inDatabase:^(FMDatabase *db) {
+        [db open];
+        NSString *sql = @"delete from FF_DATA_INFO where parentdataid = ? ";
+        NSNumber *numDataId = [NSNumber numberWithLong:tParentDataId];
+        result = [db executeUpdate:sql, numDataId];
+        [db close];
+    }];
+    return result;
+}
+
 - (NSMutableArray *)selectDataInfo
 {
     __block NSMutableArray *dataInfoList = [[NSMutableArray alloc] init];

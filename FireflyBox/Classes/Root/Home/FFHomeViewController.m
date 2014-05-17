@@ -156,6 +156,9 @@
     getFileInfoTask.parentDataId = tParentDataId;
     getFileInfoTask.fileDir = tDir;
     getFileInfoTask.finishBlock = ^(id task){
+        
+        [[FFDB sharedInstance] deleteDataInfoWithParentDataId:tParentDataId];
+        
         FFGetFileInfoTask *getTask = task;
         NSMutableArray *fileInfos = getTask.fileInfoList;
         for (id obj in fileInfos) {

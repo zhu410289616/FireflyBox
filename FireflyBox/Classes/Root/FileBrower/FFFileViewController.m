@@ -47,9 +47,6 @@
     
     _filterDataList = [[NSMutableArray alloc] init];
     
-    //
-    [self loadFileInfoInSubDir];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -58,6 +55,7 @@
     
     [GLOBAL_APP_DELEGATE.tabBarController showFFTabBarView];
     
+    [self loadFileInfoInSubDir];
 }
 
 - (void)didReceiveMemoryWarning
@@ -86,6 +84,9 @@
     getFileInfoTask.parentDataId = tParentDataId;
     getFileInfoTask.fileDir = tDir;
     getFileInfoTask.finishBlock = ^(id task){
+        
+        [[FFDB sharedInstance] deleteDataInfoWithParentDataId:tParentDataId];
+        
         FFGetFileInfoTask *getTask = task;
         NSMutableArray *fileInfos = getTask.fileInfoList;
         for (id obj in fileInfos) {

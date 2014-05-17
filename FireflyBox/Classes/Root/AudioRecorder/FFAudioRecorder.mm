@@ -7,6 +7,7 @@
 //
 
 #import "FFAudioRecorder.h"
+#import <AVFoundation/AVFoundation.h>
 
 @implementation FFAudioRecorder
 
@@ -21,41 +22,11 @@
         
         [self initAudioRecorderDir];
         
+        [self registerForBackgroundNotifications];
+        
         // Allocate our singleton instance for the recorder & player object
         _recorder = new AQRecorder();
         
-        /**
-         * 使用ARC，参数不一致，应该为
-         * AudioSessionInitialize(NULL, NULL, interruptionListener, (__bridge void*)self);
-         */
-        OSStatus error = AudioSessionInitialize(NULL, NULL, interruptionListener, (__bridge void*)self);
-        if (error) {
-            PLog(@"ERROR INITIALIZING AUDIO SESSION! %d\n", (int)error);
-        }
-        else
-        {
-            UInt32 category = kAudioSessionCategory_PlayAndRecord;
-            error = AudioSessionSetProperty(kAudioSessionProperty_AudioCategory, sizeof(category), &category);
-            if (error) printf("couldn't set audio category!");
-            
-            error = AudioSessionAddPropertyListener(kAudioSessionProperty_AudioRouteChange, propListener, (__bridge void*)self);
-            if (error) printf("ERROR ADDING AUDIO SESSION PROP LISTENER! %d\n", (int)error);
-            UInt32 inputAvailable = 0;
-            UInt32 size = sizeof(inputAvailable);
-            
-            // we do not want to allow recording if input is not available
-            error = AudioSessionGetProperty(kAudioSessionProperty_AudioInputAvailable, &size, &inputAvailable);
-            if (error) printf("ERROR GETTING INPUT AVAILABILITY! %d\n", (int)error);
-            
-            // we also need to listen to see if input availability changes
-            error = AudioSessionAddPropertyListener(kAudioSessionProperty_AudioInputAvailable, propListener, (__bridge void*)self);
-            if (error) printf("ERROR ADDING AUDIO SESSION PROP LISTENER! %d\n", (int)error);
-            
-            error = AudioSessionSetActive(true);
-            if (error) printf("AudioSessionSetActive (true) failed");
-        }
-        
-        [self registerForBackgroundNotifications];
     }
     return self;
 }
@@ -72,6 +43,9 @@
 	}
 	else // If we're not recording, start.
 	{
+        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryRecord error: nil];
+        [[AVAudioSession sharedInstance] setActive:YES error:nil];
+        
         NSString *recordFileName = [NSString stringWithFormat:@"%@.caf", [NSString stringWithDate:[NSDate date] formatter:@"yyyy-MM-dd-HHmmss"]];
 		// Start the recorder
 		_recorder->StartRecord((__bridge CFStringRef)recordFileName, (__bridge CFStringRef)_audioRecorderPath);
@@ -87,10 +61,15 @@
 
 - (void)stopRecord
 {
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error: nil];
+    [[AVAudioSession sharedInstance] setActive:YES error:nil];
+    
     if (_delegate) {
         [_delegate audioRecorder:self didStop:nil name:nil];
     }
-	_recorder->StopRecord();
+    if (_recorder->IsRunning()) {
+        _recorder->StopRecord();
+    }
 }
 
 #pragma mark privte function

@@ -7,6 +7,7 @@
 //
 
 #import "FFMusicPlayerViewController.h"
+#import <AVFoundation/AVFoundation.h>
 #import "Track.h"
 #import "DOUAudioStreamer.h"
 #import "DOUAudioVisualizer.h"
@@ -111,6 +112,9 @@ static void *kBufferingRatioKVOKey = &kBufferingRatioKVOKey;
     [super viewWillAppear:animated];
     
     [GLOBAL_APP_DELEGATE.tabBarController hideFFTabBarView];
+    
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error: nil];
+    [[AVAudioSession sharedInstance] setActive:YES error:nil];
     
     [self _resetStreamer];
     
