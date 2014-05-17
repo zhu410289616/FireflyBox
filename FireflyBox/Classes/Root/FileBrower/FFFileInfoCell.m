@@ -31,6 +31,12 @@
 - (void)updateViewWithContent:(FFDataInfo *)tDataInfo
 {
     NSString *title = [tDataInfo.dataName pathExtension];
+    if (tDataInfo.fileType == FFFileTypeDirectory) {
+        title = @"Dir";
+    } else if (title.length < 1) {
+        title = @"?";
+    }
+    
     [_typeIconView updateViewWithTitle:title showColor:tDataInfo.showColor];
     self.titleLabel.text = [NSString stringWithFormat:@"%@", tDataInfo.dataName];
     self.timeLabel.text = [NSString stringWithFormat:@"%@", tDataInfo.creationDate];

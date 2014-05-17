@@ -59,7 +59,6 @@
 		16798A40191E86FA00726FBD /* FFBaseLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16798A3F191E86FA00726FBD /* FFBaseLoadingView.m */; };
 		167E7126190B82040014ADEB /* transfer_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 167E7124190B82040014ADEB /* transfer_bg.png */; };
 		167E7127190B82040014ADEB /* transfer_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 167E7125190B82040014ADEB /* transfer_bg@2x.png */; };
-		16A0D626190ABD95007D6EBA /* FFHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A0D625190ABD95007D6EBA /* FFHomeCell.m */; };
 		16A0D62A190AC0A7007D6EBA /* FFEmptyTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A0D629190AC0A7007D6EBA /* FFEmptyTipsView.m */; };
 		16A0D62E190AC0CE007D6EBA /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A0D62D190AC0CE007D6EBA /* TTTAttributedLabel.m */; };
 		16A2F7721902663100751B82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A2F7711902663100751B82 /* Foundation.framework */; };
@@ -272,8 +271,6 @@
 		16798A3F191E86FA00726FBD /* FFBaseLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseLoadingView.m; sourceTree = "<group>"; };
 		167E7124190B82040014ADEB /* transfer_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transfer_bg.png; sourceTree = "<group>"; };
 		167E7125190B82040014ADEB /* transfer_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transfer_bg@2x.png"; sourceTree = "<group>"; };
-		16A0D624190ABD95007D6EBA /* FFHomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFHomeCell.h; sourceTree = "<group>"; };
-		16A0D625190ABD95007D6EBA /* FFHomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFHomeCell.m; sourceTree = "<group>"; };
 		16A0D628190AC0A7007D6EBA /* FFEmptyTipsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFEmptyTipsView.h; sourceTree = "<group>"; };
 		16A0D629190AC0A7007D6EBA /* FFEmptyTipsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFEmptyTipsView.m; sourceTree = "<group>"; };
 		16A0D62C190AC0CE007D6EBA /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
@@ -674,8 +671,6 @@
 			children = (
 				1624B89419093C140018B8FE /* FFHomeViewController.h */,
 				1624B89519093C140018B8FE /* FFHomeViewController.m */,
-				16A0D624190ABD95007D6EBA /* FFHomeCell.h */,
-				16A0D625190ABD95007D6EBA /* FFHomeCell.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1377,7 +1372,6 @@
 				16CF24381910948B0029F3D2 /* DOUEAGLView.m in Sources */,
 				16A2F7821902663100751B82 /* AppDelegate.m in Sources */,
 				16CF24351910948B0029F3D2 /* DOUAudioStreamer.m in Sources */,
-				16A0D626190ABD95007D6EBA /* FFHomeCell.m in Sources */,
 				1624B89F19093C140018B8FE /* FFRecentViewController.m in Sources */,
 				16CF24341910948B0029F3D2 /* DOUAudioStreamer+Options.m in Sources */,
 				16ED1D52190B78B9007EC697 /* GCDWebServerMultiPartFormRequest.m in Sources */,

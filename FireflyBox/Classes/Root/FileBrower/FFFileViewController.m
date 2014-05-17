@@ -29,6 +29,10 @@
     self.dataTableView.dataSource = self;
     [self.view addSubview:self.dataTableView];
     
+    _refreshHeaderView = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0, 0 - self.dataTableView.bounds.size.height, self.view.frame.size.width, self.dataTableView.bounds.size.height)];
+    _refreshHeaderView.delegate = self;
+    [self.dataTableView addSubview:_refreshHeaderView];
+    
     UIView *tableHeaderView = [[UIView alloc] init];
     tableHeaderView.frame = CGRectMake(0, 0, GLOBAL_SCREEN_WIDTH, 44.0f);
     _searchBar = [[UISearchBar alloc] init];
@@ -55,7 +59,13 @@
     
     [GLOBAL_APP_DELEGATE.tabBarController showFFTabBarView];
     
-    [self loadFileInfoInSubDir];
+    //refrush
+    if ([self shouldUpdateFileInfo]) {
+        [self loadFileInfoWithDir:_fileDir parentDataId:_parentDataId];
+    } else {
+        [self loadFileInfoWithParentDataId:_parentDataId];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,16 +76,20 @@
 
 #pragma mark function
 
-- (void)loadFileInfoInSubDir
+- (void)loadFileInfo
+{
+    [self loadFileInfoWithParentDataId:_parentDataId];
+    [self loadFileInfoWithDir:_fileDir parentDataId:_parentDataId];
+}
+
+- (void)loadFileInfoWithParentDataId:(long)tParentDataId
 {
     NSMutableArray *dataInfoList = [[FFDB sharedInstance] selectDataInfoWithParentDataId:_parentDataId];
     [dataInfoList sortDataInfoList];
     [self.dataList removeAllObjects];
     [self.dataList addObjectsFromArray:dataInfoList];
     [self.dataTableView reloadData];
-    [self showOrHideEmptyTips];
-    
-    [self loadFileInfoWithDir:_fileDir parentDataId:_parentDataId];
+    [self loadFileInfoFinished];
 }
 
 - (void)loadFileInfoWithDir:(NSString *)tDir parentDataId:(long)tParentDataId
@@ -97,8 +111,24 @@
         [self.dataList removeAllObjects];
         [self.dataList addObjectsFromArray:getTask.fileInfoList];
         [self.dataTableView reloadData];
+        [self loadFileInfoFinished];
     };
     [[FFConcurrentQueue sharedConcurrentQueue] addTask:getFileInfoTask];
+}
+
+- (void)loadFileInfoFinished
+{
+    PLog(@"loadFileInfoFinished...");
+    [self doneLoadingTableViewData];
+    [self showOrHideEmptyTips];
+}
+
+- (BOOL)shouldUpdateFileInfo
+{
+    BOOL shouldUpdate = [[[NSUserDefaults standardUserDefaults] objectForKey:SHOULD_UPDATE_FILE_INFO] boolValue];
+    //读取后重置为否
+    [[NSUserDefaults standardUserDefaults] setValue:@NO forKey:SHOULD_UPDATE_FILE_INFO];
+    return shouldUpdate;
 }
 
 - (void)searchFilter:(NSString *)keyword
@@ -109,6 +139,56 @@
             [_filterDataList addObject:datainfo];
         }
     }
+}
+
+#pragma mark -
+#pragma mark Data Source Loading / Reloading Methods
+
+- (void)reloadTableViewDataSource
+{
+	//  should be calling your tableviews data source model to reload
+	//  put here just for demo
+	_isReloading = YES;
+	[self loadFileInfoWithDir:_fileDir parentDataId:_parentDataId];
+    
+}
+
+- (void)doneLoadingTableViewData
+{
+	//  model should call this when its done loading
+	_isReloading = NO;
+	[_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.dataTableView];
+}
+
+#pragma mark -
+#pragma mark UIScrollViewDelegate Methods
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+	[_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+	[_refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
+}
+
+#pragma mark -
+#pragma mark EGORefreshTableHeaderDelegate Methods
+
+- (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view
+{
+	[self reloadTableViewDataSource];
+}
+
+- (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view
+{
+	return _isReloading; // should return if data source model is reloading
+}
+
+- (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView*)view
+{
+	return [NSDate date]; // should return date data source was last changed
 }
 
 #pragma mark UISearchBarDelegate method
