@@ -146,6 +146,8 @@
 		16DAD67A1902D9FB00BFE84C /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = 16DAD6791902D9FB00BFE84C /* Record.m */; };
 		16DAD67F1902DA6D00BFE84C /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 16DAD67D1902DA6D00BFE84C /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		16DAD6811902DADE00BFE84C /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 16DAD6801902DADE00BFE84C /* libsqlite3.dylib */; };
+		16E943F21929AE2A00D0A488 /* NSInvocation+FireFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E943F11929AE2A00D0A488 /* NSInvocation+FireFly.m */; };
+		16E943F61929B75E00D0A488 /* KGStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E943F51929B75E00D0A488 /* KGStatusBar.m */; };
 		16EA9927190B7A890075CE47 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 16EA9926190B7A890075CE47 /* libz.dylib */; };
 		16ED1D4B190B78B9007EC697 /* GCDWebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 16ED1D2A190B78B9007EC697 /* GCDWebServer.m */; };
 		16ED1D4C190B78B9007EC697 /* GCDWebServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 16ED1D2C190B78B9007EC697 /* GCDWebServerConnection.m */; };
@@ -445,6 +447,10 @@
 		16DAD67D1902DA6D00BFE84C /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		16DAD67E1902DA6D00BFE84C /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		16DAD6801902DADE00BFE84C /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		16E943F01929AE2A00D0A488 /* NSInvocation+FireFly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+FireFly.h"; sourceTree = "<group>"; };
+		16E943F11929AE2A00D0A488 /* NSInvocation+FireFly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+FireFly.m"; sourceTree = "<group>"; };
+		16E943F41929B75E00D0A488 /* KGStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGStatusBar.h; sourceTree = "<group>"; };
+		16E943F51929B75E00D0A488 /* KGStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGStatusBar.m; sourceTree = "<group>"; };
 		16EA9926190B7A890075CE47 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		16ED1D29190B78B9007EC697 /* GCDWebServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServer.h; sourceTree = "<group>"; };
 		16ED1D2A190B78B9007EC697 /* GCDWebServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebServer.m; sourceTree = "<group>"; };
@@ -619,6 +625,8 @@
 				16232D261916649E0043F840 /* NSDate+FireFly.m */,
 				16798A3B191E720100726FBD /* NSMutableArray+FireFly.h */,
 				16798A3C191E720100726FBD /* NSMutableArray+FireFly.m */,
+				16E943F01929AE2A00D0A488 /* NSInvocation+FireFly.h */,
+				16E943F11929AE2A00D0A488 /* NSInvocation+FireFly.m */,
 			);
 			path = FFCategory;
 			sourceTree = "<group>";
@@ -833,6 +841,7 @@
 		16A2F7A11902814400751B82 /* ThirdPartyLib */ = {
 			isa = PBXGroup;
 			children = (
+				16E943F31929B75E00D0A488 /* KGStatusBar */,
 				16BCB5541926716500B12CBF /* SpeakAudio */,
 				16059CCE191F267D0072DD8F /* Reachability */,
 				166DF8A21917E39300ED2CE4 /* UMAnalytics_Sdk_2.2.1.OpenUDID */,
@@ -1174,6 +1183,15 @@
 			path = GTMBase64;
 			sourceTree = "<group>";
 		};
+		16E943F31929B75E00D0A488 /* KGStatusBar */ = {
+			isa = PBXGroup;
+			children = (
+				16E943F41929B75E00D0A488 /* KGStatusBar.h */,
+				16E943F51929B75E00D0A488 /* KGStatusBar.m */,
+			);
+			path = KGStatusBar;
+			sourceTree = "<group>";
+		};
 		16ED1D26190B78B9007EC697 /* GCDWebServer */ = {
 			isa = PBXGroup;
 			children = (
@@ -1370,6 +1388,7 @@
 				1620DCE31913805500AE810C /* FFBaseTabBarController.m in Sources */,
 				1624B8A019093C140018B8FE /* FFSettingViewController.m in Sources */,
 				16CF24301910948B0029F3D2 /* DOUAudioLPCM.m in Sources */,
+				16E943F21929AE2A00D0A488 /* NSInvocation+FireFly.m in Sources */,
 				16CF242B1910948B0029F3D2 /* DOUAudioDecoder.m in Sources */,
 				16A2F8EA1902D5C100751B82 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				16CF242D1910948B0029F3D2 /* DOUAudioFilePreprocessor.m in Sources */,
@@ -1417,6 +1436,7 @@
 				16A2F8A41902D5AC00751B82 /* FFDB+Record.m in Sources */,
 				1620DD0D19139F5200AE810C /* FFIconActionView.m in Sources */,
 				16A5B14E190C17D9000FA5C4 /* FFDB+DataInfo.m in Sources */,
+				16E943F61929B75E00D0A488 /* KGStatusBar.m in Sources */,
 				16A2F8F61902D5C100751B82 /* FMDatabase.m in Sources */,
 				16ED1D57190B78B9007EC697 /* GCDWebServerStreamedResponse.m in Sources */,
 				16A2F8F81902D5C100751B82 /* FMDatabasePool.m in Sources */,
