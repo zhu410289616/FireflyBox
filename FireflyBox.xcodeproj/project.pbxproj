@@ -53,7 +53,7 @@
 		163102FF192716A3000ECCDC /* FFAudioRecorder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 163102FE192716A3000ECCDC /* FFAudioRecorder.mm */; };
 		1631030B1927C369000ECCDC /* FFDeleteFileTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 1631030A1927C369000ECCDC /* FFDeleteFileTask.m */; };
 		1658B518192B955900B8CF4E /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1658B515192B955900B8CF4E /* libMobClickLibrary.a */; };
-		1658B519192B955900B8CF4E /* libMobClickLibrary_armv6.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1658B516192B955900B8CF4E /* libMobClickLibrary_armv6.a */; };
+		1658B52B192BA42200B8CF4E /* FFConvertHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1658B52A192BA42200B8CF4E /* FFConvertHelper.m */; };
 		16686624192675C2009BD05D /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16686623192675C2009BD05D /* CoreAudio.framework */; };
 		16686626192675E1009BD05D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16686625192675E1009BD05D /* QuartzCore.framework */; };
 		16686628192675F9009BD05D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16686627192675F9009BD05D /* OpenGLES.framework */; };
@@ -267,8 +267,9 @@
 		163103091927C369000ECCDC /* FFDeleteFileTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFDeleteFileTask.h; sourceTree = "<group>"; };
 		1631030A1927C369000ECCDC /* FFDeleteFileTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFDeleteFileTask.m; sourceTree = "<group>"; };
 		1658B515192B955900B8CF4E /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
-		1658B516192B955900B8CF4E /* libMobClickLibrary_armv6.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary_armv6.a; sourceTree = "<group>"; };
 		1658B517192B955900B8CF4E /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		1658B529192BA42200B8CF4E /* FFConvertHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFConvertHelper.h; sourceTree = "<group>"; };
+		1658B52A192BA42200B8CF4E /* FFConvertHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFConvertHelper.m; sourceTree = "<group>"; };
 		16686623192675C2009BD05D /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		16686625192675E1009BD05D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		16686627192675F9009BD05D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -493,7 +494,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1658B519192B955900B8CF4E /* libMobClickLibrary_armv6.a in Frameworks */,
 				16686628192675F9009BD05D /* OpenGLES.framework in Frameworks */,
 				16686626192675E1009BD05D /* QuartzCore.framework in Frameworks */,
 				16686624192675C2009BD05D /* CoreAudio.framework in Frameworks */,
@@ -715,7 +715,6 @@
 			isa = PBXGroup;
 			children = (
 				1658B515192B955900B8CF4E /* libMobClickLibrary.a */,
-				1658B516192B955900B8CF4E /* libMobClickLibrary_armv6.a */,
 				1658B517192B955900B8CF4E /* MobClick.h */,
 			);
 			path = UMAnalytics_Sdk_2.2.1.OpenUDID;
@@ -1052,6 +1051,8 @@
 		16BCB5501926646500B12CBF /* AudioRecorder */ = {
 			isa = PBXGroup;
 			children = (
+				1658B529192BA42200B8CF4E /* FFConvertHelper.h */,
+				1658B52A192BA42200B8CF4E /* FFConvertHelper.m */,
 				16BCB5511926650000B12CBF /* FFAudioRecorderViewController.h */,
 				16BCB5521926650000B12CBF /* FFAudioRecorderViewController.mm */,
 				163102FD192716A3000ECCDC /* FFAudioRecorder.h */,
@@ -1380,6 +1381,7 @@
 				16A2F8F51902D5C100751B82 /* FMDatabase+InMemoryOnDiskIO.m in Sources */,
 				16A2F8E81902D5C100751B82 /* AFImageRequestOperation.m in Sources */,
 				161FF06319124B4F00CDD559 /* FFFileViewController.m in Sources */,
+				1658B52B192BA42200B8CF4E /* FFConvertHelper.m in Sources */,
 				16CF244819109CF00029F3D2 /* Track.m in Sources */,
 				16BCB5741926716500B12CBF /* CAStreamBasicDescription.cpp in Sources */,
 				16A2F8FF1902D5C100751B82 /* SYAppStart.m in Sources */,

@@ -9,7 +9,9 @@
 #ifndef FireflyBox_FFSharedMacro_h
 #define FireflyBox_FFSharedMacro_h
 
-#ifdef DEBUG
+#define FFDEBUG
+
+#ifdef FFDEBUG
 #define PLog(format, ...) NSLog(format, ## __VA_ARGS__)
 #else
 #define PLog(format, ...)

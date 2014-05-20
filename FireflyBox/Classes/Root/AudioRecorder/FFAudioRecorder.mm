@@ -76,7 +76,8 @@
     }
     
     if (_delegate) {
-        [_delegate audioRecorder:self didStop:nil name:nil];
+        NSString *cafFilePath = [NSString stringWithFormat:@"%@%@", _audioRecorderPath, (__bridge NSString *)_recorder->GetFileName()];
+        [_delegate audioRecorder:self didStop:cafFilePath name:nil];
     }
     if (_recorder->IsRunning()) {
         _recorder->StopRecord();

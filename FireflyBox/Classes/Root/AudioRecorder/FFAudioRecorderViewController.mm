@@ -9,6 +9,7 @@
 #import "FFAudioRecorderViewController.h"
 #import "FFBarButtonItem.h"
 #import <AudioToolbox/AudioToolbox.h>
+#import "FFConvertHelper.h"
 
 @interface FFAudioRecorderViewController ()
 
@@ -147,6 +148,9 @@
 {
     // Disconnect our level meter from the audio queue
 	[_lvlMeter_in setAq:nil];
+    
+    [[FFConvertHelper sharedInstance] toMp3WithCafFilePath:savePath];
+    
 }
 
 @end
