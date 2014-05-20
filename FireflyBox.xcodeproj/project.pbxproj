@@ -52,10 +52,11 @@
 		162F915A19095740004D0C25 /* FFRecentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 162F915919095740004D0C25 /* FFRecentCell.m */; };
 		163102FF192716A3000ECCDC /* FFAudioRecorder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 163102FE192716A3000ECCDC /* FFAudioRecorder.mm */; };
 		1631030B1927C369000ECCDC /* FFDeleteFileTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 1631030A1927C369000ECCDC /* FFDeleteFileTask.m */; };
+		1658B518192B955900B8CF4E /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1658B515192B955900B8CF4E /* libMobClickLibrary.a */; };
+		1658B519192B955900B8CF4E /* libMobClickLibrary_armv6.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1658B516192B955900B8CF4E /* libMobClickLibrary_armv6.a */; };
 		16686624192675C2009BD05D /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16686623192675C2009BD05D /* CoreAudio.framework */; };
 		16686626192675E1009BD05D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16686625192675E1009BD05D /* QuartzCore.framework */; };
 		16686628192675F9009BD05D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16686627192675F9009BD05D /* OpenGLES.framework */; };
-		166DF8A61917E39300ED2CE4 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 166DF8A31917E39300ED2CE4 /* libMobClickLibrary.a */; };
 		16798A3D191E720100726FBD /* NSMutableArray+FireFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 16798A3C191E720100726FBD /* NSMutableArray+FireFly.m */; };
 		16798A40191E86FA00726FBD /* FFBaseLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16798A3F191E86FA00726FBD /* FFBaseLoadingView.m */; };
 		167E7126190B82040014ADEB /* transfer_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 167E7124190B82040014ADEB /* transfer_bg.png */; };
@@ -265,11 +266,12 @@
 		163102FE192716A3000ECCDC /* FFAudioRecorder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FFAudioRecorder.mm; sourceTree = "<group>"; };
 		163103091927C369000ECCDC /* FFDeleteFileTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFDeleteFileTask.h; sourceTree = "<group>"; };
 		1631030A1927C369000ECCDC /* FFDeleteFileTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFDeleteFileTask.m; sourceTree = "<group>"; };
+		1658B515192B955900B8CF4E /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		1658B516192B955900B8CF4E /* libMobClickLibrary_armv6.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary_armv6.a; sourceTree = "<group>"; };
+		1658B517192B955900B8CF4E /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		16686623192675C2009BD05D /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		16686625192675E1009BD05D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		16686627192675F9009BD05D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
-		166DF8A31917E39300ED2CE4 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
-		166DF8A51917E39300ED2CE4 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		16798A3B191E720100726FBD /* NSMutableArray+FireFly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+FireFly.h"; sourceTree = "<group>"; };
 		16798A3C191E720100726FBD /* NSMutableArray+FireFly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+FireFly.m"; sourceTree = "<group>"; };
 		16798A3E191E86FA00726FBD /* FFBaseLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseLoadingView.h; sourceTree = "<group>"; };
@@ -491,6 +493,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1658B519192B955900B8CF4E /* libMobClickLibrary_armv6.a in Frameworks */,
 				16686628192675F9009BD05D /* OpenGLES.framework in Frameworks */,
 				16686626192675E1009BD05D /* QuartzCore.framework in Frameworks */,
 				16686624192675C2009BD05D /* CoreAudio.framework in Frameworks */,
@@ -500,7 +503,7 @@
 				16DAD6811902DADE00BFE84C /* libsqlite3.dylib in Frameworks */,
 				16A2F7741902663100751B82 /* CoreGraphics.framework in Frameworks */,
 				16A2F7761902663100751B82 /* UIKit.framework in Frameworks */,
-				166DF8A61917E39300ED2CE4 /* libMobClickLibrary.a in Frameworks */,
+				1658B518192B955900B8CF4E /* libMobClickLibrary.a in Frameworks */,
 				16A2F7721902663100751B82 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -708,11 +711,12 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
-		166DF8A21917E39300ED2CE4 /* UMAnalytics_Sdk_2.2.1.OpenUDID */ = {
+		1658B514192B955900B8CF4E /* UMAnalytics_Sdk_2.2.1.OpenUDID */ = {
 			isa = PBXGroup;
 			children = (
-				166DF8A31917E39300ED2CE4 /* libMobClickLibrary.a */,
-				166DF8A51917E39300ED2CE4 /* MobClick.h */,
+				1658B515192B955900B8CF4E /* libMobClickLibrary.a */,
+				1658B516192B955900B8CF4E /* libMobClickLibrary_armv6.a */,
+				1658B517192B955900B8CF4E /* MobClick.h */,
 			);
 			path = UMAnalytics_Sdk_2.2.1.OpenUDID;
 			sourceTree = "<group>";
@@ -841,10 +845,10 @@
 		16A2F7A11902814400751B82 /* ThirdPartyLib */ = {
 			isa = PBXGroup;
 			children = (
+				1658B514192B955900B8CF4E /* UMAnalytics_Sdk_2.2.1.OpenUDID */,
 				16E943F31929B75E00D0A488 /* KGStatusBar */,
 				16BCB5541926716500B12CBF /* SpeakAudio */,
 				16059CCE191F267D0072DD8F /* Reachability */,
-				166DF8A21917E39300ED2CE4 /* UMAnalytics_Sdk_2.2.1.OpenUDID */,
 				16CF23FE1910948B0029F3D2 /* DOUAudioStreamer */,
 				16ED1D26190B78B9007EC697 /* GCDWebServer */,
 				16A0D62B190AC0CE007D6EBA /* TTTAttributedLabel */,
@@ -1636,7 +1640,7 @@
 				INFOPLIST_FILE = "FireflyBox/FireflyBox-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/pig/Desktop/FireflyBox1.0/2326-20140419com.firefly.box/FireflyBox/FireflyBox/Classes/ThirdPartyLib/UMAnalytics_Sdk_2.2.1.OpenUDID",
+					"$(SRCROOT)/FireflyBox/Classes/ThirdPartyLib/UMAnalytics_Sdk_2.2.1.OpenUDID",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1657,7 +1661,7 @@
 				INFOPLIST_FILE = "FireflyBox/FireflyBox-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/pig/Desktop/FireflyBox1.0/2326-20140419com.firefly.box/FireflyBox/FireflyBox/Classes/ThirdPartyLib/UMAnalytics_Sdk_2.2.1.OpenUDID",
+					"$(SRCROOT)/FireflyBox/FireflyBox/Classes/ThirdPartyLib/UMAnalytics_Sdk_2.2.1.OpenUDID",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
