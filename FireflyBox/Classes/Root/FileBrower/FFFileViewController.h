@@ -9,6 +9,12 @@
 #import "FFTableViewController.h"
 #import "EGORefreshTableHeaderView.h"
 
+typedef enum {
+    LoadFileInfoSourceDatabase = 1,
+    LoadFileInfoSourceFileSystem,
+    LoadFileInfoSourceUnknow
+} LoadFileInfoSource;
+
 @interface FFFileViewController : FFTableViewController<UISearchBarDelegate, UISearchDisplayDelegate, EGORefreshTableHeaderDelegate>
 
 @property (nonatomic, assign) long parentDataId;
@@ -31,7 +37,7 @@
 - (void)loadFileInfo;
 - (void)loadFileInfoWithParentDataId:(long)tParentDataId;
 - (void)loadFileInfoWithDir:(NSString *)tDir parentDataId:(long)tParentDataId;
-- (void)loadFileInfoFinished;
+- (void)loadFileInfoFinished:(LoadFileInfoSource)tSource;
 
 - (BOOL)shouldUpdateFileInfo;
 - (void)searchFilter:(NSString *)keyword;

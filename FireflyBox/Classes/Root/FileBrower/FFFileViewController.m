@@ -89,8 +89,7 @@
     [dataInfoList sortDataInfoList];
     [self.dataList removeAllObjects];
     [self.dataList addObjectsFromArray:dataInfoList];
-    [self.dataTableView reloadData];
-    [self loadFileInfoFinished];
+    [self loadFileInfoFinished:LoadFileInfoSourceDatabase];
 }
 
 - (void)loadFileInfoWithDir:(NSString *)tDir parentDataId:(long)tParentDataId
@@ -111,8 +110,7 @@
         
         [self.dataList removeAllObjects];
         [self.dataList addObjectsFromArray:getTask.fileInfoList];
-        [self.dataTableView reloadData];
-        [self loadFileInfoFinished];
+        [self loadFileInfoFinished:LoadFileInfoSourceFileSystem];
     };
     [[FFConcurrentQueue sharedConcurrentQueue] addTask:getFileInfoTask];
 }
@@ -120,9 +118,10 @@
 /**
  * 刷新文件列表信息后的任务回调
  */
-- (void)loadFileInfoFinished
+- (void)loadFileInfoFinished:(LoadFileInfoSource)tSource
 {
-    PLog(@"loadFileInfoFinished...");
+    PLog(@"loadFileInfoFinished...%d", tSource);
+    [self.dataTableView reloadData];
     [self doneLoadingTableViewData];
     [self showOrHideEmptyTips];
 }
