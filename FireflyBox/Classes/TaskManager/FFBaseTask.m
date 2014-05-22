@@ -10,6 +10,9 @@
 
 @implementation FFBaseTask
 
+/**
+ *  please don't override
+ */
 - (void)execute
 {
     [self executeTask];
@@ -21,8 +24,8 @@
     });
 }
 
-/*
- * implement by sub class
+/**
+ *  override this function
  */
 - (void)executeTask
 {

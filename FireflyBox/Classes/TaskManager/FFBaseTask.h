@@ -17,7 +17,14 @@ typedef void(^TaskFinishBlock)(id task);
 @property (nonatomic, strong) NSString *taskId;
 @property (nonatomic, copy) TaskFinishBlock finishBlock;
 
+/**
+ *  please don't override
+ */
 - (void)execute;
+
+/**
+ *  override this function
+ */
 - (void)executeTask;
 
 @end

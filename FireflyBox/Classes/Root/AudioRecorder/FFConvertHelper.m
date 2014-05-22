@@ -7,40 +7,36 @@
 //
 
 #import "FFConvertHelper.h"
-//#import "lame.h"
+#import "lame.h"
 
 const static int PCM_SIZE = 8192;
 const static int MP3_SIZE = 8192;
 
 @implementation FFConvertHelper
 
-+ (id)sharedInstance
-{
-    static id appLoaderInstance = nil;
-    static dispatch_once_t appLoaderOnceToken;
-    dispatch_once(&appLoaderOnceToken, ^{
-        appLoaderInstance = [[self alloc] init];
-    });
-    return appLoaderInstance;
-}
-
-- (void)toMp3WithCafFilePath:(NSString *)tCafFilePath
++ (void)convertToMp3WithCafFilePath:(NSString *)tCafFilePath
 {
     NSString *mp3FilePath = [tCafFilePath stringByReplacingOccurrencesOfString:[tCafFilePath pathExtension] withString:@"mp3"];
     PLog(@"mp3FilePath: %@", mp3FilePath);
     
-    /*
+    [self convertCaf2Mp3:tCafFilePath destPath:mp3FilePath];
+    
+}
+
++ (void)convertCaf2Mp3:(NSString *)tSrcPath destPath:(NSString *)tDestPath
+{
     @try {
         int read, write;
         
-        FILE *pcm = fopen([tCafFilePath cStringUsingEncoding:1], "rb");//被转换的文件
-        FILE *mp3 = fopen([mp3FilePath cStringUsingEncoding:1], "wb");//转换后文件的存放位置
+        FILE *pcm = fopen([tSrcPath cStringUsingEncoding:1], "rb");//被转换的文件
+        fseek(pcm, 4*1024, SEEK_CUR);//skip file header
+        FILE *mp3 = fopen([tDestPath cStringUsingEncoding:1], "wb");//转换后文件的存放位置
         
         short int pcm_buffer[PCM_SIZE*2];
         unsigned char mp3_buffer[MP3_SIZE];
         
         lame_t lame = lame_init();
-        lame_set_in_samplerate(lame, 44100);
+        lame_set_in_samplerate(lame, 22050.0);//44100
         lame_set_VBR(lame, vbr_default);
         lame_init_params(lame);
         
@@ -62,7 +58,7 @@ const static int MP3_SIZE = 8192;
     @catch (NSException *exception) {
         NSLog(@"%@",[exception description]);
     }
-    */
+    
 }
 
 @end

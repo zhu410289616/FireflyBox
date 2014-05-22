@@ -9,7 +9,8 @@
 #import "FFAudioRecorderViewController.h"
 #import "FFBarButtonItem.h"
 #import <AudioToolbox/AudioToolbox.h>
-#import "FFConvertHelper.h"
+#import "FFConvertAudioTask.h"
+#import "FFConcurrentQueue.h"
 
 @interface FFAudioRecorderViewController ()
 
@@ -68,7 +69,6 @@
     
     //
     _audioRecorder = [[FFAudioRecorder alloc] init];
-    _audioRecorder.delegate = self;
     
 }
 
@@ -106,6 +106,7 @@
 - (void)doRightBarButtonItemAction:(id)sender
 {
     [_audioRecorder stopRecord];
+    _audioRecorder.delegate = nil;
     
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
@@ -117,11 +118,13 @@
         if (recordButton.tag == 100) {
             recordButton.tag = 200;
             [recordButton styleWithTitle:@"结束录音" titleColor:[UIColor colorWithHex:0x157dfb]];
+            _audioRecorder.delegate = self;
             [_audioRecorder startRecord];
         } else {
             recordButton.tag = 100;
             [recordButton styleWithTitle:@"开始录音" titleColor:[UIColor colorWithHex:0x157dfb]];
             [_audioRecorder stopRecord];
+            _audioRecorder.delegate = nil;
         }
     }
 }
@@ -149,8 +152,11 @@
     // Disconnect our level meter from the audio queue
 	[_lvlMeter_in setAq:nil];
     
-    [[FFConvertHelper sharedInstance] toMp3WithCafFilePath:savePath];
-    
+    FFConvertAudioTask *convertAudioTask = [[FFConvertAudioTask alloc] init];
+    convertAudioTask.audioConvertStatus = FFAudioConvertStatusCaf2Mp3;
+    convertAudioTask.srcPath = savePath;
+    convertAudioTask.destPath = [savePath stringByReplacingOccurrencesOfString:[savePath pathExtension] withString:@"mp3"];
+    [[FFConcurrentQueue sharedConcurrentQueue] addTask:convertAudioTask];
 }
 
 @end
