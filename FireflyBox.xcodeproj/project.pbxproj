@@ -52,6 +52,14 @@
 		162F915A19095740004D0C25 /* FFRecentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 162F915919095740004D0C25 /* FFRecentCell.m */; };
 		163102FF192716A3000ECCDC /* FFAudioRecorder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 163102FE192716A3000ECCDC /* FFAudioRecorder.mm */; };
 		1631030B1927C369000ECCDC /* FFDeleteFileTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 1631030A1927C369000ECCDC /* FFDeleteFileTask.m */; };
+		16340232192E5EF9000A04C3 /* FFBaseRunnable.m in Sources */ = {isa = PBXBuildFile; fileRef = 16340230192E5EF9000A04C3 /* FFBaseRunnable.m */; };
+		16340235192E5F50000A04C3 /* FFBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 16340234192E5F50000A04C3 /* FFBaseRequest.m */; };
+		1634023A192E5F80000A04C3 /* FFBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 16340237192E5F80000A04C3 /* FFBaseObject.m */; };
+		1634023B192E5F80000A04C3 /* FFBaseSerializable.m in Sources */ = {isa = PBXBuildFile; fileRef = 16340239192E5F80000A04C3 /* FFBaseSerializable.m */; };
+		16340245192E6063000A04C3 /* FFBaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1634023E192E6063000A04C3 /* FFBaseQueue.m */; };
+		16340246192E6063000A04C3 /* FFBaseTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 16340240192E6063000A04C3 /* FFBaseTask.m */; };
+		16340247192E6063000A04C3 /* FFConcurrentQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 16340242192E6063000A04C3 /* FFConcurrentQueue.m */; };
+		16340248192E6063000A04C3 /* FFSerialQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 16340244192E6063000A04C3 /* FFSerialQueue.m */; };
 		1658B518192B955900B8CF4E /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1658B515192B955900B8CF4E /* libMobClickLibrary.a */; };
 		1658B52B192BA42200B8CF4E /* FFConvertHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1658B52A192BA42200B8CF4E /* FFConvertHelper.m */; };
 		16686624192675C2009BD05D /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16686623192675C2009BD05D /* CoreAudio.framework */; };
@@ -102,10 +110,6 @@
 		16A2F8FB1902D5C100751B82 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F8DB1902D5C100751B82 /* FMResultSet.m */; };
 		16A2F8FC1902D5C100751B82 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F8DE1902D5C100751B82 /* EGORefreshTableHeaderView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		16A2F8FF1902D5C100751B82 /* SYAppStart.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F8E51902D5C100751B82 /* SYAppStart.m */; };
-		16A5B12E190BE35C000FA5C4 /* FFBaseTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5B12D190BE35C000FA5C4 /* FFBaseTask.m */; };
-		16A5B131190BE916000FA5C4 /* FFBaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5B130190BE916000FA5C4 /* FFBaseQueue.m */; };
-		16A5B134190BEAE8000FA5C4 /* FFConcurrentQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5B133190BEAE8000FA5C4 /* FFConcurrentQueue.m */; };
-		16A5B137190BEB0C000FA5C4 /* FFSerialQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5B136190BEB0C000FA5C4 /* FFSerialQueue.m */; };
 		16A5B13D190C0C8D000FA5C4 /* FFSingleTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5B13C190C0C8D000FA5C4 /* FFSingleTextCell.m */; };
 		16A5B140190C0CB9000FA5C4 /* FFHeadImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5B13F190C0CB9000FA5C4 /* FFHeadImageCell.m */; };
 		16A5B143190C0FBB000FA5C4 /* FFSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5B142190C0FBB000FA5C4 /* FFSettingCell.m */; };
@@ -268,6 +272,23 @@
 		163102FE192716A3000ECCDC /* FFAudioRecorder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FFAudioRecorder.mm; sourceTree = "<group>"; };
 		163103091927C369000ECCDC /* FFDeleteFileTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFDeleteFileTask.h; sourceTree = "<group>"; };
 		1631030A1927C369000ECCDC /* FFDeleteFileTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFDeleteFileTask.m; sourceTree = "<group>"; };
+		1634022F192E5EF9000A04C3 /* FFBaseRunnable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseRunnable.h; sourceTree = "<group>"; };
+		16340230192E5EF9000A04C3 /* FFBaseRunnable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseRunnable.m; sourceTree = "<group>"; };
+		16340231192E5EF9000A04C3 /* FFRunnableDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFRunnableDelegate.h; sourceTree = "<group>"; };
+		16340233192E5F50000A04C3 /* FFBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseRequest.h; sourceTree = "<group>"; };
+		16340234192E5F50000A04C3 /* FFBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseRequest.m; sourceTree = "<group>"; };
+		16340236192E5F80000A04C3 /* FFBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseObject.h; sourceTree = "<group>"; };
+		16340237192E5F80000A04C3 /* FFBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseObject.m; sourceTree = "<group>"; };
+		16340238192E5F80000A04C3 /* FFBaseSerializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseSerializable.h; sourceTree = "<group>"; };
+		16340239192E5F80000A04C3 /* FFBaseSerializable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseSerializable.m; sourceTree = "<group>"; };
+		1634023D192E6063000A04C3 /* FFBaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseQueue.h; sourceTree = "<group>"; };
+		1634023E192E6063000A04C3 /* FFBaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseQueue.m; sourceTree = "<group>"; };
+		1634023F192E6063000A04C3 /* FFBaseTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseTask.h; sourceTree = "<group>"; };
+		16340240192E6063000A04C3 /* FFBaseTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseTask.m; sourceTree = "<group>"; };
+		16340241192E6063000A04C3 /* FFConcurrentQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFConcurrentQueue.h; sourceTree = "<group>"; };
+		16340242192E6063000A04C3 /* FFConcurrentQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFConcurrentQueue.m; sourceTree = "<group>"; };
+		16340243192E6063000A04C3 /* FFSerialQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFSerialQueue.h; sourceTree = "<group>"; };
+		16340244192E6063000A04C3 /* FFSerialQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFSerialQueue.m; sourceTree = "<group>"; };
 		1658B515192B955900B8CF4E /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		1658B517192B955900B8CF4E /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		1658B529192BA42200B8CF4E /* FFConvertHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFConvertHelper.h; sourceTree = "<group>"; };
@@ -358,14 +379,6 @@
 		16A2F8DE1902D5C100751B82 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
 		16A2F8E41902D5C100751B82 /* SYAppStart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYAppStart.h; sourceTree = "<group>"; };
 		16A2F8E51902D5C100751B82 /* SYAppStart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYAppStart.m; sourceTree = "<group>"; };
-		16A5B12C190BE35C000FA5C4 /* FFBaseTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseTask.h; sourceTree = "<group>"; };
-		16A5B12D190BE35C000FA5C4 /* FFBaseTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseTask.m; sourceTree = "<group>"; };
-		16A5B12F190BE916000FA5C4 /* FFBaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseQueue.h; sourceTree = "<group>"; };
-		16A5B130190BE916000FA5C4 /* FFBaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseQueue.m; sourceTree = "<group>"; };
-		16A5B132190BEAE8000FA5C4 /* FFConcurrentQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFConcurrentQueue.h; sourceTree = "<group>"; };
-		16A5B133190BEAE8000FA5C4 /* FFConcurrentQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFConcurrentQueue.m; sourceTree = "<group>"; };
-		16A5B135190BEB0C000FA5C4 /* FFSerialQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFSerialQueue.h; sourceTree = "<group>"; };
-		16A5B136190BEB0C000FA5C4 /* FFSerialQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFSerialQueue.m; sourceTree = "<group>"; };
 		16A5B13B190C0C8D000FA5C4 /* FFSingleTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFSingleTextCell.h; sourceTree = "<group>"; };
 		16A5B13C190C0C8D000FA5C4 /* FFSingleTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFSingleTextCell.m; sourceTree = "<group>"; };
 		16A5B13E190C0CB9000FA5C4 /* FFHeadImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFHeadImageCell.h; sourceTree = "<group>"; };
@@ -718,6 +731,54 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		16340221192E5664000A04C3 /* FireflyBoxAPI */ = {
+			isa = PBXGroup;
+			children = (
+				1634023C192E6063000A04C3 /* FFTask */,
+				1634022D192E5EF9000A04C3 /* FFRequest */,
+				1634022E192E5EF9000A04C3 /* FFRunnable */,
+			);
+			path = FireflyBoxAPI;
+			sourceTree = "<group>";
+		};
+		1634022D192E5EF9000A04C3 /* FFRequest */ = {
+			isa = PBXGroup;
+			children = (
+				16340233192E5F50000A04C3 /* FFBaseRequest.h */,
+				16340234192E5F50000A04C3 /* FFBaseRequest.m */,
+			);
+			path = FFRequest;
+			sourceTree = "<group>";
+		};
+		1634022E192E5EF9000A04C3 /* FFRunnable */ = {
+			isa = PBXGroup;
+			children = (
+				16340236192E5F80000A04C3 /* FFBaseObject.h */,
+				16340237192E5F80000A04C3 /* FFBaseObject.m */,
+				16340238192E5F80000A04C3 /* FFBaseSerializable.h */,
+				16340239192E5F80000A04C3 /* FFBaseSerializable.m */,
+				1634022F192E5EF9000A04C3 /* FFBaseRunnable.h */,
+				16340230192E5EF9000A04C3 /* FFBaseRunnable.m */,
+				16340231192E5EF9000A04C3 /* FFRunnableDelegate.h */,
+			);
+			path = FFRunnable;
+			sourceTree = "<group>";
+		};
+		1634023C192E6063000A04C3 /* FFTask */ = {
+			isa = PBXGroup;
+			children = (
+				1634023D192E6063000A04C3 /* FFBaseQueue.h */,
+				1634023E192E6063000A04C3 /* FFBaseQueue.m */,
+				1634023F192E6063000A04C3 /* FFBaseTask.h */,
+				16340240192E6063000A04C3 /* FFBaseTask.m */,
+				16340241192E6063000A04C3 /* FFConcurrentQueue.h */,
+				16340242192E6063000A04C3 /* FFConcurrentQueue.m */,
+				16340243192E6063000A04C3 /* FFSerialQueue.h */,
+				16340244192E6063000A04C3 /* FFSerialQueue.m */,
+			);
+			path = FFTask;
+			sourceTree = "<group>";
+		};
 		1658B514192B955900B8CF4E /* UMAnalytics_Sdk_2.2.1.OpenUDID */ = {
 			isa = PBXGroup;
 			children = (
@@ -838,6 +899,7 @@
 		16A2F7A01902814400751B82 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				16340221192E5664000A04C3 /* FireflyBoxAPI */,
 				16A5B122190BE018000FA5C4 /* TaskManager */,
 				1624B88E19093C140018B8FE /* Root */,
 				16DAD6771902D9FB00BFE84C /* DataStruct */,
@@ -1040,14 +1102,6 @@
 		16A5B122190BE018000FA5C4 /* TaskManager */ = {
 			isa = PBXGroup;
 			children = (
-				16A5B12C190BE35C000FA5C4 /* FFBaseTask.h */,
-				16A5B12D190BE35C000FA5C4 /* FFBaseTask.m */,
-				16A5B12F190BE916000FA5C4 /* FFBaseQueue.h */,
-				16A5B130190BE916000FA5C4 /* FFBaseQueue.m */,
-				16A5B132190BEAE8000FA5C4 /* FFConcurrentQueue.h */,
-				16A5B133190BEAE8000FA5C4 /* FFConcurrentQueue.m */,
-				16A5B135190BEB0C000FA5C4 /* FFSerialQueue.h */,
-				16A5B136190BEB0C000FA5C4 /* FFSerialQueue.m */,
 				16CF243C191095540029F3D2 /* FFGetFileInfoTask.h */,
 				16CF243D191095540029F3D2 /* FFGetFileInfoTask.m */,
 				163103091927C369000ECCDC /* FFDeleteFileTask.h */,
@@ -1413,6 +1467,7 @@
 				1620DCE31913805500AE810C /* FFBaseTabBarController.m in Sources */,
 				1624B8A019093C140018B8FE /* FFSettingViewController.m in Sources */,
 				16CF24301910948B0029F3D2 /* DOUAudioLPCM.m in Sources */,
+				1634023A192E5F80000A04C3 /* FFBaseObject.m in Sources */,
 				16E943F21929AE2A00D0A488 /* NSInvocation+FireFly.m in Sources */,
 				16CF242B1910948B0029F3D2 /* DOUAudioDecoder.m in Sources */,
 				16A2F8EA1902D5C100751B82 /* AFNetworkActivityIndicatorManager.m in Sources */,
@@ -1446,13 +1501,13 @@
 				16BCB5721926716500B12CBF /* MeterTable.cpp in Sources */,
 				161FF06A191264AB00CDD559 /* FFFileReaderViewController.m in Sources */,
 				16BCB5701926716500B12CBF /* LevelMeter.m in Sources */,
-				16A5B12E190BE35C000FA5C4 /* FFBaseTask.m in Sources */,
 				16A2F8F21902D5C100751B82 /* EGOImageLoadConnection.m in Sources */,
 				1631030B1927C369000ECCDC /* FFDeleteFileTask.m in Sources */,
 				16A2F8E61902D5C100751B82 /* AFHTTPClient.m in Sources */,
 				1620DCFE1913807200AE810C /* UIViewController+FireFly.m in Sources */,
 				1620DD011913809E00AE810C /* FFActionSheetView.m in Sources */,
 				16A2F77E1902663100751B82 /* main.m in Sources */,
+				16340246192E6063000A04C3 /* FFBaseTask.m in Sources */,
 				16CF24321910948B0029F3D2 /* DOUAudioRenderer.m in Sources */,
 				162F915A19095740004D0C25 /* FFRecentCell.m in Sources */,
 				16A2F8F01902D5C100751B82 /* EGOCache.m in Sources */,
@@ -1465,7 +1520,6 @@
 				16A2F8F61902D5C100751B82 /* FMDatabase.m in Sources */,
 				16ED1D57190B78B9007EC697 /* GCDWebServerStreamedResponse.m in Sources */,
 				16A2F8F81902D5C100751B82 /* FMDatabasePool.m in Sources */,
-				16A5B134190BEAE8000FA5C4 /* FFConcurrentQueue.m in Sources */,
 				16CF244719109CF00029F3D2 /* Track+Provider.m in Sources */,
 				16A2F89D1902D5AC00751B82 /* FFCommonUtil.m in Sources */,
 				16A2F89C1902D5AC00751B82 /* FFBaseViewController.m in Sources */,
@@ -1487,9 +1541,12 @@
 				161FF06D191264DA00CDD559 /* FFTextReaderViewController.m in Sources */,
 				161FF07B19127F4200CDD559 /* FFFileTypeHelper.m in Sources */,
 				161FF074191273B600CDD559 /* FFMusicPlayerViewController.m in Sources */,
+				16340232192E5EF9000A04C3 /* FFBaseRunnable.m in Sources */,
 				1624B89D19093C140018B8FE /* FFRootTabBarController.m in Sources */,
+				16340245192E6063000A04C3 /* FFBaseQueue.m in Sources */,
 				16A2F8EC1902D5C100751B82 /* AFURLConnectionOperation.m in Sources */,
 				1620DCFD1913807200AE810C /* UIView+FireFly.m in Sources */,
+				1634023B192E5F80000A04C3 /* FFBaseSerializable.m in Sources */,
 				16BCB5531926650000B12CBF /* FFAudioRecorderViewController.mm in Sources */,
 				1620DCF81913807200AE810C /* NSString+FireFly.m in Sources */,
 				1620DD0419138F2800AE810C /* UIButton+FireFly.m in Sources */,
@@ -1497,6 +1554,7 @@
 				1624B89C19093C140018B8FE /* FFAppLoader.m in Sources */,
 				16A2F8F91902D5C100751B82 /* FMDatabaseQueue.m in Sources */,
 				16A2F8E71902D5C100751B82 /* AFHTTPRequestOperation.m in Sources */,
+				16340248192E6063000A04C3 /* FFSerialQueue.m in Sources */,
 				16CF242C1910948B0029F3D2 /* DOUAudioEventLoop.m in Sources */,
 				16BCB5731926716500B12CBF /* CADebugMacros.cpp in Sources */,
 				161FF06219124B4F00CDD559 /* FFFileInfoCell.m in Sources */,
@@ -1513,15 +1571,15 @@
 				162F9157190956FD004D0C25 /* FFBaseTableCell.m in Sources */,
 				16CF242A1910948B0029F3D2 /* DOUAudioAnalyzer.m in Sources */,
 				16ED1D55190B78B9007EC697 /* GCDWebServerErrorResponse.m in Sources */,
-				16A5B137190BEB0C000FA5C4 /* FFSerialQueue.m in Sources */,
 				16A2F8F31902D5C100751B82 /* EGOImageLoader.m in Sources */,
 				16ED1D59190B78B9007EC697 /* GCDWebUploader.m in Sources */,
+				16340247192E6063000A04C3 /* FFConcurrentQueue.m in Sources */,
 				16BCB56C1926716500B12CBF /* AQPlayer.mm in Sources */,
 				16CF244619109CF00029F3D2 /* PlayerViewController.m in Sources */,
+				16340235192E5F50000A04C3 /* FFBaseRequest.m in Sources */,
 				16A2F8F11902D5C100751B82 /* EGOImageButton.m in Sources */,
 				16A0D62E190AC0CE007D6EBA /* TTTAttributedLabel.m in Sources */,
 				16BCB56D1926716500B12CBF /* AQRecorder.mm in Sources */,
-				16A5B131190BE916000FA5C4 /* FFBaseQueue.m in Sources */,
 				16A2F8EE1902D5C100751B82 /* UIImageView+AFNetworking.m in Sources */,
 				16A2F8FC1902D5C100751B82 /* EGORefreshTableHeaderView.m in Sources */,
 				16A2F8F71902D5C100751B82 /* FMDatabaseAdditions.m in Sources */,
@@ -1576,7 +1634,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = armv7;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1617,7 +1675,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = armv7;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1651,7 +1709,7 @@
 		16A2F79B1902663100751B82 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = armv7;
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Xiang Dong (T932MCQ645)";
@@ -1663,7 +1721,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/FireflyBox/Classes/ThirdPartyLib/UMAnalytics_Sdk_2.2.1.OpenUDID",
-					"/Users/pig/Desktop/zhuruhong/FireflyBox1.0/1104-20140519FireflyBox/FireflyBox/FireflyBox/Classes/ThirdPartyLib/Lame",
+					"$(SRCROOT)/FireflyBox/Classes/ThirdPartyLib/Lame",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1674,7 +1732,7 @@
 		16A2F79C1902663100751B82 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = armv7;
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Xiang Dong (T932MCQ645)";
@@ -1685,7 +1743,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/FireflyBox/FireflyBox/Classes/ThirdPartyLib/UMAnalytics_Sdk_2.2.1.OpenUDID",
-					"/Users/pig/Desktop/zhuruhong/FireflyBox1.0/1104-20140519FireflyBox/FireflyBox/FireflyBox/Classes/ThirdPartyLib/Lame",
+					"$(SRCROOT)/FireflyBox/Classes/ThirdPartyLib/Lame",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
