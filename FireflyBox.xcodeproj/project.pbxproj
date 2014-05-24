@@ -1786,7 +1786,7 @@
 				INFOPLIST_FILE = "FireflyBox/FireflyBox-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/FireflyBox/FireflyBox/Classes/ThirdPartyLib/UMAnalytics_Sdk_2.2.1.OpenUDID",
+					"$(SRCROOT)/FireflyBox/Classes/ThirdPartyLib/UMAnalytics_Sdk_2.2.1.OpenUDID",
 					"$(SRCROOT)/FireflyBox/Classes/ThirdPartyLib/Lame",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
