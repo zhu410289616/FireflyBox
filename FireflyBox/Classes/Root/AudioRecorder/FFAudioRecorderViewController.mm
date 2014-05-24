@@ -156,6 +156,9 @@
     convertAudioTask.audioConvertStatus = FFAudioConvertStatusCaf2Mp3;
     convertAudioTask.srcPath = savePath;
     convertAudioTask.destPath = [savePath stringByReplacingOccurrencesOfString:[savePath pathExtension] withString:@"mp3"];
+    convertAudioTask.finishBlock = ^(id task){
+        //todo
+    };
     [convertAudioTask start];
 }
 
