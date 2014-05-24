@@ -24,6 +24,6 @@
 //domain
 #define WEBSERVICE_DOMAIN                       @"http://fireflybox.sinaapp.com"
 
-#define WEBSERVICE_GET_DAILY_TEXT               @"/read_daily_text.php"
+#define WEBSERVICE_GET_DAILY_TEXT               @"/get_daily_text.php"
 
 #endif

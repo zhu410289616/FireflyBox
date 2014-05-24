@@ -14,6 +14,8 @@ const static NSString *Method_Multi_Post = @"MULTI_POST";
 
 @interface FFHttpRunnable : FFBaseRunnable
 
+#pragma mark param in
+
 /**
  *  获取http的请求方式[GET, POST]
  *

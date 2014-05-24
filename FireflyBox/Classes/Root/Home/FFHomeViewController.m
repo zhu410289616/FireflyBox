@@ -11,6 +11,9 @@
 #import "FFTransferViewController.h"
 #import "FFDataInfo.h"
 
+#import "FFGetDailyRunnable.h"
+#import "FFHttpTask.h"
+
 @interface FFHomeViewController ()
 
 @end
@@ -42,6 +45,16 @@
     FFBarButtonItem *tempBarButtonItem = [[FFBarButtonItem alloc] initWithTitle:@"添加" style:UIBarButtonItemStylePlain target:self action:@selector(doRightBarButtonItemAction:)];
     self.navigationItem.rightBarButtonItem = tempBarButtonItem;
     */
+    
+    FFGetDailyRunnable *runnable = [[FFGetDailyRunnable alloc] init];
+    FFHttpTask *httpTask = [[FFHttpTask alloc] initWithRunnable:runnable];
+    httpTask.finishBlock = ^(id tTask){
+        FFHttpTask *task = tTask;
+        PLog(@"task.runnable.dicResult: %@", task.runnable.dicResult);
+    };
+    httpTask.errorBlock = ^(id task, NSError *error){
+    };
+    [httpTask start];
     
 }
 

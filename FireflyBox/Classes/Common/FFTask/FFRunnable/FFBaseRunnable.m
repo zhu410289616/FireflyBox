@@ -10,27 +10,6 @@
 
 @implementation FFBaseRunnable
 
-- (void)taskWillExecute
-{
-    if (self.delegate && [self.delegate respondsToSelector:@selector(ffBaseRunnableWillExecute:)]) {
-        [self.delegate ffBaseRunnableWillExecute:self];
-    }
-}
-
-- (void)taskExecuteFailed
-{
-    if (self.delegate && [self.delegate respondsToSelector:@selector(ffBaseRunnable:didExecuteFailed:)]) {
-        [self.delegate ffBaseRunnable:self didExecuteFailed:nil];
-    }
-}
-
-- (void)taskExecuteFinished
-{
-    if (self.delegate && [self.delegate respondsToSelector:@selector(ffBaseRunnable:didExecuteSuccess:)]) {
-        [self.delegate ffBaseRunnable:self didExecuteSuccess:nil];
-    }
-}
-
 - (void)ajaxIn
 {
 }

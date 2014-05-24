@@ -503,7 +503,6 @@
 		16FD4D231930D34000EC8B74 /* FFBaseSerializable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseSerializable.m; sourceTree = "<group>"; };
 		16FD4D241930D34000EC8B74 /* FFHttpRunnable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFHttpRunnable.h; sourceTree = "<group>"; };
 		16FD4D251930D34000EC8B74 /* FFHttpRunnable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFHttpRunnable.m; sourceTree = "<group>"; };
-		16FD4D261930D34000EC8B74 /* FFRunnableDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFRunnableDelegate.h; sourceTree = "<group>"; };
 		16FD4D301930D9A600EC8B74 /* FFHttpTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFHttpTask.h; sourceTree = "<group>"; };
 		16FD4D311930D9A600EC8B74 /* FFHttpTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFHttpTask.m; sourceTree = "<group>"; };
 		16FD4D361930ECC800EC8B74 /* FFTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFTask.h; sourceTree = "<group>"; };
@@ -1359,7 +1358,6 @@
 				16FD4D231930D34000EC8B74 /* FFBaseSerializable.m */,
 				16FD4D241930D34000EC8B74 /* FFHttpRunnable.h */,
 				16FD4D251930D34000EC8B74 /* FFHttpRunnable.m */,
-				16FD4D261930D34000EC8B74 /* FFRunnableDelegate.h */,
 			);
 			path = FFRunnable;
 			sourceTree = "<group>";

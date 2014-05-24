@@ -7,18 +7,13 @@
 //
 
 #import "FFBaseSerializable.h"
-#import "FFRunnableDelegate.h"
 
-@interface FFBaseRunnable : FFBaseSerializable<FFRunnableDelegate>
+@interface FFBaseRunnable : FFBaseSerializable
 
-@property (nonatomic, weak) id<FFRunnableDelegate> delegate;
+#pragma mark param out
 
-/**
- *  task流程逻辑
- */
-- (void)taskWillExecute;
-- (void)taskExecuteFailed;
-- (void)taskExecuteFinished;
+@property (nonatomic, strong) NSDictionary *dicResult;
+@property (nonatomic, assign) NSError *error;
 
 /**
  *  task具体参数逻辑
