@@ -10,6 +10,13 @@
 
 @interface NSString (FireFly)
 
+/**
+ *  生成唯一字符串
+ *
+ *  @return sequence
+ */
++ (NSString *)stingWithSequence;
+
 + (NSString *)stringByMd5Encode:(NSString *)tString;
 
 //格式化时间为字符串

@@ -156,7 +156,7 @@
     convertAudioTask.audioConvertStatus = FFAudioConvertStatusCaf2Mp3;
     convertAudioTask.srcPath = savePath;
     convertAudioTask.destPath = [savePath stringByReplacingOccurrencesOfString:[savePath pathExtension] withString:@"mp3"];
-    [[FFConcurrentQueue sharedConcurrentQueue] addTask:convertAudioTask];
+    [convertAudioTask start];
 }
 
 @end

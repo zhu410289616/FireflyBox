@@ -20,6 +20,10 @@
 #import "NSMutableArray+FireFly.h"
 #import "UIViewController+FireFly.h"
 
+//firefly box config
+#import "FFBoxConfig.h"
+
 #import "AppDelegate.h"
+
 
 

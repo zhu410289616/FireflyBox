@@ -11,6 +11,18 @@
 
 @implementation NSString (FireFly)
 
+/**
+ *  生成唯一字符串
+ *
+ *  @return sequence
+ */
++ (NSString *)stingWithSequence
+{
+    NSDate *time = [NSDate date];
+    NSTimeInterval timeInterval = [time timeIntervalSince1970];
+    return [NSString stringWithFormat:@"%f%d", timeInterval, arc4random()];//arc4random
+}
+
 + (NSString *)stringByMd5Encode:(NSString *)tString
 {
     @try {

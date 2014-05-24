@@ -51,20 +51,20 @@
 		162F9157190956FD004D0C25 /* FFBaseTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 162F9156190956FD004D0C25 /* FFBaseTableCell.m */; };
 		162F915A19095740004D0C25 /* FFRecentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 162F915919095740004D0C25 /* FFRecentCell.m */; };
 		163102FF192716A3000ECCDC /* FFAudioRecorder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 163102FE192716A3000ECCDC /* FFAudioRecorder.mm */; };
-		1631030B1927C369000ECCDC /* FFDeleteFileTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 1631030A1927C369000ECCDC /* FFDeleteFileTask.m */; };
-		16340232192E5EF9000A04C3 /* FFBaseRunnable.m in Sources */ = {isa = PBXBuildFile; fileRef = 16340230192E5EF9000A04C3 /* FFBaseRunnable.m */; };
-		16340235192E5F50000A04C3 /* FFBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 16340234192E5F50000A04C3 /* FFBaseRequest.m */; };
-		1634023A192E5F80000A04C3 /* FFBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 16340237192E5F80000A04C3 /* FFBaseObject.m */; };
-		1634023B192E5F80000A04C3 /* FFBaseSerializable.m in Sources */ = {isa = PBXBuildFile; fileRef = 16340239192E5F80000A04C3 /* FFBaseSerializable.m */; };
-		16340245192E6063000A04C3 /* FFBaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1634023E192E6063000A04C3 /* FFBaseQueue.m */; };
-		16340246192E6063000A04C3 /* FFBaseTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 16340240192E6063000A04C3 /* FFBaseTask.m */; };
-		16340247192E6063000A04C3 /* FFConcurrentQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 16340242192E6063000A04C3 /* FFConcurrentQueue.m */; };
-		16340248192E6063000A04C3 /* FFSerialQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 16340244192E6063000A04C3 /* FFSerialQueue.m */; };
 		1658B518192B955900B8CF4E /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1658B515192B955900B8CF4E /* libMobClickLibrary.a */; };
 		1658B52B192BA42200B8CF4E /* FFConvertHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1658B52A192BA42200B8CF4E /* FFConvertHelper.m */; };
 		16686624192675C2009BD05D /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16686623192675C2009BD05D /* CoreAudio.framework */; };
 		16686626192675E1009BD05D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16686625192675E1009BD05D /* QuartzCore.framework */; };
 		16686628192675F9009BD05D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16686627192675F9009BD05D /* OpenGLES.framework */; };
+		166919E41930C346008E385B /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 166919D21930C346008E385B /* AFHTTPRequestOperation.m */; };
+		166919E51930C346008E385B /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 166919D41930C346008E385B /* AFHTTPRequestOperationManager.m */; };
+		166919E61930C346008E385B /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 166919D61930C346008E385B /* AFHTTPSessionManager.m */; };
+		166919E71930C346008E385B /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 166919D91930C346008E385B /* AFNetworkReachabilityManager.m */; };
+		166919E81930C346008E385B /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 166919DB1930C346008E385B /* AFSecurityPolicy.m */; };
+		166919E91930C346008E385B /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 166919DD1930C346008E385B /* AFURLConnectionOperation.m */; };
+		166919EA1930C346008E385B /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 166919DF1930C346008E385B /* AFURLRequestSerialization.m */; };
+		166919EB1930C346008E385B /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 166919E11930C346008E385B /* AFURLResponseSerialization.m */; };
+		166919EC1930C346008E385B /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 166919E31930C346008E385B /* AFURLSessionManager.m */; };
 		16798A3D191E720100726FBD /* NSMutableArray+FireFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 16798A3C191E720100726FBD /* NSMutableArray+FireFly.m */; };
 		16798A40191E86FA00726FBD /* FFBaseLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16798A3F191E86FA00726FBD /* FFBaseLoadingView.m */; };
 		167E7126190B82040014ADEB /* transfer_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 167E7124190B82040014ADEB /* transfer_bg.png */; };
@@ -88,15 +88,6 @@
 		16A2F8A31902D5AC00751B82 /* FFDB+All.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F8941902D5AC00751B82 /* FFDB+All.m */; };
 		16A2F8A41902D5AC00751B82 /* FFDB+Record.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F8961902D5AC00751B82 /* FFDB+Record.m */; };
 		16A2F8A51902D5AC00751B82 /* FFDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F8981902D5AC00751B82 /* FFDB.m */; };
-		16A2F8E61902D5C100751B82 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F8A91902D5C000751B82 /* AFHTTPClient.m */; };
-		16A2F8E71902D5C100751B82 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F8AB1902D5C000751B82 /* AFHTTPRequestOperation.m */; };
-		16A2F8E81902D5C100751B82 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F8AD1902D5C000751B82 /* AFImageRequestOperation.m */; };
-		16A2F8E91902D5C100751B82 /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F8AF1902D5C000751B82 /* AFJSONRequestOperation.m */; };
-		16A2F8EA1902D5C100751B82 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F8B11902D5C000751B82 /* AFNetworkActivityIndicatorManager.m */; };
-		16A2F8EB1902D5C100751B82 /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F8B41902D5C000751B82 /* AFPropertyListRequestOperation.m */; };
-		16A2F8EC1902D5C100751B82 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F8B61902D5C000751B82 /* AFURLConnectionOperation.m */; };
-		16A2F8ED1902D5C100751B82 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F8B81902D5C000751B82 /* AFXMLRequestOperation.m */; };
-		16A2F8EE1902D5C100751B82 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F8BA1902D5C000751B82 /* UIImageView+AFNetworking.m */; };
 		16A2F8F01902D5C100751B82 /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F8C21902D5C000751B82 /* EGOCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		16A2F8F11902D5C100751B82 /* EGOImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F8C51902D5C000751B82 /* EGOImageButton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		16A2F8F21902D5C100751B82 /* EGOImageLoadConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F8C81902D5C000751B82 /* EGOImageLoadConnection.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -114,7 +105,6 @@
 		16A5B140190C0CB9000FA5C4 /* FFHeadImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5B13F190C0CB9000FA5C4 /* FFHeadImageCell.m */; };
 		16A5B143190C0FBB000FA5C4 /* FFSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5B142190C0FBB000FA5C4 /* FFSettingCell.m */; };
 		16A5B14E190C17D9000FA5C4 /* FFDB+DataInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5B14D190C17D9000FA5C4 /* FFDB+DataInfo.m */; };
-		16BC2D0419309BB40030B24A /* FFGetDailyTextRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BC2D0319309BB40030B24A /* FFGetDailyTextRequest.m */; };
 		16BCB5531926650000B12CBF /* FFAudioRecorderViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 16BCB5521926650000B12CBF /* FFAudioRecorderViewController.mm */; };
 		16BCB56C1926716500B12CBF /* AQPlayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 16BCB5561926716500B12CBF /* AQPlayer.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		16BCB56D1926716500B12CBF /* AQRecorder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 16BCB5581926716500B12CBF /* AQRecorder.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -145,7 +135,6 @@
 		16CF24391910948B0029F3D2 /* DOUMPMediaLibraryAssetLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 16CF24241910948B0029F3D2 /* DOUMPMediaLibraryAssetLoader.m */; };
 		16CF243A1910948B0029F3D2 /* DOUSimpleHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 16CF24261910948B0029F3D2 /* DOUSimpleHTTPRequest.m */; };
 		16CF243B1910948B0029F3D2 /* NSData+DOUMappedFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 16CF24281910948B0029F3D2 /* NSData+DOUMappedFile.m */; };
-		16CF243E191095540029F3D2 /* FFGetFileInfoTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 16CF243D191095540029F3D2 /* FFGetFileInfoTask.m */; };
 		16CF244619109CF00029F3D2 /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16CF244119109CF00029F3D2 /* PlayerViewController.m */; };
 		16CF244719109CF00029F3D2 /* Track+Provider.m in Sources */ = {isa = PBXBuildFile; fileRef = 16CF244319109CF00029F3D2 /* Track+Provider.m */; };
 		16CF244819109CF00029F3D2 /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 16CF244519109CF00029F3D2 /* Track.m */; };
@@ -172,7 +161,21 @@
 		16ED1D59190B78B9007EC697 /* GCDWebUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 16ED1D4A190B78B9007EC697 /* GCDWebUploader.m */; };
 		16ED1D5B190B799E007EC697 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16ED1D5A190B799E007EC697 /* CFNetwork.framework */; };
 		16F2051F192DEE75001AD92D /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16F2051E192DEE75001AD92D /* libmp3lame.a */; };
-		16F20523192DF312001AD92D /* FFConvertAudioTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F20522192DF312001AD92D /* FFConvertAudioTask.m */; };
+		16FD4D271930D34000EC8B74 /* FFBaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FD4D131930D34000EC8B74 /* FFBaseQueue.m */; };
+		16FD4D281930D34000EC8B74 /* FFBaseTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FD4D151930D34000EC8B74 /* FFBaseTask.m */; };
+		16FD4D291930D34000EC8B74 /* FFConcurrentQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FD4D171930D34000EC8B74 /* FFConcurrentQueue.m */; };
+		16FD4D2A1930D34000EC8B74 /* FFSerialQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FD4D191930D34000EC8B74 /* FFSerialQueue.m */; };
+		16FD4D2C1930D34000EC8B74 /* FFBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FD4D1F1930D34000EC8B74 /* FFBaseObject.m */; };
+		16FD4D2D1930D34000EC8B74 /* FFBaseRunnable.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FD4D211930D34000EC8B74 /* FFBaseRunnable.m */; };
+		16FD4D2E1930D34000EC8B74 /* FFBaseSerializable.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FD4D231930D34000EC8B74 /* FFBaseSerializable.m */; };
+		16FD4D2F1930D34000EC8B74 /* FFHttpRunnable.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FD4D251930D34000EC8B74 /* FFHttpRunnable.m */; };
+		16FD4D321930D9A600EC8B74 /* FFHttpTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FD4D311930D9A600EC8B74 /* FFHttpTask.m */; };
+		16FD4D4B19310ADE00EC8B74 /* FFRunnableTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FD4D4A19310ADE00EC8B74 /* FFRunnableTask.m */; };
+		16FD4D5619310E5E00EC8B74 /* FFBoxTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FD4D4F19310E5E00EC8B74 /* FFBoxTask.m */; };
+		16FD4D5719310E5E00EC8B74 /* FFConvertAudioTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FD4D5119310E5E00EC8B74 /* FFConvertAudioTask.m */; };
+		16FD4D5819310E5E00EC8B74 /* FFDeleteFileTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FD4D5319310E5E00EC8B74 /* FFDeleteFileTask.m */; };
+		16FD4D5919310E5E00EC8B74 /* FFGetFileInfoTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FD4D5519310E5E00EC8B74 /* FFGetFileInfoTask.m */; };
+		16FD4D5C19310E9C00EC8B74 /* FFGetDailyRunnable.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FD4D5B19310E9C00EC8B74 /* FFGetDailyRunnable.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -271,25 +274,6 @@
 		162F915919095740004D0C25 /* FFRecentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFRecentCell.m; sourceTree = "<group>"; };
 		163102FD192716A3000ECCDC /* FFAudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFAudioRecorder.h; sourceTree = "<group>"; };
 		163102FE192716A3000ECCDC /* FFAudioRecorder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FFAudioRecorder.mm; sourceTree = "<group>"; };
-		163103091927C369000ECCDC /* FFDeleteFileTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFDeleteFileTask.h; sourceTree = "<group>"; };
-		1631030A1927C369000ECCDC /* FFDeleteFileTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFDeleteFileTask.m; sourceTree = "<group>"; };
-		1634022F192E5EF9000A04C3 /* FFBaseRunnable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseRunnable.h; sourceTree = "<group>"; };
-		16340230192E5EF9000A04C3 /* FFBaseRunnable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseRunnable.m; sourceTree = "<group>"; };
-		16340231192E5EF9000A04C3 /* FFRunnableDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFRunnableDelegate.h; sourceTree = "<group>"; };
-		16340233192E5F50000A04C3 /* FFBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseRequest.h; sourceTree = "<group>"; };
-		16340234192E5F50000A04C3 /* FFBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseRequest.m; sourceTree = "<group>"; };
-		16340236192E5F80000A04C3 /* FFBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseObject.h; sourceTree = "<group>"; };
-		16340237192E5F80000A04C3 /* FFBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseObject.m; sourceTree = "<group>"; };
-		16340238192E5F80000A04C3 /* FFBaseSerializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseSerializable.h; sourceTree = "<group>"; };
-		16340239192E5F80000A04C3 /* FFBaseSerializable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseSerializable.m; sourceTree = "<group>"; };
-		1634023D192E6063000A04C3 /* FFBaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseQueue.h; sourceTree = "<group>"; };
-		1634023E192E6063000A04C3 /* FFBaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseQueue.m; sourceTree = "<group>"; };
-		1634023F192E6063000A04C3 /* FFBaseTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseTask.h; sourceTree = "<group>"; };
-		16340240192E6063000A04C3 /* FFBaseTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseTask.m; sourceTree = "<group>"; };
-		16340241192E6063000A04C3 /* FFConcurrentQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFConcurrentQueue.h; sourceTree = "<group>"; };
-		16340242192E6063000A04C3 /* FFConcurrentQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFConcurrentQueue.m; sourceTree = "<group>"; };
-		16340243192E6063000A04C3 /* FFSerialQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFSerialQueue.h; sourceTree = "<group>"; };
-		16340244192E6063000A04C3 /* FFSerialQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFSerialQueue.m; sourceTree = "<group>"; };
 		1658B515192B955900B8CF4E /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		1658B517192B955900B8CF4E /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		1658B529192BA42200B8CF4E /* FFConvertHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFConvertHelper.h; sourceTree = "<group>"; };
@@ -297,6 +281,25 @@
 		16686623192675C2009BD05D /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		16686625192675E1009BD05D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		16686627192675F9009BD05D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		166919D11930C346008E385B /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		166919D21930C346008E385B /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		166919D31930C346008E385B /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		166919D41930C346008E385B /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		166919D51930C346008E385B /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		166919D61930C346008E385B /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		166919D71930C346008E385B /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		166919D81930C346008E385B /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		166919D91930C346008E385B /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		166919DA1930C346008E385B /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		166919DB1930C346008E385B /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		166919DC1930C346008E385B /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		166919DD1930C346008E385B /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		166919DE1930C346008E385B /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		166919DF1930C346008E385B /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		166919E01930C346008E385B /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		166919E11930C346008E385B /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		166919E21930C346008E385B /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		166919E31930C346008E385B /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		16798A3B191E720100726FBD /* NSMutableArray+FireFly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+FireFly.h"; sourceTree = "<group>"; };
 		16798A3C191E720100726FBD /* NSMutableArray+FireFly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+FireFly.m"; sourceTree = "<group>"; };
 		16798A3E191E86FA00726FBD /* FFBaseLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseLoadingView.h; sourceTree = "<group>"; };
@@ -335,25 +338,6 @@
 		16A2F8961902D5AC00751B82 /* FFDB+Record.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FFDB+Record.m"; sourceTree = "<group>"; };
 		16A2F8971902D5AC00751B82 /* FFDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFDB.h; sourceTree = "<group>"; };
 		16A2F8981902D5AC00751B82 /* FFDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFDB.m; sourceTree = "<group>"; };
-		16A2F8A81902D5C000751B82 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
-		16A2F8A91902D5C000751B82 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
-		16A2F8AA1902D5C000751B82 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
-		16A2F8AB1902D5C000751B82 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
-		16A2F8AC1902D5C000751B82 /* AFImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageRequestOperation.h; sourceTree = "<group>"; };
-		16A2F8AD1902D5C000751B82 /* AFImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFImageRequestOperation.m; sourceTree = "<group>"; };
-		16A2F8AE1902D5C000751B82 /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONRequestOperation.h; sourceTree = "<group>"; };
-		16A2F8AF1902D5C000751B82 /* AFJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONRequestOperation.m; sourceTree = "<group>"; };
-		16A2F8B01902D5C000751B82 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
-		16A2F8B11902D5C000751B82 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
-		16A2F8B21902D5C000751B82 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
-		16A2F8B31902D5C000751B82 /* AFPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPropertyListRequestOperation.h; sourceTree = "<group>"; };
-		16A2F8B41902D5C000751B82 /* AFPropertyListRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFPropertyListRequestOperation.m; sourceTree = "<group>"; };
-		16A2F8B51902D5C000751B82 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
-		16A2F8B61902D5C000751B82 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
-		16A2F8B71902D5C000751B82 /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFXMLRequestOperation.h; sourceTree = "<group>"; };
-		16A2F8B81902D5C000751B82 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
-		16A2F8B91902D5C000751B82 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
-		16A2F8BA1902D5C000751B82 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		16A2F8C11902D5C000751B82 /* EGOCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOCache.h; sourceTree = "<group>"; };
 		16A2F8C21902D5C000751B82 /* EGOCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOCache.m; sourceTree = "<group>"; };
 		16A2F8C41902D5C000751B82 /* EGOImageButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageButton.h; sourceTree = "<group>"; };
@@ -388,8 +372,6 @@
 		16A5B142190C0FBB000FA5C4 /* FFSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFSettingCell.m; sourceTree = "<group>"; };
 		16A5B14C190C17D9000FA5C4 /* FFDB+DataInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FFDB+DataInfo.h"; sourceTree = "<group>"; };
 		16A5B14D190C17D9000FA5C4 /* FFDB+DataInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FFDB+DataInfo.m"; sourceTree = "<group>"; };
-		16BC2D0219309BB40030B24A /* FFGetDailyTextRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFGetDailyTextRequest.h; sourceTree = "<group>"; };
-		16BC2D0319309BB40030B24A /* FFGetDailyTextRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFGetDailyTextRequest.m; sourceTree = "<group>"; };
 		16BCB5511926650000B12CBF /* FFAudioRecorderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFAudioRecorderViewController.h; sourceTree = "<group>"; };
 		16BCB5521926650000B12CBF /* FFAudioRecorderViewController.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = FFAudioRecorderViewController.mm; sourceTree = "<group>"; };
 		16BCB5551926716500B12CBF /* AQPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQPlayer.h; sourceTree = "<group>"; };
@@ -454,8 +436,6 @@
 		16CF24261910948B0029F3D2 /* DOUSimpleHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOUSimpleHTTPRequest.m; sourceTree = "<group>"; };
 		16CF24271910948B0029F3D2 /* NSData+DOUMappedFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+DOUMappedFile.h"; sourceTree = "<group>"; };
 		16CF24281910948B0029F3D2 /* NSData+DOUMappedFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+DOUMappedFile.m"; sourceTree = "<group>"; };
-		16CF243C191095540029F3D2 /* FFGetFileInfoTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFGetFileInfoTask.h; sourceTree = "<group>"; };
-		16CF243D191095540029F3D2 /* FFGetFileInfoTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFGetFileInfoTask.m; sourceTree = "<group>"; };
 		16CF244019109CF00029F3D2 /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
 		16CF244119109CF00029F3D2 /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
 		16CF244219109CF00029F3D2 /* Track+Provider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Track+Provider.h"; sourceTree = "<group>"; };
@@ -507,8 +487,39 @@
 		16ED1D5A190B799E007EC697 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		16F2051D192DEE75001AD92D /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
 		16F2051E192DEE75001AD92D /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
-		16F20521192DF312001AD92D /* FFConvertAudioTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFConvertAudioTask.h; sourceTree = "<group>"; };
-		16F20522192DF312001AD92D /* FFConvertAudioTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFConvertAudioTask.m; sourceTree = "<group>"; };
+		16FD4D121930D34000EC8B74 /* FFBaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseQueue.h; sourceTree = "<group>"; };
+		16FD4D131930D34000EC8B74 /* FFBaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseQueue.m; sourceTree = "<group>"; };
+		16FD4D141930D34000EC8B74 /* FFBaseTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseTask.h; sourceTree = "<group>"; };
+		16FD4D151930D34000EC8B74 /* FFBaseTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseTask.m; sourceTree = "<group>"; };
+		16FD4D161930D34000EC8B74 /* FFConcurrentQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFConcurrentQueue.h; sourceTree = "<group>"; };
+		16FD4D171930D34000EC8B74 /* FFConcurrentQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFConcurrentQueue.m; sourceTree = "<group>"; };
+		16FD4D181930D34000EC8B74 /* FFSerialQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFSerialQueue.h; sourceTree = "<group>"; };
+		16FD4D191930D34000EC8B74 /* FFSerialQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFSerialQueue.m; sourceTree = "<group>"; };
+		16FD4D1E1930D34000EC8B74 /* FFBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseObject.h; sourceTree = "<group>"; };
+		16FD4D1F1930D34000EC8B74 /* FFBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseObject.m; sourceTree = "<group>"; };
+		16FD4D201930D34000EC8B74 /* FFBaseRunnable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseRunnable.h; sourceTree = "<group>"; };
+		16FD4D211930D34000EC8B74 /* FFBaseRunnable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseRunnable.m; sourceTree = "<group>"; };
+		16FD4D221930D34000EC8B74 /* FFBaseSerializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseSerializable.h; sourceTree = "<group>"; };
+		16FD4D231930D34000EC8B74 /* FFBaseSerializable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseSerializable.m; sourceTree = "<group>"; };
+		16FD4D241930D34000EC8B74 /* FFHttpRunnable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFHttpRunnable.h; sourceTree = "<group>"; };
+		16FD4D251930D34000EC8B74 /* FFHttpRunnable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFHttpRunnable.m; sourceTree = "<group>"; };
+		16FD4D261930D34000EC8B74 /* FFRunnableDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFRunnableDelegate.h; sourceTree = "<group>"; };
+		16FD4D301930D9A600EC8B74 /* FFHttpTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFHttpTask.h; sourceTree = "<group>"; };
+		16FD4D311930D9A600EC8B74 /* FFHttpTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFHttpTask.m; sourceTree = "<group>"; };
+		16FD4D361930ECC800EC8B74 /* FFTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFTask.h; sourceTree = "<group>"; };
+		16FD4D4919310ADE00EC8B74 /* FFRunnableTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFRunnableTask.h; sourceTree = "<group>"; };
+		16FD4D4A19310ADE00EC8B74 /* FFRunnableTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFRunnableTask.m; sourceTree = "<group>"; };
+		16FD4D4E19310E5E00EC8B74 /* FFBoxTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBoxTask.h; sourceTree = "<group>"; };
+		16FD4D4F19310E5E00EC8B74 /* FFBoxTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBoxTask.m; sourceTree = "<group>"; };
+		16FD4D5019310E5E00EC8B74 /* FFConvertAudioTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFConvertAudioTask.h; sourceTree = "<group>"; };
+		16FD4D5119310E5E00EC8B74 /* FFConvertAudioTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFConvertAudioTask.m; sourceTree = "<group>"; };
+		16FD4D5219310E5E00EC8B74 /* FFDeleteFileTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFDeleteFileTask.h; sourceTree = "<group>"; };
+		16FD4D5319310E5E00EC8B74 /* FFDeleteFileTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFDeleteFileTask.m; sourceTree = "<group>"; };
+		16FD4D5419310E5E00EC8B74 /* FFGetFileInfoTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFGetFileInfoTask.h; sourceTree = "<group>"; };
+		16FD4D5519310E5E00EC8B74 /* FFGetFileInfoTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFGetFileInfoTask.m; sourceTree = "<group>"; };
+		16FD4D5A19310E9C00EC8B74 /* FFGetDailyRunnable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFGetDailyRunnable.h; sourceTree = "<group>"; };
+		16FD4D5B19310E9C00EC8B74 /* FFGetDailyRunnable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFGetDailyRunnable.m; sourceTree = "<group>"; };
+		16FD4D5D19310F5500EC8B74 /* FFBoxConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFBoxConfig.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -737,51 +748,11 @@
 		16340221192E5664000A04C3 /* FireflyBoxAPI */ = {
 			isa = PBXGroup;
 			children = (
-				1634023C192E6063000A04C3 /* FFTask */,
-				1634022D192E5EF9000A04C3 /* FFRequest */,
-				1634022E192E5EF9000A04C3 /* FFRunnable */,
+				16FD4D4C19310E5E00EC8B74 /* FFHttpAPI */,
+				16FD4D4D19310E5E00EC8B74 /* FFNormalAPI */,
+				16FD4D5D19310F5500EC8B74 /* FFBoxConfig.h */,
 			);
 			path = FireflyBoxAPI;
-			sourceTree = "<group>";
-		};
-		1634022D192E5EF9000A04C3 /* FFRequest */ = {
-			isa = PBXGroup;
-			children = (
-				16340233192E5F50000A04C3 /* FFBaseRequest.h */,
-				16340234192E5F50000A04C3 /* FFBaseRequest.m */,
-				16BC2D0219309BB40030B24A /* FFGetDailyTextRequest.h */,
-				16BC2D0319309BB40030B24A /* FFGetDailyTextRequest.m */,
-			);
-			path = FFRequest;
-			sourceTree = "<group>";
-		};
-		1634022E192E5EF9000A04C3 /* FFRunnable */ = {
-			isa = PBXGroup;
-			children = (
-				16340236192E5F80000A04C3 /* FFBaseObject.h */,
-				16340237192E5F80000A04C3 /* FFBaseObject.m */,
-				16340238192E5F80000A04C3 /* FFBaseSerializable.h */,
-				16340239192E5F80000A04C3 /* FFBaseSerializable.m */,
-				1634022F192E5EF9000A04C3 /* FFBaseRunnable.h */,
-				16340230192E5EF9000A04C3 /* FFBaseRunnable.m */,
-				16340231192E5EF9000A04C3 /* FFRunnableDelegate.h */,
-			);
-			path = FFRunnable;
-			sourceTree = "<group>";
-		};
-		1634023C192E6063000A04C3 /* FFTask */ = {
-			isa = PBXGroup;
-			children = (
-				1634023D192E6063000A04C3 /* FFBaseQueue.h */,
-				1634023E192E6063000A04C3 /* FFBaseQueue.m */,
-				1634023F192E6063000A04C3 /* FFBaseTask.h */,
-				16340240192E6063000A04C3 /* FFBaseTask.m */,
-				16340241192E6063000A04C3 /* FFConcurrentQueue.h */,
-				16340242192E6063000A04C3 /* FFConcurrentQueue.m */,
-				16340243192E6063000A04C3 /* FFSerialQueue.h */,
-				16340244192E6063000A04C3 /* FFSerialQueue.m */,
-			);
-			path = FFTask;
 			sourceTree = "<group>";
 		};
 		1658B514192B955900B8CF4E /* UMAnalytics_Sdk_2.2.1.OpenUDID */ = {
@@ -905,7 +876,6 @@
 			isa = PBXGroup;
 			children = (
 				16340221192E5664000A04C3 /* FireflyBoxAPI */,
-				16A5B122190BE018000FA5C4 /* TaskManager */,
 				1624B88E19093C140018B8FE /* Root */,
 				16DAD6771902D9FB00BFE84C /* DataStruct */,
 				16A2F8831902D5AC00751B82 /* Common */,
@@ -947,6 +917,7 @@
 		16A2F8831902D5AC00751B82 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				16FD4D101930D34000EC8B74 /* FFTask */,
 				1620DCE61913807200AE810C /* FFCategory */,
 				1620DCDC1913805500AE810C /* FFTabBar */,
 				1620DCDB1913803900AE810C /* FFActionSheet */,
@@ -995,25 +966,25 @@
 		16A2F8A71902D5C000751B82 /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
-				16A2F8A81902D5C000751B82 /* AFHTTPClient.h */,
-				16A2F8A91902D5C000751B82 /* AFHTTPClient.m */,
-				16A2F8AA1902D5C000751B82 /* AFHTTPRequestOperation.h */,
-				16A2F8AB1902D5C000751B82 /* AFHTTPRequestOperation.m */,
-				16A2F8AC1902D5C000751B82 /* AFImageRequestOperation.h */,
-				16A2F8AD1902D5C000751B82 /* AFImageRequestOperation.m */,
-				16A2F8AE1902D5C000751B82 /* AFJSONRequestOperation.h */,
-				16A2F8AF1902D5C000751B82 /* AFJSONRequestOperation.m */,
-				16A2F8B01902D5C000751B82 /* AFNetworkActivityIndicatorManager.h */,
-				16A2F8B11902D5C000751B82 /* AFNetworkActivityIndicatorManager.m */,
-				16A2F8B21902D5C000751B82 /* AFNetworking.h */,
-				16A2F8B31902D5C000751B82 /* AFPropertyListRequestOperation.h */,
-				16A2F8B41902D5C000751B82 /* AFPropertyListRequestOperation.m */,
-				16A2F8B51902D5C000751B82 /* AFURLConnectionOperation.h */,
-				16A2F8B61902D5C000751B82 /* AFURLConnectionOperation.m */,
-				16A2F8B71902D5C000751B82 /* AFXMLRequestOperation.h */,
-				16A2F8B81902D5C000751B82 /* AFXMLRequestOperation.m */,
-				16A2F8B91902D5C000751B82 /* UIImageView+AFNetworking.h */,
-				16A2F8BA1902D5C000751B82 /* UIImageView+AFNetworking.m */,
+				166919D11930C346008E385B /* AFHTTPRequestOperation.h */,
+				166919D21930C346008E385B /* AFHTTPRequestOperation.m */,
+				166919D31930C346008E385B /* AFHTTPRequestOperationManager.h */,
+				166919D41930C346008E385B /* AFHTTPRequestOperationManager.m */,
+				166919D51930C346008E385B /* AFHTTPSessionManager.h */,
+				166919D61930C346008E385B /* AFHTTPSessionManager.m */,
+				166919D71930C346008E385B /* AFNetworking.h */,
+				166919D81930C346008E385B /* AFNetworkReachabilityManager.h */,
+				166919D91930C346008E385B /* AFNetworkReachabilityManager.m */,
+				166919DA1930C346008E385B /* AFSecurityPolicy.h */,
+				166919DB1930C346008E385B /* AFSecurityPolicy.m */,
+				166919DC1930C346008E385B /* AFURLConnectionOperation.h */,
+				166919DD1930C346008E385B /* AFURLConnectionOperation.m */,
+				166919DE1930C346008E385B /* AFURLRequestSerialization.h */,
+				166919DF1930C346008E385B /* AFURLRequestSerialization.m */,
+				166919E01930C346008E385B /* AFURLResponseSerialization.h */,
+				166919E11930C346008E385B /* AFURLResponseSerialization.m */,
+				166919E21930C346008E385B /* AFURLSessionManager.h */,
+				166919E31930C346008E385B /* AFURLSessionManager.m */,
 			);
 			path = AFNetworking;
 			sourceTree = "<group>";
@@ -1102,19 +1073,6 @@
 				16A2F8E51902D5C100751B82 /* SYAppStart.m */,
 			);
 			path = SYAppStart;
-			sourceTree = "<group>";
-		};
-		16A5B122190BE018000FA5C4 /* TaskManager */ = {
-			isa = PBXGroup;
-			children = (
-				16CF243C191095540029F3D2 /* FFGetFileInfoTask.h */,
-				16CF243D191095540029F3D2 /* FFGetFileInfoTask.m */,
-				163103091927C369000ECCDC /* FFDeleteFileTask.h */,
-				1631030A1927C369000ECCDC /* FFDeleteFileTask.m */,
-				16F20521192DF312001AD92D /* FFConvertAudioTask.h */,
-				16F20522192DF312001AD92D /* FFConvertAudioTask.m */,
-			);
-			path = TaskManager;
 			sourceTree = "<group>";
 		};
 		16BCB5501926646500B12CBF /* AudioRecorder */ = {
@@ -1353,6 +1311,83 @@
 			path = Lame;
 			sourceTree = "<group>";
 		};
+		16FD4D101930D34000EC8B74 /* FFTask */ = {
+			isa = PBXGroup;
+			children = (
+				16FD4D111930D34000EC8B74 /* FFBaseTask */,
+				16FD4D1A1930D34000EC8B74 /* FFHttpTask */,
+				16FD4D1D1930D34000EC8B74 /* FFRunnable */,
+				16FD4D361930ECC800EC8B74 /* FFTask.h */,
+			);
+			path = FFTask;
+			sourceTree = "<group>";
+		};
+		16FD4D111930D34000EC8B74 /* FFBaseTask */ = {
+			isa = PBXGroup;
+			children = (
+				16FD4D121930D34000EC8B74 /* FFBaseQueue.h */,
+				16FD4D131930D34000EC8B74 /* FFBaseQueue.m */,
+				16FD4D141930D34000EC8B74 /* FFBaseTask.h */,
+				16FD4D151930D34000EC8B74 /* FFBaseTask.m */,
+				16FD4D161930D34000EC8B74 /* FFConcurrentQueue.h */,
+				16FD4D171930D34000EC8B74 /* FFConcurrentQueue.m */,
+				16FD4D181930D34000EC8B74 /* FFSerialQueue.h */,
+				16FD4D191930D34000EC8B74 /* FFSerialQueue.m */,
+				16FD4D4919310ADE00EC8B74 /* FFRunnableTask.h */,
+				16FD4D4A19310ADE00EC8B74 /* FFRunnableTask.m */,
+			);
+			path = FFBaseTask;
+			sourceTree = "<group>";
+		};
+		16FD4D1A1930D34000EC8B74 /* FFHttpTask */ = {
+			isa = PBXGroup;
+			children = (
+				16FD4D301930D9A600EC8B74 /* FFHttpTask.h */,
+				16FD4D311930D9A600EC8B74 /* FFHttpTask.m */,
+			);
+			path = FFHttpTask;
+			sourceTree = "<group>";
+		};
+		16FD4D1D1930D34000EC8B74 /* FFRunnable */ = {
+			isa = PBXGroup;
+			children = (
+				16FD4D1E1930D34000EC8B74 /* FFBaseObject.h */,
+				16FD4D1F1930D34000EC8B74 /* FFBaseObject.m */,
+				16FD4D201930D34000EC8B74 /* FFBaseRunnable.h */,
+				16FD4D211930D34000EC8B74 /* FFBaseRunnable.m */,
+				16FD4D221930D34000EC8B74 /* FFBaseSerializable.h */,
+				16FD4D231930D34000EC8B74 /* FFBaseSerializable.m */,
+				16FD4D241930D34000EC8B74 /* FFHttpRunnable.h */,
+				16FD4D251930D34000EC8B74 /* FFHttpRunnable.m */,
+				16FD4D261930D34000EC8B74 /* FFRunnableDelegate.h */,
+			);
+			path = FFRunnable;
+			sourceTree = "<group>";
+		};
+		16FD4D4C19310E5E00EC8B74 /* FFHttpAPI */ = {
+			isa = PBXGroup;
+			children = (
+				16FD4D5A19310E9C00EC8B74 /* FFGetDailyRunnable.h */,
+				16FD4D5B19310E9C00EC8B74 /* FFGetDailyRunnable.m */,
+			);
+			path = FFHttpAPI;
+			sourceTree = "<group>";
+		};
+		16FD4D4D19310E5E00EC8B74 /* FFNormalAPI */ = {
+			isa = PBXGroup;
+			children = (
+				16FD4D4E19310E5E00EC8B74 /* FFBoxTask.h */,
+				16FD4D4F19310E5E00EC8B74 /* FFBoxTask.m */,
+				16FD4D5019310E5E00EC8B74 /* FFConvertAudioTask.h */,
+				16FD4D5119310E5E00EC8B74 /* FFConvertAudioTask.m */,
+				16FD4D5219310E5E00EC8B74 /* FFDeleteFileTask.h */,
+				16FD4D5319310E5E00EC8B74 /* FFDeleteFileTask.m */,
+				16FD4D5419310E5E00EC8B74 /* FFGetFileInfoTask.h */,
+				16FD4D5519310E5E00EC8B74 /* FFGetFileInfoTask.m */,
+			);
+			path = FFNormalAPI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1457,14 +1492,14 @@
 				163102FF192716A3000ECCDC /* FFAudioRecorder.mm in Sources */,
 				16BCB5751926716500B12CBF /* CAXException.cpp in Sources */,
 				16A2F8F51902D5C100751B82 /* FMDatabase+InMemoryOnDiskIO.m in Sources */,
-				16A2F8E81902D5C100751B82 /* AFImageRequestOperation.m in Sources */,
 				161FF06319124B4F00CDD559 /* FFFileViewController.m in Sources */,
 				1658B52B192BA42200B8CF4E /* FFConvertHelper.m in Sources */,
+				16FD4D2A1930D34000EC8B74 /* FFSerialQueue.m in Sources */,
+				16FD4D321930D9A600EC8B74 /* FFHttpTask.m in Sources */,
 				16CF244819109CF00029F3D2 /* Track.m in Sources */,
 				16BCB5741926716500B12CBF /* CAStreamBasicDescription.cpp in Sources */,
 				16A2F8FF1902D5C100751B82 /* SYAppStart.m in Sources */,
 				16CF243B1910948B0029F3D2 /* NSData+DOUMappedFile.m in Sources */,
-				16A2F8ED1902D5C100751B82 /* AFXMLRequestOperation.m in Sources */,
 				16ED1D4E190B78B9007EC697 /* GCDWebServerRequest.m in Sources */,
 				1620DCFB1913807200AE810C /* UIFont+FireFly.m in Sources */,
 				1620DD161913E1BB00AE810C /* FFTransferViewController.m in Sources */,
@@ -1472,10 +1507,9 @@
 				1620DCE31913805500AE810C /* FFBaseTabBarController.m in Sources */,
 				1624B8A019093C140018B8FE /* FFSettingViewController.m in Sources */,
 				16CF24301910948B0029F3D2 /* DOUAudioLPCM.m in Sources */,
-				1634023A192E5F80000A04C3 /* FFBaseObject.m in Sources */,
+				16FD4D2E1930D34000EC8B74 /* FFBaseSerializable.m in Sources */,
 				16E943F21929AE2A00D0A488 /* NSInvocation+FireFly.m in Sources */,
 				16CF242B1910948B0029F3D2 /* DOUAudioDecoder.m in Sources */,
-				16A2F8EA1902D5C100751B82 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				16CF242D1910948B0029F3D2 /* DOUAudioFilePreprocessor.m in Sources */,
 				16ED1D51190B78B9007EC697 /* GCDWebServerFileRequest.m in Sources */,
 				16CF24381910948B0029F3D2 /* DOUEAGLView.m in Sources */,
@@ -1484,17 +1518,21 @@
 				1624B89F19093C140018B8FE /* FFRecentViewController.m in Sources */,
 				16CF24341910948B0029F3D2 /* DOUAudioStreamer+Options.m in Sources */,
 				16ED1D52190B78B9007EC697 /* GCDWebServerMultiPartFormRequest.m in Sources */,
-				16A2F8E91902D5C100751B82 /* AFJSONRequestOperation.m in Sources */,
 				16CF24331910948B0029F3D2 /* DOUAudioSpatialAnalyzer.m in Sources */,
 				16A2F8A51902D5AC00751B82 /* FFDB.m in Sources */,
 				16CF242E1910948B0029F3D2 /* DOUAudioFileProvider.m in Sources */,
+				166919E81930C346008E385B /* AFSecurityPolicy.m in Sources */,
 				16ED1D4F190B78B9007EC697 /* GCDWebServerResponse.m in Sources */,
+				166919EA1930C346008E385B /* AFURLRequestSerialization.m in Sources */,
+				16FD4D5919310E5E00EC8B74 /* FFGetFileInfoTask.m in Sources */,
 				1624B881190930E40018B8FE /* FFHUDViewController.m in Sources */,
+				16FD4D5719310E5E00EC8B74 /* FFConvertAudioTask.m in Sources */,
 				16DAD67A1902D9FB00BFE84C /* Record.m in Sources */,
 				1620DCE41913805500AE810C /* FFTabBarItem.m in Sources */,
 				16059CD4191F2A370072DD8F /* FFReachability.m in Sources */,
 				16CF24311910948B0029F3D2 /* DOUAudioPlaybackItem.m in Sources */,
 				16059CD1191F267D0072DD8F /* Reachability.m in Sources */,
+				166919EC1930C346008E385B /* AFURLSessionManager.m in Sources */,
 				1624B8841909311C0018B8FE /* FFTableViewController.m in Sources */,
 				16BCB56F1926716500B12CBF /* GLLevelMeter.m in Sources */,
 				1620DCD61913338300AE810C /* FFFileTypeIconView.m in Sources */,
@@ -1504,23 +1542,26 @@
 				16ED1D56190B78B9007EC697 /* GCDWebServerFileResponse.m in Sources */,
 				16CF24371910948B0029F3D2 /* DOUEAGL1View.m in Sources */,
 				16BCB5721926716500B12CBF /* MeterTable.cpp in Sources */,
+				16FD4D291930D34000EC8B74 /* FFConcurrentQueue.m in Sources */,
 				161FF06A191264AB00CDD559 /* FFFileReaderViewController.m in Sources */,
+				16FD4D2D1930D34000EC8B74 /* FFBaseRunnable.m in Sources */,
+				16FD4D5619310E5E00EC8B74 /* FFBoxTask.m in Sources */,
 				16BCB5701926716500B12CBF /* LevelMeter.m in Sources */,
 				16A2F8F21902D5C100751B82 /* EGOImageLoadConnection.m in Sources */,
-				1631030B1927C369000ECCDC /* FFDeleteFileTask.m in Sources */,
-				16A2F8E61902D5C100751B82 /* AFHTTPClient.m in Sources */,
 				1620DCFE1913807200AE810C /* UIViewController+FireFly.m in Sources */,
 				1620DD011913809E00AE810C /* FFActionSheetView.m in Sources */,
-				16BC2D0419309BB40030B24A /* FFGetDailyTextRequest.m in Sources */,
+				166919EB1930C346008E385B /* AFURLResponseSerialization.m in Sources */,
 				16A2F77E1902663100751B82 /* main.m in Sources */,
-				16340246192E6063000A04C3 /* FFBaseTask.m in Sources */,
 				16CF24321910948B0029F3D2 /* DOUAudioRenderer.m in Sources */,
 				162F915A19095740004D0C25 /* FFRecentCell.m in Sources */,
 				16A2F8F01902D5C100751B82 /* EGOCache.m in Sources */,
 				16ED1D53190B78B9007EC697 /* GCDWebServerURLEncodedFormRequest.m in Sources */,
 				16798A40191E86FA00726FBD /* FFBaseLoadingView.m in Sources */,
+				16FD4D4B19310ADE00EC8B74 /* FFRunnableTask.m in Sources */,
+				16FD4D2C1930D34000EC8B74 /* FFBaseObject.m in Sources */,
 				16A2F8A41902D5AC00751B82 /* FFDB+Record.m in Sources */,
 				1620DD0D19139F5200AE810C /* FFIconActionView.m in Sources */,
+				166919E71930C346008E385B /* AFNetworkReachabilityManager.m in Sources */,
 				16A5B14E190C17D9000FA5C4 /* FFDB+DataInfo.m in Sources */,
 				16E943F61929B75E00D0A488 /* KGStatusBar.m in Sources */,
 				16A2F8F61902D5C100751B82 /* FMDatabase.m in Sources */,
@@ -1528,43 +1569,41 @@
 				16A2F8F81902D5C100751B82 /* FMDatabasePool.m in Sources */,
 				16CF244719109CF00029F3D2 /* Track+Provider.m in Sources */,
 				16A2F89D1902D5AC00751B82 /* FFCommonUtil.m in Sources */,
+				16FD4D5819310E5E00EC8B74 /* FFDeleteFileTask.m in Sources */,
 				16A2F89C1902D5AC00751B82 /* FFBaseViewController.m in Sources */,
 				16A2F8F41902D5C100751B82 /* EGOImageView.m in Sources */,
 				1620DD0A19139F1700AE810C /* FFBaseActionView.m in Sources */,
 				16ED1D4C190B78B9007EC697 /* GCDWebServerConnection.m in Sources */,
 				16A5B140190C0CB9000FA5C4 /* FFHeadImageCell.m in Sources */,
 				16A0D62A190AC0A7007D6EBA /* FFEmptyTipsView.m in Sources */,
+				16FD4D281930D34000EC8B74 /* FFBaseTask.m in Sources */,
+				16FD4D271930D34000EC8B74 /* FFBaseQueue.m in Sources */,
 				16A2F8A31902D5AC00751B82 /* FFDB+All.m in Sources */,
 				16CF242F1910948B0029F3D2 /* DOUAudioFrequencyAnalyzer.m in Sources */,
 				1620DCFC1913807200AE810C /* UIImage+FireFly.m in Sources */,
 				16ED1D4B190B78B9007EC697 /* GCDWebServer.m in Sources */,
 				16ED1D54190B78B9007EC697 /* GCDWebServerDataResponse.m in Sources */,
+				166919E91930C346008E385B /* AFURLConnectionOperation.m in Sources */,
 				161FF0771912780300CDD559 /* FFTrack.m in Sources */,
 				16A5B13D190C0C8D000FA5C4 /* FFSingleTextCell.m in Sources */,
 				16CF24291910948B0029F3D2 /* DOUAudioAnalyzer+Default.m in Sources */,
-				16CF243E191095540029F3D2 /* FFGetFileInfoTask.m in Sources */,
 				16CF243A1910948B0029F3D2 /* DOUSimpleHTTPRequest.m in Sources */,
 				161FF06D191264DA00CDD559 /* FFTextReaderViewController.m in Sources */,
 				161FF07B19127F4200CDD559 /* FFFileTypeHelper.m in Sources */,
 				161FF074191273B600CDD559 /* FFMusicPlayerViewController.m in Sources */,
-				16340232192E5EF9000A04C3 /* FFBaseRunnable.m in Sources */,
 				1624B89D19093C140018B8FE /* FFRootTabBarController.m in Sources */,
-				16340245192E6063000A04C3 /* FFBaseQueue.m in Sources */,
-				16A2F8EC1902D5C100751B82 /* AFURLConnectionOperation.m in Sources */,
 				1620DCFD1913807200AE810C /* UIView+FireFly.m in Sources */,
-				1634023B192E5F80000A04C3 /* FFBaseSerializable.m in Sources */,
 				16BCB5531926650000B12CBF /* FFAudioRecorderViewController.mm in Sources */,
 				1620DCF81913807200AE810C /* NSString+FireFly.m in Sources */,
 				1620DD0419138F2800AE810C /* UIButton+FireFly.m in Sources */,
 				1620DD131913E04A00AE810C /* FFAboutViewController.m in Sources */,
+				166919E41930C346008E385B /* AFHTTPRequestOperation.m in Sources */,
 				1624B89C19093C140018B8FE /* FFAppLoader.m in Sources */,
 				16A2F8F91902D5C100751B82 /* FMDatabaseQueue.m in Sources */,
-				16A2F8E71902D5C100751B82 /* AFHTTPRequestOperation.m in Sources */,
-				16340248192E6063000A04C3 /* FFSerialQueue.m in Sources */,
 				16CF242C1910948B0029F3D2 /* DOUAudioEventLoop.m in Sources */,
+				166919E61930C346008E385B /* AFHTTPSessionManager.m in Sources */,
 				16BCB5731926716500B12CBF /* CADebugMacros.cpp in Sources */,
 				161FF06219124B4F00CDD559 /* FFFileInfoCell.m in Sources */,
-				16F20523192DF312001AD92D /* FFConvertAudioTask.m in Sources */,
 				1620DCF71913807200AE810C /* NSObject+FireFly.m in Sources */,
 				16CF24391910948B0029F3D2 /* DOUMPMediaLibraryAssetLoader.m in Sources */,
 				16A2F8FB1902D5C100751B82 /* FMResultSet.m in Sources */,
@@ -1572,25 +1611,24 @@
 				16232D271916649E0043F840 /* NSDate+FireFly.m in Sources */,
 				16798A3D191E720100726FBD /* NSMutableArray+FireFly.m in Sources */,
 				16232D2C191671A90043F840 /* FFNextStepViewController.m in Sources */,
+				166919E51930C346008E385B /* AFHTTPRequestOperationManager.m in Sources */,
 				16ED1D4D190B78B9007EC697 /* GCDWebServerFunctions.m in Sources */,
-				16A2F8EB1902D5C100751B82 /* AFPropertyListRequestOperation.m in Sources */,
 				162F9157190956FD004D0C25 /* FFBaseTableCell.m in Sources */,
 				16CF242A1910948B0029F3D2 /* DOUAudioAnalyzer.m in Sources */,
 				16ED1D55190B78B9007EC697 /* GCDWebServerErrorResponse.m in Sources */,
 				16A2F8F31902D5C100751B82 /* EGOImageLoader.m in Sources */,
 				16ED1D59190B78B9007EC697 /* GCDWebUploader.m in Sources */,
-				16340247192E6063000A04C3 /* FFConcurrentQueue.m in Sources */,
 				16BCB56C1926716500B12CBF /* AQPlayer.mm in Sources */,
 				16CF244619109CF00029F3D2 /* PlayerViewController.m in Sources */,
-				16340235192E5F50000A04C3 /* FFBaseRequest.m in Sources */,
 				16A2F8F11902D5C100751B82 /* EGOImageButton.m in Sources */,
 				16A0D62E190AC0CE007D6EBA /* TTTAttributedLabel.m in Sources */,
+				16FD4D5C19310E9C00EC8B74 /* FFGetDailyRunnable.m in Sources */,
 				16BCB56D1926716500B12CBF /* AQRecorder.mm in Sources */,
-				16A2F8EE1902D5C100751B82 /* UIImageView+AFNetworking.m in Sources */,
 				16A2F8FC1902D5C100751B82 /* EGORefreshTableHeaderView.m in Sources */,
 				16A2F8F71902D5C100751B82 /* FMDatabaseAdditions.m in Sources */,
 				16ED1D50190B78B9007EC697 /* GCDWebServerDataRequest.m in Sources */,
 				16A5B143190C0FBB000FA5C4 /* FFSettingCell.m in Sources */,
+				16FD4D2F1930D34000EC8B74 /* FFHttpRunnable.m in Sources */,
 				1620DCF91913807200AE810C /* UIColor+FireFly.m in Sources */,
 				16DAD67F1902DA6D00BFE84C /* GTMBase64.m in Sources */,
 				1620DCFA1913807200AE810C /* UIDevice+FireFly.m in Sources */,

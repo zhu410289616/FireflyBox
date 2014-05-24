@@ -8,6 +8,8 @@
 
 #import "FFFileViewController.h"
 #import "FFDB+All.h"
+#import "FFBoxTask.h"
+
 #import "FFGetFileInfoTask.h"
 #import "FFConcurrentQueue.h"
 #import "FFFileInfoCell.h"
@@ -112,7 +114,7 @@
         [self.dataList addObjectsFromArray:getTask.fileInfoList];
         [self loadFileInfoFinished:LoadFileInfoSourceFileSystem];
     };
-    [[FFConcurrentQueue sharedConcurrentQueue] addTask:getFileInfoTask];
+    [getFileInfoTask start];
 }
 
 /**
@@ -262,7 +264,7 @@
         [[FFDB sharedInstance] deleteDataInfoWithDataId:dataInfo.dataId];
         [[FFDB sharedInstance] deleteDataInfoWithParentDataId:dataInfo.dataId];
     };
-    [[FFConcurrentQueue sharedConcurrentQueue] addTask:deleteFileTask];
+    [deleteFileTask start];
     
     [tableView reloadData];
 }

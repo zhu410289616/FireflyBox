@@ -39,15 +39,5 @@
 #define GLOBAL_APP                      [UIApplication sharedApplication]
 #define GLOBAL_APP_DELEGATE             ((AppDelegate *)([UIApplication sharedApplication].delegate))
 
-//transfer web server
-#define TRANSFER_WEB_SERVER_NAME        @"firefly"
-#define TRANSFER_WEB_SERVER_PORT        20144
-#define TRANSFER_WEB_SERVER_DIR         @"/WebServer"
-
-#define SHOULD_UPDATE_FILE_INFO         @"SHOULD_UPDATE_FILE_INFO"
-
-//audio recorder
-#define kBufferDurationSeconds .5
-#define AUDIO_RECORDER_SAVE_DIR         @"/WebServer/MyAudio"
 
 #endif
