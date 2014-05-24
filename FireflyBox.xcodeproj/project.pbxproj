@@ -114,6 +114,7 @@
 		16A5B140190C0CB9000FA5C4 /* FFHeadImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5B13F190C0CB9000FA5C4 /* FFHeadImageCell.m */; };
 		16A5B143190C0FBB000FA5C4 /* FFSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5B142190C0FBB000FA5C4 /* FFSettingCell.m */; };
 		16A5B14E190C17D9000FA5C4 /* FFDB+DataInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5B14D190C17D9000FA5C4 /* FFDB+DataInfo.m */; };
+		16BC2D0419309BB40030B24A /* FFGetDailyTextRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BC2D0319309BB40030B24A /* FFGetDailyTextRequest.m */; };
 		16BCB5531926650000B12CBF /* FFAudioRecorderViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 16BCB5521926650000B12CBF /* FFAudioRecorderViewController.mm */; };
 		16BCB56C1926716500B12CBF /* AQPlayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 16BCB5561926716500B12CBF /* AQPlayer.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		16BCB56D1926716500B12CBF /* AQRecorder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 16BCB5581926716500B12CBF /* AQRecorder.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -387,6 +388,8 @@
 		16A5B142190C0FBB000FA5C4 /* FFSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFSettingCell.m; sourceTree = "<group>"; };
 		16A5B14C190C17D9000FA5C4 /* FFDB+DataInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FFDB+DataInfo.h"; sourceTree = "<group>"; };
 		16A5B14D190C17D9000FA5C4 /* FFDB+DataInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FFDB+DataInfo.m"; sourceTree = "<group>"; };
+		16BC2D0219309BB40030B24A /* FFGetDailyTextRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFGetDailyTextRequest.h; sourceTree = "<group>"; };
+		16BC2D0319309BB40030B24A /* FFGetDailyTextRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFGetDailyTextRequest.m; sourceTree = "<group>"; };
 		16BCB5511926650000B12CBF /* FFAudioRecorderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFAudioRecorderViewController.h; sourceTree = "<group>"; };
 		16BCB5521926650000B12CBF /* FFAudioRecorderViewController.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = FFAudioRecorderViewController.mm; sourceTree = "<group>"; };
 		16BCB5551926716500B12CBF /* AQPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQPlayer.h; sourceTree = "<group>"; };
@@ -746,6 +749,8 @@
 			children = (
 				16340233192E5F50000A04C3 /* FFBaseRequest.h */,
 				16340234192E5F50000A04C3 /* FFBaseRequest.m */,
+				16BC2D0219309BB40030B24A /* FFGetDailyTextRequest.h */,
+				16BC2D0319309BB40030B24A /* FFGetDailyTextRequest.m */,
 			);
 			path = FFRequest;
 			sourceTree = "<group>";
@@ -1506,6 +1511,7 @@
 				16A2F8E61902D5C100751B82 /* AFHTTPClient.m in Sources */,
 				1620DCFE1913807200AE810C /* UIViewController+FireFly.m in Sources */,
 				1620DD011913809E00AE810C /* FFActionSheetView.m in Sources */,
+				16BC2D0419309BB40030B24A /* FFGetDailyTextRequest.m in Sources */,
 				16A2F77E1902663100751B82 /* main.m in Sources */,
 				16340246192E6063000A04C3 /* FFBaseTask.m in Sources */,
 				16CF24321910948B0029F3D2 /* DOUAudioRenderer.m in Sources */,
