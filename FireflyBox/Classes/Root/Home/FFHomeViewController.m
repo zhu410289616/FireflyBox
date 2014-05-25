@@ -54,7 +54,7 @@
     };
     httpTask.errorBlock = ^(id task, NSError *error){
     };
-    [httpTask start];
+//    [httpTask start];
     
 }
 

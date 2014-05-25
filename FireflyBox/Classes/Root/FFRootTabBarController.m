@@ -11,6 +11,7 @@
 #import "FFActionSheetView.h"
 #import "FFNextStepViewController.h"
 #import "FFAudioRecorderViewController.h"
+#import "FFBluetoothTransferViewController.h"
 
 #define TABBAR_HEIGHT 50.0f
 
@@ -112,19 +113,26 @@
     [_homeController doAddAction];
 }
 
-- (void)doShowNextStepAction
-{
-    FFNextStepViewController *nextStepController = [[FFNextStepViewController alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:nextStepController];
-    [self presentViewController:nav animated:YES completion:nil];
-}
-
 - (void)doShowAudioRecorderAction
 {
     [[NSUserDefaults standardUserDefaults] setValue:@YES forKey:SHOULD_UPDATE_FILE_INFO];
     
     FFAudioRecorderViewController *audioRecorderController = [[FFAudioRecorderViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:audioRecorderController];
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
+- (void)doShowBluetoothAction
+{
+    FFBluetoothTransferViewController *bluetoothTransferController = [[FFBluetoothTransferViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:bluetoothTransferController];
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
+- (void)doShowNextStepAction
+{
+    FFNextStepViewController *nextStepController = [[FFNextStepViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:nextStepController];
     [self presentViewController:nav animated:YES completion:nil];
 }
 
@@ -140,6 +148,9 @@
             [self doShowAudioRecorderAction];
             break;
         case 2:
+            [self doShowBluetoothAction];
+            break;
+        case 3:
             [self doShowNextStepAction];
             break;
             
@@ -156,7 +167,7 @@
     
     if (tIndex == 1) {
         [_tabBarView selectedTabBarItem:self.selectedIndex];
-        NSArray *titles = [NSArray arrayWithObjects:@"添加", @"录音", @"下一步", nil];
+        NSArray *titles = [NSArray arrayWithObjects:@"添加", @"录音", @"AB", @"下一步", nil];
         FFActionSheetView *actionSheetView = [[FFActionSheetView alloc] initWithTitles:titles];
         actionSheetView.actionBlock = ^(int actionIndex) {
             [self doItemAction:actionIndex];

@@ -65,6 +65,10 @@
 		166919EA1930C346008E385B /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 166919DF1930C346008E385B /* AFURLRequestSerialization.m */; };
 		166919EB1930C346008E385B /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 166919E11930C346008E385B /* AFURLResponseSerialization.m */; };
 		166919EC1930C346008E385B /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 166919E31930C346008E385B /* AFURLSessionManager.m */; };
+		166E7D901931D3780066A468 /* FFCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 166E7D8E1931D3780066A468 /* FFCameraViewController.m */; };
+		166E7D931931D3B00066A468 /* FFTextRecorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 166E7D921931D3B00066A468 /* FFTextRecorderViewController.m */; };
+		166E7D971931D5FC0066A468 /* FFBluetoothTransferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 166E7D961931D5FC0066A468 /* FFBluetoothTransferViewController.m */; };
+		166E7D991931D64A0066A468 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 166E7D981931D64A0066A468 /* CoreBluetooth.framework */; };
 		16798A3D191E720100726FBD /* NSMutableArray+FireFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 16798A3C191E720100726FBD /* NSMutableArray+FireFly.m */; };
 		16798A40191E86FA00726FBD /* FFBaseLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16798A3F191E86FA00726FBD /* FFBaseLoadingView.m */; };
 		167E7126190B82040014ADEB /* transfer_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 167E7124190B82040014ADEB /* transfer_bg.png */; };
@@ -300,6 +304,13 @@
 		166919E11930C346008E385B /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		166919E21930C346008E385B /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		166919E31930C346008E385B /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		166E7D8D1931D3780066A468 /* FFCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCameraViewController.h; sourceTree = "<group>"; };
+		166E7D8E1931D3780066A468 /* FFCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCameraViewController.m; sourceTree = "<group>"; };
+		166E7D911931D3B00066A468 /* FFTextRecorderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTextRecorderViewController.h; sourceTree = "<group>"; };
+		166E7D921931D3B00066A468 /* FFTextRecorderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTextRecorderViewController.m; sourceTree = "<group>"; };
+		166E7D951931D5FC0066A468 /* FFBluetoothTransferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBluetoothTransferViewController.h; sourceTree = "<group>"; };
+		166E7D961931D5FC0066A468 /* FFBluetoothTransferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBluetoothTransferViewController.m; sourceTree = "<group>"; };
+		166E7D981931D64A0066A468 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		16798A3B191E720100726FBD /* NSMutableArray+FireFly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+FireFly.h"; sourceTree = "<group>"; };
 		16798A3C191E720100726FBD /* NSMutableArray+FireFly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+FireFly.m"; sourceTree = "<group>"; };
 		16798A3E191E86FA00726FBD /* FFBaseLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseLoadingView.h; sourceTree = "<group>"; };
@@ -526,6 +537,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				166E7D991931D64A0066A468 /* CoreBluetooth.framework in Frameworks */,
 				16686628192675F9009BD05D /* OpenGLES.framework in Frameworks */,
 				16686626192675E1009BD05D /* QuartzCore.framework in Frameworks */,
 				16686624192675C2009BD05D /* CoreAudio.framework in Frameworks */,
@@ -696,6 +708,9 @@
 		1624B88E19093C140018B8FE /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				166E7D941931D5E90066A468 /* BluetoothTransfer */,
+				166E7D8C1931D3780066A468 /* Camera */,
+				166E7D8F1931D3780066A468 /* TextRecorder */,
 				16BCB5501926646500B12CBF /* AudioRecorder */,
 				16232D28191671980043F840 /* Help */,
 				16232D29191671980043F840 /* NextStep */,
@@ -763,6 +778,33 @@
 			path = UMAnalytics_Sdk_2.2.1.OpenUDID;
 			sourceTree = "<group>";
 		};
+		166E7D8C1931D3780066A468 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				166E7D8D1931D3780066A468 /* FFCameraViewController.h */,
+				166E7D8E1931D3780066A468 /* FFCameraViewController.m */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		166E7D8F1931D3780066A468 /* TextRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				166E7D911931D3B00066A468 /* FFTextRecorderViewController.h */,
+				166E7D921931D3B00066A468 /* FFTextRecorderViewController.m */,
+			);
+			path = TextRecorder;
+			sourceTree = "<group>";
+		};
+		166E7D941931D5E90066A468 /* BluetoothTransfer */ = {
+			isa = PBXGroup;
+			children = (
+				166E7D951931D5FC0066A468 /* FFBluetoothTransferViewController.h */,
+				166E7D961931D5FC0066A468 /* FFBluetoothTransferViewController.m */,
+			);
+			path = BluetoothTransfer;
+			sourceTree = "<group>";
+		};
 		167E711E190B7FE80014ADEB /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -813,6 +855,7 @@
 		16A2F7701902663100751B82 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				166E7D981931D64A0066A468 /* CoreBluetooth.framework */,
 				16686627192675F9009BD05D /* OpenGLES.framework */,
 				16686625192675E1009BD05D /* QuartzCore.framework */,
 				16686623192675C2009BD05D /* CoreAudio.framework */,
@@ -1509,6 +1552,7 @@
 				16E943F21929AE2A00D0A488 /* NSInvocation+FireFly.m in Sources */,
 				16CF242B1910948B0029F3D2 /* DOUAudioDecoder.m in Sources */,
 				16CF242D1910948B0029F3D2 /* DOUAudioFilePreprocessor.m in Sources */,
+				166E7D901931D3780066A468 /* FFCameraViewController.m in Sources */,
 				16ED1D51190B78B9007EC697 /* GCDWebServerFileRequest.m in Sources */,
 				16CF24381910948B0029F3D2 /* DOUEAGLView.m in Sources */,
 				16A2F7821902663100751B82 /* AppDelegate.m in Sources */,
@@ -1611,6 +1655,7 @@
 				16232D2C191671A90043F840 /* FFNextStepViewController.m in Sources */,
 				166919E51930C346008E385B /* AFHTTPRequestOperationManager.m in Sources */,
 				16ED1D4D190B78B9007EC697 /* GCDWebServerFunctions.m in Sources */,
+				166E7D971931D5FC0066A468 /* FFBluetoothTransferViewController.m in Sources */,
 				162F9157190956FD004D0C25 /* FFBaseTableCell.m in Sources */,
 				16CF242A1910948B0029F3D2 /* DOUAudioAnalyzer.m in Sources */,
 				16ED1D55190B78B9007EC697 /* GCDWebServerErrorResponse.m in Sources */,
@@ -1627,6 +1672,7 @@
 				16ED1D50190B78B9007EC697 /* GCDWebServerDataRequest.m in Sources */,
 				16A5B143190C0FBB000FA5C4 /* FFSettingCell.m in Sources */,
 				16FD4D2F1930D34000EC8B74 /* FFHttpRunnable.m in Sources */,
+				166E7D931931D3B00066A468 /* FFTextRecorderViewController.m in Sources */,
 				1620DCF91913807200AE810C /* UIColor+FireFly.m in Sources */,
 				16DAD67F1902DA6D00BFE84C /* GTMBase64.m in Sources */,
 				1620DCFA1913807200AE810C /* UIDevice+FireFly.m in Sources */,

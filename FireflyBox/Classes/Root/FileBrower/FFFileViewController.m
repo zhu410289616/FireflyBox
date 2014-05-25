@@ -228,6 +228,7 @@
         cell = [[FFFileInfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         cell.footerLineView.hidden = NO;
     }
+    cell.headerLineView.hidden = YES;
     if (indexPath.row == 0 && cell.headerLineView.hidden) {
         cell.headerLineView.hidden = NO;
     }
