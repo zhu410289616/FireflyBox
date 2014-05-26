@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <Crashlytics/Crashlytics.h>
 #import "FFAppLoader.h"
 
 @implementation AppDelegate
@@ -15,6 +16,8 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    [Crashlytics startWithAPIKey:@"534b1d1f60854190ad1c89e5c2ad3e0baeb99eb6"];
     
     [[FFAppLoader sharedInstance] initLoader];
     

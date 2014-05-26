@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		16059CD1191F267D0072DD8F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 16059CD0191F267D0072DD8F /* Reachability.m */; };
 		16059CD4191F2A370072DD8F /* FFReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 16059CD3191F2A370072DD8F /* FFReachability.m */; };
+		161A082019338A7200570BB6 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 161A081F19338A7200570BB6 /* Crashlytics.framework */; };
 		161FF06219124B4F00CDD559 /* FFFileInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 161FF05F19124B4F00CDD559 /* FFFileInfoCell.m */; };
 		161FF06319124B4F00CDD559 /* FFFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 161FF06119124B4F00CDD559 /* FFFileViewController.m */; };
 		161FF06A191264AB00CDD559 /* FFFileReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 161FF068191264AB00CDD559 /* FFFileReaderViewController.m */; };
@@ -197,6 +198,7 @@
 		16059CD0191F267D0072DD8F /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		16059CD2191F2A370072DD8F /* FFReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFReachability.h; sourceTree = "<group>"; };
 		16059CD3191F2A370072DD8F /* FFReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFReachability.m; sourceTree = "<group>"; };
+		161A081F19338A7200570BB6 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		161FF05E19124B4F00CDD559 /* FFFileInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFileInfoCell.h; sourceTree = "<group>"; };
 		161FF05F19124B4F00CDD559 /* FFFileInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFileInfoCell.m; sourceTree = "<group>"; };
 		161FF06019124B4F00CDD559 /* FFFileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFileViewController.h; sourceTree = "<group>"; };
@@ -543,6 +545,7 @@
 				16686624192675C2009BD05D /* CoreAudio.framework in Frameworks */,
 				16BCB5771926756400B12CBF /* AudioToolbox.framework in Frameworks */,
 				16EA9927190B7A890075CE47 /* libz.dylib in Frameworks */,
+				161A082019338A7200570BB6 /* Crashlytics.framework in Frameworks */,
 				16ED1D5B190B799E007EC697 /* CFNetwork.framework in Frameworks */,
 				16DAD6811902DADE00BFE84C /* libsqlite3.dylib in Frameworks */,
 				16A2F7741902663100751B82 /* CoreGraphics.framework in Frameworks */,
@@ -863,6 +866,7 @@
 				16EA9926190B7A890075CE47 /* libz.dylib */,
 				16ED1D5A190B799E007EC697 /* CFNetwork.framework */,
 				16DAD6801902DADE00BFE84C /* libsqlite3.dylib */,
+				161A081F19338A7200570BB6 /* Crashlytics.framework */,
 				16A2F7711902663100751B82 /* Foundation.framework */,
 				16A2F7731902663100751B82 /* CoreGraphics.framework */,
 				16A2F7751902663100751B82 /* UIKit.framework */,
@@ -1439,6 +1443,7 @@
 				16A2F76A1902663100751B82 /* Sources */,
 				16A2F76B1902663100751B82 /* Frameworks */,
 				16A2F76C1902663100751B82 /* Resources */,
+				1670313B1933821000E39B10 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1524,6 +1529,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1670313B1933821000E39B10 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 534b1d1f60854190ad1c89e5c2ad3e0baeb99eb6 2f55f4826ba84cdec065f2c76a831e91c5e2ab97889c533a5fff9e578c60907a";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		16A2F76A1902663100751B82 /* Sources */ = {
@@ -1802,6 +1823,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Xiang Dong (T932MCQ645)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiang Dong (T932MCQ645)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/pig/Desktop/FireflyBox1.1/2212-20140520com.firefly.box/FireflyBox",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FireflyBox/FireflyBox-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "";
@@ -1825,6 +1850,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Xiang Dong (T932MCQ645)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiang Dong (T932MCQ645)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/pig/Desktop/FireflyBox1.1/2212-20140520com.firefly.box/FireflyBox",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FireflyBox/FireflyBox-Prefix.pch";
 				INFOPLIST_FILE = "FireflyBox/FireflyBox-Info.plist";
