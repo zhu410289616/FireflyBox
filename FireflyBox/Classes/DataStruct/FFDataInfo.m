@@ -116,7 +116,7 @@
     } else if ([name hasSuffix:@"gif"]) {
         _fileType = FFFileTypeImageGif;
         _showColor = [UIColor blueColor];
-    } else if ([name hasSuffix:@"m4a"] || [name hasSuffix:@"mp3"] || [name hasSuffix:@"caf"]) {
+    } else if ([name hasSuffix:@"m4a"] || [name hasSuffix:@"mp3"] || [name hasSuffix:@"caf"] || [name hasSuffix:@"aac"]) {
         _fileType = FFFileTypeMusic;
         _showColor = [UIColor magentaColor];
     } else if ([name hasSuffix:@"plist"]) {
