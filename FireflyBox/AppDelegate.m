@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <Crashlytics/Crashlytics.h>
 #import "FFAppLoader.h"
+#import "FFStartAppEvent.h"
 
 @implementation AppDelegate
 
@@ -18,6 +19,7 @@
     // Override point for customization after application launch.
     
     [Crashlytics startWithAPIKey:@"534b1d1f60854190ad1c89e5c2ad3e0baeb99eb6"];
+    [[[FFStartAppEvent alloc] init] execute];
     
     [[FFAppLoader sharedInstance] initLoader];
     

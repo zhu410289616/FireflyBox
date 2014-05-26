@@ -10,6 +10,9 @@
 		16059CD1191F267D0072DD8F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 16059CD0191F267D0072DD8F /* Reachability.m */; };
 		16059CD4191F2A370072DD8F /* FFReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 16059CD3191F2A370072DD8F /* FFReachability.m */; };
 		161A082019338A7200570BB6 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 161A081F19338A7200570BB6 /* Crashlytics.framework */; };
+		161A082419338C3E00570BB6 /* FFBaseFlurryEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 161A082319338C3E00570BB6 /* FFBaseFlurryEvent.m */; };
+		161A08281933918700570BB6 /* libFlurry_5.0.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 161A08271933918700570BB6 /* libFlurry_5.0.0.a */; };
+		161A082B193394D200570BB6 /* FFStartAppEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 161A082A193394D200570BB6 /* FFStartAppEvent.m */; };
 		161FF06219124B4F00CDD559 /* FFFileInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 161FF05F19124B4F00CDD559 /* FFFileInfoCell.m */; };
 		161FF06319124B4F00CDD559 /* FFFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 161FF06119124B4F00CDD559 /* FFFileViewController.m */; };
 		161FF06A191264AB00CDD559 /* FFFileReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 161FF068191264AB00CDD559 /* FFFileReaderViewController.m */; };
@@ -199,6 +202,13 @@
 		16059CD2191F2A370072DD8F /* FFReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFReachability.h; sourceTree = "<group>"; };
 		16059CD3191F2A370072DD8F /* FFReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFReachability.m; sourceTree = "<group>"; };
 		161A081F19338A7200570BB6 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		161A082219338C3E00570BB6 /* FFBaseFlurryEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseFlurryEvent.h; sourceTree = "<group>"; };
+		161A082319338C3E00570BB6 /* FFBaseFlurryEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseFlurryEvent.m; sourceTree = "<group>"; };
+		161A08261933918700570BB6 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		161A08271933918700570BB6 /* libFlurry_5.0.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_5.0.0.a; sourceTree = "<group>"; };
+		161A0829193394D200570BB6 /* FFStartAppEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFStartAppEvent.h; sourceTree = "<group>"; };
+		161A082A193394D200570BB6 /* FFStartAppEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFStartAppEvent.m; sourceTree = "<group>"; };
+		161A082C1933967C00570BB6 /* FFFlurryEventConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFlurryEventConfig.h; sourceTree = "<group>"; };
 		161FF05E19124B4F00CDD559 /* FFFileInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFileInfoCell.h; sourceTree = "<group>"; };
 		161FF05F19124B4F00CDD559 /* FFFileInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFileInfoCell.m; sourceTree = "<group>"; };
 		161FF06019124B4F00CDD559 /* FFFileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFileViewController.h; sourceTree = "<group>"; };
@@ -547,6 +557,7 @@
 				16EA9927190B7A890075CE47 /* libz.dylib in Frameworks */,
 				161A082019338A7200570BB6 /* Crashlytics.framework in Frameworks */,
 				16ED1D5B190B799E007EC697 /* CFNetwork.framework in Frameworks */,
+				161A08281933918700570BB6 /* libFlurry_5.0.0.a in Frameworks */,
 				16DAD6811902DADE00BFE84C /* libsqlite3.dylib in Frameworks */,
 				16A2F7741902663100751B82 /* CoreGraphics.framework in Frameworks */,
 				16A2F7761902663100751B82 /* UIKit.framework in Frameworks */,
@@ -576,6 +587,27 @@
 				16059CD0191F267D0072DD8F /* Reachability.m */,
 			);
 			path = Reachability;
+			sourceTree = "<group>";
+		};
+		161A082119338C1C00570BB6 /* FFFlurryEvent */ = {
+			isa = PBXGroup;
+			children = (
+				161A082219338C3E00570BB6 /* FFBaseFlurryEvent.h */,
+				161A082319338C3E00570BB6 /* FFBaseFlurryEvent.m */,
+				161A0829193394D200570BB6 /* FFStartAppEvent.h */,
+				161A082A193394D200570BB6 /* FFStartAppEvent.m */,
+				161A082C1933967C00570BB6 /* FFFlurryEventConfig.h */,
+			);
+			path = FFFlurryEvent;
+			sourceTree = "<group>";
+		};
+		161A08251933918700570BB6 /* Flurry-iOS-5.0.0 */ = {
+			isa = PBXGroup;
+			children = (
+				161A08261933918700570BB6 /* Flurry.h */,
+				161A08271933918700570BB6 /* libFlurry_5.0.0.a */,
+			);
+			path = "Flurry-iOS-5.0.0";
 			sourceTree = "<group>";
 		};
 		161FF05D19124B4F00CDD559 /* FileBrower */ = {
@@ -934,6 +966,7 @@
 		16A2F7A11902814400751B82 /* ThirdPartyLib */ = {
 			isa = PBXGroup;
 			children = (
+				161A08251933918700570BB6 /* Flurry-iOS-5.0.0 */,
 				16F2051C192DEE75001AD92D /* Lame */,
 				1658B514192B955900B8CF4E /* UMAnalytics_Sdk_2.2.1.OpenUDID */,
 				16E943F31929B75E00D0A488 /* KGStatusBar */,
@@ -963,6 +996,7 @@
 		16A2F8831902D5AC00751B82 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				161A082119338C1C00570BB6 /* FFFlurryEvent */,
 				16FD4D101930D34000EC8B74 /* FFTask */,
 				1620DCE61913807200AE810C /* FFCategory */,
 				1620DCDC1913805500AE810C /* FFTabBar */,
@@ -1576,6 +1610,7 @@
 				166E7D901931D3780066A468 /* FFCameraViewController.m in Sources */,
 				16ED1D51190B78B9007EC697 /* GCDWebServerFileRequest.m in Sources */,
 				16CF24381910948B0029F3D2 /* DOUEAGLView.m in Sources */,
+				161A082B193394D200570BB6 /* FFStartAppEvent.m in Sources */,
 				16A2F7821902663100751B82 /* AppDelegate.m in Sources */,
 				16CF24351910948B0029F3D2 /* DOUAudioStreamer.m in Sources */,
 				1624B89F19093C140018B8FE /* FFRecentViewController.m in Sources */,
@@ -1598,6 +1633,7 @@
 				166919EC1930C346008E385B /* AFURLSessionManager.m in Sources */,
 				1624B8841909311C0018B8FE /* FFTableViewController.m in Sources */,
 				16BCB56F1926716500B12CBF /* GLLevelMeter.m in Sources */,
+				161A082419338C3E00570BB6 /* FFBaseFlurryEvent.m in Sources */,
 				1620DCD61913338300AE810C /* FFFileTypeIconView.m in Sources */,
 				16CF24361910948B0029F3D2 /* DOUAudioVisualizer.m in Sources */,
 				1624B88D190938D90018B8FE /* FFBarButtonItem.m in Sources */,
@@ -1835,6 +1871,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/FireflyBox/Classes/ThirdPartyLib/UMAnalytics_Sdk_2.2.1.OpenUDID",
 					"$(SRCROOT)/FireflyBox/Classes/ThirdPartyLib/Lame",
+					"/Users/pig/Desktop/FireflyBox1.1/2212-20140520com.firefly.box/FireflyBox/FireflyBox/Classes/ThirdPartyLib/Flurry-iOS-5.0.0",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1861,6 +1898,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/FireflyBox/Classes/ThirdPartyLib/UMAnalytics_Sdk_2.2.1.OpenUDID",
 					"$(SRCROOT)/FireflyBox/Classes/ThirdPartyLib/Lame",
+					"/Users/pig/Desktop/FireflyBox1.1/2212-20140520com.firefly.box/FireflyBox/FireflyBox/Classes/ThirdPartyLib/Flurry-iOS-5.0.0",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
