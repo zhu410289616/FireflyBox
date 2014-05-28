@@ -2,4 +2,52 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FireflyBox/Classes/Root/BluetoothTransfer/FFBluetoothSender.m"
+            timestampString = "422984703.475566"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "-peripheral:didDiscoverCharacteristicsForService:error:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[FFBluetoothSender peripheral:didDiscoverCharacteristicsForService:error:]"
+                  moduleName = "FireflyBox"
+                  urlString = "file://localhost/Users/pig/Desktop/FireflyBox1.1/2212-20140520com.firefly.box/FireflyBox/FireflyBox/Classes/Root/BluetoothTransfer/FFBluetoothSender.m"
+                  timestampString = "422985214.299498"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "146">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[FFBluetoothSender peripheral:didDiscoverCharacteristicsForService:error:]"
+                  moduleName = "FireflyBox"
+                  urlString = "file://localhost/Users/pig/Desktop/FireflyBox1.1/2212-20140520com.firefly.box/FireflyBox/FireflyBox/Classes/Root/BluetoothTransfer/FFBluetoothSender.m"
+                  timestampString = "422985214.299906"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "716">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

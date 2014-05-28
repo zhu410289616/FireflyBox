@@ -7,11 +7,12 @@
 //
 
 #import "FFBaseViewController.h"
-#import <CoreBluetooth/CoreBluetooth.h>
+#import "FFBluetoothReceiver.h"
+#import "FFBluetoothSender.h"
 
-@interface FFBluetoothTransferViewController : FFBaseViewController<CBCentralManagerDelegate, CBPeripheralDelegate>
+@interface FFBluetoothTransferViewController : FFBaseViewController
 
-@property (nonatomic, strong) CBCentralManager *cbCentralManager;
-@property (nonatomic, strong) NSMutableArray *peripheralList;
+@property (nonatomic, strong) FFBluetoothReceiver *bluetoothReceiver;
+@property (nonatomic, strong) FFBluetoothSender *bluetoothSender;
 
 @end

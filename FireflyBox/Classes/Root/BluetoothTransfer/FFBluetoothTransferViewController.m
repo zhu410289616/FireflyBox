@@ -9,6 +9,10 @@
 #import "FFBluetoothTransferViewController.h"
 #import "FFBarButtonItem.h"
 
+static NSString *const kCharacteristicUUID = @"CCE62C0F-1098-4CD0-ADFA-C8FC7EA2EE90";
+
+static NSString *const kServiceUUID = @"50BD367B-6B17-4E81-B6E9-F62016F26E7B";
+
 @interface FFBluetoothTransferViewController ()
 
 @end
@@ -25,14 +29,38 @@
     FFBarButtonItem *tempBarButtonItem = [[FFBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(doRightBarButtonItemAction:)];
     self.navigationItem.rightBarButtonItem = tempBarButtonItem;
     
-    self.peripheralList = [[NSMutableArray alloc] init];
+    //
+    self.bluetoothReceiver = [[FFBluetoothReceiver alloc] init];
+    [self.bluetoothReceiver start];
     
-    self.cbCentralManager = [[CBCentralManager alloc] init];
-    self.cbCentralManager.delegate = self;
+    self.bluetoothSender = [[FFBluetoothSender alloc] init];
+    [self.bluetoothSender start];
     
-    NSDictionary *dicOptions = @{CBCentralManagerScanOptionAllowDuplicatesKey:@FALSE};
-    [self.cbCentralManager scanForPeripheralsWithServices:nil options:dicOptions];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     
+    GLOBAL_APP.idleTimerDisabled = YES;//不自动锁屏
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+    GLOBAL_APP.idleTimerDisabled = NO;//自动锁屏
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,28 +74,9 @@
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
-#pragma mark CBCentralManagerDelegate method
+#pragma mark function
 
-- (void)centralManagerDidUpdateState:(CBCentralManager *)central
-{
-    PLog(@"central.description: %@", central.description);
-}
+#pragma mark delegate method
 
-- (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI
-{
-    PLog(@"advertisementData: %@", advertisementData);
-}
-
-- (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral
-{
-    PLog(@"peripheral.description: %@", peripheral.description);
-}
-
-#pragma mark CBPeripheralDelegate method
-
-- (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
-{
-    
-}
 
 @end

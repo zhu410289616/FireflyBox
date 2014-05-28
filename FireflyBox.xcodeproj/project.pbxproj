@@ -73,6 +73,8 @@
 		166E7D931931D3B00066A468 /* FFTextRecorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 166E7D921931D3B00066A468 /* FFTextRecorderViewController.m */; };
 		166E7D971931D5FC0066A468 /* FFBluetoothTransferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 166E7D961931D5FC0066A468 /* FFBluetoothTransferViewController.m */; };
 		166E7D991931D64A0066A468 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 166E7D981931D64A0066A468 /* CoreBluetooth.framework */; };
+		1676704419362CB70063E74F /* FFBluetoothReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 1676704319362CB70063E74F /* FFBluetoothReceiver.m */; };
+		1676704719362CCC0063E74F /* FFBluetoothSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 1676704619362CCC0063E74F /* FFBluetoothSender.m */; };
 		16798A3D191E720100726FBD /* NSMutableArray+FireFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 16798A3C191E720100726FBD /* NSMutableArray+FireFly.m */; };
 		16798A40191E86FA00726FBD /* FFBaseLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16798A3F191E86FA00726FBD /* FFBaseLoadingView.m */; };
 		167E7126190B82040014ADEB /* transfer_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 167E7124190B82040014ADEB /* transfer_bg.png */; };
@@ -323,6 +325,10 @@
 		166E7D951931D5FC0066A468 /* FFBluetoothTransferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBluetoothTransferViewController.h; sourceTree = "<group>"; };
 		166E7D961931D5FC0066A468 /* FFBluetoothTransferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBluetoothTransferViewController.m; sourceTree = "<group>"; };
 		166E7D981931D64A0066A468 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		1676704219362CB70063E74F /* FFBluetoothReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBluetoothReceiver.h; sourceTree = "<group>"; };
+		1676704319362CB70063E74F /* FFBluetoothReceiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBluetoothReceiver.m; sourceTree = "<group>"; };
+		1676704519362CCC0063E74F /* FFBluetoothSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBluetoothSender.h; sourceTree = "<group>"; };
+		1676704619362CCC0063E74F /* FFBluetoothSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBluetoothSender.m; sourceTree = "<group>"; };
 		16798A3B191E720100726FBD /* NSMutableArray+FireFly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+FireFly.h"; sourceTree = "<group>"; };
 		16798A3C191E720100726FBD /* NSMutableArray+FireFly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+FireFly.m"; sourceTree = "<group>"; };
 		16798A3E191E86FA00726FBD /* FFBaseLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseLoadingView.h; sourceTree = "<group>"; };
@@ -836,6 +842,10 @@
 			children = (
 				166E7D951931D5FC0066A468 /* FFBluetoothTransferViewController.h */,
 				166E7D961931D5FC0066A468 /* FFBluetoothTransferViewController.m */,
+				1676704219362CB70063E74F /* FFBluetoothReceiver.h */,
+				1676704319362CB70063E74F /* FFBluetoothReceiver.m */,
+				1676704519362CCC0063E74F /* FFBluetoothSender.h */,
+				1676704619362CCC0063E74F /* FFBluetoothSender.m */,
 			);
 			path = BluetoothTransfer;
 			sourceTree = "<group>";
@@ -1625,6 +1635,7 @@
 				16FD4D5919310E5E00EC8B74 /* FFGetFileInfoTask.m in Sources */,
 				1624B881190930E40018B8FE /* FFHUDViewController.m in Sources */,
 				16FD4D5719310E5E00EC8B74 /* FFConvertAudioTask.m in Sources */,
+				1676704719362CCC0063E74F /* FFBluetoothSender.m in Sources */,
 				16DAD67A1902D9FB00BFE84C /* Record.m in Sources */,
 				1620DCE41913805500AE810C /* FFTabBarItem.m in Sources */,
 				16059CD4191F2A370072DD8F /* FFReachability.m in Sources */,
@@ -1696,6 +1707,7 @@
 				1620DCF81913807200AE810C /* NSString+FireFly.m in Sources */,
 				1620DD0419138F2800AE810C /* UIButton+FireFly.m in Sources */,
 				1620DD131913E04A00AE810C /* FFAboutViewController.m in Sources */,
+				1676704419362CB70063E74F /* FFBluetoothReceiver.m in Sources */,
 				166919E41930C346008E385B /* AFHTTPRequestOperation.m in Sources */,
 				1624B89C19093C140018B8FE /* FFAppLoader.m in Sources */,
 				16A2F8F91902D5C100751B82 /* FMDatabaseQueue.m in Sources */,
