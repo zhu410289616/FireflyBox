@@ -18,6 +18,7 @@
 #import "Track.h"
 #import "DOUAudioStreamer.h"
 #import "DOUAudioVisualizer.h"
+#import <AVFoundation/AVFoundation.h>
 
 static void *kStatusKVOKey = &kStatusKVOKey;
 static void *kDurationKVOKey = &kDurationKVOKey;
@@ -237,12 +238,13 @@ static void *kBufferingRatioKVOKey = &kBufferingRatioKVOKey;
 
 - (void)viewWillAppear:(BOOL)animated
 {
-  [super viewWillAppear:animated];
-
-  [self _resetStreamer];
-
-  _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(_timerAction:) userInfo:nil repeats:YES];
-  [_volumeSlider setValue:[DOUAudioStreamer volume]];
+    [super viewWillAppear:animated];
+    
+    [self setAudioSession];//
+    [self _resetStreamer];
+    
+    _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(_timerAction:) userInfo:nil repeats:YES];
+    [_volumeSlider setValue:[DOUAudioStreamer volume]];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -287,6 +289,23 @@ static void *kBufferingRatioKVOKey = &kBufferingRatioKVOKey;
 - (void)_actionSliderVolume:(id)sender
 {
   [DOUAudioStreamer setVolume:[_volumeSlider value]];
+}
+
+#pragma mark audio session for play music
+
+//这种方式后台，可以连续播放非网络请求歌曲。遇到网络请求歌曲就废，需要后台申请task
+- (void)setAudioSession
+{
+    /*
+     * AudioSessionInitialize用于处理中断处理，
+     * AVAudioSession主要调用setCategory和setActive方法来进行设置，
+     * AVAudioSessionCategoryPlayback一般用于支持后台播放
+     */
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    NSError *setCategoryError = nil;
+    [session setCategory:AVAudioSessionCategoryPlayback error:&setCategoryError];
+    NSError *activationError = nil;
+    [session setActive:YES error:&activationError];
 }
 
 @end

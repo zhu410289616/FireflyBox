@@ -29,7 +29,7 @@
 
 - (void)styleWithCornerRadius:(float)radius
 {
-    self.layer.cornerRadius = 30;
+    self.layer.cornerRadius = radius;
     self.layer.masksToBounds = YES;
 }
 

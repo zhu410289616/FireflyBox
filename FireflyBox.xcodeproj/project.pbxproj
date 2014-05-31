@@ -73,6 +73,13 @@
 		166E7D931931D3B00066A468 /* FFTextRecorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 166E7D921931D3B00066A468 /* FFTextRecorderViewController.m */; };
 		166E7D971931D5FC0066A468 /* FFBluetoothTransferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 166E7D961931D5FC0066A468 /* FFBluetoothTransferViewController.m */; };
 		166E7D991931D64A0066A468 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 166E7D981931D64A0066A468 /* CoreBluetooth.framework */; };
+		166E9BDC1939A26B0043D5F9 /* FFCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 166E9BD71939A26B0043D5F9 /* FFCircularProgressView.m */; };
+		166E9BDD1939A26B0043D5F9 /* FFPorgressLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 166E9BD91939A26B0043D5F9 /* FFPorgressLayer.m */; };
+		166E9BDE1939A26B0043D5F9 /* FFProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 166E9BDB1939A26B0043D5F9 /* FFProgressView.m */; };
+		166E9BE11939B2A70043D5F9 /* FFCircularProgressLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 166E9BE01939B2A70043D5F9 /* FFCircularProgressLayer.m */; };
+		166E9BE71939B7EB0043D5F9 /* FFBluetoothDeviceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 166E9BE61939B7EB0043D5F9 /* FFBluetoothDeviceView.m */; };
+		166E9BED1939D3C50043D5F9 /* FFCircularProgressButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 166E9BEC1939D3C50043D5F9 /* FFCircularProgressButton.m */; };
+		166E9BF31939DEF90043D5F9 /* FFBluetoothDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 166E9BF21939DEF90043D5F9 /* FFBluetoothDevice.m */; };
 		1676704419362CB70063E74F /* FFBluetoothReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 1676704319362CB70063E74F /* FFBluetoothReceiver.m */; };
 		1676704719362CCC0063E74F /* FFBluetoothSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 1676704619362CCC0063E74F /* FFBluetoothSender.m */; };
 		16798A3D191E720100726FBD /* NSMutableArray+FireFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 16798A3C191E720100726FBD /* NSMutableArray+FireFly.m */; };
@@ -325,6 +332,21 @@
 		166E7D951931D5FC0066A468 /* FFBluetoothTransferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBluetoothTransferViewController.h; sourceTree = "<group>"; };
 		166E7D961931D5FC0066A468 /* FFBluetoothTransferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBluetoothTransferViewController.m; sourceTree = "<group>"; };
 		166E7D981931D64A0066A468 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		166E9BD61939A26B0043D5F9 /* FFCircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCircularProgressView.h; sourceTree = "<group>"; };
+		166E9BD71939A26B0043D5F9 /* FFCircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCircularProgressView.m; sourceTree = "<group>"; };
+		166E9BD81939A26B0043D5F9 /* FFPorgressLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFPorgressLayer.h; sourceTree = "<group>"; };
+		166E9BD91939A26B0043D5F9 /* FFPorgressLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFPorgressLayer.m; sourceTree = "<group>"; };
+		166E9BDA1939A26B0043D5F9 /* FFProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFProgressView.h; sourceTree = "<group>"; };
+		166E9BDB1939A26B0043D5F9 /* FFProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFProgressView.m; sourceTree = "<group>"; };
+		166E9BDF1939B2A70043D5F9 /* FFCircularProgressLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCircularProgressLayer.h; sourceTree = "<group>"; };
+		166E9BE01939B2A70043D5F9 /* FFCircularProgressLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCircularProgressLayer.m; sourceTree = "<group>"; };
+		166E9BE51939B7EB0043D5F9 /* FFBluetoothDeviceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBluetoothDeviceView.h; sourceTree = "<group>"; };
+		166E9BE61939B7EB0043D5F9 /* FFBluetoothDeviceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBluetoothDeviceView.m; sourceTree = "<group>"; };
+		166E9BEB1939D3C50043D5F9 /* FFCircularProgressButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCircularProgressButton.h; sourceTree = "<group>"; };
+		166E9BEC1939D3C50043D5F9 /* FFCircularProgressButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCircularProgressButton.m; sourceTree = "<group>"; };
+		166E9BF11939DEF90043D5F9 /* FFBluetoothDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBluetoothDevice.h; sourceTree = "<group>"; };
+		166E9BF21939DEF90043D5F9 /* FFBluetoothDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBluetoothDevice.m; sourceTree = "<group>"; };
+		166E9BF41939E5710043D5F9 /* FFBluetoothConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFBluetoothConfig.h; sourceTree = "<group>"; };
 		1676704219362CB70063E74F /* FFBluetoothReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBluetoothReceiver.h; sourceTree = "<group>"; };
 		1676704319362CB70063E74F /* FFBluetoothReceiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBluetoothReceiver.m; sourceTree = "<group>"; };
 		1676704519362CCC0063E74F /* FFBluetoothSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBluetoothSender.h; sourceTree = "<group>"; };
@@ -846,8 +868,30 @@
 				1676704319362CB70063E74F /* FFBluetoothReceiver.m */,
 				1676704519362CCC0063E74F /* FFBluetoothSender.h */,
 				1676704619362CCC0063E74F /* FFBluetoothSender.m */,
+				166E9BE51939B7EB0043D5F9 /* FFBluetoothDeviceView.h */,
+				166E9BE61939B7EB0043D5F9 /* FFBluetoothDeviceView.m */,
+				166E9BF11939DEF90043D5F9 /* FFBluetoothDevice.h */,
+				166E9BF21939DEF90043D5F9 /* FFBluetoothDevice.m */,
+				166E9BF41939E5710043D5F9 /* FFBluetoothConfig.h */,
 			);
 			path = BluetoothTransfer;
+			sourceTree = "<group>";
+		};
+		166E9BD51939A26B0043D5F9 /* FFProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				166E9BD61939A26B0043D5F9 /* FFCircularProgressView.h */,
+				166E9BD71939A26B0043D5F9 /* FFCircularProgressView.m */,
+				166E9BD81939A26B0043D5F9 /* FFPorgressLayer.h */,
+				166E9BD91939A26B0043D5F9 /* FFPorgressLayer.m */,
+				166E9BDA1939A26B0043D5F9 /* FFProgressView.h */,
+				166E9BDB1939A26B0043D5F9 /* FFProgressView.m */,
+				166E9BDF1939B2A70043D5F9 /* FFCircularProgressLayer.h */,
+				166E9BE01939B2A70043D5F9 /* FFCircularProgressLayer.m */,
+				166E9BEB1939D3C50043D5F9 /* FFCircularProgressButton.h */,
+				166E9BEC1939D3C50043D5F9 /* FFCircularProgressButton.m */,
+			);
+			path = FFProgressView;
 			sourceTree = "<group>";
 		};
 		167E711E190B7FE80014ADEB /* Images */ = {
@@ -1006,6 +1050,7 @@
 		16A2F8831902D5AC00751B82 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				166E9BD51939A26B0043D5F9 /* FFProgressView */,
 				161A082119338C1C00570BB6 /* FFFlurryEvent */,
 				16FD4D101930D34000EC8B74 /* FFTask */,
 				1620DCE61913807200AE810C /* FFCategory */,
@@ -1602,10 +1647,12 @@
 				1658B52B192BA42200B8CF4E /* FFConvertHelper.m in Sources */,
 				16FD4D2A1930D34000EC8B74 /* FFSerialQueue.m in Sources */,
 				16FD4D321930D9A600EC8B74 /* FFHttpTask.m in Sources */,
+				166E9BE71939B7EB0043D5F9 /* FFBluetoothDeviceView.m in Sources */,
 				16CF244819109CF00029F3D2 /* Track.m in Sources */,
 				16BCB5741926716500B12CBF /* CAStreamBasicDescription.cpp in Sources */,
 				16A2F8FF1902D5C100751B82 /* SYAppStart.m in Sources */,
 				16CF243B1910948B0029F3D2 /* NSData+DOUMappedFile.m in Sources */,
+				166E9BDE1939A26B0043D5F9 /* FFProgressView.m in Sources */,
 				16ED1D4E190B78B9007EC697 /* GCDWebServerRequest.m in Sources */,
 				1620DCFB1913807200AE810C /* UIFont+FireFly.m in Sources */,
 				1620DD161913E1BB00AE810C /* FFTransferViewController.m in Sources */,
@@ -1614,6 +1661,7 @@
 				1624B8A019093C140018B8FE /* FFSettingViewController.m in Sources */,
 				16CF24301910948B0029F3D2 /* DOUAudioLPCM.m in Sources */,
 				16FD4D2E1930D34000EC8B74 /* FFBaseSerializable.m in Sources */,
+				166E9BED1939D3C50043D5F9 /* FFCircularProgressButton.m in Sources */,
 				16E943F21929AE2A00D0A488 /* NSInvocation+FireFly.m in Sources */,
 				16CF242B1910948B0029F3D2 /* DOUAudioDecoder.m in Sources */,
 				16CF242D1910948B0029F3D2 /* DOUAudioFilePreprocessor.m in Sources */,
@@ -1650,6 +1698,7 @@
 				1624B88D190938D90018B8FE /* FFBarButtonItem.m in Sources */,
 				16BCB56E1926716500B12CBF /* AQLevelMeter.mm in Sources */,
 				16ED1D56190B78B9007EC697 /* GCDWebServerFileResponse.m in Sources */,
+				166E9BF31939DEF90043D5F9 /* FFBluetoothDevice.m in Sources */,
 				16CF24371910948B0029F3D2 /* DOUEAGL1View.m in Sources */,
 				16BCB5721926716500B12CBF /* MeterTable.cpp in Sources */,
 				16FD4D291930D34000EC8B74 /* FFConcurrentQueue.m in Sources */,
@@ -1668,6 +1717,7 @@
 				16ED1D53190B78B9007EC697 /* GCDWebServerURLEncodedFormRequest.m in Sources */,
 				16798A40191E86FA00726FBD /* FFBaseLoadingView.m in Sources */,
 				16FD4D4B19310ADE00EC8B74 /* FFRunnableTask.m in Sources */,
+				166E9BE11939B2A70043D5F9 /* FFCircularProgressLayer.m in Sources */,
 				16FD4D2C1930D34000EC8B74 /* FFBaseObject.m in Sources */,
 				16A2F8A41902D5AC00751B82 /* FFDB+Record.m in Sources */,
 				1620DD0D19139F5200AE810C /* FFIconActionView.m in Sources */,
@@ -1680,6 +1730,7 @@
 				16CF244719109CF00029F3D2 /* Track+Provider.m in Sources */,
 				16A2F89D1902D5AC00751B82 /* FFCommonUtil.m in Sources */,
 				16FD4D5819310E5E00EC8B74 /* FFDeleteFileTask.m in Sources */,
+				166E9BDD1939A26B0043D5F9 /* FFPorgressLayer.m in Sources */,
 				16A2F89C1902D5AC00751B82 /* FFBaseViewController.m in Sources */,
 				16A2F8F41902D5C100751B82 /* EGOImageView.m in Sources */,
 				1620DD0A19139F1700AE810C /* FFBaseActionView.m in Sources */,
@@ -1711,6 +1762,7 @@
 				166919E41930C346008E385B /* AFHTTPRequestOperation.m in Sources */,
 				1624B89C19093C140018B8FE /* FFAppLoader.m in Sources */,
 				16A2F8F91902D5C100751B82 /* FMDatabaseQueue.m in Sources */,
+				166E9BDC1939A26B0043D5F9 /* FFCircularProgressView.m in Sources */,
 				16CF242C1910948B0029F3D2 /* DOUAudioEventLoop.m in Sources */,
 				166919E61930C346008E385B /* AFHTTPSessionManager.m in Sources */,
 				16BCB5731926716500B12CBF /* CADebugMacros.cpp in Sources */,

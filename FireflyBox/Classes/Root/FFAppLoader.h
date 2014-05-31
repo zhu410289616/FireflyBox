@@ -17,7 +17,6 @@
 - (void)initLoader;
 
 - (void)initAppLevelUIConfig;
-- (void)setAudioSession;
 
 - (void)testFunction;
 

@@ -7,9 +7,7 @@
 //
 
 #import "FFBluetoothReceiver.h"
-
-static NSString *const kCharacteristicUUID = @"CCE62C0F-1098-4CD0-ADFA-C8FC7EA2EE90";
-static NSString *const kServiceUUID = @"50BD367B-6B17-4E81-B6E9-F62016F26E7B";
+#import "FFBluetoothConfig.h"
 
 @implementation FFBluetoothReceiver
 
@@ -22,6 +20,11 @@ static NSString *const kServiceUUID = @"50BD367B-6B17-4E81-B6E9-F62016F26E7B";
     self.cbPeripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self queue:nil];
 }
 
+- (void)stop
+{
+    [self.cbPeripheralManager stopAdvertising];
+}
+
 #pragma mark CBPeripheralManagerDelegate method
 
 - (void)peripheralManagerDidUpdateState:(CBPeripheralManager *)peripheral
@@ -30,10 +33,10 @@ static NSString *const kServiceUUID = @"50BD367B-6B17-4E81-B6E9-F62016F26E7B";
         case CBPeripheralManagerStatePoweredOn:
         {
             PLog(@"CBPeripheralManagerStatePoweredOn...");
-            CBUUID *characteristicUUID = [CBUUID UUIDWithString:kCharacteristicUUID];
-            self.cbMutableCharacteristic = [[CBMutableCharacteristic alloc] initWithType:characteristicUUID properties:CBCharacteristicPropertyNotify value:nil permissions:CBAttributePermissionsReadable];
+            CBUUID *characteristicUUID = [CBUUID UUIDWithString:kTransferCharacteristicUUID];
+            self.cbMutableCharacteristic = [[CBMutableCharacteristic alloc] initWithType:characteristicUUID properties:CBCharacteristicPropertyNotify | CBCharacteristicPropertyRead | CBCharacteristicPropertyWrite value:nil permissions:CBAttributePermissionsReadable | CBAttributePermissionsWriteable];
             
-            CBUUID *serviceUUID = [CBUUID UUIDWithString:kServiceUUID];
+            CBUUID *serviceUUID = [CBUUID UUIDWithString:kTransferServiceUUID];
             self.cbMutableService = [[CBMutableService alloc] initWithType:serviceUUID primary:YES];
             [self.cbMutableService setCharacteristics:@[self.cbMutableCharacteristic]];
             
@@ -76,6 +79,36 @@ static NSString *const kServiceUUID = @"50BD367B-6B17-4E81-B6E9-F62016F26E7B";
 - (void)peripheralManagerDidStartAdvertising:(CBPeripheralManager *)peripheral error:(NSError *)error
 {
     PLog(@"peripheralManagerDidStartAdvertising: %@, error: %@", peripheral, error);
+}
+
+- (void)peripheralManager:(CBPeripheralManager *)peripheral didReceiveReadRequest:(CBATTRequest *)request
+{
+    if ([request.characteristic.UUID isEqual:self.cbMutableCharacteristic.UUID]) {
+        
+        request.value = [@"ok" dataUsingEncoding:NSUTF8StringEncoding];
+        [peripheral respondToRequest:request withResult:CBATTErrorSuccess];
+        
+//        if (request.offset > self.cbMutableCharacteristic.value.length) {
+//            [peripheral respondToRequest:request withResult:CBATTErrorInvalidOffset];
+//        } else {
+//            request.value = [self.cbMutableCharacteristic.value subdataWithRange:NSMakeRange(request.offset, self.cbMutableCharacteristic.value.length - request.offset)];
+//            [peripheral respondToRequest:request withResult:CBATTErrorSuccess];
+//        }
+    }
+}
+
+- (void)peripheralManager:(CBPeripheralManager *)peripheral didReceiveWriteRequests:(NSArray *)requests
+{
+    for (CBATTRequest *request in requests) {
+        if ([request.characteristic.UUID isEqual:self.cbMutableCharacteristic.UUID]) {
+            NSData *data = request.value;
+            NSString *receiveData = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+            PLog(@"peripheralManager receiveData: %@", receiveData);
+            
+            request.value = [[NSString stringWithFormat:@"receive %@", receiveData] dataUsingEncoding:NSUTF8StringEncoding];
+            [peripheral respondToRequest:request withResult:CBATTErrorSuccess];
+        }
+    }
 }
 
 @end

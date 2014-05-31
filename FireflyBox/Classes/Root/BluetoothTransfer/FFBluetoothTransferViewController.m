@@ -8,6 +8,8 @@
 
 #import "FFBluetoothTransferViewController.h"
 #import "FFBarButtonItem.h"
+#import "FFBluetoothDeviceView.h"
+#import "FFBluetoothDevice.h"
 
 static NSString *const kCharacteristicUUID = @"CCE62C0F-1098-4CD0-ADFA-C8FC7EA2EE90";
 
@@ -29,12 +31,26 @@ static NSString *const kServiceUUID = @"50BD367B-6B17-4E81-B6E9-F62016F26E7B";
     FFBarButtonItem *tempBarButtonItem = [[FFBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(doRightBarButtonItemAction:)];
     self.navigationItem.rightBarButtonItem = tempBarButtonItem;
     
+    float searchButtonWidth = 80.0f;
+    self.searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.searchButton.frame = CGRectMake((GLOBAL_SCREEN_WIDTH - searchButtonWidth)/2, GLOBAL_SCREEN_HEIGHT - 64 - 30 - searchButtonWidth, searchButtonWidth, searchButtonWidth);
+    self.searchButton.tag = 100;
+    [self.searchButton styleWithCornerRadius:searchButtonWidth/2];
+    [self.searchButton styleWithTitle:@"搜索" titleColor:[UIColor whiteColor]];
+    [self.searchButton styleWithBackgroundColor:[UIColor orangeColor]];
+    [self.searchButton addTarget:self action:@selector(doSearchAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.searchButton];
+    
+    //
+    self.peripheralList = [[NSMutableArray alloc] init];
+    
     //
     self.bluetoothReceiver = [[FFBluetoothReceiver alloc] init];
     [self.bluetoothReceiver start];
     
     self.bluetoothSender = [[FFBluetoothSender alloc] init];
-    [self.bluetoothSender start];
+    self.bluetoothSender.delegate = self;
+//    [self.bluetoothSender start];
     
 }
 
@@ -61,6 +77,8 @@ static NSString *const kServiceUUID = @"50BD367B-6B17-4E81-B6E9-F62016F26E7B";
     [super viewDidDisappear:animated];
     
     GLOBAL_APP.idleTimerDisabled = NO;//自动锁屏
+    
+    [self.bluetoothSender stop];
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,7 +94,76 @@ static NSString *const kServiceUUID = @"50BD367B-6B17-4E81-B6E9-F62016F26E7B";
 
 #pragma mark function
 
-#pragma mark delegate method
+- (void)doSearchAction:(id)sender
+{
+    UIButton *tempSearchButton = sender;
+    if (tempSearchButton.tag == 100) {
+        self.bluetoothSender.delegate = self;
+        [self.bluetoothSender start];
+    } else {
+        self.bluetoothSender.delegate = nil;
+        [self.bluetoothSender stop];
+    }
+}
 
+- (void)doBluetoothDeviceAction:(id)sender
+{
+    FFBluetoothDeviceView *deviceView = sender;
+    PLog(@"deviceView.tag: %d", deviceView.tag);
+    
+    CBPeripheral *peripheral = deviceView.bluetoothDevice.peripheral;
+    [self.bluetoothSender connectPeripheral:peripheral];
+    
+}
+
+#pragma mark FFBluetoothSenderDelegate method
+
+- (void)didDiscoverPeripheral:(CBPeripheral *)peripheral
+{
+    if (![self.peripheralList containsObject:peripheral]) {
+        [self.peripheralList addObject:peripheral];
+        
+        FFBluetoothDevice *bluetoothDevice = [[FFBluetoothDevice alloc] init];
+        bluetoothDevice.peripheral = peripheral;
+        
+        //生成device icon
+        FFBluetoothDeviceView *peripheralView = [FFBluetoothDeviceView buttonWithType:UIButtonTypeCustom];
+        peripheralView.frame = CGRectMake(80, 80, 60, 60);
+        peripheralView.backgroundColor = [UIColor orangeColor];
+        peripheralView.layer.cornerRadius = 30.0f;
+        peripheralView.layer.masksToBounds = YES;
+        peripheralView.bluetoothDevice = bluetoothDevice;
+        [peripheralView addTarget:self action:@selector(doBluetoothDeviceAction:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:peripheralView];
+        
+    }
+}
+
+- (void)didConnectPeripheral:(CBPeripheral *)peripheral
+{
+}
+
+- (void)didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error
+{}
+
+- (void)didDiscoverService:(CBPeripheral *)peripheral services:(NSArray *)services error:(NSError *)error
+{}
+
+- (void)didDiscoverCharacteristic:(CBPeripheral *)peripheral characteristic:(CBCharacteristic *)characteristic
+{
+    NSData *data = [@"sd" dataUsingEncoding:NSUTF8StringEncoding];
+    [peripheral writeValue:data forCharacteristic:characteristic type:CBCharacteristicWriteWithResponse];
+}
+
+- (void)didUpdateValue:(CBPeripheral *)peripheral characteristic:(CBCharacteristic *)characteristic
+{
+    NSData *data = characteristic.value;
+    NSString *receiveData = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    PLog(@"didUpdateValue receiveData: %@", receiveData);
+    
+    NSString *getData = [NSString stringWithFormat:@"%@", receiveData];
+    NSData *writeData = [getData dataUsingEncoding:NSUTF8StringEncoding];
+    [peripheral writeValue:writeData forCharacteristic:characteristic type:CBCharacteristicWriteWithResponse];
+}
 
 @end

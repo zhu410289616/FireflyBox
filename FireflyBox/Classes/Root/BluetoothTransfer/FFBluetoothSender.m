@@ -7,9 +7,7 @@
 //
 
 #import "FFBluetoothSender.h"
-
-static NSString *const kCharacteristicUUID = @"CCE62C0F-1098-4CD0-ADFA-C8FC7EA2EE90";
-static NSString *const kServiceUUID = @"50BD367B-6B17-4E81-B6E9-F62016F26E7B";
+#import "FFBluetoothConfig.h"
 
 @implementation FFBluetoothSender
 
@@ -20,6 +18,26 @@ static NSString *const kServiceUUID = @"50BD367B-6B17-4E81-B6E9-F62016F26E7B";
      *  - (void)centralManagerDidUpdateState:(CBCentralManager *)central
      */
     self.cbCentralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
+}
+
+- (BOOL)connectPeripheral:(CBPeripheral *)peripheral
+{
+    /**
+     *  发现设备后即可连接该设备 调用完该方法后会调用代理CBCentralManagerDelegate的
+     *  - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral表示连接上了设别
+     */
+    /**
+     *  如果不能连接会调用 - (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error
+     */
+    [self.cbCentralManager connectPeripheral:peripheral options:@{CBConnectPeripheralOptionNotifyOnConnectionKey:@YES}];
+    return YES;
+}
+
+- (void)stop
+{
+    if (self.cbCentralManager.state == CBCentralManagerStatePoweredOn) {
+        [self.cbCentralManager stopScan];
+    }
 }
 
 #pragma mark CBCentralManagerDelegate method
@@ -37,7 +55,7 @@ static NSString *const kServiceUUID = @"50BD367B-6B17-4E81-B6E9-F62016F26E7B";
         case CBCentralManagerStatePoweredOn:
         {
             PLog(@"CBCentralManagerStatePoweredOn...");
-//            [self.cbCentralManager scanForPeripheralsWithServices:@[[CBUUID UUIDWithString:kServiceUUID]] options:@{CBCentralManagerScanOptionAllowDuplicatesKey:@YES}];
+            //实际测试发现，如果用特定的UUID传参根本找不到任何设备
             [self.cbCentralManager scanForPeripheralsWithServices:nil options:@{CBCentralManagerScanOptionAllowDuplicatesKey:@YES}];
         }
             break;
@@ -50,40 +68,44 @@ static NSString *const kServiceUUID = @"50BD367B-6B17-4E81-B6E9-F62016F26E7B";
 - (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI
 {
     if (peripheral) {
-        self.cbPeripheral = peripheral;
-        
-        /**
-         *  发现设备后即可连接该设备 调用完该方法后会调用代理CBCentralManagerDelegate的
-         *  - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral表示连接上了设别
-         */
-        /**
-         *  如果不能连接会调用 - (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error
-         */
-        [self.cbCentralManager connectPeripheral:peripheral options:@{CBConnectPeripheralOptionNotifyOnConnectionKey:@YES}];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(didDiscoverPeripheral:)]) {
+            [self.delegate didDiscoverPeripheral:peripheral];
+        }
     }
 }
 
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral
 {
     PLog(@"centralManager: %@, didConnectPeripheral: %@", central, peripheral);
-    self.cbPeripheral.delegate = self;
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didConnectPeripheral:)]) {
+        [self.delegate didConnectPeripheral:peripheral];
+    }
     
     /**
      *  此时设备已经连接上了  你要做的就是找到该设备上的指定服务 调用完该方法后会调用代理CBPeripheralDelegate（现在开始调用另一个代理的方法了）的
      *  - (void)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error
      */
-    [self.cbPeripheral discoverServices:@[[CBUUID UUIDWithString:kServiceUUID]]];
+    peripheral.delegate = self;
+    [peripheral discoverServices:@[[CBUUID UUIDWithString:kTransferServiceUUID]]];
 }
 
 - (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error
 {
     PLog(@"centralManager: %@, didFailToConnectPeripheral: %@", central, peripheral);
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didFailToConnectPeripheral:error:)]) {
+        [self.delegate didFailToConnectPeripheral:peripheral error:error];
+    }
 }
 
 #pragma mark CBPeripheralDelegate method
 
 - (void)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error
 {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didDiscoverService:services:error:)]) {
+        [self.delegate didDiscoverService:peripheral services:peripheral.services error:error];
+    }
     if (error) {
         NSLog(@"Discovered services for %@ with error: %@", peripheral.name, [error localizedDescription]);
     } else {
@@ -96,8 +118,8 @@ static NSString *const kServiceUUID = @"50BD367B-6B17-4E81-B6E9-F62016F26E7B";
          */
         for (CBService *service in peripheral.services) {
             PLog(@"service.UUID: %@", service.UUID);
-            if ([service.UUID isEqual:[CBUUID UUIDWithString:kServiceUUID]]) {
-                [peripheral discoverCharacteristics:@[[CBUUID UUIDWithString:kCharacteristicUUID]] forService:service];
+            if ([service.UUID isEqual:[CBUUID UUIDWithString:kTransferServiceUUID]]) {
+                [peripheral discoverCharacteristics:@[[CBUUID UUIDWithString:kTransferCharacteristicUUID]] forService:service];
             }
         }
     }
@@ -118,8 +140,13 @@ static NSString *const kServiceUUID = @"50BD367B-6B17-4E81-B6E9-F62016F26E7B";
          */
         for (CBCharacteristic *characteristic in service.characteristics) {
             PLog(@"characteristic.UUID: %@", characteristic.UUID);
-            if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:kCharacteristicUUID]]) {
+            if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:kTransferCharacteristicUUID]]) {
                 [peripheral setNotifyValue:YES forCharacteristic:characteristic];
+                
+                PLog(@"characteristic.properties: %d", characteristic.properties);
+                if (self.delegate && [self.delegate respondsToSelector:@selector(didDiscoverCharacteristic:characteristic:)]) {
+                    [self.delegate didDiscoverCharacteristic:peripheral characteristic:characteristic];
+                }
             }
         }
     }
@@ -140,7 +167,19 @@ static NSString *const kServiceUUID = @"50BD367B-6B17-4E81-B6E9-F62016F26E7B";
 
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
 {
-    PLog(@"peripheral: %@, didUpdateValueForCharacteristic: %@", peripheral, characteristic);
+    PLog(@"peripheral: %@, didUpdateValueForCharacteristic: %@, error: %@", peripheral, characteristic, error);
+    if (error) {
+        //
+    } else {
+        
+        NSData *data = characteristic.value;
+        NSString *receiveData = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+        PLog(@"peripheralManager receiveData: %@", receiveData);
+        
+        if (self.delegate && [self.delegate respondsToSelector:@selector(didUpdateValue:characteristic:)]) {
+            [self.delegate didUpdateValue:peripheral characteristic:characteristic];
+        }
+    }
 }
 
 @end
