@@ -47,6 +47,19 @@
     return tString;
 }
 
+- (NSString *)stringWithMD5Encode
+{
+    return [NSString stringByMd5Encode:self];
+}
+
+/**
+ *  格式化时间为字符串
+ *
+ *  @param tDate      nsdate
+ *  @param tFormatter string like @"yyyy-MM-dd HH:mm:ss"
+ *
+ *  @return string
+ */
 + (NSString *)stringWithDate:(NSDate *)tDate formatter:(NSString *)tFormatter
 {
     NSDateFormatter *dateformatter = [[NSDateFormatter alloc] init];
@@ -58,6 +71,14 @@
     return strTime;
 }
 
+/**
+ *  格式化时间戳为字符串
+ *
+ *  @param tTimeInterval 距离1970年的时间戳
+ *  @param tFormatter    string like @"yyyy-MM-dd HH:mm:ss"
+ *
+ *  @return string
+ */
 + (NSString *)stringWithTime:(long)tTimeInterval formatter:(NSString *)tFormatter
 {
     NSDateFormatter *dateformatter = [[NSDateFormatter alloc] init];
@@ -68,6 +89,52 @@
     NSDate *tempDate = [NSDate dateWithTimeIntervalSince1970:tTimeInterval];
     NSString *strTime = [dateformatter stringFromDate:tempDate];
     return strTime;
+}
+
+/**
+ *  url编码
+ *
+ *  @return string
+ */
+- (NSString *)stringWithUrlEncode
+{
+    return [self stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//    return CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (__bridge CFStringRef)self, NULL, (CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8));
+}
+
+/**
+ *  url解码
+ *
+ *  @return string
+ */
+- (NSString *)stringWithUrlDecode
+{
+    return [self stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+}
+
+/**
+ *  遍历字符串编码格式
+ */
+- (void)enumStringEncodings
+{
+    const NSStringEncoding *encodings = [NSString availableStringEncodings];
+    NSMutableString *mutableStr = [[NSMutableString alloc] init];
+    NSStringEncoding encoding;
+    while (0 != (encoding = *encodings++)) {
+        [mutableStr appendFormat:@"%@ == %in", [NSString localizedNameOfStringEncoding:encoding], encoding];
+        PLog(@"mutableStr: %@", mutableStr);
+    }
+}
+
+/**
+ *  gb2312编码
+ *
+ *  @return string
+ */
+- (NSString *)stringWithGB2312Encode
+{
+    NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+    return [[NSString alloc] initWithCString:[self UTF8String] encoding:enc];
 }
 
 @end

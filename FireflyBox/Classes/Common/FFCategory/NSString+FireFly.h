@@ -18,9 +18,51 @@
 + (NSString *)stingWithSequence;
 
 + (NSString *)stringByMd5Encode:(NSString *)tString;
+- (NSString *)stringWithMD5Encode;
 
-//格式化时间为字符串
+/**
+ *  格式化时间为字符串
+ *
+ *  @param tDate      nsdate
+ *  @param tFormatter string like @"yyyy-MM-dd HH:mm:ss"
+ *
+ *  @return string
+ */
 + (NSString *)stringWithDate:(NSDate *)tDate formatter:(NSString *)tFormatter;
+
+/**
+ *  格式化时间戳为字符串
+ *
+ *  @param tTimeInterval 距离1970年的时间戳
+ *  @param tFormatter    string like @"yyyy-MM-dd HH:mm:ss"
+ *
+ *  @return string
+ */
 + (NSString *)stringWithTime:(long)tTimeInterval formatter:(NSString *)tFormatter;
+
+/**
+ *  url编码
+ *
+ *  @return string
+ */
+- (NSString *)stringWithUrlEncode;
+/**
+ *  url解码
+ *
+ *  @return string
+ */
+- (NSString *)stringWithUrlDecode;
+
+/**
+ *  遍历字符串编码格式
+ */
+- (void)enumStringEncodings;
+
+/**
+ *  gb2312编码
+ *
+ *  @return string
+ */
+- (NSString *)stringWithGB2312Encode;
 
 @end
