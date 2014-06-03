@@ -86,6 +86,8 @@
 		16798A40191E86FA00726FBD /* FFBaseLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16798A3F191E86FA00726FBD /* FFBaseLoadingView.m */; };
 		167E7126190B82040014ADEB /* transfer_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 167E7124190B82040014ADEB /* transfer_bg.png */; };
 		167E7127190B82040014ADEB /* transfer_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 167E7125190B82040014ADEB /* transfer_bg@2x.png */; };
+		16906484193E0E8600AF7C97 /* FFGraffitiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16906483193E0E8600AF7C97 /* FFGraffitiViewController.m */; };
+		1690648B193E121800AF7C97 /* FFGraffitiView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1690648A193E121800AF7C97 /* FFGraffitiView.m */; };
 		16A0D62A190AC0A7007D6EBA /* FFEmptyTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A0D629190AC0A7007D6EBA /* FFEmptyTipsView.m */; };
 		16A0D62E190AC0CE007D6EBA /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A0D62D190AC0CE007D6EBA /* TTTAttributedLabel.m */; };
 		16A2F7721902663100751B82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A2F7711902663100751B82 /* Foundation.framework */; };
@@ -357,6 +359,10 @@
 		16798A3F191E86FA00726FBD /* FFBaseLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseLoadingView.m; sourceTree = "<group>"; };
 		167E7124190B82040014ADEB /* transfer_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transfer_bg.png; sourceTree = "<group>"; };
 		167E7125190B82040014ADEB /* transfer_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transfer_bg@2x.png"; sourceTree = "<group>"; };
+		16906482193E0E8600AF7C97 /* FFGraffitiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFGraffitiViewController.h; sourceTree = "<group>"; };
+		16906483193E0E8600AF7C97 /* FFGraffitiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFGraffitiViewController.m; sourceTree = "<group>"; };
+		16906489193E121800AF7C97 /* FFGraffitiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFGraffitiView.h; sourceTree = "<group>"; };
+		1690648A193E121800AF7C97 /* FFGraffitiView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFGraffitiView.m; sourceTree = "<group>"; };
 		16A0D628190AC0A7007D6EBA /* FFEmptyTipsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFEmptyTipsView.h; sourceTree = "<group>"; };
 		16A0D629190AC0A7007D6EBA /* FFEmptyTipsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFEmptyTipsView.m; sourceTree = "<group>"; };
 		16A0D62C190AC0CE007D6EBA /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
@@ -771,6 +777,7 @@
 		1624B88E19093C140018B8FE /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				16906481193E0E4D00AF7C97 /* Graffiti */,
 				166E7D941931D5E90066A468 /* BluetoothTransfer */,
 				166E7D8C1931D3780066A468 /* Camera */,
 				166E7D8F1931D3780066A468 /* TextRecorder */,
@@ -911,6 +918,17 @@
 				167E7125190B82040014ADEB /* transfer_bg@2x.png */,
 			);
 			path = Transfer;
+			sourceTree = "<group>";
+		};
+		16906481193E0E4D00AF7C97 /* Graffiti */ = {
+			isa = PBXGroup;
+			children = (
+				16906482193E0E8600AF7C97 /* FFGraffitiViewController.h */,
+				16906483193E0E8600AF7C97 /* FFGraffitiViewController.m */,
+				16906489193E121800AF7C97 /* FFGraffitiView.h */,
+				1690648A193E121800AF7C97 /* FFGraffitiView.m */,
+			);
+			path = Graffiti;
 			sourceTree = "<group>";
 		};
 		16A0D62B190AC0CE007D6EBA /* TTTAttributedLabel */ = {
@@ -1763,8 +1781,10 @@
 				1624B89C19093C140018B8FE /* FFAppLoader.m in Sources */,
 				16A2F8F91902D5C100751B82 /* FMDatabaseQueue.m in Sources */,
 				166E9BDC1939A26B0043D5F9 /* FFCircularProgressView.m in Sources */,
+				16906484193E0E8600AF7C97 /* FFGraffitiViewController.m in Sources */,
 				16CF242C1910948B0029F3D2 /* DOUAudioEventLoop.m in Sources */,
 				166919E61930C346008E385B /* AFHTTPSessionManager.m in Sources */,
+				1690648B193E121800AF7C97 /* FFGraffitiView.m in Sources */,
 				16BCB5731926716500B12CBF /* CADebugMacros.cpp in Sources */,
 				161FF06219124B4F00CDD559 /* FFFileInfoCell.m in Sources */,
 				1620DCF71913807200AE810C /* NSObject+FireFly.m in Sources */,

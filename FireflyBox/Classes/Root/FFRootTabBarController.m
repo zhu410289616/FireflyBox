@@ -10,6 +10,7 @@
 
 #import "FFActionSheetView.h"
 #import "FFNextStepViewController.h"
+#import "FFGraffitiViewController.h"
 #import "FFAudioRecorderViewController.h"
 #import "FFBluetoothTransferViewController.h"
 
@@ -129,6 +130,13 @@
     [self presentViewController:nav animated:YES completion:nil];
 }
 
+- (void)doShowGraffitiAction
+{
+    FFGraffitiViewController *graffitiController = [[FFGraffitiViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:graffitiController];
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
 - (void)doShowNextStepAction
 {
     FFNextStepViewController *nextStepController = [[FFNextStepViewController alloc] init];
@@ -145,12 +153,15 @@
             [self doShowTransferAction];
             break;
         case 1:
-            [self doShowAudioRecorderAction];
+            [self doShowGraffitiAction];
             break;
         case 2:
-            [self doShowBluetoothAction];
+            [self doShowAudioRecorderAction];
             break;
         case 3:
+            [self doShowBluetoothAction];
+            break;
+        case 4:
             [self doShowNextStepAction];
             break;
             
@@ -167,7 +178,7 @@
     
     if (tIndex == 1) {
         [_tabBarView selectedTabBarItem:self.selectedIndex];
-        NSArray *titles = [NSArray arrayWithObjects:@"添加", @"录音", @"AB", @"下一步", nil];
+        NSArray *titles = [NSArray arrayWithObjects:@"添加", @"涂鸦", @"录音", @"AB", @"下一步", nil];
         FFActionSheetView *actionSheetView = [[FFActionSheetView alloc] initWithTitles:titles];
         actionSheetView.actionBlock = ^(int actionIndex) {
             [self doItemAction:actionIndex];
