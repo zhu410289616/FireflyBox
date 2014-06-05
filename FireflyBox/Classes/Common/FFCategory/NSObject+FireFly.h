@@ -10,6 +10,8 @@
 
 @interface NSObject (FireFly)
 
+- (NSString *)autoDescription:(Class)classType;
+- (Class)getCustomClass;
 - (void)log;
 
 @end

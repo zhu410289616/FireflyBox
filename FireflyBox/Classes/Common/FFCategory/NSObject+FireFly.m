@@ -11,22 +11,54 @@
 
 @implementation NSObject (FireFly)
 
-- (void)log
+- (NSString *)autoDescription:(Class)classType
 {
-    id LenderClass = [self getCustomClass];//objc_getClass("ClassName");
-    unsigned int outCount;
-    objc_property_t *properties = class_copyPropertyList(LenderClass, &outCount);
-    for (int i=0; i<outCount; i++) {
+    NSMutableString *propertyMutableStr = [[NSMutableString alloc] init];
+    
+    unsigned int count;
+    objc_property_t *properties = class_copyPropertyList(classType, &count);
+    for (int i=0; i<count; i++) {
         objc_property_t property = properties[i];
-        unsigned int attributeOutCount;
-        objc_property_attribute_t *attribute = property_copyAttributeList(property, &attributeOutCount);
-//        PLog(@"%s %s", property_getName(property), attribute->value);
+        const char *cPropertyName = property_getName(property);
+        NSString *propertyName = [NSString stringWithCString:cPropertyName encoding:NSASCIIStringEncoding];
+        if (propertyName) {
+            @try {
+                id value = [self valueForKey:propertyName];
+                [propertyMutableStr appendFormat:@"%@: %@, ", propertyName, value];
+            }
+            @catch (NSException *exception) {
+                [propertyMutableStr appendFormat:@"Can't get value for property %@ through KVO", propertyName];
+            }
+        }//
+    }//for
+    
+    NSString *tempDescription = nil;
+    if (propertyMutableStr.length > 2) {
+        tempDescription = [propertyMutableStr substringToIndex:propertyMutableStr.length - 2];
     }
+    return tempDescription;
 }
 
 - (Class)getCustomClass
 {
     return [self class];
+}
+
+- (void)log:(Class)classType
+{
+    // Now see if we need to map any superclasses as well.
+    Class superClass = class_getSuperclass(classType);
+    if (superClass && [superClass isSubclassOfClass:[NSObject class]]) {
+        //
+    }
+    
+    NSString *tempDescription = [self autoDescription:classType];
+    PLog(@"[FFLOG] - (ClassName:%s): %@", class_getName(classType), tempDescription);
+}
+
+- (void)log
+{
+    [self log:[self getCustomClass]];
 }
 
 @end
