@@ -9,6 +9,8 @@
 #import "FFGraffitiViewController.h"
 #import "FFBarButtonItem.h"
 
+const static float ffGraffitiButtonWidth = 40.0f;
+
 @interface FFGraffitiViewController ()
 
 @end
@@ -30,6 +32,12 @@
     self.graffitiView.backgroundColor = [UIColor whiteColor];
     self.graffitiView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:self.graffitiView];
+    
+    self.eraseButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.eraseButton.frame = CGRectMake(0, CGRectGetHeight(self.graffitiView.frame) - 100 - ffGraffitiButtonWidth, ffGraffitiButtonWidth, ffGraffitiButtonWidth);
+    self.eraseButton.backgroundColor = [UIColor orangeColor];
+    self.eraseButton.layer.cornerRadius = ffGraffitiButtonWidth / 2;
+    [self.view addSubview:self.eraseButton];
     
 }
 

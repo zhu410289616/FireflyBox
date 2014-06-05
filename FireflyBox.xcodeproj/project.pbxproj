@@ -89,6 +89,7 @@
 		16906484193E0E8600AF7C97 /* FFGraffitiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16906483193E0E8600AF7C97 /* FFGraffitiViewController.m */; };
 		1690648B193E121800AF7C97 /* FFGraffitiView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1690648A193E121800AF7C97 /* FFGraffitiView.m */; };
 		169B3F2C1940251100A92F2D /* NSNull+FireFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 169B3F2B1940251100A92F2D /* NSNull+FireFly.m */; };
+		169B3F2F1940650A00A92F2D /* FFCAShapeCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 169B3F2E1940650A00A92F2D /* FFCAShapeCircularProgressView.m */; };
 		16A0D62A190AC0A7007D6EBA /* FFEmptyTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A0D629190AC0A7007D6EBA /* FFEmptyTipsView.m */; };
 		16A0D62E190AC0CE007D6EBA /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A0D62D190AC0CE007D6EBA /* TTTAttributedLabel.m */; };
 		16A2F7721902663100751B82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A2F7711902663100751B82 /* Foundation.framework */; };
@@ -366,6 +367,8 @@
 		1690648A193E121800AF7C97 /* FFGraffitiView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFGraffitiView.m; sourceTree = "<group>"; };
 		169B3F2A1940251100A92F2D /* NSNull+FireFly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNull+FireFly.h"; sourceTree = "<group>"; };
 		169B3F2B1940251100A92F2D /* NSNull+FireFly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNull+FireFly.m"; sourceTree = "<group>"; };
+		169B3F2D1940650A00A92F2D /* FFCAShapeCircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCAShapeCircularProgressView.h; sourceTree = "<group>"; };
+		169B3F2E1940650A00A92F2D /* FFCAShapeCircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCAShapeCircularProgressView.m; sourceTree = "<group>"; };
 		16A0D628190AC0A7007D6EBA /* FFEmptyTipsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFEmptyTipsView.h; sourceTree = "<group>"; };
 		16A0D629190AC0A7007D6EBA /* FFEmptyTipsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFEmptyTipsView.m; sourceTree = "<group>"; };
 		16A0D62C190AC0CE007D6EBA /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
@@ -902,6 +905,8 @@
 				166E9BE01939B2A70043D5F9 /* FFCircularProgressLayer.m */,
 				166E9BEB1939D3C50043D5F9 /* FFCircularProgressButton.h */,
 				166E9BEC1939D3C50043D5F9 /* FFCircularProgressButton.m */,
+				169B3F2D1940650A00A92F2D /* FFCAShapeCircularProgressView.h */,
+				169B3F2E1940650A00A92F2D /* FFCAShapeCircularProgressView.m */,
 			);
 			path = FFProgressView;
 			sourceTree = "<group>";
@@ -1795,6 +1800,7 @@
 				161FF06219124B4F00CDD559 /* FFFileInfoCell.m in Sources */,
 				1620DCF71913807200AE810C /* NSObject+FireFly.m in Sources */,
 				16CF24391910948B0029F3D2 /* DOUMPMediaLibraryAssetLoader.m in Sources */,
+				169B3F2F1940650A00A92F2D /* FFCAShapeCircularProgressView.m in Sources */,
 				16A2F8FB1902D5C100751B82 /* FMResultSet.m in Sources */,
 				1620DCE51913805500AE810C /* FFTabBarView.m in Sources */,
 				16232D271916649E0043F840 /* NSDate+FireFly.m in Sources */,

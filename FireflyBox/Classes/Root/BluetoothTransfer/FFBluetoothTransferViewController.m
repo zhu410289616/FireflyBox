@@ -11,6 +11,8 @@
 #import "FFBluetoothDeviceView.h"
 #import "FFBluetoothDevice.h"
 
+#import "FFCAShapeCircularProgressView.h"
+
 static NSString *const kCharacteristicUUID = @"CCE62C0F-1098-4CD0-ADFA-C8FC7EA2EE90";
 
 static NSString *const kServiceUUID = @"50BD367B-6B17-4E81-B6E9-F62016F26E7B";
@@ -40,6 +42,14 @@ static NSString *const kServiceUUID = @"50BD367B-6B17-4E81-B6E9-F62016F26E7B";
     [self.searchButton styleWithBackgroundColor:[UIColor orangeColor]];
     [self.searchButton addTarget:self action:@selector(doSearchAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.searchButton];
+    
+    //
+    FFCAShapeCircularProgressView *progress = [[FFCAShapeCircularProgressView alloc] initWithFrame:CGRectMake(0, 180, 100, 100)];
+    [self.view addSubview:progress];
+    progress.trackColor = [UIColor blackColor];
+    progress.progressColor = [UIColor orangeColor];
+    progress.progress = .7;
+    progress.progressWidth = 10;
     
     //
     self.peripheralList = [[NSMutableArray alloc] init];

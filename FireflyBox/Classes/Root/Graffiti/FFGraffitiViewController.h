@@ -12,5 +12,6 @@
 @interface FFGraffitiViewController : FFBaseViewController
 
 @property (nonatomic, strong) FFGraffitiView *graffitiView;
+@property (nonatomic, strong) UIButton *eraseButton;
 
 @end
