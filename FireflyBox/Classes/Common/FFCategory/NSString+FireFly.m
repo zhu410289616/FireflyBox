@@ -53,6 +53,32 @@
 }
 
 /**
+ *  对nsdata坐解码，生成nsstring
+ *
+ *  @param data     data description
+ *  @param encoding encoding description
+ *
+ *  @return return nsstring
+ */
++ (NSString *)stringWithData:(NSData *)data encoding:(NSStringEncoding)encoding
+{
+    return [[NSString alloc] initWithData:data encoding:encoding];
+}
+
+/**
+ *  对nsdata坐解码，生成nsstring
+ *  default NSUTF8StringEncoding
+ *
+ *  @param data data description
+ *
+ *  @return nsstring
+ */
++ (NSString *)stringWithData:(NSData *)data
+{
+    return [NSString stringWithData:data encoding:NSUTF8StringEncoding];
+}
+
+/**
  *  格式化时间为字符串
  *
  *  @param tDate      nsdate

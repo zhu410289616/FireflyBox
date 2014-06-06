@@ -21,6 +21,26 @@
 - (NSString *)stringWithMD5Encode;
 
 /**
+ *  对nsdata坐解码，生成nsstring
+ *
+ *  @param data     data description
+ *  @param encoding encoding description
+ *
+ *  @return return nsstring
+ */
++ (NSString *)stringWithData:(NSData *)data encoding:(NSStringEncoding)encoding;
+
+/**
+ *  对nsdata坐解码，生成nsstring
+ *  default NSUTF8StringEncoding
+ *
+ *  @param data data description
+ *
+ *  @return nsstring
+ */
++ (NSString *)stringWithData:(NSData *)data;
+
+/**
  *  格式化时间为字符串
  *
  *  @param tDate      nsdate

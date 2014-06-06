@@ -102,7 +102,7 @@
     for (CBATTRequest *request in requests) {
         if ([request.characteristic.UUID isEqual:self.cbMutableCharacteristic.UUID]) {
             NSData *data = request.value;
-            NSString *receiveData = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+            NSString *receiveData = [NSString stringWithData:data];
             PLog(@"peripheralManager receiveData: %@", receiveData);
             
             request.value = [[NSString stringWithFormat:@"receive %@", receiveData] dataUsingEncoding:NSUTF8StringEncoding];

@@ -12,6 +12,7 @@
 #import "NSObject+FireFly.h"
 #import "NSNull+FireFly.h"
 #import "NSString+FireFly.h"
+#import "NSData+FireFly.h"
 #import "NSDate+FireFly.h"
 #import "NSMutableArray+FireFly.h"
 

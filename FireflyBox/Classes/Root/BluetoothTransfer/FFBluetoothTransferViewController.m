@@ -161,14 +161,14 @@ static NSString *const kServiceUUID = @"50BD367B-6B17-4E81-B6E9-F62016F26E7B";
 
 - (void)didDiscoverCharacteristic:(CBPeripheral *)peripheral characteristic:(CBCharacteristic *)characteristic
 {
-    NSData *data = [@"sd" dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *data = [NSData dataWithString:@"hello world"];
     [peripheral writeValue:data forCharacteristic:characteristic type:CBCharacteristicWriteWithResponse];
 }
 
 - (void)didUpdateValue:(CBPeripheral *)peripheral characteristic:(CBCharacteristic *)characteristic
 {
     NSData *data = characteristic.value;
-    NSString *receiveData = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    NSString *receiveData = [NSString stringWithData:data];
     PLog(@"didUpdateValue receiveData: %@", receiveData);
     
     NSString *getData = [NSString stringWithFormat:@"%@", receiveData];

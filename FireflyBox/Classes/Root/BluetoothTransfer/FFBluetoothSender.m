@@ -92,7 +92,7 @@
 
 - (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error
 {
-    PLog(@"centralManager: %@, didFailToConnectPeripheral: %@", central, peripheral);
+    PLog(@"centralManager: %@, didFailToConnectPeripheral: %@, error: %@", central, peripheral, error);
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(didFailToConnectPeripheral:error:)]) {
         [self.delegate didFailToConnectPeripheral:peripheral error:error];

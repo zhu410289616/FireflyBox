@@ -27,7 +27,7 @@
 #define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
 
 #define IS_IOS7_OR_HIGHER               SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")
-#define IS_RETINA_SCREEN                [[UIDevice currentDevice] isRetinaScreen]
+#define IS_RETINA_SCREEN                ([UIDevice currentDevice].isRetinaScreen)
 
 //
 #define GLOBAL_SCREEN_SIZE              ([UIScreen mainScreen].bounds.size)
@@ -35,6 +35,8 @@
 #define GLOBAL_SCREEN_HEIGHT            (GLOBAL_SCREEN_SIZE.height)
 
 #define GLOBAL_TABBAR_HEIGHT            50.0f
+
+#define GLOBAL_DEVICE_UUID              ([UIDevice currentDevice].identifierForVendor)
 
 #define GLOBAL_APP                      [UIApplication sharedApplication]
 #define GLOBAL_APP_DELEGATE             ((AppDelegate *)([UIApplication sharedApplication].delegate))

@@ -55,6 +55,7 @@
 		162F9157190956FD004D0C25 /* FFBaseTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 162F9156190956FD004D0C25 /* FFBaseTableCell.m */; };
 		162F915A19095740004D0C25 /* FFRecentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 162F915919095740004D0C25 /* FFRecentCell.m */; };
 		163102FF192716A3000ECCDC /* FFAudioRecorder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 163102FE192716A3000ECCDC /* FFAudioRecorder.mm */; };
+		1631715C19421E4E001B5BA5 /* NSData+FireFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 1631715B19421E4E001B5BA5 /* NSData+FireFly.m */; };
 		1658B518192B955900B8CF4E /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1658B515192B955900B8CF4E /* libMobClickLibrary.a */; };
 		1658B52B192BA42200B8CF4E /* FFConvertHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1658B52A192BA42200B8CF4E /* FFConvertHelper.m */; };
 		16686624192675C2009BD05D /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16686623192675C2009BD05D /* CoreAudio.framework */; };
@@ -303,6 +304,8 @@
 		162F915919095740004D0C25 /* FFRecentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFRecentCell.m; sourceTree = "<group>"; };
 		163102FD192716A3000ECCDC /* FFAudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFAudioRecorder.h; sourceTree = "<group>"; };
 		163102FE192716A3000ECCDC /* FFAudioRecorder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FFAudioRecorder.mm; sourceTree = "<group>"; };
+		1631715A19421E4E001B5BA5 /* NSData+FireFly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+FireFly.h"; sourceTree = "<group>"; };
+		1631715B19421E4E001B5BA5 /* NSData+FireFly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+FireFly.m"; sourceTree = "<group>"; };
 		1658B515192B955900B8CF4E /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		1658B517192B955900B8CF4E /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		1658B529192BA42200B8CF4E /* FFConvertHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFConvertHelper.h; sourceTree = "<group>"; };
@@ -752,6 +755,8 @@
 				16E943F11929AE2A00D0A488 /* NSInvocation+FireFly.m */,
 				169B3F2A1940251100A92F2D /* NSNull+FireFly.h */,
 				169B3F2B1940251100A92F2D /* NSNull+FireFly.m */,
+				1631715A19421E4E001B5BA5 /* NSData+FireFly.h */,
+				1631715B19421E4E001B5BA5 /* NSData+FireFly.m */,
 			);
 			path = FFCategory;
 			sourceTree = "<group>";
@@ -1705,6 +1710,7 @@
 				16ED1D52190B78B9007EC697 /* GCDWebServerMultiPartFormRequest.m in Sources */,
 				16CF24331910948B0029F3D2 /* DOUAudioSpatialAnalyzer.m in Sources */,
 				16A2F8A51902D5AC00751B82 /* FFDB.m in Sources */,
+				1631715C19421E4E001B5BA5 /* NSData+FireFly.m in Sources */,
 				16CF242E1910948B0029F3D2 /* DOUAudioFileProvider.m in Sources */,
 				166919E81930C346008E385B /* AFSecurityPolicy.m in Sources */,
 				16ED1D4F190B78B9007EC697 /* GCDWebServerResponse.m in Sources */,
