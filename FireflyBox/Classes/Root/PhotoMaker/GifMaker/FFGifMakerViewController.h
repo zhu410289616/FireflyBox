@@ -7,7 +7,8 @@
 //
 
 #import "FFBaseViewController.h"
+#import "FFAssetSelectionDelegate.h"
 
-@interface FFGifMakerViewController : FFBaseViewController
+@interface FFGifMakerViewController : FFBaseViewController<FFAssetSelectionDelegate>
 
 @end

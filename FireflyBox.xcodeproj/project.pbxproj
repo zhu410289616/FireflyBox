@@ -59,6 +59,14 @@
 		1658B518192B955900B8CF4E /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1658B515192B955900B8CF4E /* libMobClickLibrary.a */; };
 		1658B52B192BA42200B8CF4E /* FFConvertHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1658B52A192BA42200B8CF4E /* FFConvertHelper.m */; };
 		16647B0719440477004BD99E /* FFGifMakerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16647B0619440477004BD99E /* FFGifMakerViewController.m */; };
+		16647B0B19440E45004BD99E /* FFAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 16647B0A19440E45004BD99E /* FFAsset.m */; };
+		16647B0D19440E7C004BD99E /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16647B0C19440E7C004BD99E /* AssetsLibrary.framework */; };
+		16647B11194410B4004BD99E /* FFPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 16647B10194410B4004BD99E /* FFPageControl.m */; };
+		16647B14194413B9004BD99E /* FFAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16647B13194413B9004BD99E /* FFAssetCell.m */; };
+		16647B17194417BC004BD99E /* FFAssetTablePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 16647B16194417BC004BD99E /* FFAssetTablePicker.m */; };
+		16647B1919441976004BD99E /* Overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16647B1819441976004BD99E /* Overlay@2x.png */; };
+		16647B1D1944283B004BD99E /* FFAlbumTablePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 16647B1C1944283B004BD99E /* FFAlbumTablePicker.m */; };
+		16647B2019445EF8004BD99E /* FFAssetPickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 16647B1F19445EF8004BD99E /* FFAssetPickerManager.m */; };
 		16686624192675C2009BD05D /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16686623192675C2009BD05D /* CoreAudio.framework */; };
 		16686626192675E1009BD05D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16686625192675E1009BD05D /* QuartzCore.framework */; };
 		16686628192675F9009BD05D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16686627192675F9009BD05D /* OpenGLES.framework */; };
@@ -313,6 +321,21 @@
 		1658B52A192BA42200B8CF4E /* FFConvertHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFConvertHelper.m; sourceTree = "<group>"; };
 		16647B0519440477004BD99E /* FFGifMakerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFGifMakerViewController.h; sourceTree = "<group>"; };
 		16647B0619440477004BD99E /* FFGifMakerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFGifMakerViewController.m; sourceTree = "<group>"; };
+		16647B0919440E45004BD99E /* FFAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFAsset.h; sourceTree = "<group>"; };
+		16647B0A19440E45004BD99E /* FFAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFAsset.m; sourceTree = "<group>"; };
+		16647B0C19440E7C004BD99E /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		16647B0F194410B4004BD99E /* FFPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFPageControl.h; sourceTree = "<group>"; };
+		16647B10194410B4004BD99E /* FFPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFPageControl.m; sourceTree = "<group>"; };
+		16647B12194413B9004BD99E /* FFAssetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFAssetCell.h; sourceTree = "<group>"; };
+		16647B13194413B9004BD99E /* FFAssetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFAssetCell.m; sourceTree = "<group>"; };
+		16647B15194417BC004BD99E /* FFAssetTablePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFAssetTablePicker.h; sourceTree = "<group>"; };
+		16647B16194417BC004BD99E /* FFAssetTablePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFAssetTablePicker.m; sourceTree = "<group>"; };
+		16647B1819441976004BD99E /* Overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Overlay@2x.png"; sourceTree = "<group>"; };
+		16647B1A194419DA004BD99E /* FFAssetSelectionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFAssetSelectionDelegate.h; sourceTree = "<group>"; };
+		16647B1B1944283B004BD99E /* FFAlbumTablePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFAlbumTablePicker.h; sourceTree = "<group>"; };
+		16647B1C1944283B004BD99E /* FFAlbumTablePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFAlbumTablePicker.m; sourceTree = "<group>"; };
+		16647B1E19445EF8004BD99E /* FFAssetPickerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFAssetPickerManager.h; sourceTree = "<group>"; };
+		16647B1F19445EF8004BD99E /* FFAssetPickerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFAssetPickerManager.m; sourceTree = "<group>"; };
 		16686623192675C2009BD05D /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		16686625192675E1009BD05D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		16686627192675F9009BD05D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -595,6 +618,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16647B0D19440E7C004BD99E /* AssetsLibrary.framework in Frameworks */,
 				166E7D991931D64A0066A468 /* CoreBluetooth.framework in Frameworks */,
 				16686628192675F9009BD05D /* OpenGLES.framework in Frameworks */,
 				16686626192675E1009BD05D /* QuartzCore.framework in Frameworks */,
@@ -882,6 +906,34 @@
 			path = GifMaker;
 			sourceTree = "<group>";
 		};
+		16647B0819440E2C004BD99E /* FFImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				16647B1819441976004BD99E /* Overlay@2x.png */,
+				16647B0919440E45004BD99E /* FFAsset.h */,
+				16647B0A19440E45004BD99E /* FFAsset.m */,
+				16647B12194413B9004BD99E /* FFAssetCell.h */,
+				16647B13194413B9004BD99E /* FFAssetCell.m */,
+				16647B15194417BC004BD99E /* FFAssetTablePicker.h */,
+				16647B16194417BC004BD99E /* FFAssetTablePicker.m */,
+				16647B1A194419DA004BD99E /* FFAssetSelectionDelegate.h */,
+				16647B1B1944283B004BD99E /* FFAlbumTablePicker.h */,
+				16647B1C1944283B004BD99E /* FFAlbumTablePicker.m */,
+				16647B1E19445EF8004BD99E /* FFAssetPickerManager.h */,
+				16647B1F19445EF8004BD99E /* FFAssetPickerManager.m */,
+			);
+			path = FFImagePicker;
+			sourceTree = "<group>";
+		};
+		16647B0E19441099004BD99E /* FFPageControl */ = {
+			isa = PBXGroup;
+			children = (
+				16647B0F194410B4004BD99E /* FFPageControl.h */,
+				16647B10194410B4004BD99E /* FFPageControl.m */,
+			);
+			path = FFPageControl;
+			sourceTree = "<group>";
+		};
 		166E7D8C1931D3780066A468 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
@@ -998,6 +1050,7 @@
 		16A2F7701902663100751B82 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				16647B0C19440E7C004BD99E /* AssetsLibrary.framework */,
 				166E7D981931D64A0066A468 /* CoreBluetooth.framework */,
 				16686627192675F9009BD05D /* OpenGLES.framework */,
 				16686625192675E1009BD05D /* QuartzCore.framework */,
@@ -1104,6 +1157,8 @@
 		16A2F8831902D5AC00751B82 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				16647B0E19441099004BD99E /* FFPageControl */,
+				16647B0819440E2C004BD99E /* FFImagePicker */,
 				166E9BD51939A26B0043D5F9 /* FFProgressView */,
 				161A082119338C1C00570BB6 /* FFFlurryEvent */,
 				16FD4D101930D34000EC8B74 /* FFTask */,
@@ -1654,6 +1709,7 @@
 			files = (
 				1620DD1B1913EE4300AE810C /* Icon_120_120@2x.png in Resources */,
 				16A2F77C1902663100751B82 /* InfoPlist.strings in Resources */,
+				16647B1919441976004BD99E /* Overlay@2x.png in Resources */,
 				16232D301916743B0043F840 /* NextStep.bundle in Resources */,
 				167E7126190B82040014ADEB /* transfer_bg.png in Resources */,
 				1620DD1C1913EE4300AE810C /* Icon_200_200@2x.png in Resources */,
@@ -1730,6 +1786,7 @@
 				16CF24341910948B0029F3D2 /* DOUAudioStreamer+Options.m in Sources */,
 				16ED1D52190B78B9007EC697 /* GCDWebServerMultiPartFormRequest.m in Sources */,
 				16CF24331910948B0029F3D2 /* DOUAudioSpatialAnalyzer.m in Sources */,
+				16647B14194413B9004BD99E /* FFAssetCell.m in Sources */,
 				16A2F8A51902D5AC00751B82 /* FFDB.m in Sources */,
 				1631715C19421E4E001B5BA5 /* NSData+FireFly.m in Sources */,
 				16CF242E1910948B0029F3D2 /* DOUAudioFileProvider.m in Sources */,
@@ -1744,6 +1801,7 @@
 				1620DCE41913805500AE810C /* FFTabBarItem.m in Sources */,
 				16059CD4191F2A370072DD8F /* FFReachability.m in Sources */,
 				16CF24311910948B0029F3D2 /* DOUAudioPlaybackItem.m in Sources */,
+				16647B11194410B4004BD99E /* FFPageControl.m in Sources */,
 				16059CD1191F267D0072DD8F /* Reachability.m in Sources */,
 				166919EC1930C346008E385B /* AFURLSessionManager.m in Sources */,
 				1624B8841909311C0018B8FE /* FFTableViewController.m in Sources */,
@@ -1780,6 +1838,7 @@
 				1620DD0D19139F5200AE810C /* FFIconActionView.m in Sources */,
 				166919E71930C346008E385B /* AFNetworkReachabilityManager.m in Sources */,
 				16A5B14E190C17D9000FA5C4 /* FFDB+DataInfo.m in Sources */,
+				16647B0B19440E45004BD99E /* FFAsset.m in Sources */,
 				16E943F61929B75E00D0A488 /* KGStatusBar.m in Sources */,
 				16A2F8F61902D5C100751B82 /* FMDatabase.m in Sources */,
 				16ED1D57190B78B9007EC697 /* GCDWebServerStreamedResponse.m in Sources */,
@@ -1788,6 +1847,7 @@
 				16A2F89D1902D5AC00751B82 /* FFCommonUtil.m in Sources */,
 				16FD4D5819310E5E00EC8B74 /* FFDeleteFileTask.m in Sources */,
 				166E9BDD1939A26B0043D5F9 /* FFPorgressLayer.m in Sources */,
+				16647B17194417BC004BD99E /* FFAssetTablePicker.m in Sources */,
 				16A2F89C1902D5AC00751B82 /* FFBaseViewController.m in Sources */,
 				16A2F8F41902D5C100751B82 /* EGOImageView.m in Sources */,
 				1620DD0A19139F1700AE810C /* FFBaseActionView.m in Sources */,
@@ -1824,6 +1884,7 @@
 				16CF242C1910948B0029F3D2 /* DOUAudioEventLoop.m in Sources */,
 				166919E61930C346008E385B /* AFHTTPSessionManager.m in Sources */,
 				1690648B193E121800AF7C97 /* FFGraffitiView.m in Sources */,
+				16647B1D1944283B004BD99E /* FFAlbumTablePicker.m in Sources */,
 				16BCB5731926716500B12CBF /* CADebugMacros.cpp in Sources */,
 				161FF06219124B4F00CDD559 /* FFFileInfoCell.m in Sources */,
 				1620DCF71913807200AE810C /* NSObject+FireFly.m in Sources */,
@@ -1847,6 +1908,7 @@
 				16A2F8F11902D5C100751B82 /* EGOImageButton.m in Sources */,
 				16A0D62E190AC0CE007D6EBA /* TTTAttributedLabel.m in Sources */,
 				16FD4D5C19310E9C00EC8B74 /* FFGetDailyRunnable.m in Sources */,
+				16647B2019445EF8004BD99E /* FFAssetPickerManager.m in Sources */,
 				16BCB56D1926716500B12CBF /* AQRecorder.mm in Sources */,
 				16A2F8FC1902D5C100751B82 /* EGORefreshTableHeaderView.m in Sources */,
 				16A2F8F71902D5C100751B82 /* FMDatabaseAdditions.m in Sources */,

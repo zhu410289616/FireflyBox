@@ -27,6 +27,7 @@
 #define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
 
 #define IS_IOS7_OR_HIGHER               SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")
+#define IS_IOS6_OR_HIGHER               SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"6.0")
 #define IS_RETINA_SCREEN                ([UIDevice currentDevice].isRetinaScreen)
 
 //

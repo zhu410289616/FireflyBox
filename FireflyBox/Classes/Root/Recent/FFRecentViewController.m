@@ -85,6 +85,11 @@
     }
 }
 
+- (IBAction)doEmptyTipsAction:(id)sender
+{
+    //
+}
+
 #pragma mark UITableViewDataSource method
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
