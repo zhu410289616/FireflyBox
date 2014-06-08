@@ -7,7 +7,6 @@
 //
 
 #import "FFNextStepViewController.h"
-#import "FFBarButtonItem.h"
 
 @interface FFNextStepViewController ()
 

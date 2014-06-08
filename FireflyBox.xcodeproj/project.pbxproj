@@ -58,6 +58,7 @@
 		1631715C19421E4E001B5BA5 /* NSData+FireFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 1631715B19421E4E001B5BA5 /* NSData+FireFly.m */; };
 		1658B518192B955900B8CF4E /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1658B515192B955900B8CF4E /* libMobClickLibrary.a */; };
 		1658B52B192BA42200B8CF4E /* FFConvertHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1658B52A192BA42200B8CF4E /* FFConvertHelper.m */; };
+		16647B0719440477004BD99E /* FFGifMakerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16647B0619440477004BD99E /* FFGifMakerViewController.m */; };
 		16686624192675C2009BD05D /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16686623192675C2009BD05D /* CoreAudio.framework */; };
 		16686626192675E1009BD05D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16686625192675E1009BD05D /* QuartzCore.framework */; };
 		16686628192675F9009BD05D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16686627192675F9009BD05D /* OpenGLES.framework */; };
@@ -310,6 +311,8 @@
 		1658B517192B955900B8CF4E /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		1658B529192BA42200B8CF4E /* FFConvertHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFConvertHelper.h; sourceTree = "<group>"; };
 		1658B52A192BA42200B8CF4E /* FFConvertHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFConvertHelper.m; sourceTree = "<group>"; };
+		16647B0519440477004BD99E /* FFGifMakerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFGifMakerViewController.h; sourceTree = "<group>"; };
+		16647B0619440477004BD99E /* FFGifMakerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFGifMakerViewController.m; sourceTree = "<group>"; };
 		16686623192675C2009BD05D /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		16686625192675E1009BD05D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		16686627192675F9009BD05D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -790,6 +793,7 @@
 		1624B88E19093C140018B8FE /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				16647B0319440454004BD99E /* PhotoMaker */,
 				16906481193E0E4D00AF7C97 /* Graffiti */,
 				166E7D941931D5E90066A468 /* BluetoothTransfer */,
 				166E7D8C1931D3780066A468 /* Camera */,
@@ -859,6 +863,23 @@
 				1658B517192B955900B8CF4E /* MobClick.h */,
 			);
 			path = UMAnalytics_Sdk_2.2.1.OpenUDID;
+			sourceTree = "<group>";
+		};
+		16647B0319440454004BD99E /* PhotoMaker */ = {
+			isa = PBXGroup;
+			children = (
+				16647B0419440454004BD99E /* GifMaker */,
+			);
+			path = PhotoMaker;
+			sourceTree = "<group>";
+		};
+		16647B0419440454004BD99E /* GifMaker */ = {
+			isa = PBXGroup;
+			children = (
+				16647B0519440477004BD99E /* FFGifMakerViewController.h */,
+				16647B0619440477004BD99E /* FFGifMakerViewController.m */,
+			);
+			path = GifMaker;
 			sourceTree = "<group>";
 		};
 		166E7D8C1931D3780066A468 /* Camera */ = {
@@ -1743,6 +1764,7 @@
 				16BCB5701926716500B12CBF /* LevelMeter.m in Sources */,
 				16A2F8F21902D5C100751B82 /* EGOImageLoadConnection.m in Sources */,
 				1620DCFE1913807200AE810C /* UIViewController+FireFly.m in Sources */,
+				16647B0719440477004BD99E /* FFGifMakerViewController.m in Sources */,
 				1620DD011913809E00AE810C /* FFActionSheetView.m in Sources */,
 				166919EB1930C346008E385B /* AFURLResponseSerialization.m in Sources */,
 				16A2F77E1902663100751B82 /* main.m in Sources */,

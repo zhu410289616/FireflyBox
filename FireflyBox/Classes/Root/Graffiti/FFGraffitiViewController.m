@@ -7,7 +7,6 @@
 //
 
 #import "FFGraffitiViewController.h"
-#import "FFBarButtonItem.h"
 
 const static float ffGraffitiButtonWidth = 40.0f;
 

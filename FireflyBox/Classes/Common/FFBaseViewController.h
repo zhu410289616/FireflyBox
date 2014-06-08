@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AppConfig.h"
+#import "FFBarButtonItem.h"
 
 @interface FFBaseViewController : UIViewController
 

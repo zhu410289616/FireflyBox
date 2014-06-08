@@ -10,7 +10,6 @@
 #import "FFDataInfo.h"
 #import "FFRecentCell.h"
 
-#import "FFBarButtonItem.h"
 #import "FFTransferViewController.h"
 
 @interface FFRecentViewController ()

@@ -7,7 +7,6 @@
 //
 
 #import "FFTransferViewController.h"
-#import "FFBarButtonItem.h"
 #import "FFCommonUtil.h"
 
 @interface FFTransferViewController ()

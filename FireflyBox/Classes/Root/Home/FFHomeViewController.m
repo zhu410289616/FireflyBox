@@ -7,7 +7,6 @@
 //
 
 #import "FFHomeViewController.h"
-#import "FFBarButtonItem.h"
 #import "FFTransferViewController.h"
 #import "FFDataInfo.h"
 

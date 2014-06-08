@@ -7,7 +7,6 @@
 //
 
 #import "FFAudioRecorderViewController.h"
-#import "FFBarButtonItem.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import "FFConvertAudioTask.h"
 #import "FFConcurrentQueue.h"

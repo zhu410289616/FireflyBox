@@ -10,9 +10,10 @@
 
 #import "FFActionSheetView.h"
 #import "FFNextStepViewController.h"
-#import "FFGraffitiViewController.h"
 #import "FFAudioRecorderViewController.h"
+#import "FFGifMakerViewController.h"
 #import "FFBluetoothTransferViewController.h"
+#import "FFGraffitiViewController.h"
 
 #define TABBAR_HEIGHT 50.0f
 
@@ -107,6 +108,13 @@
 
 #pragma mark private function
 
+- (void)doShowNextStepAction
+{
+    FFNextStepViewController *nextStepController = [[FFNextStepViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:nextStepController];
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
 - (void)doShowTransferAction
 {
     [[NSUserDefaults standardUserDefaults] setValue:@YES forKey:SHOULD_UPDATE_FILE_INFO];
@@ -120,6 +128,15 @@
     
     FFAudioRecorderViewController *audioRecorderController = [[FFAudioRecorderViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:audioRecorderController];
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
+- (void)doShowGifMakerAction
+{
+    [[NSUserDefaults standardUserDefaults] setValue:@YES forKey:SHOULD_UPDATE_FILE_INFO];
+    
+    FFGifMakerViewController *gifMakerController = [[FFGifMakerViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:gifMakerController];
     [self presentViewController:nav animated:YES completion:nil];
 }
 
@@ -137,32 +154,28 @@
     [self presentViewController:nav animated:YES completion:nil];
 }
 
-- (void)doShowNextStepAction
-{
-    FFNextStepViewController *nextStepController = [[FFNextStepViewController alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:nextStepController];
-    [self presentViewController:nav animated:YES completion:nil];
-}
-
 - (void)doItemAction:(int)actionIndex
 {
     PLog(@"doItemAction: %d", actionIndex);
     
     switch (actionIndex) {
         case 0:
-            [self doShowTransferAction];
+            [self doShowNextStepAction];//下一步
             break;
         case 1:
-            [self doShowGraffitiAction];
+            [self doShowTransferAction];//u盘
             break;
         case 2:
-            [self doShowAudioRecorderAction];
+            [self doShowAudioRecorderAction];//录音
             break;
         case 3:
-            [self doShowBluetoothAction];
+            [self doShowGifMakerAction];
             break;
         case 4:
-            [self doShowNextStepAction];
+            [self doShowBluetoothAction];
+            break;
+        case 5:
+            [self doShowGraffitiAction];
             break;
             
         default:
@@ -178,7 +191,7 @@
     
     if (tIndex == 1) {
         [_tabBarView selectedTabBarItem:self.selectedIndex];
-        NSArray *titles = [NSArray arrayWithObjects:@"添加", @"涂鸦", @"录音", @"AB", @"下一步", nil];
+        NSArray *titles = [NSArray arrayWithObjects:@"下一步", @"u盘", @"录音", @"GIF", @"AB", @"涂鸦", nil];
         FFActionSheetView *actionSheetView = [[FFActionSheetView alloc] initWithTitles:titles];
         actionSheetView.actionBlock = ^(int actionIndex) {
             [self doItemAction:actionIndex];

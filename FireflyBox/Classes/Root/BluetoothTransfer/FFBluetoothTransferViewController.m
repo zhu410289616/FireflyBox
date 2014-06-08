@@ -7,7 +7,6 @@
 //
 
 #import "FFBluetoothTransferViewController.h"
-#import "FFBarButtonItem.h"
 #import "FFBluetoothDeviceView.h"
 #import "FFBluetoothDevice.h"
 
