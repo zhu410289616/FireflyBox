@@ -18,6 +18,14 @@
 
 @implementation FFAlbumTablePicker
 
+- (id)init
+{
+    if (self = [super init]) {
+        [[FFAssetPickerManager sharedInstance] removeAllAssets];
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -30,11 +38,10 @@
     
     self.dataTableView.dataSource = self;
     self.dataTableView.delegate = self;
-    self.dataTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    self.dataTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.dataTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
     //
-    [[FFAssetPickerManager sharedInstance] removeAllAssets];
     self.assetsLibrary = [[ALAssetsLibrary alloc] init];
     [self loadAssetsLibrary];
     
@@ -174,8 +181,8 @@
 
 - (BOOL)hadSelectedAsset:(FFAsset *)ffAsset
 {
-    ALAsset *asset = [[FFAssetPickerManager sharedInstance] isExists:ffAsset.asset];
-    if (asset) {
+    FFAsset *tempFFAsset = [[FFAssetPickerManager sharedInstance] isExists:ffAsset];
+    if (tempFFAsset) {
         return YES;
     }
     return NO;
@@ -185,15 +192,20 @@
 {
     if (isSelected) {
         FFAssetPickerManager *assetPickerManager = [FFAssetPickerManager sharedInstance];
-        [assetPickerManager addAsset:ffAsset.asset];
+        [assetPickerManager addAsset:ffAsset];
     } else {
-        [[FFAssetPickerManager sharedInstance] removeAsset:ffAsset.asset];
+        [[FFAssetPickerManager sharedInstance] removeAsset:ffAsset];
     }
 }
 
 - (BOOL)shouldSelectAsset:(FFAsset *)ffAsset previousCount:(NSUInteger)previousCount
 {
     return YES;
+}
+
+- (BOOL)isLastestSelectedAsset:(FFAsset *)ffAsset
+{
+    return [[FFAssetPickerManager sharedInstance] isLastAsset:ffAsset];
 }
 
 @end

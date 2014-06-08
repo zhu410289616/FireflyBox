@@ -7,14 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <AssetsLibrary/AssetsLibrary.h>
+#import "FFAsset.h"
 
 @interface FFAssetPickerManager : NSObject
 
 + (id)sharedInstance;
-- (ALAsset *)isExists:(ALAsset *)tAsset;
-- (void)addAsset:(ALAsset *)tAsset;
-- (void)removeAsset:(ALAsset *)tAsset;
+- (FFAsset *)isExists:(FFAsset *)ffAsset;
+- (BOOL)isLastAsset:(FFAsset *)ffAsset;
+- (void)addAsset:(FFAsset *)ffAsset;
+- (void)removeAsset:(FFAsset *)ffAsset;
 - (void)removeAllAssets;
 - (NSArray *)getAssets;
 

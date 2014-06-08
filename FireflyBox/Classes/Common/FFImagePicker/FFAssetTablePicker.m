@@ -48,6 +48,36 @@
     self.dataTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
     //
+    self.bottomTipView = [[UIView alloc] init];
+    self.bottomTipView.frame = CGRectMake(0, GLOBAL_SCREEN_HEIGHT - 64 - 44, GLOBAL_SCREEN_WIDTH, 44);
+    self.bottomTipView.backgroundColor = [UIColor colorWithHex:0xffffff alpha:0.9];
+    
+    UIView *lineView = [[UIView alloc] init];
+    lineView.frame = CGRectMake(0, 0, GLOBAL_SCREEN_WIDTH, 0.5f);
+    lineView.backgroundColor = [UIColor colorWithHex:0xe5e5e5];
+    [self.bottomTipView addSubview:lineView];
+    
+    self.tipLabel = [[UILabel alloc] init];
+    self.tipLabel.frame = CGRectMake(0, 0, GLOBAL_SCREEN_WIDTH, 44);
+    self.tipLabel.textColor = [UIColor colorWithHex:0x157dfb];
+    self.tipLabel.font = [UIFont boldSystemFontOfSize:17.0f];
+    self.tipLabel.textAlignment = NSTextAlignmentCenter;
+    [self.bottomTipView addSubview:self.tipLabel];
+    
+    self.indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    self.indicatorView.frame = CGRectMake(GLOBAL_SCREEN_WIDTH/2-10, 12, 20, 20);
+    self.indicatorView.hidesWhenStopped = YES;
+    [self.bottomTipView addSubview:self.indicatorView];
+    [self.indicatorView startAnimating];
+    
+    [self.view addSubview:self.bottomTipView];
+    
+    UIView *tableFooterView = [[UIView alloc] init];
+    tableFooterView.frame = self.bottomTipView.bounds;
+    tableFooterView.backgroundColor = [UIColor clearColor];
+    self.dataTableView.tableFooterView = tableFooterView;
+    
+    //
     [self loadPhotosByALAssetsGroup];
     
 }
@@ -128,7 +158,7 @@
                 if (section >= 0 && row >= 0) {
                     NSIndexPath *ip = [NSIndexPath indexPathForRow:row
                                                          inSection:section];
-                    [self.dataTableView scrollToRowAtIndexPath:ip atScrollPosition:UITableViewScrollPositionMiddle animated:NO];
+                    [self.dataTableView scrollToRowAtIndexPath:ip atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
                     
                 }
                 
@@ -143,10 +173,18 @@
 
 - (void)updateSelectedAssetsLabel
 {
+    [self.indicatorView stopAnimating];
     if ([self.delegate respondsToSelector:@selector(shouldSelectAssetCount)]) {
         int shouldSelectAssetCount = [self.delegate shouldSelectAssetCount];
-        PLog(@"shouldSelectAssetCount: %d", shouldSelectAssetCount);
+        self.tipLabel.text = [NSString stringWithFormat:@"%d / %d", [self totalSelectedAssets], shouldSelectAssetCount];
+    } else {
+        self.tipLabel.text = [NSString stringWithFormat:@"已选择 %d 张", [self totalSelectedAssets]];
     }
+}
+
+- (int)totalSelectedAssets
+{
+    return [[[FFAssetPickerManager sharedInstance] getAssets] count];
 }
 
 #pragma mark UITableViewDataSource method
@@ -213,6 +251,7 @@
     if ([self.delegate respondsToSelector:@selector(updateAssetStatus:isSelected:)]) {
         [self.delegate updateAssetStatus:ffAsset isSelected:YES];
     }
+    [self updateSelectedAssetsLabel];
 }
 
 - (BOOL)shouldSelectAsset:(FFAsset *)ffAsset
@@ -231,6 +270,7 @@
     if ([self.delegate respondsToSelector:@selector(updateAssetStatus:isSelected:)]) {
         [self.delegate updateAssetStatus:ffAsset isSelected:NO];
     }
+    [self updateSelectedAssetsLabel];
 }
 
 @end

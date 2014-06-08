@@ -64,9 +64,11 @@
 		16647B11194410B4004BD99E /* FFPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 16647B10194410B4004BD99E /* FFPageControl.m */; };
 		16647B14194413B9004BD99E /* FFAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16647B13194413B9004BD99E /* FFAssetCell.m */; };
 		16647B17194417BC004BD99E /* FFAssetTablePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 16647B16194417BC004BD99E /* FFAssetTablePicker.m */; };
-		16647B1919441976004BD99E /* Overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16647B1819441976004BD99E /* Overlay@2x.png */; };
 		16647B1D1944283B004BD99E /* FFAlbumTablePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 16647B1C1944283B004BD99E /* FFAlbumTablePicker.m */; };
 		16647B2019445EF8004BD99E /* FFAssetPickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 16647B1F19445EF8004BD99E /* FFAssetPickerManager.m */; };
+		16647B2619449B9A004BD99E /* FFAssetPickerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 16647B2519449B9A004BD99E /* FFAssetPickerItem.m */; };
+		16647B2919449C83004BD99E /* FFAssetPickerBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 16647B2819449C83004BD99E /* FFAssetPickerBar.m */; };
+		16647B2C1944ABCA004BD99E /* FFImagePicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 16647B2B1944ABCA004BD99E /* FFImagePicker.bundle */; };
 		16686624192675C2009BD05D /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16686623192675C2009BD05D /* CoreAudio.framework */; };
 		16686626192675E1009BD05D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16686625192675E1009BD05D /* QuartzCore.framework */; };
 		16686628192675F9009BD05D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16686627192675F9009BD05D /* OpenGLES.framework */; };
@@ -330,12 +332,16 @@
 		16647B13194413B9004BD99E /* FFAssetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFAssetCell.m; sourceTree = "<group>"; };
 		16647B15194417BC004BD99E /* FFAssetTablePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFAssetTablePicker.h; sourceTree = "<group>"; };
 		16647B16194417BC004BD99E /* FFAssetTablePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFAssetTablePicker.m; sourceTree = "<group>"; };
-		16647B1819441976004BD99E /* Overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Overlay@2x.png"; sourceTree = "<group>"; };
 		16647B1A194419DA004BD99E /* FFAssetSelectionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFAssetSelectionDelegate.h; sourceTree = "<group>"; };
 		16647B1B1944283B004BD99E /* FFAlbumTablePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFAlbumTablePicker.h; sourceTree = "<group>"; };
 		16647B1C1944283B004BD99E /* FFAlbumTablePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFAlbumTablePicker.m; sourceTree = "<group>"; };
 		16647B1E19445EF8004BD99E /* FFAssetPickerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFAssetPickerManager.h; sourceTree = "<group>"; };
 		16647B1F19445EF8004BD99E /* FFAssetPickerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFAssetPickerManager.m; sourceTree = "<group>"; };
+		16647B2419449B99004BD99E /* FFAssetPickerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFAssetPickerItem.h; sourceTree = "<group>"; };
+		16647B2519449B9A004BD99E /* FFAssetPickerItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFAssetPickerItem.m; sourceTree = "<group>"; };
+		16647B2719449C83004BD99E /* FFAssetPickerBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFAssetPickerBar.h; sourceTree = "<group>"; };
+		16647B2819449C83004BD99E /* FFAssetPickerBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFAssetPickerBar.m; sourceTree = "<group>"; };
+		16647B2B1944ABCA004BD99E /* FFImagePicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FFImagePicker.bundle; sourceTree = "<group>"; };
 		16686623192675C2009BD05D /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		16686625192675E1009BD05D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		16686627192675F9009BD05D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -909,7 +915,6 @@
 		16647B0819440E2C004BD99E /* FFImagePicker */ = {
 			isa = PBXGroup;
 			children = (
-				16647B1819441976004BD99E /* Overlay@2x.png */,
 				16647B0919440E45004BD99E /* FFAsset.h */,
 				16647B0A19440E45004BD99E /* FFAsset.m */,
 				16647B12194413B9004BD99E /* FFAssetCell.h */,
@@ -921,6 +926,11 @@
 				16647B1C1944283B004BD99E /* FFAlbumTablePicker.m */,
 				16647B1E19445EF8004BD99E /* FFAssetPickerManager.h */,
 				16647B1F19445EF8004BD99E /* FFAssetPickerManager.m */,
+				16647B2419449B99004BD99E /* FFAssetPickerItem.h */,
+				16647B2519449B9A004BD99E /* FFAssetPickerItem.m */,
+				16647B2719449C83004BD99E /* FFAssetPickerBar.h */,
+				16647B2819449C83004BD99E /* FFAssetPickerBar.m */,
+				16647B2B1944ABCA004BD99E /* FFImagePicker.bundle */,
 			);
 			path = FFImagePicker;
 			sourceTree = "<group>";
@@ -1709,13 +1719,13 @@
 			files = (
 				1620DD1B1913EE4300AE810C /* Icon_120_120@2x.png in Resources */,
 				16A2F77C1902663100751B82 /* InfoPlist.strings in Resources */,
-				16647B1919441976004BD99E /* Overlay@2x.png in Resources */,
 				16232D301916743B0043F840 /* NextStep.bundle in Resources */,
 				167E7126190B82040014ADEB /* transfer_bg.png in Resources */,
 				1620DD1C1913EE4300AE810C /* Icon_200_200@2x.png in Resources */,
 				16ED1D58190B78B9007EC697 /* GCDWebUploader.bundle in Resources */,
 				16A2F7841902663100751B82 /* Images.xcassets in Resources */,
 				167E7127190B82040014ADEB /* transfer_bg@2x.png in Resources */,
+				16647B2C1944ABCA004BD99E /* FFImagePicker.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1759,6 +1769,7 @@
 				16FD4D321930D9A600EC8B74 /* FFHttpTask.m in Sources */,
 				166E9BE71939B7EB0043D5F9 /* FFBluetoothDeviceView.m in Sources */,
 				16CF244819109CF00029F3D2 /* Track.m in Sources */,
+				16647B2619449B9A004BD99E /* FFAssetPickerItem.m in Sources */,
 				169B3F2C1940251100A92F2D /* NSNull+FireFly.m in Sources */,
 				16BCB5741926716500B12CBF /* CAStreamBasicDescription.cpp in Sources */,
 				16A2F8FF1902D5C100751B82 /* SYAppStart.m in Sources */,
@@ -1881,6 +1892,7 @@
 				16A2F8F91902D5C100751B82 /* FMDatabaseQueue.m in Sources */,
 				166E9BDC1939A26B0043D5F9 /* FFCircularProgressView.m in Sources */,
 				16906484193E0E8600AF7C97 /* FFGraffitiViewController.m in Sources */,
+				16647B2919449C83004BD99E /* FFAssetPickerBar.m in Sources */,
 				16CF242C1910948B0029F3D2 /* DOUAudioEventLoop.m in Sources */,
 				166919E61930C346008E385B /* AFHTTPSessionManager.m in Sources */,
 				1690648B193E121800AF7C97 /* FFGraffitiView.m in Sources */,

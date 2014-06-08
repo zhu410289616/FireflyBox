@@ -37,47 +37,76 @@
     return self;
 }
 
-- (ALAsset *)isExists:(ALAsset *)tAsset
+- (FFAsset *)isExists:(FFAsset *)ffAsset
 {
     if (IS_IOS6_OR_HIGHER) {
-        NSURL *ffAssetPropertyURL = [tAsset valueForProperty:ALAssetPropertyAssetURL];
+        NSURL *ffAssetPropertyURL = [ffAsset.asset valueForProperty:ALAssetPropertyAssetURL];
         NSString *srcFFAssetPropertyURL = ffAssetPropertyURL.absoluteString;
         PLog(@"srcFFAssetPropertyURL: %@", srcFFAssetPropertyURL);
         
-        for (ALAsset *asset in self.assetList) {
-            NSURL *assetPropertyURL = [asset valueForProperty:ALAssetPropertyAssetURL];
+        for (FFAsset *tempFFAsset in self.assetList) {
+            NSURL *assetPropertyURL = [tempFFAsset.asset valueForProperty:ALAssetPropertyAssetURL];
             NSString *strAssetPropertyURL = assetPropertyURL.absoluteString;
             PLog(@"strAssetPropertyURL: %@", strAssetPropertyURL);
             if ([srcFFAssetPropertyURL compare:strAssetPropertyURL] == NSOrderedSame) {
-                return asset;
+                return tempFFAsset;
             }
         }
     } else {
-        NSURL *ffAssetPropertyURL = [[tAsset valueForProperty:ALAssetPropertyURLs] valueForKey:[[[tAsset valueForProperty:ALAssetPropertyURLs] allKeys] objectAtIndex:0]];
+        NSURL *ffAssetPropertyURL = [[ffAsset.asset valueForProperty:ALAssetPropertyURLs] valueForKey:[[[ffAsset.asset valueForProperty:ALAssetPropertyURLs] allKeys] objectAtIndex:0]];
         NSString *srcFFAssetPropertyURL = ffAssetPropertyURL.absoluteString;
         PLog(@"srcFFAssetPropertyURL: %@", srcFFAssetPropertyURL);
         
-        for (ALAsset *asset in self.assetList) {
-            NSURL *assetPropertyURL = [[asset valueForProperty:ALAssetPropertyURLs] valueForKey:[[[asset valueForProperty:ALAssetPropertyURLs] allKeys] objectAtIndex:0]];
+        for (FFAsset *tempFFAsset in self.assetList) {
+            NSURL *assetPropertyURL = [[tempFFAsset.asset valueForProperty:ALAssetPropertyURLs] valueForKey:[[[tempFFAsset.asset valueForProperty:ALAssetPropertyURLs] allKeys] objectAtIndex:0]];
             NSString *strAssetPropertyURL = assetPropertyURL.absoluteString;
             PLog(@"strAssetPropertyURL: %@", strAssetPropertyURL);
             if ([srcFFAssetPropertyURL compare:strAssetPropertyURL] == NSOrderedSame) {
-                return asset;
+                return tempFFAsset;
             }
         }
     }
     return nil;
 }
 
-- (void)addAsset:(ALAsset *)tAsset
+- (BOOL)isLastAsset:(FFAsset *)ffAsset
 {
-    [self.assetList addObject:tAsset];
+    if (IS_IOS6_OR_HIGHER) {
+        NSURL *ffAssetPropertyURL = [ffAsset.asset valueForProperty:ALAssetPropertyAssetURL];
+        NSString *srcFFAssetPropertyURL = ffAssetPropertyURL.absoluteString;
+        
+        FFAsset *lastAsset = [self.assetList lastObject];
+        NSURL *assetPropertyURL = [lastAsset.asset valueForProperty:ALAssetPropertyAssetURL];
+        NSString *strAssetPropertyURL = assetPropertyURL.absoluteString;
+        if ([srcFFAssetPropertyURL compare:strAssetPropertyURL] == NSOrderedSame) {
+            return YES;
+        }
+    } else {
+        NSURL *ffAssetPropertyURL = [[ffAsset.asset valueForProperty:ALAssetPropertyURLs] valueForKey:[[[ffAsset.asset valueForProperty:ALAssetPropertyURLs] allKeys] objectAtIndex:0]];
+        NSString *srcFFAssetPropertyURL = ffAssetPropertyURL.absoluteString;
+        
+        FFAsset *lastAsset = [self.assetList lastObject];
+        NSURL *assetPropertyURL = [[lastAsset.asset valueForProperty:ALAssetPropertyURLs] valueForKey:[[[lastAsset.asset valueForProperty:ALAssetPropertyURLs] allKeys] objectAtIndex:0]];
+        NSString *strAssetPropertyURL = assetPropertyURL.absoluteString;
+        if ([srcFFAssetPropertyURL compare:strAssetPropertyURL] == NSOrderedSame) {
+            return YES;
+        }
+    }
+    
+    return NO;
 }
 
-- (void)removeAsset:(ALAsset *)tAsset
+- (void)addAsset:(FFAsset *)ffAsset
 {
-    ALAsset *asset = [self isExists:tAsset];
-    [self.assetList removeObject:asset];
+    [self.assetList addObject:ffAsset];
+}
+
+- (void)removeAsset:(FFAsset *)ffAsset
+{
+    FFAsset *tempFFAsset = [self isExists:ffAsset];
+    if (tempFFAsset) {
+        [self.assetList removeObject:tempFFAsset];
+    }
 }
 
 - (void)removeAllAssets

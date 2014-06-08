@@ -8,7 +8,10 @@
 
 #import "FFBaseViewController.h"
 #import "FFAssetSelectionDelegate.h"
+#import "FFAssetPickerBar.h"
 
-@interface FFGifMakerViewController : FFBaseViewController<FFAssetSelectionDelegate>
+@interface FFGifMakerViewController : FFBaseViewController<FFAssetSelectionDelegate, FFAssetDelegate>
+
+@property (nonatomic, strong) FFAssetPickerBar *assetPickerBar;
 
 @end

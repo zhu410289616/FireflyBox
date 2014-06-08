@@ -69,7 +69,7 @@
             overlayView.hidden = asset.selected ? NO : YES;
         } else {
             if (overlayImage == nil) {
-                overlayImage = [UIImage imageNamed:@"Overlay.png"];
+                overlayImage = [UIImage imageNamed:@"FFImagePicker.bundle/overlay.png"];
             }
             UIImageView *overlayView = [[UIImageView alloc] initWithImage:overlayImage];
             [_overlayViewArray addObject:overlayView];

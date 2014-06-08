@@ -13,6 +13,10 @@
 
 @interface FFAssetTablePicker : FFTableViewController<FFAssetDelegate>
 
+@property (nonatomic, strong) UIView *bottomTipView;
+@property (nonatomic, strong) UILabel *tipLabel;
+@property (nonatomic, strong) UIActivityIndicatorView *indicatorView;
+
 @property (nonatomic, weak) id<FFAssetSelectionDelegate> delegate;
 @property (nonatomic, strong) ALAssetsGroup *assetGroup;
 @property (nonatomic, strong) NSThread *preparePhotosThread;

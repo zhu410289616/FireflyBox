@@ -15,11 +15,11 @@
 @required
 
 - (void)selectedAssets:(NSArray *)ffAssets isUpdated:(BOOL)isUpdated;
-- (BOOL)hadSelectedAsset:(FFAsset *)ffAsset;
-- (void)updateAssetStatus:(FFAsset *)ffAsset isSelected:(BOOL)isSelected;
 
 @optional
 
+- (BOOL)hadSelectedAsset:(FFAsset *)ffAsset;
+- (void)updateAssetStatus:(FFAsset *)ffAsset isSelected:(BOOL)isSelected;
 - (BOOL)shouldSelectAsset:(FFAsset *)ffAsset previousCount:(NSUInteger)previousCount;
 - (int)shouldSelectAssetCount;
 - (BOOL)isFirstSelectedAsset:(FFAsset *)ffAsset;

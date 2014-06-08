@@ -9,6 +9,8 @@
 #import "FFGifMakerViewController.h"
 #import "FFAlbumTablePicker.h"
 
+#import "FFAssetPickerBar.h"
+
 @interface FFGifMakerViewController ()
 
 @end
@@ -32,6 +34,10 @@
     [addButton styleWithBackgroundColor:[UIColor orangeColor]];
     [addButton addTarget:self action:@selector(doAddButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:addButton];
+    
+    self.assetPickerBar = [[FFAssetPickerBar alloc] initWithFrame:CGRectMake(0, 100, GLOBAL_SCREEN_WIDTH, 96)];
+    self.assetPickerBar.ffAssetDelegate = self;
+    [self.view addSubview:self.assetPickerBar];
     
 }
 
@@ -63,6 +69,22 @@
     [ffAssets enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         PLog(@"obj: %@", obj);
     }];
+    
+    [self.assetPickerBar.selectedAssets removeAllObjects];
+    [self.assetPickerBar.selectedAssets addObjectsFromArray:ffAssets];
+    [self.assetPickerBar reloadData];
+}
+
+#pragma mark FFAssetDelegate method
+
+- (void)assetSelected:(FFAsset *)ffAsset
+{
+    PLog(@"ffAsset: %@", ffAsset);
+}
+
+- (void)assetCanceled:(FFAsset *)ffAsset
+{
+    [self.assetPickerBar removeAsset:ffAsset];
 }
 
 @end
