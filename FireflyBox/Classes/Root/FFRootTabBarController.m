@@ -11,7 +11,7 @@
 #import "FFActionSheetView.h"
 #import "FFNextStepViewController.h"
 #import "FFAudioRecorderViewController.h"
-#import "FFGifMakerViewController.h"
+#import "FFGIFCamViewController.h"
 #import "FFBluetoothTransferViewController.h"
 #import "FFGraffitiViewController.h"
 
@@ -22,6 +22,16 @@
 @end
 
 @implementation FFRootTabBarController
+
++ (id)sharedInstance
+{
+    static id sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[self alloc] init];
+    });
+    return sharedInstance;
+}
 
 - (void)viewDidLoad
 {
@@ -131,12 +141,12 @@
     [self presentViewController:nav animated:YES completion:nil];
 }
 
-- (void)doShowGifMakerAction
+- (void)doShowGifAction
 {
     [[NSUserDefaults standardUserDefaults] setValue:@YES forKey:SHOULD_UPDATE_FILE_INFO];
     
-    FFGifMakerViewController *gifMakerController = [[FFGifMakerViewController alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:gifMakerController];
+    FFGIFCamViewController *gifCamController = [[FFGIFCamViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:gifCamController];
     [self presentViewController:nav animated:YES completion:nil];
 }
 
@@ -169,7 +179,7 @@
             [self doShowAudioRecorderAction];//录音
             break;
         case 3:
-            [self doShowGifMakerAction];
+            [self doShowGifAction];
             break;
         case 4:
             [self doShowBluetoothAction];

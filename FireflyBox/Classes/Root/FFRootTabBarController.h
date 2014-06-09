@@ -21,6 +21,8 @@
 @property (nonatomic, strong) FFSettingViewController *settingController;
 @property (nonatomic, strong) FFAboutViewController *aboutController;
 
++ (id)sharedInstance;
+
 - (void)hideFFTabBarView;
 - (void)showFFTabBarView;
 

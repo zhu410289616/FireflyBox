@@ -92,6 +92,12 @@
 		166E9BE71939B7EB0043D5F9 /* FFBluetoothDeviceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 166E9BE61939B7EB0043D5F9 /* FFBluetoothDeviceView.m */; };
 		166E9BED1939D3C50043D5F9 /* FFCircularProgressButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 166E9BEC1939D3C50043D5F9 /* FFCircularProgressButton.m */; };
 		166E9BF31939DEF90043D5F9 /* FFBluetoothDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 166E9BF21939DEF90043D5F9 /* FFBluetoothDevice.m */; };
+		167057B11945EDB8000EA5D4 /* FFAVCamPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 167057B01945EDB8000EA5D4 /* FFAVCamPreviewView.m */; };
+		167057B41945EE39000EA5D4 /* FFAVCamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 167057B31945EE39000EA5D4 /* FFAVCamViewController.m */; };
+		167057B81945F77D000EA5D4 /* FFGIFCamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 167057B71945F77D000EA5D4 /* FFGIFCamViewController.m */; };
+		167057BC1945FE5B000EA5D4 /* FFPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 167057BB1945FE5B000EA5D4 /* FFPhotoView.m */; };
+		167057BF1946021E000EA5D4 /* FFPhotoBrower.m in Sources */ = {isa = PBXBuildFile; fileRef = 167057BE1946021E000EA5D4 /* FFPhotoBrower.m */; };
+		167057C2194604C7000EA5D4 /* FFPhotosDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 167057C1194604C7000EA5D4 /* FFPhotosDataSource.m */; };
 		1676704419362CB70063E74F /* FFBluetoothReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 1676704319362CB70063E74F /* FFBluetoothReceiver.m */; };
 		1676704719362CCC0063E74F /* FFBluetoothSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 1676704619362CCC0063E74F /* FFBluetoothSender.m */; };
 		16798A3D191E720100726FBD /* NSMutableArray+FireFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 16798A3C191E720100726FBD /* NSMutableArray+FireFly.m */; };
@@ -386,6 +392,18 @@
 		166E9BF11939DEF90043D5F9 /* FFBluetoothDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBluetoothDevice.h; sourceTree = "<group>"; };
 		166E9BF21939DEF90043D5F9 /* FFBluetoothDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBluetoothDevice.m; sourceTree = "<group>"; };
 		166E9BF41939E5710043D5F9 /* FFBluetoothConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFBluetoothConfig.h; sourceTree = "<group>"; };
+		167057AF1945EDB8000EA5D4 /* FFAVCamPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFAVCamPreviewView.h; sourceTree = "<group>"; };
+		167057B01945EDB8000EA5D4 /* FFAVCamPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFAVCamPreviewView.m; sourceTree = "<group>"; };
+		167057B21945EE39000EA5D4 /* FFAVCamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFAVCamViewController.h; sourceTree = "<group>"; };
+		167057B31945EE39000EA5D4 /* FFAVCamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFAVCamViewController.m; sourceTree = "<group>"; };
+		167057B61945F77D000EA5D4 /* FFGIFCamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFGIFCamViewController.h; sourceTree = "<group>"; };
+		167057B71945F77D000EA5D4 /* FFGIFCamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFGIFCamViewController.m; sourceTree = "<group>"; };
+		167057BA1945FE5B000EA5D4 /* FFPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFPhotoView.h; sourceTree = "<group>"; };
+		167057BB1945FE5B000EA5D4 /* FFPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFPhotoView.m; sourceTree = "<group>"; };
+		167057BD1946021E000EA5D4 /* FFPhotoBrower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFPhotoBrower.h; sourceTree = "<group>"; };
+		167057BE1946021E000EA5D4 /* FFPhotoBrower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFPhotoBrower.m; sourceTree = "<group>"; };
+		167057C0194604C7000EA5D4 /* FFPhotosDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFPhotosDataSource.h; sourceTree = "<group>"; };
+		167057C1194604C7000EA5D4 /* FFPhotosDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFPhotosDataSource.m; sourceTree = "<group>"; };
 		1676704219362CB70063E74F /* FFBluetoothReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBluetoothReceiver.h; sourceTree = "<group>"; };
 		1676704319362CB70063E74F /* FFBluetoothReceiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBluetoothReceiver.m; sourceTree = "<group>"; };
 		1676704519362CCC0063E74F /* FFBluetoothSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBluetoothSender.h; sourceTree = "<group>"; };
@@ -898,6 +916,7 @@
 		16647B0319440454004BD99E /* PhotoMaker */ = {
 			isa = PBXGroup;
 			children = (
+				167057B51945F768000EA5D4 /* GifCamera */,
 				16647B0419440454004BD99E /* GifMaker */,
 			);
 			path = PhotoMaker;
@@ -949,6 +968,10 @@
 			children = (
 				166E7D8D1931D3780066A468 /* FFCameraViewController.h */,
 				166E7D8E1931D3780066A468 /* FFCameraViewController.m */,
+				167057AF1945EDB8000EA5D4 /* FFAVCamPreviewView.h */,
+				167057B01945EDB8000EA5D4 /* FFAVCamPreviewView.m */,
+				167057B21945EE39000EA5D4 /* FFAVCamViewController.h */,
+				167057B31945EE39000EA5D4 /* FFAVCamViewController.m */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -997,6 +1020,28 @@
 				169B3F2E1940650A00A92F2D /* FFCAShapeCircularProgressView.m */,
 			);
 			path = FFProgressView;
+			sourceTree = "<group>";
+		};
+		167057B51945F768000EA5D4 /* GifCamera */ = {
+			isa = PBXGroup;
+			children = (
+				167057B61945F77D000EA5D4 /* FFGIFCamViewController.h */,
+				167057B71945F77D000EA5D4 /* FFGIFCamViewController.m */,
+			);
+			path = GifCamera;
+			sourceTree = "<group>";
+		};
+		167057B91945FE45000EA5D4 /* FFPhotoBrower */ = {
+			isa = PBXGroup;
+			children = (
+				167057BA1945FE5B000EA5D4 /* FFPhotoView.h */,
+				167057BB1945FE5B000EA5D4 /* FFPhotoView.m */,
+				167057BD1946021E000EA5D4 /* FFPhotoBrower.h */,
+				167057BE1946021E000EA5D4 /* FFPhotoBrower.m */,
+				167057C0194604C7000EA5D4 /* FFPhotosDataSource.h */,
+				167057C1194604C7000EA5D4 /* FFPhotosDataSource.m */,
+			);
+			path = FFPhotoBrower;
 			sourceTree = "<group>";
 		};
 		167E711E190B7FE80014ADEB /* Images */ = {
@@ -1167,6 +1212,7 @@
 		16A2F8831902D5AC00751B82 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				167057B91945FE45000EA5D4 /* FFPhotoBrower */,
 				16647B0E19441099004BD99E /* FFPageControl */,
 				16647B0819440E2C004BD99E /* FFImagePicker */,
 				166E9BD51939A26B0043D5F9 /* FFProgressView */,
@@ -1765,7 +1811,9 @@
 				16A2F8F51902D5C100751B82 /* FMDatabase+InMemoryOnDiskIO.m in Sources */,
 				161FF06319124B4F00CDD559 /* FFFileViewController.m in Sources */,
 				1658B52B192BA42200B8CF4E /* FFConvertHelper.m in Sources */,
+				167057B81945F77D000EA5D4 /* FFGIFCamViewController.m in Sources */,
 				16FD4D2A1930D34000EC8B74 /* FFSerialQueue.m in Sources */,
+				167057BF1946021E000EA5D4 /* FFPhotoBrower.m in Sources */,
 				16FD4D321930D9A600EC8B74 /* FFHttpTask.m in Sources */,
 				166E9BE71939B7EB0043D5F9 /* FFBluetoothDeviceView.m in Sources */,
 				16CF244819109CF00029F3D2 /* Track.m in Sources */,
@@ -1816,6 +1864,7 @@
 				16059CD1191F267D0072DD8F /* Reachability.m in Sources */,
 				166919EC1930C346008E385B /* AFURLSessionManager.m in Sources */,
 				1624B8841909311C0018B8FE /* FFTableViewController.m in Sources */,
+				167057BC1945FE5B000EA5D4 /* FFPhotoView.m in Sources */,
 				16BCB56F1926716500B12CBF /* GLLevelMeter.m in Sources */,
 				161A082419338C3E00570BB6 /* FFBaseFlurryEvent.m in Sources */,
 				1620DCD61913338300AE810C /* FFFileTypeIconView.m in Sources */,
@@ -1842,6 +1891,7 @@
 				16A2F8F01902D5C100751B82 /* EGOCache.m in Sources */,
 				16ED1D53190B78B9007EC697 /* GCDWebServerURLEncodedFormRequest.m in Sources */,
 				16798A40191E86FA00726FBD /* FFBaseLoadingView.m in Sources */,
+				167057B11945EDB8000EA5D4 /* FFAVCamPreviewView.m in Sources */,
 				16FD4D4B19310ADE00EC8B74 /* FFRunnableTask.m in Sources */,
 				166E9BE11939B2A70043D5F9 /* FFCircularProgressLayer.m in Sources */,
 				16FD4D2C1930D34000EC8B74 /* FFBaseObject.m in Sources */,
@@ -1875,6 +1925,7 @@
 				166919E91930C346008E385B /* AFURLConnectionOperation.m in Sources */,
 				161FF0771912780300CDD559 /* FFTrack.m in Sources */,
 				16A5B13D190C0C8D000FA5C4 /* FFSingleTextCell.m in Sources */,
+				167057C2194604C7000EA5D4 /* FFPhotosDataSource.m in Sources */,
 				16CF24291910948B0029F3D2 /* DOUAudioAnalyzer+Default.m in Sources */,
 				16CF243A1910948B0029F3D2 /* DOUSimpleHTTPRequest.m in Sources */,
 				161FF06D191264DA00CDD559 /* FFTextReaderViewController.m in Sources */,
@@ -1930,6 +1981,7 @@
 				166E7D931931D3B00066A468 /* FFTextRecorderViewController.m in Sources */,
 				1620DCF91913807200AE810C /* UIColor+FireFly.m in Sources */,
 				16DAD67F1902DA6D00BFE84C /* GTMBase64.m in Sources */,
+				167057B41945EE39000EA5D4 /* FFAVCamViewController.m in Sources */,
 				1620DCFA1913807200AE810C /* UIDevice+FireFly.m in Sources */,
 				1624B89E19093C140018B8FE /* FFHomeViewController.m in Sources */,
 			);
