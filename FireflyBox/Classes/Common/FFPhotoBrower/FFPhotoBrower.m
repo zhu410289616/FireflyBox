@@ -7,6 +7,7 @@
 //
 
 #import "FFPhotoBrower.h"
+#import "FFPhotoCollectionCell.h"
 
 @interface FFPhotoBrower ()
 
@@ -22,6 +23,22 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    /**
+     *  代码初始化
+     *  需要用以下的方式处理，否则init会崩溃
+     */
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    flowLayout.minimumLineSpacing = 0.0f;//cell间的间隔
+    //1. 设置collectionViewLayout
+    self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:flowLayout];
+    //2. 注册cell类型
+    [self.collectionView registerClass:[FFPhotoCollectionCell class] forCellWithReuseIdentifier:@"PhotoCollectionCell"];
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
+    self.collectionView.pagingEnabled = YES;
+    [self.view addSubview:self.collectionView];
     
     self.photosDataSource = [[FFPhotosDataSource alloc] init];
     
@@ -47,6 +64,60 @@
 - (BOOL)prefersStatusBarHidden
 {
     return self.isFullScreen;
+}
+
+#pragma mark - Orientation
+#pragma mark -
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    FFLog(@"%@", NSStringFromSelector(_cmd));
+    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+    
+    // ensure the item is dislayed after rotation
+    _currentIndexPath = [self indexPathForCurrentItem];
+    
+}
+
+// changes in this method will be included with view controller's animation block
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [super willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
+    FFLog(@"%@", NSStringFromSelector(_cmd));
+    
+    [self.collectionView.collectionViewLayout invalidateLayout];
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    FFLog(@"%@", NSStringFromSelector(_cmd));
+    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        if (_currentIndexPath) {
+            FFLog(@"item: %li", (long)_currentIndexPath.item);
+            
+            [self.collectionView.collectionViewLayout invalidateLayout];
+            [self.collectionView scrollToItemAtIndexPath:_currentIndexPath atScrollPosition:UICollectionViewScrollPositionNone animated:FALSE];
+            
+        }
+    });
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAllButUpsideDown;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationPortrait;
+}
+
+- (BOOL)shouldAutorotate {
+    return TRUE;
 }
 
 - (void)didReceiveMemoryWarning
@@ -158,14 +229,14 @@
 
 - (void)toggleFullScreen
 {
-    PLog(@"toggling full screen");
+    FFLog(@"toggling full screen");
     
     self.isFullScreen = !self.isFullScreen;
     
     if (!self.isFullScreen) {
         // fade in navigation
         
-        PLog(@"fading in");
+        FFLog(@"fading in");
         
         [UIView animateWithDuration:0.4 animations:^{
             [self setNeedsStatusBarAppearanceUpdate];
@@ -176,7 +247,7 @@
     } else {
         // fade out navigation
         
-        PLog(@"fading out");
+        FFLog(@"fading out");
         
         [UIView animateWithDuration:0.4 animations:^{
             [self setNeedsStatusBarAppearanceUpdate];
@@ -192,12 +263,12 @@
 
 - (void)logRect:(CGRect)rect withName:(NSString *)name
 {
-    PLog(@"%@: %f, %f / %f, %f", name, rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
+    LOG_FRAME(name, rect);
 }
 
 - (void)logLayout
 {
-    PLog(@"### PZViewController ###");
+    FFLog(@"### FFPhotoBrower ###");
     [self logRect:self.view.window.bounds withName:@"self.view.window.bounds"];
     [self logRect:self.view.window.frame withName:@"self.view.window.frame"];
     
@@ -216,8 +287,12 @@
     return self.photosDataSource.count;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoView" forIndexPath:indexPath];
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *PhotoCollectionCell = @"PhotoCollectionCell";
+    FFPhotoCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:PhotoCollectionCell forIndexPath:indexPath];
+    
+    [self logRect:cell.frame withName:[NSString stringWithFormat:@"FFPhotoCollectionCell: %ld", (long)indexPath.row]];
     
     UIView *view = [cell viewWithTag:1];
     if ([view isKindOfClass:[FFPhotoView class]]) {
@@ -229,7 +304,7 @@
         [self.photosDataSource photoForIndex:indexPath.item withCompletionBlock:^(UIImage *photo, NSError *error) {
             [photoView stopWaiting];
             if (error != nil) {
-                PLog(@"Error: %@", error);
+                FFLog(@"Error: %@", error);
             }
             else {
                 photoView.alpha = 0.0f;
@@ -256,7 +331,8 @@
 #pragma mark - Private
 #pragma mark -
 
-- (UIImage *)screenshotOfCurrentItem {
+- (UIImage *)screenshotOfCurrentItem
+{
     if (!floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
         NSCAssert(FALSE, @"iOS 7 or later is required.");
     }

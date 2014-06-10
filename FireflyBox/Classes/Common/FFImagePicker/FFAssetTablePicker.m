@@ -166,7 +166,7 @@
             });
         }
         @catch (NSException *exception) {
-            PLog(@"preparePhotos failed...exception: %@", exception);
+            FFLog(@"preparePhotos failed...exception: %@", exception);
         }
     }
 }

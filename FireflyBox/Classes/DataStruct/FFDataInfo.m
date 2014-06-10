@@ -14,7 +14,7 @@
 {
     if (self = [super init]) {
         for (NSString *str in fileAttributes) {
-            PLog(@"%@ : %@", str, [fileAttributes objectForKey:str]);
+            FFLog(@"%@ : %@", str, [fileAttributes objectForKey:str]);
         }
         long fileNumber = [[fileAttributes objectForKey:@"NSFileSystemFileNumber"] longValue];
         NSString *fileType = [fileAttributes objectForKey:@"NSFileType"];

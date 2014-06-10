@@ -56,7 +56,7 @@
         char buf[5];
         const char *dataFormat = OSTypeToStr(buf, _recorder->DataFormat().mFormatID);
         NSString *description = [NSString stringWithFormat:@"(%ld ch. %s @ %g Hz)", _recorder->DataFormat().NumberChannels(), dataFormat, _recorder->DataFormat().mSampleRate, nil];
-        PLog(@"description: %@", description);
+        FFLog(@"description: %@", description);
 		
         if (_delegate) {
             [_delegate audioRecorder:self didStart:description name:recordFileName];

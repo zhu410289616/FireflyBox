@@ -12,7 +12,7 @@
 
 - (void)initRecord
 {
-    PLog(@"initRecord...");
+    FFLog(@"initRecord...");
     
     [self.dbQueue inDatabase:^(FMDatabase *db) {
         NSString *sql = [NSString stringWithFormat:@"create table if not exists RUN_RECORD_DATA (_id integer primary key autoincrement not null, recordid integer, runnerid integer, onerunid integer, oldlatitude integer, oldlongitude integer, newlatitude integer, newlongitude integer, createtime integer)"];

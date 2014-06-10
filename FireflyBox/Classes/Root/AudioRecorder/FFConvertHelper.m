@@ -17,7 +17,7 @@ const static int MP3_SIZE = 8192;
 + (void)convertToMp3WithCafFilePath:(NSString *)tCafFilePath
 {
     NSString *mp3FilePath = [tCafFilePath stringByReplacingOccurrencesOfString:[tCafFilePath pathExtension] withString:@"mp3"];
-    PLog(@"mp3FilePath: %@", mp3FilePath);
+    FFLog(@"mp3FilePath: %@", mp3FilePath);
     
     [self convertCaf2Mp3:tCafFilePath destPath:mp3FilePath];
     

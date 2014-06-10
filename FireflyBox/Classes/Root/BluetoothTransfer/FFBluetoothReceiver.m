@@ -32,7 +32,7 @@
     switch (peripheral.state) {
         case CBPeripheralManagerStatePoweredOn:
         {
-            PLog(@"CBPeripheralManagerStatePoweredOn...");
+            FFLog(@"CBPeripheralManagerStatePoweredOn...");
             CBUUID *characteristicUUID = [CBUUID UUIDWithString:kTransferCharacteristicUUID];
             self.cbMutableCharacteristic = [[CBMutableCharacteristic alloc] initWithType:characteristicUUID properties:CBCharacteristicPropertyNotify | CBCharacteristicPropertyRead | CBCharacteristicPropertyWrite value:nil permissions:CBAttributePermissionsReadable | CBAttributePermissionsWriteable];
             
@@ -49,7 +49,7 @@
             break;
         case CBPeripheralManagerStatePoweredOff:
         {
-            PLog(@"CBPeripheralManagerStatePoweredOff...");
+            FFLog(@"CBPeripheralManagerStatePoweredOff...");
         }
             break;
             
@@ -78,7 +78,7 @@
 
 - (void)peripheralManagerDidStartAdvertising:(CBPeripheralManager *)peripheral error:(NSError *)error
 {
-    PLog(@"peripheralManagerDidStartAdvertising: %@, error: %@", peripheral, error);
+    FFLog(@"peripheralManagerDidStartAdvertising: %@, error: %@", peripheral, error);
 }
 
 - (void)peripheralManager:(CBPeripheralManager *)peripheral didReceiveReadRequest:(CBATTRequest *)request
@@ -103,7 +103,7 @@
         if ([request.characteristic.UUID isEqual:self.cbMutableCharacteristic.UUID]) {
             NSData *data = request.value;
             NSString *receiveData = [NSString stringWithData:data];
-            PLog(@"peripheralManager receiveData: %@", receiveData);
+            FFLog(@"peripheralManager receiveData: %@", receiveData);
             
             request.value = [[NSString stringWithFormat:@"receive %@", receiveData] dataUsingEncoding:NSUTF8StringEncoding];
             [peripheral respondToRequest:request withResult:CBATTErrorSuccess];

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1605955019474346005A9A05 /* FFPhotoCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1605954F19474346005A9A05 /* FFPhotoCollectionCell.m */; };
 		16059CD1191F267D0072DD8F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 16059CD0191F267D0072DD8F /* Reachability.m */; };
 		16059CD4191F2A370072DD8F /* FFReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 16059CD3191F2A370072DD8F /* FFReachability.m */; };
 		161A082019338A7200570BB6 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 161A081F19338A7200570BB6 /* Crashlytics.framework */; };
@@ -228,6 +229,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1605954E19474346005A9A05 /* FFPhotoCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFPhotoCollectionCell.h; sourceTree = "<group>"; };
+		1605954F19474346005A9A05 /* FFPhotoCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFPhotoCollectionCell.m; sourceTree = "<group>"; };
 		16059CCF191F267D0072DD8F /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		16059CD0191F267D0072DD8F /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		16059CD2191F2A370072DD8F /* FFReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFReachability.h; sourceTree = "<group>"; };
@@ -1040,6 +1043,8 @@
 				167057BE1946021E000EA5D4 /* FFPhotoBrower.m */,
 				167057C0194604C7000EA5D4 /* FFPhotosDataSource.h */,
 				167057C1194604C7000EA5D4 /* FFPhotosDataSource.m */,
+				1605954E19474346005A9A05 /* FFPhotoCollectionCell.h */,
+				1605954F19474346005A9A05 /* FFPhotoCollectionCell.m */,
 			);
 			path = FFPhotoBrower;
 			sourceTree = "<group>";
@@ -1966,6 +1971,7 @@
 				16ED1D55190B78B9007EC697 /* GCDWebServerErrorResponse.m in Sources */,
 				16A2F8F31902D5C100751B82 /* EGOImageLoader.m in Sources */,
 				16ED1D59190B78B9007EC697 /* GCDWebUploader.m in Sources */,
+				1605955019474346005A9A05 /* FFPhotoCollectionCell.m in Sources */,
 				16BCB56C1926716500B12CBF /* AQPlayer.mm in Sources */,
 				16CF244619109CF00029F3D2 /* PlayerViewController.m in Sources */,
 				16A2F8F11902D5C100751B82 /* EGOImageButton.m in Sources */,

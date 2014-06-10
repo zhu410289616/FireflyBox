@@ -42,7 +42,7 @@
         }
     }
     @catch (NSException *exception) {
-        PLog(@"string md5 encode error... %@", tString);
+        FFLog(@"string md5 encode error... %@", tString);
     }
     return tString;
 }
@@ -148,7 +148,7 @@
     NSStringEncoding encoding;
     while (0 != (encoding = *encodings++)) {
         [mutableStr appendFormat:@"%@ == %in", [NSString localizedNameOfStringEncoding:encoding], encoding];
-        PLog(@"mutableStr: %@", mutableStr);
+        FFLog(@"mutableStr: %@", mutableStr);
     }
 }
 

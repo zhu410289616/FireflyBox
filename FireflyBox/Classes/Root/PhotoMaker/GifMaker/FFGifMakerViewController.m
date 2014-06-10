@@ -67,7 +67,7 @@
 - (void)selectedAssets:(NSArray *)ffAssets isUpdated:(BOOL)isUpdated
 {
     [ffAssets enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        PLog(@"obj: %@", obj);
+        FFLog(@"obj: %@", obj);
     }];
     
     [self.assetPickerBar.selectedAssets removeAllObjects];
@@ -79,7 +79,7 @@
 
 - (void)assetSelected:(FFAsset *)ffAsset
 {
-    PLog(@"ffAsset: %@", ffAsset);
+    FFLog(@"ffAsset: %@", ffAsset);
 }
 
 - (void)assetCanceled:(FFAsset *)ffAsset

@@ -64,7 +64,7 @@ static int tempNum = 1;
             break;
         case FFFileTypeUnkown:
         {
-            PLog(@"FFFileTypeUnkown...");
+            FFLog(@"FFFileTypeUnkown...");
             FFFileReaderViewController *readerController = [[FFFileReaderViewController alloc] init];
             readerController.title = _dataInfo.dataName;
             readerController.filePath = _dataInfo.dataPath;

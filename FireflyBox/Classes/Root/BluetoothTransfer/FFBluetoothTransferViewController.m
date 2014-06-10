@@ -118,7 +118,7 @@ static NSString *const kServiceUUID = @"50BD367B-6B17-4E81-B6E9-F62016F26E7B";
 - (void)doBluetoothDeviceAction:(id)sender
 {
     FFBluetoothDeviceView *deviceView = sender;
-    PLog(@"deviceView.tag: %d", deviceView.tag);
+    FFLog(@"deviceView.tag: %d", deviceView.tag);
     
     CBPeripheral *peripheral = deviceView.bluetoothDevice.peripheral;
     [self.bluetoothSender connectPeripheral:peripheral];
@@ -168,7 +168,7 @@ static NSString *const kServiceUUID = @"50BD367B-6B17-4E81-B6E9-F62016F26E7B";
 {
     NSData *data = characteristic.value;
     NSString *receiveData = [NSString stringWithData:data];
-    PLog(@"didUpdateValue receiveData: %@", receiveData);
+    FFLog(@"didUpdateValue receiveData: %@", receiveData);
     
     NSString *getData = [NSString stringWithFormat:@"%@", receiveData];
     NSData *writeData = [getData dataUsingEncoding:NSUTF8StringEncoding];

@@ -96,7 +96,7 @@
 {
     FFReachability *ffReachability = [FFReachability sharedInstance];
     ffReachability.reachabilityBlock = ^(NetworkStatus netStatus, BOOL connectionRequired){
-        PLog(@"");
+        FFLog(@"");
     };
 }
 

@@ -166,7 +166,7 @@
 
 - (void)doItemAction:(int)actionIndex
 {
-    PLog(@"doItemAction: %d", actionIndex);
+    FFLog(@"doItemAction: %d", actionIndex);
     
     switch (actionIndex) {
         case 0:
@@ -197,7 +197,7 @@
 
 - (BOOL)tabBarItem:(FFTabBarItem *)tTabBarItem willSelected:(NSInteger)tIndex
 {
-    PLog(@"willSelected tIndex: %d", tIndex);
+    FFLog(@"willSelected tIndex: %d", tIndex);
     
     if (tIndex == 1) {
         [_tabBarView selectedTabBarItem:self.selectedIndex];
@@ -214,7 +214,7 @@
 
 - (void)tabBarItem:(FFTabBarItem *)tTabBarItem didSelected:(NSInteger)tIndex
 {
-    PLog(@"didSelected tIndex: %d", tIndex);
+    FFLog(@"didSelected tIndex: %d", tIndex);
     self.selectedIndex = tIndex;
 }
 

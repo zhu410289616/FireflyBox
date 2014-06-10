@@ -12,7 +12,7 @@
 
 - (void)initDataInfo
 {
-    PLog(@"initDataInfo...");
+    FFLog(@"initDataInfo...");
     
     [self.dbQueue inDatabase:^(FMDatabase *db) {
         NSString *sql = [NSString stringWithFormat:@"create table if not exists FF_DATA_INFO (_id integer primary key autoincrement not null, dataid integer, parentdataid integer, datatype integer, filetype integer, dataname text, creationdate text, datapath text)"];

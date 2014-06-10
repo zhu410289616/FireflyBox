@@ -26,7 +26,7 @@
         
         NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
         NSString *webServerPath = [NSString stringWithFormat:@"%@%@", documentsPath, TRANSFER_WEB_SERVER_DIR];
-        PLog(@"webServerPath: %@", webServerPath);
+        FFLog(@"webServerPath: %@", webServerPath);
         self.fileDir = webServerPath;
         self.parentDataId = TOP_PARENT_DATA_ID;
         
@@ -49,7 +49,7 @@
     FFHttpTask *httpTask = [[FFHttpTask alloc] initWithRunnable:runnable];
     httpTask.finishBlock = ^(id tTask){
         FFHttpTask *task = tTask;
-        PLog(@"task.runnable.dicResult: %@", task.runnable.dicResult);
+        FFLog(@"task.runnable.dicResult: %@", task.runnable.dicResult);
     };
     httpTask.errorBlock = ^(id task, NSError *error){
     };

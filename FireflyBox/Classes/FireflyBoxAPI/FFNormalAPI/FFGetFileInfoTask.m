@@ -18,14 +18,14 @@
 
 - (void)executeTask
 {
-    PLog(@"_fileDir: %@", _fileDir);
+    FFLog(@"_fileDir: %@", _fileDir);
     
     NSFileManager *fm = [NSFileManager defaultManager];
     if ([fm fileExistsAtPath:_fileDir]) {
         NSError *error;
         NSArray *contents = [fm contentsOfDirectoryAtPath:_fileDir error:&error];
         for (id info in contents) {
-            PLog(@"-------------- info: %@ --------------", info);
+            FFLog(@"-------------- info: %@ --------------", info);
             NSString *infoPath = [NSString stringWithFormat:@"%@/%@", _fileDir, info];
             NSDictionary *fileAttributes = [fm attributesOfItemAtPath:infoPath error:&error];
             
