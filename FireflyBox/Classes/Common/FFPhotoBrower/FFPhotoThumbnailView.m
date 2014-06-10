@@ -1,14 +1,14 @@
 //
-//  FFAssetPickerItem.m
+//  FFPhotoThumbnailView.m
 //  FireflyBox
 //
-//  Created by pig on 14-6-8.
+//  Created by pig on 14-6-10.
 //  Copyright (c) 2014年 pig. All rights reserved.
 //
 
-#import "FFAssetPickerItem.h"
+#import "FFPhotoThumbnailView.h"
 
-@implementation FFAssetPickerItem
+@implementation FFPhotoThumbnailView
 
 - (id)initWithFFAsset:(FFAsset *)ffAsset frame:(CGRect)frame
 {
@@ -23,14 +23,14 @@
         self.thumbnailImageView.image = [UIImage imageWithCGImage:ffAsset.asset.thumbnail];
         [self addSubview:self.thumbnailImageView];
         
-        UIImage *deleteBtnBgImage = [UIImage imageNamed:@"FFImagePicker.bundle/delete.png"];
+        UIImage *deleteBtnBgImage = [UIImage imageNamed:@"FFPhotoBrower.bundle/delete.png"];
         self.deleteButton = [UIButton buttonWithType:UIButtonTypeCustom];
         self.deleteButton.frame = (CGRect){-5, -5, deleteBtnBgImage.size};
         [self.deleteButton setImage:deleteBtnBgImage forState:UIControlStateNormal];
         [self.deleteButton addTarget:self action:@selector(doDeleteAction:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:self.deleteButton];
         
-        UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doSelectedAction:)];
+        UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doSelectAction:)];
         [self addGestureRecognizer:tapRecognizer];
         
     }
@@ -39,15 +39,15 @@
 
 - (IBAction)doDeleteAction:(id)sender
 {
-    if ([self.delegate respondsToSelector:@selector(assetCanceled:)]) {
-        [self.delegate assetCanceled:self.ffAsset];
+    if ([self.delegate respondsToSelector:@selector(photoThumbnailViewDidDelete:)]) {
+        [self.delegate photoThumbnailViewDidDelete:self];
     }
 }
 
-- (IBAction)doSelectedAction:(id)sender
+- (IBAction)doSelectAction:(id)sender
 {
-    if ([self.delegate respondsToSelector:@selector(assetSelected:)]) {
-        [self.delegate assetSelected:self.ffAsset];
+    if ([self.delegate respondsToSelector:@selector(photoThumbnailViewDidSelect:)]) {
+        [self.delegate photoThumbnailViewDidSelect:self];
     }
 }
 

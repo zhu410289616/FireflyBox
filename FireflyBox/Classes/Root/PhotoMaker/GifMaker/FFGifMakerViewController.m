@@ -9,8 +9,6 @@
 #import "FFGifMakerViewController.h"
 #import "FFAlbumTablePicker.h"
 
-#import "FFAssetPickerBar.h"
-
 @interface FFGifMakerViewController ()
 
 @end
@@ -35,8 +33,8 @@
     [addButton addTarget:self action:@selector(doAddButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:addButton];
     
-    self.assetPickerBar = [[FFAssetPickerBar alloc] initWithFrame:CGRectMake(0, 100, GLOBAL_SCREEN_WIDTH, 96)];
-    self.assetPickerBar.ffAssetDelegate = self;
+    self.assetPickerBar = [[FFPhotoThumbnailBar alloc] initWithFrame:CGRectMake(0, 100, GLOBAL_SCREEN_WIDTH, 96)];
+    self.assetPickerBar.photoThumbnailDelegate = self;
     [self.view addSubview:self.assetPickerBar];
     
 }
@@ -70,21 +68,21 @@
         FFLog(@"obj: %@", obj);
     }];
     
-    [self.assetPickerBar.selectedAssets removeAllObjects];
-    [self.assetPickerBar.selectedAssets addObjectsFromArray:ffAssets];
+    [self.assetPickerBar.ffAssetList removeAllObjects];
+    [self.assetPickerBar.ffAssetList addObjectsFromArray:ffAssets];
     [self.assetPickerBar reloadData];
 }
 
-#pragma mark FFAssetDelegate method
+#pragma mark FFPhotoViewDelegate method
 
-- (void)assetSelected:(FFAsset *)ffAsset
+- (void)photoThumbnailViewDidSelect:(FFPhotoThumbnailView *)photoThumbnailView
 {
-    FFLog(@"ffAsset: %@", ffAsset);
+    FFLog(@"ffAsset: %@", photoThumbnailView.ffAsset);
 }
 
-- (void)assetCanceled:(FFAsset *)ffAsset
+- (void)photoThumbnailViewDidDelete:(FFPhotoThumbnailView *)photoThumbnailView
 {
-    [self.assetPickerBar removeAsset:ffAsset];
+    [self.assetPickerBar removeFFAsset:photoThumbnailView.ffAsset];
 }
 
 @end

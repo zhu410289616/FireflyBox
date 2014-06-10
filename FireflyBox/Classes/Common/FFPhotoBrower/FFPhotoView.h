@@ -7,19 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@class FFPhotoView;
-
-@protocol FFPhotoViewDelegate <NSObject>
-
-@optional
-
-- (void)photoViewDidSingleTap:(FFPhotoView *)photoView;
-- (void)photoViewDidDoubleTap:(FFPhotoView *)photoView;
-- (void)photoViewDidTwoFingerTap:(FFPhotoView *)photoView;
-- (void)photoViewDidDoubleTwoFingerTap:(FFPhotoView *)photoView;
-
-@end
+#import "FFPhotoViewDelegate.h"
 
 @interface FFPhotoView : UIScrollView
 

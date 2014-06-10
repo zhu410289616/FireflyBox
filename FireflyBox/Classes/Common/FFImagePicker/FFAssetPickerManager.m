@@ -42,12 +42,10 @@
     if (IS_IOS6_OR_HIGHER) {
         NSURL *ffAssetPropertyURL = [ffAsset.asset valueForProperty:ALAssetPropertyAssetURL];
         NSString *srcFFAssetPropertyURL = ffAssetPropertyURL.absoluteString;
-        FFLog(@"srcFFAssetPropertyURL: %@", srcFFAssetPropertyURL);
         
         for (FFAsset *tempFFAsset in self.assetList) {
             NSURL *assetPropertyURL = [tempFFAsset.asset valueForProperty:ALAssetPropertyAssetURL];
             NSString *strAssetPropertyURL = assetPropertyURL.absoluteString;
-            FFLog(@"strAssetPropertyURL: %@", strAssetPropertyURL);
             if ([srcFFAssetPropertyURL compare:strAssetPropertyURL] == NSOrderedSame) {
                 return tempFFAsset;
             }
@@ -55,12 +53,10 @@
     } else {
         NSURL *ffAssetPropertyURL = [[ffAsset.asset valueForProperty:ALAssetPropertyURLs] valueForKey:[[[ffAsset.asset valueForProperty:ALAssetPropertyURLs] allKeys] objectAtIndex:0]];
         NSString *srcFFAssetPropertyURL = ffAssetPropertyURL.absoluteString;
-        FFLog(@"srcFFAssetPropertyURL: %@", srcFFAssetPropertyURL);
         
         for (FFAsset *tempFFAsset in self.assetList) {
             NSURL *assetPropertyURL = [[tempFFAsset.asset valueForProperty:ALAssetPropertyURLs] valueForKey:[[[tempFFAsset.asset valueForProperty:ALAssetPropertyURLs] allKeys] objectAtIndex:0]];
             NSString *strAssetPropertyURL = assetPropertyURL.absoluteString;
-            FFLog(@"strAssetPropertyURL: %@", strAssetPropertyURL);
             if ([srcFFAssetPropertyURL compare:strAssetPropertyURL] == NSOrderedSame) {
                 return tempFFAsset;
             }

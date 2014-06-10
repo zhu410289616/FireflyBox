@@ -9,6 +9,8 @@
 #import "FFGIFCamViewController.h"
 #import "FFGifMakerViewController.h"
 
+#import "FFMultiPhotoBrower.h"
+
 @interface FFGIFCamViewController ()
 
 @end
@@ -36,6 +38,12 @@
     [self.photoButton addTarget:self action:@selector(doShowPhotoAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.photoButton];
     
+    self.ffAssetButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.ffAssetButton.frame = CGRectMake(100, 180, 60, 60);
+    [self.ffAssetButton setTitle:@"FFAsset" forState:UIControlStateNormal];
+    [self.ffAssetButton addTarget:self action:@selector(doShowFFAssetAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.ffAssetButton];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,6 +56,12 @@
 {
     FFGifMakerViewController *gifMakerController = [[FFGifMakerViewController alloc] init];
     [self.navigationController pushViewController:gifMakerController animated:YES];
+}
+
+- (IBAction)doShowFFAssetAction:(id)sender
+{
+    FFMultiPhotoBrower *multiPhotoBrower = [[FFMultiPhotoBrower alloc] init];
+    [self.navigationController pushViewController:multiPhotoBrower animated:YES];
 }
 
 @end

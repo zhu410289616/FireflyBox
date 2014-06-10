@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong) UIButton *photoButton;
 
+@property (nonatomic, strong) UIButton *ffAssetButton;
+
 @end

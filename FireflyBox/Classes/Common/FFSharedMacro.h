@@ -17,7 +17,7 @@
 #define FFLog(format, ...)
 #endif
 
-#define LOG_FRAME(a) FFLog(@"frame log: %f %f %f %f", a.frame.origin.x, a.frame.origin.y, a.frame.size.width, a.frame.size.height)
+#define LOG_VIEW(a) FFLog(@"frame log: %f %f %f %f", a.frame.origin.x, a.frame.origin.y, a.frame.size.width, a.frame.size.height)
 #define LOG_FRAME(label, frame) FFLog(@"%@: %f, %f, %f, %f", label, frame.origin.x, frame.origin.y, frame.size.width, frame.size.height)
 #define LOG_SIZE(label, size) FFLog(@"%@: %f, %f", label, size.width, size.height)
 #define LOG_POINT(label, point) FFLog(@"%@: %f, %f", label, point.x, point.y)
