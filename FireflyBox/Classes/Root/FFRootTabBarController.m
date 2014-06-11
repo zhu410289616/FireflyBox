@@ -146,8 +146,9 @@
     [[NSUserDefaults standardUserDefaults] setValue:@YES forKey:SHOULD_UPDATE_FILE_INFO];
     
     FFGIFCamViewController *gifCamController = [[FFGIFCamViewController alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:gifCamController];
-    [self presentViewController:nav animated:YES completion:nil];
+    [self presentViewController:gifCamController animated:YES completion:nil];
+//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:gifCamController];
+//    [self presentViewController:nav animated:YES completion:nil];
 }
 
 - (void)doShowBluetoothAction

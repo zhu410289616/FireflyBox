@@ -18,5 +18,7 @@
 @property (nonatomic, weak) id<FFPhotoViewDelegate> delegate;
 
 - (id)initWithFFAsset:(FFAsset *)ffAsset frame:(CGRect)frame;
+- (void)startShake;
+- (void)stopShake;
 
 @end

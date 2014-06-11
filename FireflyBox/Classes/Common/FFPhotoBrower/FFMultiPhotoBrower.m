@@ -26,6 +26,9 @@
     FFBarButtonItem *tempBarButtonItem = [[FFBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(doAddButtonAction:)];
     self.navigationItem.rightBarButtonItem = tempBarButtonItem;
     
+    UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(doSingleRecognizerAction:)];
+    [self.view addGestureRecognizer:panRecognizer];
+    
     float addButtonWidth = 80.0f;
     UIButton *addButton = [UIButton buttonWithType:UIButtonTypeCustom];
     addButton.frame = CGRectMake((GLOBAL_SCREEN_WIDTH - addButtonWidth)/2, GLOBAL_SCREEN_HEIGHT - 64 - 30 - addButtonWidth, addButtonWidth, addButtonWidth);
@@ -40,6 +43,9 @@
     self.thumbnailBar.frame = CGRectMake(0, GLOBAL_SCREEN_HEIGHT - 64 - 96, GLOBAL_SCREEN_WIDTH, 96);
     self.thumbnailBar.photoThumbnailDelegate = self;
     [self.view addSubview:self.thumbnailBar];
+    
+    UILongPressGestureRecognizer *longPressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(doLongPressAction:)];
+    [self.thumbnailBar addGestureRecognizer:longPressRecognizer];
     
     /**
      *  代码初始化
@@ -74,6 +80,62 @@
     albumPicker.delegate = self;
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:albumPicker];
     [self presentViewController:nav animated:YES completion:nil];
+}
+
+- (IBAction)doSingleRecognizerAction:(UIPanGestureRecognizer *)sender
+{
+    if (!self.thumbnailBar.isShake) {
+        return;
+    }
+    
+    CGPoint point = [sender locationInView:self.thumbnailBar];
+    
+    switch (sender.state) {
+        case UIGestureRecognizerStateBegan:
+        {
+            for (UIView *subview in self.thumbnailBar.subviews) {
+                if ([subview isKindOfClass:[FFPhotoThumbnailView class]]) {
+                    FFPhotoThumbnailView *photoThumbnailView = (FFPhotoThumbnailView *)subview;
+                    if (self.thumbnailBar.isShake) {
+                        [photoThumbnailView stopShake];
+                    }
+                }
+            }
+            self.thumbnailBar.isShake = !self.thumbnailBar.isShake;
+        }
+            break;
+        case UIGestureRecognizerStateChanged:
+        {
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
+
+- (IBAction)doLongPressAction:(UILongPressGestureRecognizer *)sender
+{
+    switch (sender.state) {
+        case UIGestureRecognizerStateBegan:
+        {
+            for (UIView *subview in self.thumbnailBar.subviews) {
+                if ([subview isKindOfClass:[FFPhotoThumbnailView class]]) {
+                    FFPhotoThumbnailView *photoThumbnailView = (FFPhotoThumbnailView *)subview;
+                    if (self.thumbnailBar.isShake) {
+                        [photoThumbnailView stopShake];
+                    } else {
+                        [photoThumbnailView startShake];
+                    }
+                }
+            }
+            self.thumbnailBar.isShake = !self.thumbnailBar.isShake;
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 #pragma mark FFAssetSelectionDelegate method

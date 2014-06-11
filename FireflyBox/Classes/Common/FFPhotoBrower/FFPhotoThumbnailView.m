@@ -51,6 +51,23 @@
     }
 }
 
+- (void)startShake
+{
+    CABasicAnimation *shakeAnimation = [CABasicAnimation animationWithKeyPath:@"transform"];
+    shakeAnimation.duration = 0.08;
+    shakeAnimation.autoreverses = YES;
+    shakeAnimation.repeatCount = MAXFLOAT;
+    shakeAnimation.fromValue = [NSValue valueWithCATransform3D:CATransform3DRotate(self.layer.transform, -0.1, 0, 0, 1)];
+    shakeAnimation.toValue = [NSValue valueWithCATransform3D:CATransform3DRotate(self.layer.transform, 0.1, 0, 0, 1)];
+    
+    [self.layer addAnimation:shakeAnimation forKey:@"shakeAnimation"];
+}
+
+- (void)stopShake
+{
+    [self.layer removeAnimationForKey:@"shakeAnimation"];
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

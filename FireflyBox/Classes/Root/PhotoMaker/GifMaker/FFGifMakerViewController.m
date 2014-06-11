@@ -37,6 +37,9 @@
     self.assetPickerBar.photoThumbnailDelegate = self;
     [self.view addSubview:self.assetPickerBar];
     
+    UILongPressGestureRecognizer *longPressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(doLongPressAction:)];
+    [self.assetPickerBar addGestureRecognizer:longPressRecognizer];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,6 +61,32 @@
     albumPicker.delegate = self;
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:albumPicker];
     [self presentViewController:nav animated:YES completion:nil];
+}
+
+- (IBAction)doLongPressAction:(UILongPressGestureRecognizer *)sender
+{
+    CGPoint point = [sender locationInView:self.assetPickerBar];
+    
+    switch (sender.state) {
+        case UIGestureRecognizerStateBegan:
+        {
+            for (UIView *subview in self.assetPickerBar.subviews) {
+                if ([subview isKindOfClass:[FFPhotoThumbnailView class]]) {
+                    FFPhotoThumbnailView *photoThumbnailView = (FFPhotoThumbnailView *)subview;
+                    if (self.assetPickerBar.isShake) {
+                        [photoThumbnailView stopShake];
+                    } else {
+                        [photoThumbnailView startShake];
+                    }
+                }
+            }
+            self.assetPickerBar.isShake = !self.assetPickerBar.isShake;
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 #pragma mark FFAssetSelectionDelegate method
@@ -83,6 +112,7 @@
 - (void)photoThumbnailViewDidDelete:(FFPhotoThumbnailView *)photoThumbnailView
 {
     [self.assetPickerBar removeFFAsset:photoThumbnailView.ffAsset];
+    [self.assetPickerBar reloadData];
 }
 
 @end

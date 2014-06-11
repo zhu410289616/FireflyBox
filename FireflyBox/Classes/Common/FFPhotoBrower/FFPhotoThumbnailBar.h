@@ -14,6 +14,8 @@
 @property (nonatomic, strong) NSMutableArray *ffAssetList;
 @property (nonatomic, weak) id<FFPhotoViewDelegate> photoThumbnailDelegate;
 
+@property (nonatomic, assign) BOOL isShake;
+
 - (void)addFFAsset:(FFAsset *)ffAsset;
 - (void)removeFFAsset:(FFAsset *)ffAsset;
 

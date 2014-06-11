@@ -10,6 +10,8 @@
 
 @interface FFGIFCamViewController : FFAVCamViewController
 
+@property (nonatomic, strong) UIButton *exitButton;
+
 @property (nonatomic, strong) UIButton *photoButton;
 
 @property (nonatomic, strong) UIButton *ffAssetButton;

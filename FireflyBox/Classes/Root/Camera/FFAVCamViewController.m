@@ -48,6 +48,8 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.view.backgroundColor = [UIColor blackColor];
+    
     //menu
     [self viewDidLoadAction];
     
@@ -120,7 +122,7 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 - (void)viewDidLoadAction
 {
     self.previewView = [[FFAVCamPreviewView alloc] init];
-    self.previewView.frame = CGRectMake(0, 0, GLOBAL_SCREEN_WIDTH, GLOBAL_TABBAR_HEIGHT);
+    self.previewView.frame = CGRectMake(0, 0, GLOBAL_SCREEN_WIDTH, GLOBAL_SCREEN_HEIGHT);
     [self.view addSubview:self.previewView];
     UITapGestureRecognizer *singleRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(focusAndExposeTap:)];
     [self.previewView addGestureRecognizer:singleRecognizer];
