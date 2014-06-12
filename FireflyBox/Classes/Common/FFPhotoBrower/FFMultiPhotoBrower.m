@@ -23,11 +23,22 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    FFBarButtonItem *tempBarButtonItem = [[FFBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(doAddButtonAction:)];
+    FFBarButtonItem *tempBarButtonItem = [[FFBarButtonItem alloc] initWithTitle:@"生成" style:UIBarButtonItemStylePlain target:self action:@selector(doAddButtonAction:)];
     self.navigationItem.rightBarButtonItem = tempBarButtonItem;
     
-    UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(doSingleRecognizerAction:)];
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doTapRecognizerAction:)];
+    [self.view addGestureRecognizer:tapRecognizer];
+    
+    UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(doPanRecognizerAction:)];
     [self.view addGestureRecognizer:panRecognizer];
+    
+    self.multiPhotoEditView = [[FFMultiPhotoEditView alloc] init];
+    self.multiPhotoEditView.frame = CGRectMake(0, GLOBAL_SCREEN_HEIGHT - 64 - 72, GLOBAL_SCREEN_WIDTH, 72);
+    self.multiPhotoEditView.photoThumbnailDelegate = self;
+    [self.view addSubview:self.multiPhotoEditView];
+    
+    UILongPressGestureRecognizer *longPressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(doLongPressAction:)];
+    [self.multiPhotoEditView addGestureRecognizer:longPressRecognizer];
     
     float addButtonWidth = 80.0f;
     UIButton *addButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -42,10 +53,7 @@
     self.thumbnailBar = [[FFPhotoThumbnailBar alloc] init];
     self.thumbnailBar.frame = CGRectMake(0, GLOBAL_SCREEN_HEIGHT - 64 - 96, GLOBAL_SCREEN_WIDTH, 96);
     self.thumbnailBar.photoThumbnailDelegate = self;
-    [self.view addSubview:self.thumbnailBar];
-    
-    UILongPressGestureRecognizer *longPressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(doLongPressAction:)];
-    [self.thumbnailBar addGestureRecognizer:longPressRecognizer];
+//    [self.view addSubview:self.thumbnailBar];
     
     /**
      *  代码初始化
@@ -82,31 +90,20 @@
     [self presentViewController:nav animated:YES completion:nil];
 }
 
-- (IBAction)doSingleRecognizerAction:(UIPanGestureRecognizer *)sender
+- (IBAction)doTapRecognizerAction:(UITapGestureRecognizer *)sender
 {
-    if (!self.thumbnailBar.isShake) {
-        return;
+    if (self.multiPhotoEditView.isShaking) {
+        for (int i=0; i<[self.multiPhotoEditView.visibleThumbnailViews count]; i++) {
+            FFPhotoThumbnailView *thumbnailView = self.multiPhotoEditView.visibleThumbnailViews[i];
+            [thumbnailView stopShake];
+        }
+        self.multiPhotoEditView.isShaking = !self.multiPhotoEditView.isShaking;
     }
     
-    CGPoint point = [sender locationInView:self.thumbnailBar];
     
     switch (sender.state) {
         case UIGestureRecognizerStateBegan:
-        {
-            for (UIView *subview in self.thumbnailBar.subviews) {
-                if ([subview isKindOfClass:[FFPhotoThumbnailView class]]) {
-                    FFPhotoThumbnailView *photoThumbnailView = (FFPhotoThumbnailView *)subview;
-                    if (self.thumbnailBar.isShake) {
-                        [photoThumbnailView stopShake];
-                    }
-                }
-            }
-            self.thumbnailBar.isShake = !self.thumbnailBar.isShake;
-        }
-            break;
-        case UIGestureRecognizerStateChanged:
-        {
-        }
+        {}
             break;
             
         default:
@@ -114,22 +111,95 @@
     }
 }
 
+- (IBAction)doPanRecognizerAction:(UIPanGestureRecognizer *)sender
+{
+    if (!self.multiPhotoEditView.isShaking) {
+        return;
+    }
+    
+    CGPoint currentPoint = [sender locationInView:self.thumbnailBar];
+    
+    switch (sender.state) {
+        case UIGestureRecognizerStateBegan:
+        {
+            for (FFPhotoThumbnailView *photoThumbnailView in self.multiPhotoEditView.visibleThumbnailViews) {
+                if (CGRectContainsPoint(photoThumbnailView.frame, currentPoint)) {
+                    self.multiPhotoEditView.dragThumbnailView = photoThumbnailView;
+                    [self.multiPhotoEditView bringSubviewToFront:photoThumbnailView];
+                    [photoThumbnailView stopShake];
+                    break;
+                }
+            }
+//            self.multiPhotoEditView.isShaking = !self.multiPhotoEditView.isShaking;
+        }
+            break;
+        case UIGestureRecognizerStateChanged:
+        {
+            int indexOfDrag = 0;
+            for (int i=0; i<[self.multiPhotoEditView.visibleThumbnailViews count]; i++) {
+                FFPhotoThumbnailView *thumbnailView = self.multiPhotoEditView.visibleThumbnailViews[i];
+                if (thumbnailView.tag == self.multiPhotoEditView.dragThumbnailView.tag) {
+                    indexOfDrag = i;
+                }
+            }
+            
+            for (int i=0; i<[self.multiPhotoEditView.visibleThumbnailViews count]; i++) {
+                FFPhotoThumbnailView *photoThumbnailView = self.multiPhotoEditView.visibleThumbnailViews[i];
+                if (photoThumbnailView.tag == self.multiPhotoEditView.dragThumbnailView.tag) {
+                    continue;
+                }
+                if (CGRectIntersectsRect(self.multiPhotoEditView.dragThumbnailView.frame, photoThumbnailView.frame)) {
+                    
+                    [self.multiPhotoEditView.visibleThumbnailViews exchangeObjectAtIndex:i withObjectAtIndex:indexOfDrag];
+                    
+                    [UIView animateWithDuration:0.4 animations:^{
+                        CGRect rect = (CGRect){10, 10, 52, 52};
+                        for (int i=0; i<[self.multiPhotoEditView.visibleThumbnailViews count]; i++) {
+                            FFPhotoThumbnailView *thumbnailView = self.multiPhotoEditView.visibleThumbnailViews[i];
+                            if (thumbnailView.tag != self.multiPhotoEditView.dragThumbnailView.tag) {
+                                rect.origin.x = rect.origin.x + rect.size.width + 10;
+                            }
+                        }
+                    }];
+                }
+            }
+            
+            [self.multiPhotoEditView doDrag:currentPoint];
+        }
+            break;
+        case UIGestureRecognizerStateEnded:
+        {
+//            [self.multiPhotoEditView.dragThumbnailView startShake];
+//            self.multiPhotoEditView.dragThumbnailView = nil;
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
+    self.multiPhotoEditView.previousPoint = currentPoint;
+}
+
 - (IBAction)doLongPressAction:(UILongPressGestureRecognizer *)sender
 {
     switch (sender.state) {
         case UIGestureRecognizerStateBegan:
         {
-            for (UIView *subview in self.thumbnailBar.subviews) {
-                if ([subview isKindOfClass:[FFPhotoThumbnailView class]]) {
-                    FFPhotoThumbnailView *photoThumbnailView = (FFPhotoThumbnailView *)subview;
-                    if (self.thumbnailBar.isShake) {
-                        [photoThumbnailView stopShake];
-                    } else {
-                        [photoThumbnailView startShake];
-                    }
+            if (self.multiPhotoEditView.isShaking) {
+                for (FFPhotoThumbnailView *photoThumbnailView in self.multiPhotoEditView.visibleThumbnailViews) {
+                    [photoThumbnailView stopShake];
+                }
+            } else {
+                for (FFPhotoThumbnailView *photoThumbnailView in self.multiPhotoEditView.visibleThumbnailViews) {
+                    [photoThumbnailView startShake];
                 }
             }
-            self.thumbnailBar.isShake = !self.thumbnailBar.isShake;
+            self.multiPhotoEditView.isShaking = !self.multiPhotoEditView.isShaking;
+        }
+            break;
+        case UIGestureRecognizerStateChanged:
+        {
         }
             break;
             
@@ -146,9 +216,9 @@
         FFLog(@"obj: %@", obj);
     }];
     
-    [self.thumbnailBar.ffAssetList removeAllObjects];
-    [self.thumbnailBar.ffAssetList addObjectsFromArray:ffAssets];
-    [self.thumbnailBar reloadData];
+    [self.multiPhotoEditView removeAllFFAsset];
+    [self.multiPhotoEditView addFFAssetList:ffAssets];
+    [self.multiPhotoEditView reloadData];
 }
 
 #pragma mark - UICollectionViewDelegate

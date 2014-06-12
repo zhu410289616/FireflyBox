@@ -9,10 +9,16 @@
 #import "FFBaseViewController.h"
 #import "FFPhotosDataSource.h"
 #import "FFPhotoViewDelegate.h"
+
+#import "FFMultiPhotoEditView.h"
+
 #import "FFPhotoThumbnailBar.h"
+
 #import "FFAssetSelectionDelegate.h"
 
 @interface FFMultiPhotoBrower : FFBaseViewController<UICollectionViewDelegate, UICollectionViewDataSource, FFAssetSelectionDelegate, FFPhotoViewDelegate>
+
+@property (nonatomic, strong) FFMultiPhotoEditView *multiPhotoEditView;
 
 @property (nonatomic, strong) FFPhotoThumbnailBar *thumbnailBar;
 

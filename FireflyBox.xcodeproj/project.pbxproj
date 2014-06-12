@@ -58,6 +58,7 @@
 		1624B89E19093C140018B8FE /* FFHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1624B89519093C140018B8FE /* FFHomeViewController.m */; };
 		1624B89F19093C140018B8FE /* FFRecentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1624B89819093C140018B8FE /* FFRecentViewController.m */; };
 		1624B8A019093C140018B8FE /* FFSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1624B89B19093C140018B8FE /* FFSettingViewController.m */; };
+		162926501949F4340063F762 /* FFMultiPhotoEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1629264F1949F4340063F762 /* FFMultiPhotoEditView.m */; };
 		162F9157190956FD004D0C25 /* FFBaseTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 162F9156190956FD004D0C25 /* FFBaseTableCell.m */; };
 		162F915A19095740004D0C25 /* FFRecentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 162F915919095740004D0C25 /* FFRecentCell.m */; };
 		163102FF192716A3000ECCDC /* FFAudioRecorder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 163102FE192716A3000ECCDC /* FFAudioRecorder.mm */; };
@@ -331,6 +332,8 @@
 		1624B89819093C140018B8FE /* FFRecentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFRecentViewController.m; sourceTree = "<group>"; };
 		1624B89A19093C140018B8FE /* FFSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFSettingViewController.h; sourceTree = "<group>"; };
 		1624B89B19093C140018B8FE /* FFSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFSettingViewController.m; sourceTree = "<group>"; };
+		1629264E1949F4340063F762 /* FFMultiPhotoEditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMultiPhotoEditView.h; sourceTree = "<group>"; };
+		1629264F1949F4340063F762 /* FFMultiPhotoEditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMultiPhotoEditView.m; sourceTree = "<group>"; };
 		162F9155190956FD004D0C25 /* FFBaseTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBaseTableCell.h; sourceTree = "<group>"; };
 		162F9156190956FD004D0C25 /* FFBaseTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBaseTableCell.m; sourceTree = "<group>"; };
 		162F915819095740004D0C25 /* FFRecentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFRecentCell.h; sourceTree = "<group>"; };
@@ -1060,6 +1063,8 @@
 				16059566194757E3005A9A05 /* FFSimplePhotoBrower.m */,
 				160595681947590D005A9A05 /* FFMultiPhotoBrower.h */,
 				160595691947590D005A9A05 /* FFMultiPhotoBrower.m */,
+				1629264E1949F4340063F762 /* FFMultiPhotoEditView.h */,
+				1629264F1949F4340063F762 /* FFMultiPhotoEditView.m */,
 			);
 			path = FFPhotoBrower;
 			sourceTree = "<group>";
@@ -1932,6 +1937,7 @@
 				16FD4D5819310E5E00EC8B74 /* FFDeleteFileTask.m in Sources */,
 				166E9BDD1939A26B0043D5F9 /* FFPorgressLayer.m in Sources */,
 				16647B17194417BC004BD99E /* FFAssetTablePicker.m in Sources */,
+				162926501949F4340063F762 /* FFMultiPhotoEditView.m in Sources */,
 				16A2F89C1902D5AC00751B82 /* FFBaseViewController.m in Sources */,
 				16A2F8F41902D5C100751B82 /* EGOImageView.m in Sources */,
 				1620DD0A19139F1700AE810C /* FFBaseActionView.m in Sources */,

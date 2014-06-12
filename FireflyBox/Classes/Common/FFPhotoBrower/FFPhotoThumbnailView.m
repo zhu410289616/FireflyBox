@@ -18,7 +18,7 @@
         self.ffAsset = ffAsset;
         
         self.thumbnailImageView = [[UIImageView alloc] init];
-        self.thumbnailImageView.frame = CGRectMake(0, 0, 65.0f, 65.0f);
+        self.thumbnailImageView.frame = CGRectMake(0, 0, 52, 52);
         self.thumbnailImageView.contentMode = UIViewContentModeScaleToFill;
         self.thumbnailImageView.image = [UIImage imageWithCGImage:ffAsset.asset.thumbnail];
         [self addSubview:self.thumbnailImageView];
