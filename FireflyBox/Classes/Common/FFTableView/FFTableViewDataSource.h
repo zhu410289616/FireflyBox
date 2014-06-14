@@ -12,6 +12,8 @@ typedef void(^FFTableViewCellConfigureBlock)(id cell, id item);
 
 @interface FFTableViewDataSource : NSObject<UITableViewDataSource>
 
+@property (nonatomic, strong) NSMutableArray *items;
+
 - (id)initWithItems:(NSArray *)anItems cellIdentifier:(NSString *)aCellIdentifier configureCellBlock:(FFTableViewCellConfigureBlock)aConfigureCellBlock;
 
 - (id)itemAtIndexPath:(NSIndexPath *)indexPath;

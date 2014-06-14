@@ -10,8 +10,7 @@
 
 @interface FFTableViewDataSource ()
 
-@property (nonatomic, strong) NSArray *items;
-@property (nonatomic, strong) NSString *cellIdentifier;
+@property (nonatomic, copy) NSString *cellIdentifier;
 @property (nonatomic, copy) FFTableViewCellConfigureBlock configureCellBlock;
 
 @end
@@ -21,7 +20,7 @@
 - (id)initWithItems:(NSArray *)anItems cellIdentifier:(NSString *)aCellIdentifier configureCellBlock:(FFTableViewCellConfigureBlock)aConfigureCellBlock
 {
     if (self = [super init]) {
-        self.items = anItems;
+        self.items = [NSMutableArray arrayWithArray:anItems];
         self.cellIdentifier = aCellIdentifier;
         self.configureCellBlock = aConfigureCellBlock;
     }

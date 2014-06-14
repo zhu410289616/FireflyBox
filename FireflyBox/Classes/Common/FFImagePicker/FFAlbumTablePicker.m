@@ -10,6 +10,8 @@
 #import "FFAssetTablePicker.h"
 #import "FFAssetPickerManager.h"
 
+static NSString * const CellIdentifier = @"CellIdentifier";
+
 @interface FFAlbumTablePicker ()
 
 @property (nonatomic, strong) ALAssetsLibrary *assetsLibrary;
@@ -36,10 +38,24 @@
     
     self.navigationItem.title = @"Loading...";
     
-    self.dataTableView.dataSource = self;
     self.dataTableView.delegate = self;
     self.dataTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     self.dataTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
+    FFTableViewCellConfigureBlock configureCell = ^(UITableViewCell *cell, id item) {
+        // Get count
+        ALAssetsGroup *g = (ALAssetsGroup*)item;
+        [g setAssetsFilter:[ALAssetsFilter allPhotos]];
+        NSInteger gCount = [g numberOfAssets];
+        
+        cell.textLabel.font = [UIFont systemFontOfSize:17.0f];
+        cell.textLabel.text = [NSString stringWithFormat:@"%@ (%ld)",[g valueForProperty:ALAssetsGroupPropertyName], (long)gCount];
+        [cell.imageView setImage:[UIImage imageWithCGImage:[g posterImage]]];
+        [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    };
+    self.itemsDataSource = [[FFTableViewDataSource alloc] initWithItems:nil cellIdentifier:CellIdentifier configureCellBlock:configureCell];
+    self.dataTableView.dataSource = self.itemsDataSource;
+    [self.dataTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CellIdentifier];
     
     //
     self.assetsLibrary = [[ALAssetsLibrary alloc] init];
@@ -94,7 +110,7 @@
                     [group setAssetsFilter:[ALAssetsFilter allPhotos]];
                     NSInteger gCount = [group numberOfAssets];
                     if (gCount > 0) {
-                        [self.dataList addObject:group];
+                        [self.itemsDataSource.items addObject:group];
                     }
                 } else {
                     dispatch_async(dispatch_get_main_queue(), ^{
@@ -124,35 +140,6 @@
     self.title = @"Photos";
 }
 
-#pragma mark UITableViewDataSource method
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [self.dataList count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    
-    // Get count
-    ALAssetsGroup *g = (ALAssetsGroup*)[self.dataList objectAtIndex:indexPath.row];
-    [g setAssetsFilter:[ALAssetsFilter allPhotos]];
-    NSInteger gCount = [g numberOfAssets];
-    
-    cell.textLabel.font = [UIFont systemFontOfSize:17.0f];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ (%ld)",[g valueForProperty:ALAssetsGroupPropertyName], (long)gCount];
-    [cell.imageView setImage:[UIImage imageWithCGImage:[(ALAssetsGroup*)[self.dataList objectAtIndex:indexPath.row] posterImage]]];
-	[cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
-	
-    return cell;
-}
-
 #pragma mark UITableViewDelegate method
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -166,7 +153,7 @@
     
     FFAssetTablePicker *assetPicker = [[FFAssetTablePicker alloc] init];
     assetPicker.delegate = self;
-    assetPicker.assetGroup = [self.dataList objectAtIndex:indexPath.row];
+    assetPicker.assetGroup = [self.itemsDataSource itemAtIndexPath:indexPath];
     [assetPicker.assetGroup setAssetsFilter:[ALAssetsFilter allPhotos]];
     [self.navigationController pushViewController:assetPicker animated:YES];
 }

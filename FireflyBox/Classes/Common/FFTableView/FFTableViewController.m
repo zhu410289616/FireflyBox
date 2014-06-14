@@ -7,6 +7,9 @@
 //
 
 #import "FFTableViewController.h"
+#import "FFTableViewCell.h"
+
+static NSString * const FFTableViewCellIdentifier = @"FFTableViewCellIdentifier";
 
 @interface FFTableViewController ()
 
@@ -19,14 +22,21 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    _dataTableView = [[UITableView alloc] init];
-    _dataTableView.frame = CGRectMake(0, 0, GLOBAL_SCREEN_WIDTH, GLOBAL_SCREEN_HEIGHT);
-    _dataTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    _dataTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _dataTableView.backgroundColor = [UIColor colorWithHex:0xe5e5e5];
-    [self.view addSubview:_dataTableView];
+    self.dataTableView = [[UITableView alloc] init];
+    self.dataTableView.frame = CGRectMake(0, 0, GLOBAL_SCREEN_WIDTH, GLOBAL_SCREEN_HEIGHT);
+    self.dataTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.dataTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.dataTableView.backgroundColor = [UIColor colorWithHex:0xe5e5e5];
+    [self.view addSubview:self.dataTableView];
     
-    _dataList = [[NSMutableArray alloc] init];
+    FFTableViewCellConfigureBlock configureCell = ^(FFTableViewCell *cell, id item) {
+        [cell configureCellWithItem:item];
+    };
+    self.itemsDataSource = [[FFTableViewDataSource alloc] initWithItems:nil cellIdentifier:FFTableViewCellIdentifier configureCellBlock:configureCell];
+    self.dataTableView.dataSource = self.itemsDataSource;
+    [self.dataTableView registerClass:[FFTableViewCell class] forCellReuseIdentifier:FFTableViewCellIdentifier];
+    
+    self.dataList = [[NSMutableArray alloc] init];
     
 }
 
@@ -48,7 +58,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return [self.dataList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
