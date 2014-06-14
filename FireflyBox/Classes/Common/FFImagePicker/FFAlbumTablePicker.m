@@ -38,7 +38,7 @@
     
     self.dataTableView.dataSource = self;
     self.dataTableView.delegate = self;
-//    self.dataTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.dataTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     self.dataTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
     //
