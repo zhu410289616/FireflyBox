@@ -23,8 +23,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    FFBarButtonItem *tempBarButtonItem = [[FFBarButtonItem alloc] initWithTitle:@"生成" style:UIBarButtonItemStylePlain target:self action:@selector(doAddButtonAction:)];
-    self.navigationItem.rightBarButtonItem = tempBarButtonItem;
+    FFBarButtonItem *leftBarButtonItem = [[FFBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(doLeftBarButtonItemAction:)];
+    self.navigationItem.leftBarButtonItem = leftBarButtonItem;
+    
+    FFBarButtonItem *rightBarButtonItem = [[FFBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(doRightBarButtonItemAction:)];
+    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
     
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doTapRecognizerAction:)];
     [self.view addGestureRecognizer:tapRecognizer];
@@ -76,18 +79,40 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self doGotoAlbumTablePicker:NO];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)doLeftBarButtonItemAction:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)doRightBarButtonItemAction:(id)sender
+{
+    [self doAddButtonAction:nil];
+}
+
 - (IBAction)doAddButtonAction:(id)sender
+{
+    [self doGotoAlbumTablePicker:YES];
+}
+
+- (void)doGotoAlbumTablePicker:(BOOL)isAnimated
 {
     FFAlbumTablePicker *albumPicker = [[FFAlbumTablePicker alloc] init];
     albumPicker.delegate = self;
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:albumPicker];
-    [self presentViewController:nav animated:YES completion:nil];
+    [self presentViewController:nav animated:isAnimated completion:nil];
 }
 
 - (IBAction)doTapRecognizerAction:(UITapGestureRecognizer *)sender

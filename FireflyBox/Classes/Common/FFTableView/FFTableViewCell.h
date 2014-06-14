@@ -14,6 +14,7 @@
 @property (nonatomic, strong) UIView *headerLineView;
 @property (nonatomic, strong) UIView *footerLineView;
 
+- (void)configureCellWithItem:(id)item indexPath:(NSIndexPath *)indexPath;
 - (void)configureCellWithItem:(id)item;
 
 @end

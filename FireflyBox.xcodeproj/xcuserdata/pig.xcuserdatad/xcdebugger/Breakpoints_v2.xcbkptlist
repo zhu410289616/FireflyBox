@@ -52,11 +52,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FireflyBox/Classes/Root/PhotoMaker/GifMaker/FFGifMakerViewController.m"
-            timestampString = "424192794.863481"
+            timestampString = "424453462.453526"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "-doLongPressAction:"
             landmarkType = "5">
          </BreakpointContent>

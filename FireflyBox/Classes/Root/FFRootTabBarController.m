@@ -44,26 +44,13 @@
     UINavigationController *recentNav = [[UINavigationController alloc] initWithRootViewController:_recentController];
     _settingController = [[FFSettingViewController alloc] init];
     UINavigationController *settingNav = [[UINavigationController alloc] initWithRootViewController:_settingController];
-    _aboutController = [[FFAboutViewController alloc] init];
-    UINavigationController *aboutNav = [[UINavigationController alloc] initWithRootViewController:_aboutController];
     
-    int showContentType = 1;
-    if (showContentType == 0) {
-        self.viewControllers = [NSArray arrayWithObjects:homeNav, recentNav, settingNav, nil];
-        NSArray *titleList = [NSArray arrayWithObjects:@"赤兔", @"工具", @"设置", nil];
-        _tabBarView = [[FFTabBarView alloc] initWithFrame:CGRectMake(0, GLOBAL_SCREEN_HEIGHT - TABBAR_HEIGHT, GLOBAL_SCREEN_WIDTH, TABBAR_HEIGHT) titles:titleList];
-        _tabBarView.delegate = self;
-        _tabBarView.backgroundColor = [UIColor colorWithHex:0xc8c8c8];
-        [self.view addSubview:_tabBarView];
-    } else if (showContentType == 1) {
-        self.viewControllers = [NSArray arrayWithObjects:homeNav, recentNav, aboutNav, nil];
-        NSArray *titleList = [NSArray arrayWithObjects:@"赤兔", @"工具", @"关于", nil];
-        _tabBarView = [[FFTabBarView alloc] initWithFrame:CGRectMake(0, GLOBAL_SCREEN_HEIGHT - TABBAR_HEIGHT, GLOBAL_SCREEN_WIDTH, TABBAR_HEIGHT) titles:titleList];
-        _tabBarView.delegate = self;
-        _tabBarView.backgroundColor = [UIColor colorWithHex:0xc8c8c8];
-        [self.view addSubview:_tabBarView];
-    }
-    
+    self.viewControllers = [NSArray arrayWithObjects:homeNav, recentNav, settingNav, nil];
+    NSArray *titleList = [NSArray arrayWithObjects:@"赤兔", @"工具", @"设置", nil];
+    _tabBarView = [[FFTabBarView alloc] initWithFrame:CGRectMake(0, GLOBAL_SCREEN_HEIGHT - TABBAR_HEIGHT, GLOBAL_SCREEN_WIDTH, TABBAR_HEIGHT) titles:titleList];
+    _tabBarView.delegate = self;
+    _tabBarView.backgroundColor = [UIColor colorWithHex:0xc8c8c8];
+    [self.view addSubview:_tabBarView];
     
     [_tabBarView selectedTabBarItem:0];
     
@@ -202,7 +189,7 @@
     
     if (tIndex == 1) {
         [_tabBarView selectedTabBarItem:self.selectedIndex];
-        NSArray *titles = [NSArray arrayWithObjects:@"下一步", @"u盘", @"录音", @"GIF", @"AB", @"涂鸦", nil];
+        NSArray *titles = [NSArray arrayWithObjects:@"下一步", @"u盘", @"录音", @"GIF", @"丢一下", @"涂鸦", nil];
         FFActionSheetView *actionSheetView = [[FFActionSheetView alloc] initWithTitles:titles];
         actionSheetView.actionBlock = ^(int actionIndex) {
             [self doItemAction:actionIndex];

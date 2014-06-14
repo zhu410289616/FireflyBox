@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void(^FFTableViewCellConfigureBlock)(id cell, id item);
+typedef void(^FFTableViewCellConfigureBlock)(id cell, id item, NSIndexPath *indexPath);
 
 @interface FFTableViewDataSource : NSObject<UITableViewDataSource>
 

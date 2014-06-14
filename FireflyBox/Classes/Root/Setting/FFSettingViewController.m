@@ -8,6 +8,7 @@
 
 #import "FFSettingViewController.h"
 #import "FFSettingCell.h"
+#import "FFAboutViewController.h"
 
 @interface FFSettingViewController ()
 
@@ -29,28 +30,36 @@
 	// Do any additional setup after loading the view.
     
     self.dataTableView.delegate = self;
-    self.dataTableView.dataSource = self;
     [self.view addSubview:self.dataTableView];
     
     UIView *tableHeaderView = [[UIView alloc] init];
-    tableHeaderView.frame = CGRectMake(0, 0, GLOBAL_SCREEN_WIDTH, 20);
+    tableHeaderView.frame = CGRectMake(0, 0, GLOBAL_SCREEN_WIDTH, 40);
     self.dataTableView.tableHeaderView = tableHeaderView;
     
-    //
-    [self loadMenuData];
+    NSArray *settingMenu = [NSArray arrayWithObjects:@"吐个槽", @"关于", nil];
+    static NSString *CellIdentifier = @"FFSettingCell";
+    
+    FFTableViewCellConfigureBlock configureCell = ^(FFSettingCell *cell, id item, NSIndexPath *indexPath) {
+        [cell configureCellWithItem:item indexPath:indexPath];
+    };
+    self.itemsDataSource = [[FFTableViewDataSource alloc] initWithItems:settingMenu cellIdentifier:CellIdentifier configureCellBlock:configureCell];
+    self.dataTableView.dataSource = self.itemsDataSource;
+    [self.dataTableView registerClass:[FFSettingCell class] forCellReuseIdentifier:CellIdentifier];
     
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [GLOBAL_APP_DELEGATE.tabBarController showFFTabBarView];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
-    [GLOBAL_APP_DELEGATE.tabBarController showFFTabBarView];
+    GLOBAL_APP_DELEGATE.tabBarController.navigationController.navigationBar.hidden = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -69,46 +78,32 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark function
-
-- (void)loadMenuData
-{
-    self.dataList = [NSMutableArray arrayWithObjects:@"设置", @"帮助", @"关于", nil];
-    [self.dataTableView reloadData];
-}
-
-#pragma mark UITableViewDataSource method
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [self.dataList count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static  NSString *identifier = @"TableViewCell";
-    FFSettingCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    if (!cell) {
-        cell = [[FFSettingCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-        cell.footerLineView.hidden = NO;
-    }
-    if (indexPath.row == 0 && cell.headerLineView.hidden) {
-        cell.headerLineView.hidden = NO;
-    }
-    
-    NSString *menuName = [self.dataList objectAtIndex:indexPath.row];
-    [cell updateViewWithContent:menuName];
-    
-    return cell;
-}
-
 #pragma mark UITableViewDelegate method
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    [GLOBAL_APP_DELEGATE.tabBarController hideFFTabBarView];
+//    [GLOBAL_APP_DELEGATE.tabBarController hideFFTabBarView];
+    
+    switch (indexPath.row) {
+        case 0:
+        {
+            NSString *str = [NSString stringWithFormat: @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@", @"874328260"];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+        }
+            break;
+        case 1:
+        {
+            FFAboutViewController *aboutController = [[FFAboutViewController alloc] init];
+            [self.navigationController pushViewController:aboutController animated:YES];
+//            [GLOBAL_APP_DELEGATE.tabBarController.navigationController pushViewController:aboutController animated:YES];
+        }
+            break;
+            
+        default:
+            break;
+    }
     
 }
 

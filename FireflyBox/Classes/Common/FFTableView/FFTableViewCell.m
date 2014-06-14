@@ -32,9 +32,15 @@
     return self;
 }
 
+- (void)configureCellWithItem:(id)item indexPath:(NSIndexPath *)indexPath
+{
+    //todo
+}
+
 - (void)configureCellWithItem:(id)item
 {
     //todo
+    [self configureCellWithItem:item indexPath:nil];
 }
 
 - (void)layoutSubviews

@@ -42,7 +42,7 @@ static NSString * const CellIdentifier = @"CellIdentifier";
     self.dataTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     self.dataTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
-    FFTableViewCellConfigureBlock configureCell = ^(UITableViewCell *cell, id item) {
+    FFTableViewCellConfigureBlock configureCell = ^(UITableViewCell *cell, id item, NSIndexPath *indexPath) {
         // Get count
         ALAssetsGroup *g = (ALAssetsGroup*)item;
         [g setAssetsFilter:[ALAssetsFilter allPhotos]];

@@ -16,14 +16,20 @@
     if (self) {
         // Initialization code
         
+        self.footerLineView.hidden = NO;
         self.titleLabel.frame = CGRectMake(15, 0, GLOBAL_SCREEN_WIDTH - 30, 44);
     }
     return self;
 }
 
-- (void)updateViewWithContent:(NSString *)menuName
+- (void)configureCellWithItem:(id)item indexPath:(NSIndexPath *)indexPath
 {
-    self.titleLabel.text = [NSString stringWithFormat:@"%@", menuName];
+    self.headerLineView.hidden = YES;
+    if (indexPath.row == 0 && self.headerLineView.hidden) {
+        self.headerLineView.hidden = NO;
+    }
+    
+    self.titleLabel.text = [NSString stringWithFormat:@"%@", item];
 }
 
 @end

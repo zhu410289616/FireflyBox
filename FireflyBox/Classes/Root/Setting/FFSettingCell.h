@@ -10,6 +10,4 @@
 
 @interface FFSettingCell : FFSingleTextCell
 
-- (void)updateViewWithContent:(NSString *)menuName;
-
 @end

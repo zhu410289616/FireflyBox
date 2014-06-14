@@ -11,7 +11,6 @@
 #import "FFHomeViewController.h"
 #import "FFRecentViewController.h"
 #import "FFSettingViewController.h"
-#import "FFAboutViewController.h"
 
 @interface FFRootTabBarController : FFBaseTabBarController<FFTabBarViewDelegate>
 
@@ -19,7 +18,6 @@
 @property (nonatomic, strong) FFHomeViewController *homeController;
 @property (nonatomic, strong) FFRecentViewController *recentController;
 @property (nonatomic, strong) FFSettingViewController *settingController;
-@property (nonatomic, strong) FFAboutViewController *aboutController;
 
 + (id)sharedInstance;
 

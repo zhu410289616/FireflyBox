@@ -29,8 +29,8 @@ static NSString * const FFTableViewCellIdentifier = @"FFTableViewCellIdentifier"
     self.dataTableView.backgroundColor = [UIColor colorWithHex:0xe5e5e5];
     [self.view addSubview:self.dataTableView];
     
-    FFTableViewCellConfigureBlock configureCell = ^(FFTableViewCell *cell, id item) {
-        [cell configureCellWithItem:item];
+    FFTableViewCellConfigureBlock configureCell = ^(FFTableViewCell *cell, id item, NSIndexPath *indexPath) {
+        [cell configureCellWithItem:item indexPath:indexPath];
     };
     self.itemsDataSource = [[FFTableViewDataSource alloc] initWithItems:nil cellIdentifier:FFTableViewCellIdentifier configureCellBlock:configureCell];
     self.dataTableView.dataSource = self.itemsDataSource;
