@@ -15,6 +15,9 @@
 #import "FFBluetoothTransferViewController.h"
 #import "FFGraffitiViewController.h"
 
+//test
+#import "FFSinglePhotoBrower.h"
+
 #define TABBAR_HEIGHT 50.0f
 
 @interface FFRootTabBarController ()
@@ -152,6 +155,13 @@
     [self presentViewController:nav animated:YES completion:nil];
 }
 
+- (void)doTestAction
+{
+    FFSinglePhotoBrower *singlePhotoBrower = [[FFSinglePhotoBrower alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:singlePhotoBrower];
+    [self navigationWithCustomStyle:NavigationStylePresent toController:nav animated:YES];
+}
+
 - (void)doItemAction:(int)actionIndex
 {
     FFLog(@"doItemAction: %d", actionIndex);
@@ -175,6 +185,9 @@
         case 5:
             [self doShowGraffitiAction];
             break;
+        case 6:
+            [self doTestAction];
+            break;
             
         default:
             break;
@@ -189,7 +202,7 @@
     
     if (tIndex == 1) {
         [_tabBarView selectedTabBarItem:self.selectedIndex];
-        NSArray *titles = [NSArray arrayWithObjects:@"下一步", @"u盘", @"录音", @"GIF", @"丢一下", @"涂鸦", nil];
+        NSArray *titles = [NSArray arrayWithObjects:@"下一步", @"u盘", @"录音", @"GIF", @"丢一下", @"涂鸦", @"test", nil];
         FFActionSheetView *actionSheetView = [[FFActionSheetView alloc] initWithTitles:titles];
         actionSheetView.actionBlock = ^(int actionIndex) {
             [self doItemAction:actionIndex];

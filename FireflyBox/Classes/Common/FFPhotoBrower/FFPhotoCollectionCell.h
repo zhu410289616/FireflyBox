@@ -6,11 +6,13 @@
 //  Copyright (c) 2014年 pig. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "FFCollectionViewCell.h"
 #import "FFPhotoView.h"
 
-@interface FFPhotoCollectionCell : UICollectionViewCell
+@interface FFPhotoCollectionCell : FFCollectionViewCell
 
 @property (nonatomic, strong) FFPhotoView *photoView;
+
+- (void)configureCellWithItem:(id)item indexPath:(NSIndexPath *)indexPath delegate:(id)delegate;
 
 @end

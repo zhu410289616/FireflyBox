@@ -82,8 +82,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    [self doGotoAlbumTablePicker:NO];
 }
 
 - (void)didReceiveMemoryWarning

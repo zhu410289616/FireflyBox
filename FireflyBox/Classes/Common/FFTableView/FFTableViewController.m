@@ -9,8 +9,6 @@
 #import "FFTableViewController.h"
 #import "FFTableViewCell.h"
 
-static NSString * const FFTableViewCellIdentifier = @"FFTableViewCellIdentifier";
-
 @interface FFTableViewController ()
 
 @end
@@ -32,9 +30,11 @@ static NSString * const FFTableViewCellIdentifier = @"FFTableViewCellIdentifier"
     FFTableViewCellConfigureBlock configureCell = ^(FFTableViewCell *cell, id item, NSIndexPath *indexPath) {
         [cell configureCellWithItem:item indexPath:indexPath];
     };
-    self.itemsDataSource = [[FFTableViewDataSource alloc] initWithItems:nil cellIdentifier:FFTableViewCellIdentifier configureCellBlock:configureCell];
+    
+    static NSString *CellIdentifier = @"FFTableViewCell";
+    self.itemsDataSource = [[FFTableViewDataSource alloc] initWithItems:nil cellIdentifier:CellIdentifier configureCellBlock:configureCell];
     self.dataTableView.dataSource = self.itemsDataSource;
-    [self.dataTableView registerClass:[FFTableViewCell class] forCellReuseIdentifier:FFTableViewCellIdentifier];
+    [self.dataTableView registerClass:[FFTableViewCell class] forCellReuseIdentifier:CellIdentifier];
     
     self.dataList = [[NSMutableArray alloc] init];
     

@@ -25,6 +25,23 @@
     return self;
 }
 
+- (void)configureCellWithItem:(id)item indexPath:(NSIndexPath *)indexPath delegate:(id)delegate
+{
+    [self.photoView prepareForReuse];
+    
+    self.photoView.photoViewDelegate = delegate;
+    [self.photoView startWaiting];
+    
+    self.photoView.alpha = 0.0f;
+    [self.photoView displayImage:item];
+    [UIView animateWithDuration:0.35f animations:^{
+        self.photoView.alpha = 1.0f;
+    } completion:^(BOOL finished) {
+        [self.photoView stopWaiting];
+    }];
+}
+
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

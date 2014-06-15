@@ -197,7 +197,7 @@
 
 - (void)handleDoubleTap:(UIGestureRecognizer *)gestureRecognizer
 {
-    if (self.zoomScale > (self.maximumZoomScale - FLT_EPSILON)) {
+    if (self.zoomScale >= (self.maximumZoomScale - FLT_EPSILON)) {
         // jump back to minimum scale
         [self updateZoomScaleWithGesture:gestureRecognizer newScale:self.minimumZoomScale];
     }

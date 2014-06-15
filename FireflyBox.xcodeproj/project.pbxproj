@@ -161,6 +161,10 @@
 		16BCB5741926716500B12CBF /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16BCB5681926716500B12CBF /* CAStreamBasicDescription.cpp */; };
 		16BCB5751926716500B12CBF /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16BCB56A1926716500B12CBF /* CAXException.cpp */; };
 		16BCB5771926756400B12CBF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16BCB5761926756400B12CBF /* AudioToolbox.framework */; };
+		16C0700B194D91E5001C7232 /* FFCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16C0700A194D91E5001C7232 /* FFCollectionViewController.m */; };
+		16C0700E194D9218001C7232 /* FFCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16C0700D194D9218001C7232 /* FFCollectionViewCell.m */; };
+		16C07011194D9244001C7232 /* FFCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 16C07010194D9244001C7232 /* FFCollectionViewDataSource.m */; };
+		16C07014194D9DF4001C7232 /* FFSinglePhotoBrower.m in Sources */ = {isa = PBXBuildFile; fileRef = 16C07013194D9DF4001C7232 /* FFSinglePhotoBrower.m */; };
 		16CF24291910948B0029F3D2 /* DOUAudioAnalyzer+Default.m in Sources */ = {isa = PBXBuildFile; fileRef = 16CF24001910948B0029F3D2 /* DOUAudioAnalyzer+Default.m */; };
 		16CF242A1910948B0029F3D2 /* DOUAudioAnalyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = 16CF24021910948B0029F3D2 /* DOUAudioAnalyzer.m */; };
 		16CF242B1910948B0029F3D2 /* DOUAudioDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 16CF24061910948B0029F3D2 /* DOUAudioDecoder.m */; };
@@ -528,6 +532,14 @@
 		16BCB56A1926716500B12CBF /* CAXException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAXException.cpp; sourceTree = "<group>"; };
 		16BCB56B1926716500B12CBF /* CAXException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAXException.h; sourceTree = "<group>"; };
 		16BCB5761926756400B12CBF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		16C07009194D91E5001C7232 /* FFCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCollectionViewController.h; sourceTree = "<group>"; };
+		16C0700A194D91E5001C7232 /* FFCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCollectionViewController.m; sourceTree = "<group>"; };
+		16C0700C194D9218001C7232 /* FFCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCollectionViewCell.h; sourceTree = "<group>"; };
+		16C0700D194D9218001C7232 /* FFCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCollectionViewCell.m; sourceTree = "<group>"; };
+		16C0700F194D9244001C7232 /* FFCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCollectionViewDataSource.h; sourceTree = "<group>"; };
+		16C07010194D9244001C7232 /* FFCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCollectionViewDataSource.m; sourceTree = "<group>"; };
+		16C07012194D9DF4001C7232 /* FFSinglePhotoBrower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFSinglePhotoBrower.h; sourceTree = "<group>"; };
+		16C07013194D9DF4001C7232 /* FFSinglePhotoBrower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFSinglePhotoBrower.m; sourceTree = "<group>"; };
 		16CF23FF1910948B0029F3D2 /* DOUAudioAnalyzer+Default.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DOUAudioAnalyzer+Default.h"; sourceTree = "<group>"; };
 		16CF24001910948B0029F3D2 /* DOUAudioAnalyzer+Default.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DOUAudioAnalyzer+Default.m"; sourceTree = "<group>"; };
 		16CF24011910948B0029F3D2 /* DOUAudioAnalyzer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOUAudioAnalyzer.h; sourceTree = "<group>"; };
@@ -1085,6 +1097,8 @@
 				160595691947590D005A9A05 /* FFMultiPhotoBrower.m */,
 				1629264E1949F4340063F762 /* FFMultiPhotoEditView.h */,
 				1629264F1949F4340063F762 /* FFMultiPhotoEditView.m */,
+				16C07012194D9DF4001C7232 /* FFSinglePhotoBrower.h */,
+				16C07013194D9DF4001C7232 /* FFSinglePhotoBrower.m */,
 			);
 			path = FFPhotoBrower;
 			sourceTree = "<group>";
@@ -1257,6 +1271,7 @@
 		16A2F8831902D5AC00751B82 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				16C07008194D91B5001C7232 /* FFCollectionView */,
 				162A2CBE194C7E1F00116D51 /* FFTableView */,
 				167057B91945FE45000EA5D4 /* FFPhotoBrower */,
 				16647B0E19441099004BD99E /* FFPageControl */,
@@ -1466,6 +1481,19 @@
 				16BCB56B1926716500B12CBF /* CAXException.h */,
 			);
 			path = PublicUtility;
+			sourceTree = "<group>";
+		};
+		16C07008194D91B5001C7232 /* FFCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				16C07009194D91E5001C7232 /* FFCollectionViewController.h */,
+				16C0700A194D91E5001C7232 /* FFCollectionViewController.m */,
+				16C0700C194D9218001C7232 /* FFCollectionViewCell.h */,
+				16C0700D194D9218001C7232 /* FFCollectionViewCell.m */,
+				16C0700F194D9244001C7232 /* FFCollectionViewDataSource.h */,
+				16C07010194D9244001C7232 /* FFCollectionViewDataSource.m */,
+			);
+			path = FFCollectionView;
 			sourceTree = "<group>";
 		};
 		16CF23FE1910948B0029F3D2 /* DOUAudioStreamer */ = {
@@ -1943,6 +1971,7 @@
 				16647B0B19440E45004BD99E /* FFAsset.m in Sources */,
 				16E943F61929B75E00D0A488 /* KGStatusBar.m in Sources */,
 				16A2F8F61902D5C100751B82 /* FMDatabase.m in Sources */,
+				16C07014194D9DF4001C7232 /* FFSinglePhotoBrower.m in Sources */,
 				16ED1D57190B78B9007EC697 /* GCDWebServerStreamedResponse.m in Sources */,
 				16A2F8F81902D5C100751B82 /* FMDatabasePool.m in Sources */,
 				16CF244719109CF00029F3D2 /* Track+Provider.m in Sources */,
@@ -1958,6 +1987,7 @@
 				16A0D62A190AC0A7007D6EBA /* FFEmptyTipsView.m in Sources */,
 				16FD4D281930D34000EC8B74 /* FFBaseTask.m in Sources */,
 				16FD4D271930D34000EC8B74 /* FFBaseQueue.m in Sources */,
+				16C0700E194D9218001C7232 /* FFCollectionViewCell.m in Sources */,
 				16A2F8A31902D5AC00751B82 /* FFDB+All.m in Sources */,
 				16CF242F1910948B0029F3D2 /* DOUAudioFrequencyAnalyzer.m in Sources */,
 				1620DCFC1913807200AE810C /* UIImage+FireFly.m in Sources */,
@@ -1966,6 +1996,7 @@
 				16ED1D54190B78B9007EC697 /* GCDWebServerDataResponse.m in Sources */,
 				166919E91930C346008E385B /* AFURLConnectionOperation.m in Sources */,
 				161FF0771912780300CDD559 /* FFTrack.m in Sources */,
+				16C07011194D9244001C7232 /* FFCollectionViewDataSource.m in Sources */,
 				167057C2194604C7000EA5D4 /* FFPhotosDataSource.m in Sources */,
 				16CF24291910948B0029F3D2 /* DOUAudioAnalyzer+Default.m in Sources */,
 				16CF243A1910948B0029F3D2 /* DOUSimpleHTTPRequest.m in Sources */,
@@ -2026,6 +2057,7 @@
 				16059567194757E3005A9A05 /* FFSimplePhotoBrower.m in Sources */,
 				16DAD67F1902DA6D00BFE84C /* GTMBase64.m in Sources */,
 				167057B41945EE39000EA5D4 /* FFAVCamViewController.m in Sources */,
+				16C0700B194D91E5001C7232 /* FFCollectionViewController.m in Sources */,
 				1620DCFA1913807200AE810C /* UIDevice+FireFly.m in Sources */,
 				1624B89E19093C140018B8FE /* FFHomeViewController.m in Sources */,
 			);
