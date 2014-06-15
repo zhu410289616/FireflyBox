@@ -26,9 +26,6 @@
     //
     _tabBarController = [[FFRootTabBarController alloc] init];
     self.window.rootViewController = _tabBarController;
-//    _navController = [[UINavigationController alloc] initWithRootViewController:_tabBarController];
-//    _navController.navigationBarHidden = YES;
-//    self.window.rootViewController = _navController;
     
     //
     self.window.backgroundColor = [UIColor whiteColor];

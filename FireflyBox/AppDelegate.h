@@ -14,6 +14,5 @@
 @property (strong, nonatomic) UIWindow *window;
 
 @property (nonatomic, strong) FFRootTabBarController *tabBarController;
-@property (nonatomic, strong) UINavigationController *navController;
 
 @end

@@ -121,7 +121,7 @@
     FFBarButtonItem *backBarItem = [[FFBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
     self.navigationItem.backBarButtonItem = backBarItem;
     FFTransferViewController *transferController = [[FFTransferViewController alloc] init];
-    [self.navigationController pushViewController:transferController animated:YES];
+    [self navigationWithCustomStyle:NavigationStylePopPush toController:transferController animated:YES];
 }
 
 @end

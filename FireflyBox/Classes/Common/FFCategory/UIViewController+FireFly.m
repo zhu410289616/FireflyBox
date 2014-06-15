@@ -10,4 +10,40 @@
 
 @implementation UIViewController (FireFly)
 
+- (void)navigationWithCustomStyle:(NavigationStyle)navStyle toController:(UIViewController *)toController animated:(BOOL)animated
+{
+    switch (navStyle) {
+        case NavigationStyleNormalPush:
+        {
+            [self.navigationController pushViewController:toController animated:animated];
+        }
+            break;
+        case NavigationStylePopPush:
+        {
+            if ([self.navigationController.viewControllers containsObject:toController]) {
+                [self.navigationController popToViewController:toController animated:animated];
+            } else {
+                [self.navigationController pushViewController:toController animated:animated];
+            }
+        }
+            break;
+        case NavigationStylePresent:
+        {
+            [self presentViewController:toController animated:animated completion:nil];
+        }
+            break;
+        case NavigationStyleFlipHorizontal:
+        {
+            toController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+            [UIView animateWithDuration:0.5 animations:^{
+                [self presentViewController:toController animated:NO completion:nil];
+            }];
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
+
 @end

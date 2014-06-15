@@ -155,7 +155,7 @@ static NSString * const CellIdentifier = @"CellIdentifier";
     assetPicker.delegate = self;
     assetPicker.assetGroup = [self.itemsDataSource itemAtIndexPath:indexPath];
     [assetPicker.assetGroup setAssetsFilter:[ALAssetsFilter allPhotos]];
-    [self.navigationController pushViewController:assetPicker animated:YES];
+    [self navigationWithCustomStyle:NavigationStylePopPush toController:assetPicker animated:YES];
 }
 
 #pragma mark FFAssetSelectionDelegate method

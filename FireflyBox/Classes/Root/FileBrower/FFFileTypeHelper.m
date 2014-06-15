@@ -32,7 +32,7 @@ static int tempNum = 1;
             fileController.title = _dataInfo.dataName;
             fileController.parentDataId = _dataInfo.dataId;
             fileController.fileDir = _dataInfo.dataPath;
-            [_viewController.navigationController pushViewController:fileController animated:YES];
+            [_viewController navigationWithCustomStyle:NavigationStylePopPush toController:fileController animated:YES];
         }
             break;
         case FFFileTypeText:
@@ -40,7 +40,7 @@ static int tempNum = 1;
             FFTextReaderViewController *textController = [[FFTextReaderViewController alloc] init];
             textController.title = _dataInfo.dataName;
             textController.filePath = _dataInfo.dataPath;
-            [_viewController.navigationController pushViewController:textController animated:YES];
+            [_viewController navigationWithCustomStyle:NavigationStylePopPush toController:textController animated:YES];
         }
             break;
         case FFFileTypeMusic:
@@ -59,7 +59,7 @@ static int tempNum = 1;
             FFFileReaderViewController *readerController = [[FFFileReaderViewController alloc] init];
             readerController.title = _dataInfo.dataName;
             readerController.filePath = _dataInfo.dataPath;
-            [_viewController.navigationController pushViewController:readerController animated:YES];
+            [_viewController navigationWithCustomStyle:NavigationStylePopPush toController:readerController animated:YES];
         }
             break;
         case FFFileTypeUnkown:
@@ -68,7 +68,7 @@ static int tempNum = 1;
             FFFileReaderViewController *readerController = [[FFFileReaderViewController alloc] init];
             readerController.title = _dataInfo.dataName;
             readerController.filePath = _dataInfo.dataPath;
-            [_viewController.navigationController pushViewController:readerController animated:YES];
+            [_viewController navigationWithCustomStyle:NavigationStylePopPush toController:readerController animated:YES];
         }
             break;
             
@@ -106,7 +106,7 @@ static int tempNum = 1;
     musicController.tracks = [self getMusicInfoList];
     musicController.currentTrackIndex = selectIndex;
     musicController.title = [NSString stringWithFormat:@"Music(%d)", [[self getMusicInfoList] count]];
-    [_viewController.navigationController pushViewController:musicController animated:YES];
+    [_viewController navigationWithCustomStyle:NavigationStylePopPush toController:musicController animated:YES];
 }
 
 - (NSMutableArray *)getMusicInfoList

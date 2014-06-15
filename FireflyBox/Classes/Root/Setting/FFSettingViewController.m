@@ -58,8 +58,6 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    GLOBAL_APP_DELEGATE.tabBarController.navigationController.navigationBar.hidden = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -96,8 +94,7 @@
         case 1:
         {
             FFAboutViewController *aboutController = [[FFAboutViewController alloc] init];
-            [self.navigationController pushViewController:aboutController animated:YES];
-//            [GLOBAL_APP_DELEGATE.tabBarController.navigationController pushViewController:aboutController animated:YES];
+            [self navigationWithCustomStyle:NavigationStylePopPush toController:aboutController animated:YES];
         }
             break;
             

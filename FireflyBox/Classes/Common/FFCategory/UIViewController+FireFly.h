@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum {
+    NavigationStyleNormalPush,
+    NavigationStylePopPush,
+    NavigationStylePresent,
+    NavigationStyleFlipHorizontal
+} NavigationStyle;
+
 @interface UIViewController (FireFly)
+
+- (void)navigationWithCustomStyle:(NavigationStyle)navStyle toController:(UIViewController *)toController animated:(BOOL)animated;
 
 @end
