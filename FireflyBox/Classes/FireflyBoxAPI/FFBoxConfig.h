@@ -19,6 +19,7 @@
 //audio recorder
 #define kBufferDurationSeconds .5
 #define AUDIO_RECORDER_SAVE_DIR         @"/WebServer/MyAudio"
+#define MOVIE_WRITER_SAVE_DIR           @"/WebServer/MyMovie"
 
 //webservice
 //domain

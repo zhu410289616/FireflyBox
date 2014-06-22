@@ -68,6 +68,7 @@
 		1631715C19421E4E001B5BA5 /* NSData+FireFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 1631715B19421E4E001B5BA5 /* NSData+FireFly.m */; };
 		1658B518192B955900B8CF4E /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1658B515192B955900B8CF4E /* libMobClickLibrary.a */; };
 		1658B52B192BA42200B8CF4E /* FFConvertHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1658B52A192BA42200B8CF4E /* FFConvertHelper.m */; };
+		165E3E181956954000FC9A68 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 165E3E171956954000FC9A68 /* GPUImage.framework */; };
 		16647B0719440477004BD99E /* FFGifMakerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16647B0619440477004BD99E /* FFGifMakerViewController.m */; };
 		16647B0B19440E45004BD99E /* FFAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 16647B0A19440E45004BD99E /* FFAsset.m */; };
 		16647B0D19440E7C004BD99E /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16647B0C19440E7C004BD99E /* AssetsLibrary.framework */; };
@@ -150,6 +151,9 @@
 		16A2F8FF1902D5C100751B82 /* SYAppStart.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A2F8E51902D5C100751B82 /* SYAppStart.m */; };
 		16A5B143190C0FBB000FA5C4 /* FFSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5B142190C0FBB000FA5C4 /* FFSettingCell.m */; };
 		16A5B14E190C17D9000FA5C4 /* FFDB+DataInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5B14D190C17D9000FA5C4 /* FFDB+DataInfo.m */; };
+		16B46BA61956C298003C30C5 /* Menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16B46BA31956C298003C30C5 /* Menu@2x.png */; };
+		16B46BA71956C298003C30C5 /* RecordDot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16B46BA41956C298003C30C5 /* RecordDot@2x.png */; };
+		16B46BA81956C298003C30C5 /* RecordStop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16B46BA51956C298003C30C5 /* RecordStop@2x.png */; };
 		16BCB5531926650000B12CBF /* FFAudioRecorderViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 16BCB5521926650000B12CBF /* FFAudioRecorderViewController.mm */; };
 		16BCB56C1926716500B12CBF /* AQPlayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 16BCB5561926716500B12CBF /* AQPlayer.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		16BCB56D1926716500B12CBF /* AQRecorder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 16BCB5581926716500B12CBF /* AQRecorder.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -357,6 +361,7 @@
 		1658B517192B955900B8CF4E /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		1658B529192BA42200B8CF4E /* FFConvertHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFConvertHelper.h; sourceTree = "<group>"; };
 		1658B52A192BA42200B8CF4E /* FFConvertHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFConvertHelper.m; sourceTree = "<group>"; };
+		165E3E171956954000FC9A68 /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GPUImage.framework; sourceTree = "<group>"; };
 		16647B0519440477004BD99E /* FFGifMakerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFGifMakerViewController.h; sourceTree = "<group>"; };
 		16647B0619440477004BD99E /* FFGifMakerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFGifMakerViewController.m; sourceTree = "<group>"; };
 		16647B0919440E45004BD99E /* FFAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFAsset.h; sourceTree = "<group>"; };
@@ -510,6 +515,9 @@
 		16A5B142190C0FBB000FA5C4 /* FFSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFSettingCell.m; sourceTree = "<group>"; };
 		16A5B14C190C17D9000FA5C4 /* FFDB+DataInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FFDB+DataInfo.h"; sourceTree = "<group>"; };
 		16A5B14D190C17D9000FA5C4 /* FFDB+DataInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FFDB+DataInfo.m"; sourceTree = "<group>"; };
+		16B46BA31956C298003C30C5 /* Menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu@2x.png"; sourceTree = "<group>"; };
+		16B46BA41956C298003C30C5 /* RecordDot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecordDot@2x.png"; sourceTree = "<group>"; };
+		16B46BA51956C298003C30C5 /* RecordStop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecordStop@2x.png"; sourceTree = "<group>"; };
 		16BCB5511926650000B12CBF /* FFAudioRecorderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFAudioRecorderViewController.h; sourceTree = "<group>"; };
 		16BCB5521926650000B12CBF /* FFAudioRecorderViewController.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = FFAudioRecorderViewController.mm; sourceTree = "<group>"; };
 		16BCB5551926716500B12CBF /* AQPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQPlayer.h; sourceTree = "<group>"; };
@@ -685,6 +693,7 @@
 				16DAD6811902DADE00BFE84C /* libsqlite3.dylib in Frameworks */,
 				16A2F7741902663100751B82 /* CoreGraphics.framework in Frameworks */,
 				16A2F7761902663100751B82 /* UIKit.framework in Frameworks */,
+				165E3E181956954000FC9A68 /* GPUImage.framework in Frameworks */,
 				16F2051F192DEE75001AD92D /* libmp3lame.a in Frameworks */,
 				1658B518192B955900B8CF4E /* libMobClickLibrary.a in Frameworks */,
 				16A2F7721902663100751B82 /* Foundation.framework in Frameworks */,
@@ -1106,6 +1115,7 @@
 		167E711E190B7FE80014ADEB /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				16B46BA21956C298003C30C5 /* Camera */,
 				1620DD191913EE4300AE810C /* Icon_120_120@2x.png */,
 				1620DD1A1913EE4300AE810C /* Icon_200_200@2x.png */,
 				167E711F190B7FE80014ADEB /* Transfer */,
@@ -1164,6 +1174,7 @@
 		16A2F7701902663100751B82 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				165E3E171956954000FC9A68 /* GPUImage.framework */,
 				16647B0C19440E7C004BD99E /* AssetsLibrary.framework */,
 				166E7D981931D64A0066A468 /* CoreBluetooth.framework */,
 				16686627192675F9009BD05D /* OpenGLES.framework */,
@@ -1426,6 +1437,16 @@
 				16A2F8E51902D5C100751B82 /* SYAppStart.m */,
 			);
 			path = SYAppStart;
+			sourceTree = "<group>";
+		};
+		16B46BA21956C298003C30C5 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				16B46BA31956C298003C30C5 /* Menu@2x.png */,
+				16B46BA41956C298003C30C5 /* RecordDot@2x.png */,
+				16B46BA51956C298003C30C5 /* RecordStop@2x.png */,
+			);
+			path = Camera;
 			sourceTree = "<group>";
 		};
 		16BCB5501926646500B12CBF /* AudioRecorder */ = {
@@ -1829,12 +1850,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16B46BA61956C298003C30C5 /* Menu@2x.png in Resources */,
 				1620DD1B1913EE4300AE810C /* Icon_120_120@2x.png in Resources */,
 				16A2F77C1902663100751B82 /* InfoPlist.strings in Resources */,
 				16232D301916743B0043F840 /* NextStep.bundle in Resources */,
 				167E7126190B82040014ADEB /* transfer_bg.png in Resources */,
+				16B46BA81956C298003C30C5 /* RecordStop@2x.png in Resources */,
 				1620DD1C1913EE4300AE810C /* Icon_200_200@2x.png in Resources */,
 				1605955A19474AD3005A9A05 /* FFPhotoBrower.bundle in Resources */,
+				16B46BA71956C298003C30C5 /* RecordDot@2x.png in Resources */,
 				16ED1D58190B78B9007EC697 /* GCDWebUploader.bundle in Resources */,
 				16A2F7841902663100751B82 /* Images.xcassets in Resources */,
 				167E7127190B82040014ADEB /* transfer_bg@2x.png in Resources */,
@@ -2190,6 +2214,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FireflyBox/FireflyBox-Prefix.pch";
@@ -2219,6 +2244,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FireflyBox/FireflyBox-Prefix.pch";

@@ -49,6 +49,7 @@ static int const TOP_PARENT_DATA_ID = 0;
 @property (nonatomic, strong) NSString *creationDate;
 @property (nonatomic, strong) NSString *dataPath;
 @property (nonatomic, assign) long lCreateTime;
+@property (nonatomic, assign) long fileSize;
 
 - (id)initWithFileAttributes:(NSDictionary *)fileAttributes name:(NSString *)name parentDataId:(long)tParentDataId;
 - (id)initWithFMResultSet:(FMResultSet *)tResultSet;

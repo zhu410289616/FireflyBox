@@ -18,6 +18,11 @@
 
 - (void)initAppLevelUIConfig;
 
+/**
+ *  制定定时提醒计划
+ */
+- (void)doLocalNotificationSchema;
+
 - (void)testFunction;
 
 @end

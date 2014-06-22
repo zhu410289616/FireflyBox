@@ -54,6 +54,13 @@
     
     _filterDataList = [[NSMutableArray alloc] init];
     
+    //refrush
+    if ([self shouldUpdateFileInfo]) {
+        [self loadFileInfoWithDir:_fileDir parentDataId:_parentDataId];
+    } else {
+        [self loadFileInfo];
+    }
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -61,13 +68,6 @@
     [super viewWillAppear:animated];
     
     [GLOBAL_APP_DELEGATE.tabBarController showFFTabBarView];
-    
-    //refrush
-    if ([self shouldUpdateFileInfo]) {
-        [self loadFileInfoWithDir:_fileDir parentDataId:_parentDataId];
-    } else {
-        [self loadFileInfo];
-    }
     
 }
 

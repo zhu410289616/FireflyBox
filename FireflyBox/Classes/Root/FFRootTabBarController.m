@@ -11,6 +11,7 @@
 #import "FFActionSheetView.h"
 #import "FFNextStepViewController.h"
 #import "FFAudioRecorderViewController.h"
+#import "FFCameraViewController.h"
 #import "FFGIFCamViewController.h"
 #import "FFBluetoothTransferViewController.h"
 #import "FFGraffitiViewController.h"
@@ -131,6 +132,14 @@
     [self presentViewController:nav animated:YES completion:nil];
 }
 
+- (void)doShowCameraAction
+{
+    [[NSUserDefaults standardUserDefaults] setValue:@YES forKey:SHOULD_UPDATE_FILE_INFO];
+    
+    FFCameraViewController *cameraController = [[FFCameraViewController alloc] init];
+    [self navigationWithCustomStyle:NavigationStylePresent toController:cameraController animated:YES];
+}
+
 - (void)doShowGifAction
 {
     [[NSUserDefaults standardUserDefaults] setValue:@YES forKey:SHOULD_UPDATE_FILE_INFO];
@@ -177,15 +186,18 @@
             [self doShowAudioRecorderAction];//录音
             break;
         case 3:
+            [self doShowCameraAction];//camera
+            break;
+        case 94:
             [self doShowGifAction];
             break;
-        case 4:
+        case 95:
             [self doShowBluetoothAction];
             break;
-        case 5:
+        case 96:
             [self doShowGraffitiAction];
             break;
-        case 6:
+        case 97:
             [self doTestAction];
             break;
             
@@ -202,7 +214,8 @@
     
     if (tIndex == 1) {
         [_tabBarView selectedTabBarItem:self.selectedIndex];
-        NSArray *titles = [NSArray arrayWithObjects:@"下一步", @"u盘", @"录音", @"GIF", @"丢一下", @"涂鸦", @"test", nil];
+//        NSArray *titles = [NSArray arrayWithObjects:@"下一步", @"u盘", @"录音", @"视频", @"GIF", @"丢一下", @"涂鸦", @"test", nil];
+        NSArray *titles = [NSArray arrayWithObjects:@"下一步", @"u盘", @"录音", @"视频", nil];
         FFActionSheetView *actionSheetView = [[FFActionSheetView alloc] initWithTitles:titles];
         actionSheetView.actionBlock = ^(int actionIndex) {
             [self doItemAction:actionIndex];

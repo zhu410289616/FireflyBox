@@ -7,7 +7,22 @@
 //
 
 #import "FFBaseViewController.h"
+#import <GPUImage/GPUImage.h>
 
 @interface FFCameraViewController : FFBaseViewController
+
+@property (nonatomic, strong) NSString *movieWriterPath;
+
+@property (nonatomic, strong) GPUImageView *backgroundGPUImageView;
+@property (nonatomic, strong) GPUImageVideoCamera *videoCamera;
+//@property (nonatomic, strong) GPUImageOutput<GPUImageInput> *filter;
+@property (nonatomic, strong) GPUImageBuffer *videoBuffer;
+@property (nonatomic, strong) GPUImageMovieWriter *movieWriter;
+
+@property (nonatomic, strong) UIButton *quitButton;
+@property (nonatomic, strong) UIButton *recordButton;
+@property (nonatomic, strong) UIButton *frontOrBackButton;
+
+@property (nonatomic, assign) BOOL isRecording;
 
 @end

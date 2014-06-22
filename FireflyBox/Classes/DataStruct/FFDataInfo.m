@@ -20,6 +20,7 @@
         NSString *fileType = [fileAttributes objectForKey:@"NSFileType"];
         NSDate *fileCreationDate = [fileAttributes objectForKey:@"NSFileCreationDate"];
         
+        _fileSize = [[fileAttributes objectForKey:@"NSFileSize"] longValue];
         _dataName = name;
         _dataId = fileNumber;
         _parentDataId = tParentDataId;
@@ -51,6 +52,7 @@
         _dataName = [tResultSet stringForColumn:@"dataname"];
         _creationDate = [tResultSet stringForColumn:@"creationdate"];
         _dataPath = [tResultSet stringForColumn:@"datapath"];
+        _fileSize = [tResultSet longForColumn:@"filesize"];
         [self getShowColorWithFileType:_fileType];
     }
     return self;

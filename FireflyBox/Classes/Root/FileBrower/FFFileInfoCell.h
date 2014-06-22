@@ -13,6 +13,7 @@
 @interface FFFileInfoCell : FFHeadImageCell
 
 @property (nonatomic, strong) FFFileTypeIconView *typeIconView;
+@property (nonatomic, strong) UILabel *fileSizeLabel;
 
 - (void)updateViewWithContent:(FFDataInfo *)tDataInfo;
 

@@ -90,6 +90,38 @@
     
 }
 
+#pragma local notification
+
+/**
+ *  制定定时提醒计划
+ */
+- (void)doLocalNotificationSchema
+{
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    
+    NSArray *alertBodyList = [NSArray arrayWithObjects:@"这么多天没使用赤兔了，伦家都感觉都动力了~", @"\"主人你最近好像忽略我了，都没忘我肚子里装东西了呢～～", @"几天没见，你忘记赤兔了吗~~快来看看人家啦~", nil];
+    int nAlertBodyListSize = [alertBodyList count];
+    
+    //随机显示消息内容
+    int rnd = random() % nAlertBodyListSize;
+    NSString *strAlertBody = [alertBodyList objectAtIndex:rnd];
+    
+    FFLog(@"rnd: %d, strAlertBody: %@", rnd, strAlertBody);
+    
+    long addSecond = 7 * 24 * 3600;
+    NSDate *alertDate = [[NSDate date] dateByAddingTimeInterval:addSecond];
+    
+    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+    if (localNotification) {
+        localNotification.fireDate = alertDate;
+        localNotification.timeZone = [NSTimeZone defaultTimeZone];
+        localNotification.alertBody = strAlertBody;
+        localNotification.hasAction = YES;
+        localNotification.repeatInterval = kCFCalendarUnitWeekday;
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    }
+}
+
 #pragma mark reachability
 
 - (void)setFFReachability

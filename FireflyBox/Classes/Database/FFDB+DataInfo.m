@@ -15,7 +15,7 @@
     FFLog(@"initDataInfo...");
     
     [self.dbQueue inDatabase:^(FMDatabase *db) {
-        NSString *sql = [NSString stringWithFormat:@"create table if not exists FF_DATA_INFO (_id integer primary key autoincrement not null, dataid integer, parentdataid integer, datatype integer, filetype integer, dataname text, creationdate text, datapath text)"];
+        NSString *sql = [NSString stringWithFormat:@"create table if not exists FF_DATA_INFO (_id integer primary key autoincrement not null, dataid integer, parentdataid integer, datatype integer, filetype integer, dataname text, creationdate text, datapath text, filesize integer)"];
         [db open];
         [db executeUpdate:sql];
         [db close];
@@ -35,12 +35,13 @@
     __block BOOL result = YES;
     [self.dbQueue inDatabase:^(FMDatabase *db) {
         [db open];
-        NSString *sql = @"insert into FF_DATA_INFO (_id, dataid, parentdataid, datatype, filetype, dataname, creationdate, datapath) values (?, ?, ?, ?, ?, ?, ?, ?)";
+        NSString *sql = @"insert into FF_DATA_INFO (_id, dataid, parentdataid, datatype, filetype, dataname, creationdate, datapath, filesize) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         NSNumber *numDataId = [NSNumber numberWithLong:tDataInfo.dataId];
         NSNumber *numParentDataId = [NSNumber numberWithLong:tDataInfo.parentDataId];
         NSNumber *numDataType = [NSNumber numberWithInt:tDataInfo.dataType];
         NSNumber *numFileType = [NSNumber numberWithInt:tDataInfo.fileType];
-        result = [db executeUpdate:sql, numDataId, numDataId, numParentDataId, numDataType, numFileType, tDataInfo.dataName, tDataInfo.creationDate, tDataInfo.dataPath];
+        NSNumber *numFileSize = [NSNumber numberWithLong:tDataInfo.fileSize];
+        result = [db executeUpdate:sql, numDataId, numDataId, numParentDataId, numDataType, numFileType, tDataInfo.dataName, tDataInfo.creationDate, tDataInfo.dataPath, numFileSize];
         [db close];
     }];
     return result;

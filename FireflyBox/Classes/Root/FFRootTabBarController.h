@@ -12,6 +12,18 @@
 #import "FFRecentViewController.h"
 #import "FFSettingViewController.h"
 
+typedef enum {
+    ToolItemActionTypeNextStep = 0,
+    ToolItemActionTypeTransfer,
+    ToolItemActionTypeAudioRecorder,
+    ToolItemActionTypeCamera,
+    ToolItemActionTypeGif,
+    ToolItemActionTypeBluetooth,
+    ToolItemActionTypeGraffiti,
+    ToolItemActionTypeTest,
+    ToolItemActionTypeUnkown
+} ToolItemActionType;
+
 @interface FFRootTabBarController : FFBaseTabBarController<FFTabBarViewDelegate>
 
 @property (nonatomic, strong) FFTabBarView *tabBarView;
