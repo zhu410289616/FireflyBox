@@ -19,6 +19,8 @@
 //test
 #import "FFSinglePhotoBrower.h"
 
+#import "FFSinaShowHallViewController.h"
+
 #define TABBAR_HEIGHT 50.0f
 
 @interface FFRootTabBarController ()
@@ -164,10 +166,17 @@
     [self presentViewController:nav animated:YES completion:nil];
 }
 
-- (void)doTestAction
+- (void)doShowSinglePhotoBrowerAction
 {
     FFSinglePhotoBrower *singlePhotoBrower = [[FFSinglePhotoBrower alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:singlePhotoBrower];
+    [self navigationWithCustomStyle:NavigationStylePresent toController:nav animated:YES];
+}
+
+- (void)doTestAction
+{
+    FFSinaShowHallViewController *sinaShowHallController = [[FFSinaShowHallViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:sinaShowHallController];
     [self navigationWithCustomStyle:NavigationStylePresent toController:nav animated:YES];
 }
 
@@ -198,6 +207,9 @@
             [self doShowGraffitiAction];
             break;
         case 97:
+            [self doShowSinglePhotoBrowerAction];
+            break;
+        case 4:
             [self doTestAction];
             break;
             
@@ -215,7 +227,7 @@
     if (tIndex == 1) {
         [_tabBarView selectedTabBarItem:self.selectedIndex];
 //        NSArray *titles = [NSArray arrayWithObjects:@"下一步", @"u盘", @"录音", @"视频", @"GIF", @"丢一下", @"涂鸦", @"test", nil];
-        NSArray *titles = [NSArray arrayWithObjects:@"下一步", @"u盘", @"录音", @"视频", nil];
+        NSArray *titles = [NSArray arrayWithObjects:@"下一步", @"u盘", @"录音", @"视频", @"新浪秀", nil];
         FFActionSheetView *actionSheetView = [[FFActionSheetView alloc] initWithTitles:titles];
         actionSheetView.actionBlock = ^(int actionIndex) {
             [self doItemAction:actionIndex];

@@ -170,6 +170,8 @@
 		16B46ED419571D32003C30C5 /* KxMovieDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 16B46ECD19571D32003C30C5 /* KxMovieDecoder.m */; };
 		16B46ED519571D32003C30C5 /* KxMovieGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16B46ECF19571D32003C30C5 /* KxMovieGLView.m */; };
 		16B46ED619571D32003C30C5 /* KxMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16B46ED119571D32003C30C5 /* KxMovieViewController.m */; };
+		16B46EDA19572229003C30C5 /* FFGetSinaShowRoomListRunnable.m in Sources */ = {isa = PBXBuildFile; fileRef = 16B46ED919572229003C30C5 /* FFGetSinaShowRoomListRunnable.m */; };
+		16B46EDD195722BA003C30C5 /* FFSinaShowHallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16B46EDC195722BA003C30C5 /* FFSinaShowHallViewController.m */; };
 		16BCB5531926650000B12CBF /* FFAudioRecorderViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 16BCB5521926650000B12CBF /* FFAudioRecorderViewController.mm */; };
 		16BCB56C1926716500B12CBF /* AQPlayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 16BCB5561926716500B12CBF /* AQPlayer.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		16BCB56D1926716500B12CBF /* AQRecorder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 16BCB5581926716500B12CBF /* AQRecorder.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -630,6 +632,10 @@
 		16B46ECF19571D32003C30C5 /* KxMovieGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMovieGLView.m; sourceTree = "<group>"; };
 		16B46ED019571D32003C30C5 /* KxMovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMovieViewController.h; sourceTree = "<group>"; };
 		16B46ED119571D32003C30C5 /* KxMovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMovieViewController.m; sourceTree = "<group>"; };
+		16B46ED819572229003C30C5 /* FFGetSinaShowRoomListRunnable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFGetSinaShowRoomListRunnable.h; sourceTree = "<group>"; };
+		16B46ED919572229003C30C5 /* FFGetSinaShowRoomListRunnable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFGetSinaShowRoomListRunnable.m; sourceTree = "<group>"; };
+		16B46EDB195722BA003C30C5 /* FFSinaShowHallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFSinaShowHallViewController.h; sourceTree = "<group>"; };
+		16B46EDC195722BA003C30C5 /* FFSinaShowHallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFSinaShowHallViewController.m; sourceTree = "<group>"; };
 		16BCB5511926650000B12CBF /* FFAudioRecorderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFAudioRecorderViewController.h; sourceTree = "<group>"; };
 		16BCB5521926650000B12CBF /* FFAudioRecorderViewController.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = FFAudioRecorderViewController.mm; sourceTree = "<group>"; };
 		16BCB5551926716500B12CBF /* AQPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQPlayer.h; sourceTree = "<group>"; };
@@ -1752,6 +1758,10 @@
 		16B46ED719571DC8003C30C5 /* SinaShow */ = {
 			isa = PBXGroup;
 			children = (
+				16B46ED819572229003C30C5 /* FFGetSinaShowRoomListRunnable.h */,
+				16B46ED919572229003C30C5 /* FFGetSinaShowRoomListRunnable.m */,
+				16B46EDB195722BA003C30C5 /* FFSinaShowHallViewController.h */,
+				16B46EDC195722BA003C30C5 /* FFSinaShowHallViewController.m */,
 			);
 			path = SinaShow;
 			sourceTree = "<group>";
@@ -2220,6 +2230,7 @@
 				16BCB5741926716500B12CBF /* CAStreamBasicDescription.cpp in Sources */,
 				16A2F8FF1902D5C100751B82 /* SYAppStart.m in Sources */,
 				16CF243B1910948B0029F3D2 /* NSData+DOUMappedFile.m in Sources */,
+				16B46EDD195722BA003C30C5 /* FFSinaShowHallViewController.m in Sources */,
 				166E9BDE1939A26B0043D5F9 /* FFProgressView.m in Sources */,
 				16ED1D4E190B78B9007EC697 /* GCDWebServerRequest.m in Sources */,
 				1620DCFB1913807200AE810C /* UIFont+FireFly.m in Sources */,
@@ -2335,6 +2346,7 @@
 				16CF24291910948B0029F3D2 /* DOUAudioAnalyzer+Default.m in Sources */,
 				16CF243A1910948B0029F3D2 /* DOUSimpleHTTPRequest.m in Sources */,
 				161FF06D191264DA00CDD559 /* FFTextReaderViewController.m in Sources */,
+				16B46EDA19572229003C30C5 /* FFGetSinaShowRoomListRunnable.m in Sources */,
 				161FF07B19127F4200CDD559 /* FFFileTypeHelper.m in Sources */,
 				161FF074191273B600CDD559 /* FFMusicPlayerViewController.m in Sources */,
 				1624B89D19093C140018B8FE /* FFRootTabBarController.m in Sources */,

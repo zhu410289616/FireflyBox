@@ -56,11 +56,14 @@
     FFLOG_FORMAT(@"[GET] http url: %@, param: %@", httpUrl, param);
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", @"text/plain", nil];
     [manager GET:httpUrl parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
         FFLOG_FORMAT(@"[GET] JSON: %@", responseObject);
         httpRunnable.dicResult = responseObject;
         [httpRunnable ajaxOut];
+        if (self.finishBlock) {
+            self.finishBlock(self);
+        }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         FFLOG_FORMAT(@"[GET] error: %@", error);
         [httpRunnable ajaxFail];
@@ -77,7 +80,7 @@
     FFLOG_FORMAT(@"[POST] http url: %@, param: %@", httpUrl, param);
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", @"text/plain", nil];
     [manager POST:httpUrl parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
         FFLOG_FORMAT(@"[POST] JSON: %@", responseObject);
         httpRunnable.dicResult = responseObject;
