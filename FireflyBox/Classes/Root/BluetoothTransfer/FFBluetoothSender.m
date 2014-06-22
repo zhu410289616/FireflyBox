@@ -54,7 +54,7 @@
     switch (central.state) {
         case CBCentralManagerStatePoweredOn:
         {
-            FFLog(@"CBCentralManagerStatePoweredOn...");
+            FFLOG_FORMAT(@"CBCentralManagerStatePoweredOn...");
             //实际测试发现，如果用特定的UUID传参根本找不到任何设备
             [self.cbCentralManager scanForPeripheralsWithServices:nil options:@{CBCentralManagerScanOptionAllowDuplicatesKey:@YES}];
         }
@@ -76,7 +76,7 @@
 
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral
 {
-    FFLog(@"centralManager: %@, didConnectPeripheral: %@", central, peripheral);
+    FFLOG_FORMAT(@"centralManager: %@, didConnectPeripheral: %@", central, peripheral);
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(didConnectPeripheral:)]) {
         [self.delegate didConnectPeripheral:peripheral];
@@ -92,7 +92,7 @@
 
 - (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error
 {
-    FFLog(@"centralManager: %@, didFailToConnectPeripheral: %@, error: %@", central, peripheral, error);
+    FFLOG_FORMAT(@"centralManager: %@, didFailToConnectPeripheral: %@, error: %@", central, peripheral, error);
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(didFailToConnectPeripheral:error:)]) {
         [self.delegate didFailToConnectPeripheral:peripheral error:error];
@@ -117,7 +117,7 @@
          *  - (void)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error
          */
         for (CBService *service in peripheral.services) {
-            FFLog(@"service.UUID: %@", service.UUID);
+            FFLOG_FORMAT(@"service.UUID: %@", service.UUID);
             if ([service.UUID isEqual:[CBUUID UUIDWithString:kTransferServiceUUID]]) {
                 [peripheral discoverCharacteristics:@[[CBUUID UUIDWithString:kTransferCharacteristicUUID]] forService:service];
             }
@@ -127,7 +127,7 @@
 
 - (void)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error
 {
-    FFLog(@"peripheral: %@, didDiscoverCharacteristicsForService: %@, error: %@", peripheral, service, error);
+    FFLOG_FORMAT(@"peripheral: %@, didDiscoverCharacteristicsForService: %@, error: %@", peripheral, service, error);
     if (error) {
         //
     } else {
@@ -139,11 +139,11 @@
          *  - (void)peripheral:(CBPeripheral *)peripheral didUpdateNotificationStateForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
          */
         for (CBCharacteristic *characteristic in service.characteristics) {
-            FFLog(@"characteristic.UUID: %@", characteristic.UUID);
+            FFLOG_FORMAT(@"characteristic.UUID: %@", characteristic.UUID);
             if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:kTransferCharacteristicUUID]]) {
                 [peripheral setNotifyValue:YES forCharacteristic:characteristic];
                 
-                FFLog(@"characteristic.properties: %d", characteristic.properties);
+                FFLOG_FORMAT(@"characteristic.properties: %d", characteristic.properties);
                 if (self.delegate && [self.delegate respondsToSelector:@selector(didDiscoverCharacteristic:characteristic:)]) {
                     [self.delegate didDiscoverCharacteristic:peripheral characteristic:characteristic];
                 }
@@ -167,14 +167,14 @@
 
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
 {
-    FFLog(@"peripheral: %@, didUpdateValueForCharacteristic: %@, error: %@", peripheral, characteristic, error);
+    FFLOG_FORMAT(@"peripheral: %@, didUpdateValueForCharacteristic: %@, error: %@", peripheral, characteristic, error);
     if (error) {
         //
     } else {
         
         NSData *data = characteristic.value;
         NSString *receiveData = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-        FFLog(@"peripheralManager receiveData: %@", receiveData);
+        FFLOG_FORMAT(@"peripheralManager receiveData: %@", receiveData);
         
         if (self.delegate && [self.delegate respondsToSelector:@selector(didUpdateValue:characteristic:)]) {
             [self.delegate didUpdateValue:peripheral characteristic:characteristic];

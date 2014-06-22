@@ -119,21 +119,16 @@
 
 - (void)photoViewDidDoubleTwoFingerTap:(FFPhotoView *)photoView
 {
-    FFLog(@"FFSinglePhotoBrower...");
     LOG_FRAME(@"self.view.window.bounds", self.view.window.bounds);
     LOG_FRAME(@"self.view.window.frame", self.view.window.frame);
 }
 
 - (void)toggleFullScreen
 {
-    FFLog(@"toggling full screen");
-    
     self.isFullScreen = !self.isFullScreen;
     
     if (!self.isFullScreen) {
         // fade in navigation
-        
-        FFLog(@"fading in");
         
         [UIView animateWithDuration:0.4 animations:^{
             [self setNeedsStatusBarAppearanceUpdate];
@@ -143,8 +138,6 @@
         }];
     } else {
         // fade out navigation
-        
-        FFLog(@"fading out");
         
         [UIView animateWithDuration:0.4 animations:^{
             [self setNeedsStatusBarAppearanceUpdate];
@@ -163,7 +156,6 @@
     NSMutableArray *imageList = [[NSMutableArray alloc] init];
     
     [ffAssets enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        FFLog(@"obj: %@", obj);
         FFAsset *ffAsset = (FFAsset *)obj;
         UIImage *assetFullImage = [UIImage imageWithCGImage:[[ffAsset.asset defaultRepresentation] fullScreenImage]];
         [imageList addObject:assetFullImage];

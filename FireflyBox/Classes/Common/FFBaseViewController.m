@@ -48,29 +48,29 @@
 
 - (IBAction)doBackBarButtonItemAction:(id)sender
 {
-    FFLog(@"doBackBarButtonItemAction...");
+    FFLOG_FORMAT(@"doBackBarButtonItemAction...");
 }
 
 - (IBAction)doLeftBarButtonItemAction:(id)sender
 {
-    FFLog(@"doLeftBarButtonItemAction...");
+    FFLOG_FORMAT(@"doLeftBarButtonItemAction...");
 }
 
 - (IBAction)doRightBarButtonItemAction:(id)sender
 {
-    FFLog(@"doRightBarButtonItemAction...");
+    FFLOG_FORMAT(@"doRightBarButtonItemAction...");
 }
 
 #pragma mark common function
 
 - (BOOL)searchResult:(NSString *)content searchKeyword:(NSString *)keyword
 {
-    FFLog(@"content: %@, keyword: %@", content, keyword);
+    FFLOG_FORMAT(@"content: %@, keyword: %@", content, keyword);
     if (keyword == nil || keyword.length == 0) {
         return NO;
     }
     NSRange range = [content rangeOfString:keyword options:NSCaseInsensitiveSearch];
-    FFLog(@"range.location: %d, range.length: %d", range.location, range.length);
+    FFLOG_FORMAT(@"range.location: %d, range.length: %d", range.location, range.length);
     if (range.location != NSNotFound && range.length > 0) {
         return YES;
     }

@@ -12,17 +12,17 @@
 #define FFDEBUG
 
 #ifdef FFDEBUG
-#define FFLog(format, ...) NSLog(format, ## __VA_ARGS__)
+#define FFLOG_FORMAT(format, ...) NSLog(format, ## __VA_ARGS__)
 #else
-#define FFLog(format, ...)
+#define FFLOG_FORMAT(format, ...)
 #endif
 
-#define LOG_VIEW(a) FFLog(@"frame log: %f %f %f %f", a.frame.origin.x, a.frame.origin.y, a.frame.size.width, a.frame.size.height)
-#define LOG_FRAME(label, frame) FFLog(@"%@: %f, %f, %f, %f", label, frame.origin.x, frame.origin.y, frame.size.width, frame.size.height)
-#define LOG_SIZE(label, size) FFLog(@"%@: %f, %f", label, size.width, size.height)
-#define LOG_POINT(label, point) FFLog(@"%@: %f, %f", label, point.x, point.y)
-#define LOG_OFFSET(label, offset) FFLog(@"%@: %f, %f", label, offset.x, offset.y)
-#define LOG_INSET(label, inset) FFLog(@"%@: %f, %f, %f, %f", label, inset.top, inset.left, inset.bottom, inset.right)
+#define LOG_VIEW(a) FFLOG_FORMAT(@"frame log: %f %f %f %f", a.frame.origin.x, a.frame.origin.y, a.frame.size.width, a.frame.size.height)
+#define LOG_FRAME(label, frame) FFLOG_FORMAT(@"%@: %f, %f, %f, %f", label, frame.origin.x, frame.origin.y, frame.size.width, frame.size.height)
+#define LOG_SIZE(label, size) FFLOG_FORMAT(@"%@: %f, %f", label, size.width, size.height)
+#define LOG_POINT(label, point) FFLOG_FORMAT(@"%@: %f, %f", label, point.x, point.y)
+#define LOG_OFFSET(label, offset) FFLOG_FORMAT(@"%@: %f, %f", label, offset.x, offset.y)
+#define LOG_INSET(label, inset) FFLOG_FORMAT(@"%@: %f, %f, %f, %f", label, inset.top, inset.left, inset.bottom, inset.right)
 
 //
 #define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)

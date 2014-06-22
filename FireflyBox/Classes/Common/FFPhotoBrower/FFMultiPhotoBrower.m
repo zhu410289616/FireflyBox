@@ -236,7 +236,7 @@
 - (void)selectedAssets:(NSArray *)ffAssets isUpdated:(BOOL)isUpdated
 {
     [ffAssets enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        FFLog(@"obj: %@", obj);
+        FFLOG_FORMAT(@"obj: %@", obj);
     }];
     
     [self.multiPhotoEditView removeAllFFAsset];
@@ -275,7 +275,7 @@
         [self.photosDataSource photoForIndex:indexPath.item withCompletionBlock:^(UIImage *photo, NSError *error) {
             [photoView stopWaiting];
             if (error != nil) {
-                FFLog(@"Error: %@", error);
+                FFLOG_FORMAT(@"Error: %@", error);
             }
             else {
                 photoView.alpha = 0.0f;
@@ -326,12 +326,12 @@
 
 - (void)logRect:(CGRect)rect withName:(NSString *)name
 {
-    FFLog(@"%@: %f, %f / %f, %f", name, rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
+    FFLOG_FORMAT(@"%@: %f, %f / %f, %f", name, rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
 }
 
 - (void)logLayout
 {
-    FFLog(@"### FFMultiPhotoBrower ###");
+    FFLOG_FORMAT(@"### FFMultiPhotoBrower ###");
     [self logRect:self.view.window.bounds withName:@"self.view.window.bounds"];
     [self logRect:self.view.window.frame withName:@"self.view.window.frame"];
     

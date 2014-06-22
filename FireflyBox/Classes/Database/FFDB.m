@@ -25,13 +25,13 @@
 {
     NSString *docsdir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     NSString *sqliteFilePath = [docsdir stringByAppendingPathComponent:@"user.sqlite"];
-    FFLog(@"sqliteFilePath: %@", sqliteFilePath);
+    FFLOG_FORMAT(@"sqliteFilePath: %@", sqliteFilePath);
     return sqliteFilePath;
 }
 
 - (void)initDatabase
 {
-    FFLog(@"initDatabase...");
+    FFLOG_FORMAT(@"initDatabase...");
     _dbQueue = [FMDatabaseQueue databaseQueueWithPath:[self getSqliteFilePath]];
     [_dbQueue inDatabase:^(FMDatabase *db) {
         NSLog(@"%d: %@", [db lastErrorCode], [db lastErrorMessage]);

@@ -92,14 +92,14 @@
 {
     switch (netStatus) {
         case NotReachable:
-            FFLog(@"FFReachability: %@", @"Access Not Available");
+            FFLOG_FORMAT(@"FFReachability: %@", @"Access Not Available");
             connectionRequired = NO;
             break;
         case ReachableViaWWAN:
-            FFLog(@"FFReachability: %@", @"Reachable WWAN");
+            FFLOG_FORMAT(@"FFReachability: %@", @"Reachable WWAN");
             break;
         case ReachableViaWiFi:
-            FFLog(@"FFReachability: %@", @"Reachable WiFi");
+            FFLOG_FORMAT(@"FFReachability: %@", @"Reachable WiFi");
             break;
             
         default:
@@ -107,9 +107,9 @@
     }
     
     if (connectionRequired) {
-        FFLog(@"FFReachability: %@", @"Cellular data network is available.\nInternet traffic will be routed through it after a connection is established.");
+        FFLOG_FORMAT(@"FFReachability: %@", @"Cellular data network is available.\nInternet traffic will be routed through it after a connection is established.");
     } else {
-        FFLog(@"FFReachability: %@", @"Cellular data network is active.\nInternet traffic will be routed through it.");
+        FFLOG_FORMAT(@"FFReachability: %@", @"Cellular data network is active.\nInternet traffic will be routed through it.");
     }
     
     if (_reachabilityBlock) {

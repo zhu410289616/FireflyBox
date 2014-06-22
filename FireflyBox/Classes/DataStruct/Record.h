@@ -22,6 +22,5 @@
 @property (nonatomic, assign) long createTime;
 
 - (id)initWithFMResultSet:(FMResultSet *)tResultSet;
-- (void)log;
 
 @end

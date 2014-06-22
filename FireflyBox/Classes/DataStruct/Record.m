@@ -26,9 +26,4 @@
     return self;
 }
 
-- (void)log
-{
-    FFLog(@"_recordId: %ld, _oldLatitude: %f, _oldLongitude: %f, _nowLatitude: %f, _nowLongitude: %f", _recordId, _oldLatitude, _oldLongitude, _nowLatitude, _nowLongitude);
-}
-
 @end

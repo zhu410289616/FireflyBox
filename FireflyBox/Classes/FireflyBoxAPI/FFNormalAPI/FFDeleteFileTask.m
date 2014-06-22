@@ -12,7 +12,7 @@
 
 - (void)executeTask
 {
-    FFLog(@"_filePath: %@", _filePath);
+    FFLOG_FORMAT(@"_filePath: %@", _filePath);
     
     NSFileManager *fm = [NSFileManager defaultManager];
     [fm removeItemAtPath:_filePath error:nil];

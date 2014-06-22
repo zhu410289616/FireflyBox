@@ -122,7 +122,7 @@
  */
 - (void)loadFileInfoFinished:(LoadFileInfoSource)tSource
 {
-    FFLog(@"loadFileInfoFinished...%d", tSource);
+    FFLOG_FORMAT(@"loadFileInfoFinished...%d", tSource);
     [self.dataTableView reloadData];
     [self doneLoadingTableViewData];
     [self showOrHideEmptyTips];

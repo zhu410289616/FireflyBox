@@ -144,7 +144,7 @@
  */
 - (void)webUploader:(GCDWebUploader*)uploader didDownloadFileAtPath:(NSString*)path
 {
-    FFLog(@"[DOWNLOAD] %@", path);
+    FFLOG_FORMAT(@"[DOWNLOAD] %@", path);
 }
 
 /**
@@ -152,7 +152,7 @@
  */
 - (void)webUploader:(GCDWebUploader*)uploader didUploadFileAtPath:(NSString*)path
 {
-    FFLog(@"[UPLOAD] %@", path);
+    FFLOG_FORMAT(@"[UPLOAD] %@", path);
 }
 
 /**
@@ -160,7 +160,7 @@
  */
 - (void)webUploader:(GCDWebUploader*)uploader didMoveItemFromPath:(NSString*)fromPath toPath:(NSString*)toPath
 {
-    FFLog(@"[MOVE] %@ -> %@", fromPath, toPath);
+    FFLOG_FORMAT(@"[MOVE] %@ -> %@", fromPath, toPath);
 }
 
 /**
@@ -168,7 +168,7 @@
  */
 - (void)webUploader:(GCDWebUploader*)uploader didDeleteItemAtPath:(NSString*)path
 {
-    FFLog(@"[DELETE] %@", path);
+    FFLOG_FORMAT(@"[DELETE] %@", path);
 }
 
 /**
@@ -176,7 +176,7 @@
  */
 - (void)webUploader:(GCDWebUploader*)uploader didCreateDirectoryAtPath:(NSString*)path
 {
-    FFLog(@"[CREATE] %@", path);
+    FFLOG_FORMAT(@"[CREATE] %@", path);
 }
 
 @end

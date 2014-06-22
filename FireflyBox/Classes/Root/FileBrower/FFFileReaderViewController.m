@@ -68,17 +68,17 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
-    FFLog(@"webViewDidStartLoad...");
+    FFLOG_FORMAT(@"webViewDidStartLoad...");
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    FFLog(@"webViewDidFinishLoad...");
+    FFLOG_FORMAT(@"webViewDidFinishLoad...");
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
-    FFLog(@"didFailLoadWithError: %@", error);
+    FFLOG_FORMAT(@"didFailLoadWithError: %@", error);
 }
 
 @end

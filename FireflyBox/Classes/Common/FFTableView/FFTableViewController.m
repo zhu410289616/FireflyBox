@@ -51,7 +51,7 @@
  */
 - (void)showOrHideEmptyTips
 {
-    FFLog(@"showOrHideEmptyTips...");
+    FFLOG_FORMAT(@"showOrHideEmptyTips...");
 }
 
 #pragma mark UITableViewDataSource method

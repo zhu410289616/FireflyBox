@@ -57,44 +57,6 @@
     
 }
 
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
-{
-    // Map UIDeviceOrientation to UIInterfaceOrientation.
-    UIInterfaceOrientation orient = UIInterfaceOrientationPortrait;
-    switch ([[UIDevice currentDevice] orientation])
-    {
-        case UIDeviceOrientationLandscapeLeft:
-            orient = UIInterfaceOrientationLandscapeLeft;
-            break;
-            
-        case UIDeviceOrientationLandscapeRight:
-            orient = UIInterfaceOrientationLandscapeRight;
-            break;
-            
-        case UIDeviceOrientationPortrait:
-            orient = UIInterfaceOrientationPortrait;
-            break;
-            
-        case UIDeviceOrientationPortraitUpsideDown:
-            orient = UIInterfaceOrientationPortraitUpsideDown;
-            break;
-            
-        case UIDeviceOrientationFaceUp:
-        case UIDeviceOrientationFaceDown:
-        case UIDeviceOrientationUnknown:
-            // When in doubt, stay the same.
-            orient = fromInterfaceOrientation;
-            break;
-    }
-    self.videoCamera.outputImageOrientation = orient;
-    
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return YES; // Support all orientations.
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -137,6 +99,44 @@
         [self.recordButton setImage:[UIImage imageNamed:@"RecordStop.png"] forState:UIControlStateNormal] ;
         [self.recordButton setTitle:@"停止" forState:UIControlStateNormal];
     }
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    // Map UIDeviceOrientation to UIInterfaceOrientation.
+    UIInterfaceOrientation orient = UIInterfaceOrientationPortrait;
+    switch ([[UIDevice currentDevice] orientation])
+    {
+        case UIDeviceOrientationLandscapeLeft:
+            orient = UIInterfaceOrientationLandscapeLeft;
+            break;
+            
+        case UIDeviceOrientationLandscapeRight:
+            orient = UIInterfaceOrientationLandscapeRight;
+            break;
+            
+        case UIDeviceOrientationPortrait:
+            orient = UIInterfaceOrientationPortrait;
+            break;
+            
+        case UIDeviceOrientationPortraitUpsideDown:
+            orient = UIInterfaceOrientationPortraitUpsideDown;
+            break;
+            
+        case UIDeviceOrientationFaceUp:
+        case UIDeviceOrientationFaceDown:
+        case UIDeviceOrientationUnknown:
+            // When in doubt, stay the same.
+            orient = fromInterfaceOrientation;
+            break;
+    }
+    self.videoCamera.outputImageOrientation = orient;
+    
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return YES; // Support all orientations.
 }
 
 @end

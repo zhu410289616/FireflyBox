@@ -106,7 +106,7 @@
     int rnd = random() % nAlertBodyListSize;
     NSString *strAlertBody = [alertBodyList objectAtIndex:rnd];
     
-    FFLog(@"rnd: %d, strAlertBody: %@", rnd, strAlertBody);
+    FFLOG_FORMAT(@"rnd: %d, strAlertBody: %@", rnd, strAlertBody);
     
     long addSecond = 7 * 24 * 3600;
     NSDate *alertDate = [[NSDate date] dateByAddingTimeInterval:addSecond];
@@ -128,7 +128,7 @@
 {
     FFReachability *ffReachability = [FFReachability sharedInstance];
     ffReachability.reachabilityBlock = ^(NetworkStatus netStatus, BOOL connectionRequired){
-        FFLog(@"");
+        FFLOG_FORMAT(@"NetworkStatus: %d, connection: %i", netStatus, connectionRequired);
     };
 }
 

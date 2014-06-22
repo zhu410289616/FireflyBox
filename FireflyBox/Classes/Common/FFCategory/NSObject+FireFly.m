@@ -53,7 +53,7 @@
     }
     
     NSString *tempDescription = [self autoDescription:classType];
-    FFLog(@"[FFLOG] - (ClassName:%s): %@", class_getName(classType), tempDescription);
+    FFLOG_FORMAT(@"[FFLOG] - (ClassName:%s): %@", class_getName(classType), tempDescription);
 }
 
 - (void)log

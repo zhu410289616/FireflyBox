@@ -101,7 +101,7 @@
 - (void)selectedAssets:(NSArray *)ffAssets isUpdated:(BOOL)isUpdated
 {
     [ffAssets enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        FFLog(@"obj: %@", obj);
+        FFLOG_FORMAT(@"obj: %@", obj);
     }];
     
     [self.assetPickerBar.ffAssetList removeAllObjects];
@@ -113,7 +113,7 @@
 
 - (void)photoThumbnailViewDidSelect:(FFPhotoThumbnailView *)photoThumbnailView
 {
-    FFLog(@"ffAsset: %@", photoThumbnailView.ffAsset);
+    FFLOG_FORMAT(@"ffAsset: %@", photoThumbnailView.ffAsset);
 }
 
 - (void)photoThumbnailViewDidDelete:(FFPhotoThumbnailView *)photoThumbnailView

@@ -71,7 +71,7 @@
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
-    FFLog(@"%@", NSStringFromSelector(_cmd));
+    FFLOG_FORMAT(@"%@", NSStringFromSelector(_cmd));
     [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
     
     // ensure the item is dislayed after rotation
@@ -83,19 +83,19 @@
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
     [super willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
-    FFLog(@"%@", NSStringFromSelector(_cmd));
+    FFLOG_FORMAT(@"%@", NSStringFromSelector(_cmd));
     
     [self.collectionView.collectionViewLayout invalidateLayout];
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
-    FFLog(@"%@", NSStringFromSelector(_cmd));
+    FFLOG_FORMAT(@"%@", NSStringFromSelector(_cmd));
     [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         if (_currentIndexPath) {
-            FFLog(@"item: %li", (long)_currentIndexPath.item);
+            FFLOG_FORMAT(@"item: %li", (long)_currentIndexPath.item);
             
             [self.collectionView.collectionViewLayout invalidateLayout];
             [self.collectionView scrollToItemAtIndexPath:_currentIndexPath atScrollPosition:UICollectionViewScrollPositionNone animated:FALSE];
@@ -229,14 +229,14 @@
 
 - (void)toggleFullScreen
 {
-    FFLog(@"toggling full screen");
+    FFLOG_FORMAT(@"toggling full screen");
     
     self.isFullScreen = !self.isFullScreen;
     
     if (!self.isFullScreen) {
         // fade in navigation
         
-        FFLog(@"fading in");
+        FFLOG_FORMAT(@"fading in");
         
         [UIView animateWithDuration:0.4 animations:^{
             [self setNeedsStatusBarAppearanceUpdate];
@@ -247,7 +247,7 @@
     } else {
         // fade out navigation
         
-        FFLog(@"fading out");
+        FFLOG_FORMAT(@"fading out");
         
         [UIView animateWithDuration:0.4 animations:^{
             [self setNeedsStatusBarAppearanceUpdate];
@@ -268,7 +268,7 @@
 
 - (void)logLayout
 {
-    FFLog(@"### FFPhotoBrower ###");
+    FFLOG_FORMAT(@"### FFPhotoBrower ###");
     [self logRect:self.view.window.bounds withName:@"self.view.window.bounds"];
     [self logRect:self.view.window.frame withName:@"self.view.window.frame"];
     
@@ -304,7 +304,7 @@
         [self.photosDataSource photoForIndex:indexPath.item withCompletionBlock:^(UIImage *photo, NSError *error) {
             [photoView stopWaiting];
             if (error != nil) {
-                FFLog(@"Error: %@", error);
+                FFLOG_FORMAT(@"Error: %@", error);
             }
             else {
                 photoView.alpha = 0.0f;
