@@ -6,7 +6,8 @@
 //  Copyright (c) 2014年 pig. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "FFBaseObject.h"
+#import "FFBaseRunnable.h"
 
 typedef enum {
     FFTaskQueueTypeDefault,
@@ -14,31 +15,35 @@ typedef enum {
     FFTaskQueueTypeSerial
 } FFTaskQueueType;
 
-typedef void(^TaskErrorBlock)(id task, NSError *error);
-typedef void(^TaskFinishBlock)(id task);
+typedef void(^FinishBlock)(id task);
+typedef void(^ErrorBlock)(id task, NSError *error);
 
 /**
  * 任务基础类，子类需要重栽executeTask方法
  * 通过runnable参数处理回调
  */
-@interface FFBaseTask : NSObject
+@interface FFBaseTask : FFBaseObject
 
-@property (nonatomic, strong) NSString *taskId;
-@property (nonatomic, assign) FFTaskQueueType taskQueueType;
-@property (nonatomic, copy) TaskErrorBlock errorBlock;
-@property (nonatomic, copy) TaskFinishBlock finishBlock;
+@property (nonatomic, copy) FinishBlock finishBlock;
+@property (nonatomic, copy) ErrorBlock errorBlock;
+
+@property (nonatomic, strong) FFBaseRunnable *runnable;
 
 /**
- *  初始化任务配置
+ *  通过FFBaseRunnable初始化对象
+ *
+ *  @param FFBaseRunnable, 一个带有参数和回调方法的运行时对象
+ *
+ *  @return return FFBaseTask
  */
-- (void)initTask;
+- (id)initWithRunnable:(FFBaseRunnable *)runnable;
 
 /**
  *  子类可以通过重栽该方法修改任务执行queue的类型
  *
  *  @return FFTaskQueueType
  */
-- (FFTaskQueueType)getFFTaskQueueType;
+- (FFTaskQueueType)taskQueueType;
 
 /**
  *  通过start方法，把认为加入queue执行

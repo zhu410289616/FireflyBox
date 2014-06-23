@@ -2,7 +2,7 @@
 //  FFBaseSerializable.m
 //  FireflyBox
 //
-//  Created by pig on 14-5-23.
+//  Created by pig on 14-6-23.
 //  Copyright (c) 2014年 pig. All rights reserved.
 //
 
@@ -10,10 +10,21 @@
 
 @implementation FFBaseSerializable
 
+#pragma mark override function
+
 - (NSString *)className
 {
     return @"com.firefly.BaseSerializable";
 }
+
+#pragma mark implement function
+
+- (NSArray *)fields
+{
+    return nil;
+}
+
+#pragma mark FFSerializableDelegate method
 
 - (BOOL)deserialize:(NSString *)str
 {
@@ -28,7 +39,7 @@
 - (NSString *)serialize
 {
     NSMutableString *destMutableStr = [[NSMutableString alloc] initWithCapacity:5];
-    NSMutableArray *fields = [self fields];
+    NSArray *fields = [self fields];
     for (id field in fields) {
         [destMutableStr appendFormat:@"%@", field];
     }

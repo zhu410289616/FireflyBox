@@ -6,8 +6,8 @@
 //  Copyright (c) 2014年 pig. All rights reserved.
 //
 
-#import "FFRunnableTask.h"
+#import "FFBaseTask.h"
 
-@interface FFHttpTask : FFRunnableTask
+@interface FFHttpTask : FFBaseTask
 
 @end

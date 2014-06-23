@@ -12,29 +12,41 @@
 
 @implementation FFBaseTask
 
-- (id)init
+/**
+ *  通过FFBaseRunnable初始化对象
+ *
+ *  @param FFBaseRunnable, 一个带有参数和回调方法的运行时对象
+ *
+ *  @return return FFBaseTask
+ */
+- (id)initWithRunnable:(FFBaseRunnable *)runnable
 {
     if (self = [super init]) {
-        [self initTask];
+        self.runnable = runnable;
     }
     return self;
 }
 
-/**
- *  初始化任务配置
- */
-- (void)initTask
+#pragma mark override function
+
+- (NSString *)classId
 {
-    self.taskId = [NSString stingWithSequence];
-    self.taskQueueType = [self getFFTaskQueueType];
+    return [NSString stingWithSequence];
 }
+
+- (NSString *)className
+{
+    return @"com.firefly.FFBaseTask";
+}
+
+#pragma mark implement function
 
 /**
  *  子类可以通过重栽该方法修改任务执行queue的类型
  *
  *  @return FFTaskQueueType
  */
-- (FFTaskQueueType)getFFTaskQueueType
+- (FFTaskQueueType)taskQueueType
 {
     return FFTaskQueueTypeDefault;
 }
@@ -44,7 +56,7 @@
  */
 - (void)start
 {
-    switch ([self getFFTaskQueueType]) {
+    switch ([self taskQueueType]) {
         case FFTaskQueueTypeConcurrent:
             [[FFConcurrentQueue sharedInstance] addTask:self];
             break;
@@ -68,9 +80,11 @@
 {
     @try {
         
+        [self.runnable ajaxIn:self];
         [self executeTask];
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            [self.runnable ajaxOut:self];
             if (self.finishBlock) {
                 self.finishBlock(self);
             }
@@ -78,8 +92,9 @@
         
     }
     @catch (NSException *exception) {
+        NSError *error = [NSError errorWithDomain:[NSString stringWithFormat:@"name: %@, reason: %@", exception.name, exception.reason] code:0 userInfo:exception.userInfo];
+        [self.runnable ajaxFail:self error:error];
         if (self.errorBlock) {
-            NSError *error = [NSError errorWithDomain:[NSString stringWithFormat:@"name: %@, reason: %@", exception.name, exception.reason] code:0 userInfo:exception.userInfo];
             self.errorBlock(self, error);
         }
     }
