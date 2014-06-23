@@ -12,12 +12,12 @@ static NSString * const kSinaShowRoomListUrl = @"http://ok.sina.com.cn/ashx/getl
 
 @implementation FFGetSinaShowRoomListRunnable
 
-- (void)ajaxOut
+- (void)ajaxOut:(id)aTask
 {
     
 }
 
-- (NSString *)getHttpURL
+- (NSString *)httpURL
 {
     return [NSString stringWithFormat:@"%@", kSinaShowRoomListUrl];
 }

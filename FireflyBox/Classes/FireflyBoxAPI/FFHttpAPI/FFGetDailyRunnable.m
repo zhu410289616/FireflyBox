@@ -11,12 +11,12 @@
 
 @implementation FFGetDailyRunnable
 
-- (NSString *)getHttpMethod
+- (NSString *)httpMethod
 {
     return (NSString *)Method_Post;
 }
 
-- (NSString *)getHttpURL
+- (NSString *)httpURL
 {
     return [NSString stringWithFormat:@"%@%@", WEBSERVICE_DOMAIN, WEBSERVICE_GET_DAILY_TEXT];
 }

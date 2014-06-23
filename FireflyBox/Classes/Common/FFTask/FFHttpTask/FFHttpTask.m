@@ -41,11 +41,11 @@
             [self doMultiPostRequest:httpRunnable];
         } else {
             NSError *error = [NSError errorWithDomain:[NSString stringWithFormat:@"Unknow Runnable class!"] code:0 userInfo:nil];
-            [self.runnable ajaxFail:nil error:error];
+            [self doFailed:error];
         }
     } else {
         NSError *error = [NSError errorWithDomain:[NSString stringWithFormat:@"Unknow Runnable class!"] code:0 userInfo:nil];
-        [self.runnable ajaxFail:nil error:error];
+        [self doFailed:error];
     }
 }
 
@@ -63,10 +63,10 @@
     [manager GET:httpUrl parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
         FFLOG_FORMAT(@"[GET] JSON: %@", responseObject);
         httpRunnable.dicResult = responseObject;
-        [httpRunnable ajaxOut:self];
+        [self doFinished];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         FFLOG_FORMAT(@"[GET] error: %@", error);
-        [httpRunnable ajaxFail:self error:error];
+        [self doFailed:error];
     }];
 }
 
@@ -84,10 +84,10 @@
     [manager POST:httpUrl parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
         FFLOG_FORMAT(@"[POST] JSON: %@", responseObject);
         httpRunnable.dicResult = responseObject;
-        [httpRunnable ajaxOut:self];
+        [self doFinished];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         FFLOG_FORMAT(@"[POST] error: %@", error);
-        [httpRunnable ajaxFail:self error:error];
+        [self doFailed:error];
     }];
 }
 
@@ -114,12 +114,31 @@
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
         FFLOG_FORMAT(@"[MULTI POST] JSON: %@", responseObject);
         httpRunnable.dicResult = responseObject;
-        [httpRunnable ajaxOut:self];
+        [self doFinished];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         FFLOG_FORMAT(@"[MULTI POST] error: %@", error);
-        [httpRunnable ajaxFail:self error:error];
+        [self doFailed:error];
     }];
 }
 
+- (void)doFinished
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.runnable ajaxOut:self];
+        if (self.finishBlock) {
+            self.finishBlock(self);
+        }
+    });
+}
+
+- (void)doFailed:(NSError *)error
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.runnable ajaxFail:self error:error];
+        if (self.errorBlock) {
+            self.errorBlock(self, error);
+        }
+    });
+}
 
 @end

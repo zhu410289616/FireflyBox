@@ -10,7 +10,7 @@
 
 @implementation FFBoxTask
 
-- (FFTaskQueueType)getFFTaskQueueType
+- (FFTaskQueueType)taskQueueType
 {
     return FFTaskQueueTypeConcurrent;
 }

@@ -92,11 +92,13 @@
         
     }
     @catch (NSException *exception) {
-        NSError *error = [NSError errorWithDomain:[NSString stringWithFormat:@"name: %@, reason: %@", exception.name, exception.reason] code:0 userInfo:exception.userInfo];
-        [self.runnable ajaxFail:self error:error];
-        if (self.errorBlock) {
-            self.errorBlock(self, error);
-        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSError *error = [NSError errorWithDomain:[NSString stringWithFormat:@"name: %@, reason: %@", exception.name, exception.reason] code:0 userInfo:exception.userInfo];
+            [self.runnable ajaxFail:self error:error];
+            if (self.errorBlock) {
+                self.errorBlock(self, error);
+            }
+        });
     }
 }
 
