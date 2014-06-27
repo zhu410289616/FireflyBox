@@ -9,7 +9,7 @@
 #import "FFBaseViewController.h"
 #import <GPUImage/GPUImage.h>
 
-@interface FFCameraViewController : FFBaseViewController
+@interface FFCameraViewController : FFBaseViewController<GPUImageVideoCameraDelegate>
 
 @property (nonatomic, strong) NSString *movieWriterPath;
 
